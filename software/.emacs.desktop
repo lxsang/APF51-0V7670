@@ -1,0 +1,29 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Thu Jan  1 01:47:07 1970
+;; Desktop file format version 206
+;; Emacs version 23.4.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/workspace/APF51-0V7670/software/Makefile"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/root/workspace/APF51-0V7670/software/Makefile"
+  "Makefile"
+  'makefile-gmake-mode
+  '(linum-mode)
+  24
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode . t) (buffer-file-coding-system . utf-8-unix)))
+

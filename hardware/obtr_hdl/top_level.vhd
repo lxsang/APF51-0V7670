@@ -16,6 +16,20 @@ port
     ext_clk   : in std_logic;
     button    : in std_logic;
     gls_irq   : out std_logic
+	
+	--- CAMERA PINS GOES HERE
+	OV7670_VSYNC	: in std_logic;
+	OV7670_HREF		: in std_logic;
+	OV7670_PCLK		: in std_logic;
+	OV7670_D		: in std_logic_vector(7 downto 0);
+	OV7670_SIOC  	: out   STD_LOGIC;
+	OV7670_SIOD  	: inout STD_LOGIC;
+	OV7670_RESET 	: out   STD_LOGIC;
+	OV7670_PWDN  	: out   STD_LOGIC;
+	OV7670_XCLK  	: out   STD_LOGIC;
+	
+	-- debug signal
+	led 			: out std_logic
 );
 end entity;
 
@@ -31,19 +45,9 @@ architecture RTL of top_level is
     signal irq_port: std_logic_vector(15 downto 0);
     signal buffer_ack: std_logic;
     signal ack_tick : std_logic;
+	signal resend, frame_irq: std_logic;
 begin
-
-  -- connect button to debouce unit
-    debounce_unit: entity work.debounce
-      port map(
-        clk => gls_clk,
-        reset => gls_reset,
-        sw => button,
-        db_level => open,
-        db_tick => bt_irq
-        );
-    
-  irq_port <= "000000000000000" & bt_irq;
+  irq_port <= "000000000000000" & frame_irq;
     reset_gen: entity work.rstgen_syscon
       port map (
         ext_clk => ext_clk,
@@ -99,27 +103,43 @@ begin
         wbs_s1_write    => wr,
         irq_cs          => c_sel(0),
         irqport         => irq_port,
-        gls_irq         => gls_irq
+        gls_irq         => gls_irq,
+		start 			=> resend
         );
 
   --gls_irq <= bt_irq;
     
     
-	buffer_ent: entity work.buffer_ctrl
-	port map(
+	camera_ent: entity work.camera_unit
+    generic map(
+      BUF_AW  =>14;
+      BUF_DW  =>16
+      )
+    port map(                       
 		clk		=> gls_clk,
 		reset	=> gls_reset,
-		din		=> wbm_writedata,
-        addr    => wbm_address,
+    	addr    => wbm_address,
 		strobe	=> strobe,
 		cycle	=> cycle,	
 		c_sel	=> c_sel(1), 
-		--adv		=> adv,
 		ack		=> buffer_ack,
-		wr		=> wr,
-        ack_tick=> ack_tick,
+    	ack_tick=> ack_tick,
 		dout	=> buffer_dout
-        );
+      	cfinish => led,
+  		resend 	=>  resend,
+		frame_irq=>frame_irq,
+  		--- CAMERA PINS GOES HERE
+  		OV7670_VSYNC	=> OV7670_VSYNC,
+  		OV7670_HREF		=> OV7670_HREF,
+  		OV7670_PCLK		=> OV7670_PCLK,
+  		OV7670_D		=> OV7670_D,
+  		OV7670_SIOC  	=> OV7670_SIOC,
+  		OV7670_SIOD  	=> OV7670_SIOD,
+  		OV7670_RESET 	=> OV7670_RESET,
+  		OV7670_PWDN  	=> OV7670_PWDN,
+  		OV7670_XCLK  	=> OV7670_XCLK
+		);
+
 
     rw_cnt_ent: entity work.rw_counter
       port map(

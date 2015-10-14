@@ -13,7 +13,7 @@ hdlmake
 make
 if [ $? -eq 0 ]; then
     bitgen  -w -g Binary:Yes -intstyle ise  top_level.ncd
-    scp "./top_level.bin" "root@$1:/root/$2.bin"
+    #scp "./top_level.bin" "root@$1:/root/$2.bin"
 else
     echo "FAIL TO MAKE"
 fi

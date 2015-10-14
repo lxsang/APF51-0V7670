@@ -1,13 +1,11 @@
 CC=gcc
 CFLAGS=-W -Wall -g -std=c99 -D DEBUG
-BUILDIRD=build
+BUILDIRD=/root/antd
 EXT=dylib
 SERVER=plugin_manager.o ini.o http_server.o plugins/dictionary.o plugins/utils.o
 SERVERLIB=-lpthread -ldl
 #-lsocket
-PLUGINS=	dummy.$(EXT)\
-			sysconfig.$(EXT)\
-			pluginsman.$(EXT)\
+PLUGINS=	pluginsman.$(EXT)\
 			fileman.$(EXT)\
 			cookiex.$(EXT)
 
@@ -23,7 +21,7 @@ httpd:$(SERVER)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 plugins: $(PLUGINS)
-	
+
 %.$(EXT): $(PLUGINSDEP) 
 	for file in $(wildcard plugins/$(basename $@)/*.c) ; do\
 		$(CC) $(CFLAGS) -c $$file -o $$file.o; \
@@ -35,9 +33,9 @@ plugins: $(PLUGINS)
 clean: sclean pclean
 
 sclean:
-	rm -f *.o build/httpd
+	rm -f *.o $(BUILDIRD)/httpd
 pclean:
-	rm -f build/plugins/* plugins/*.o
+	rm -f $(BUILDIRD)/plugins/* plugins/*.o
 	-for file in plugins/* ;do \
 		if [ -d "$$file" ]; then \
 			rm "$$file"/*.o; \

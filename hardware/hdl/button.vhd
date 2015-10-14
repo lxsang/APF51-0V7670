@@ -43,7 +43,7 @@ begin
         db_level => db_level,
         db_tick => irq
         );
-    
+    --irq <= sw;
     --read proc
     read_proc : process( clk,reset) 
 	begin 

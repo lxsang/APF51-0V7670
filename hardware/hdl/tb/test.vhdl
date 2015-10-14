@@ -8,6 +8,7 @@ architecture behavior of wb_test is
   -- Component declaration for the unit under test
   -- inputs
   signal  imx_cs_n, imx_rw, imx_adv, clk, reset: std_logic;
+  signal button, irq: std_logic;
   signal imx_da: std_logic_vector(15 downto 0);
   constant clk_period: time := 20 ns;
 begin
@@ -18,8 +19,9 @@ begin
     imx_adv=> imx_adv,
     --gls_reset=> reset,
     ext_clk => clk,
+    button=> button,
     led_a=> open,
-    led_c=>open
+    gls_irq => irq
  );
 
   clk_process: process
@@ -33,6 +35,7 @@ begin
   -- stimulus process
   stim_proc: process
   begin
+    button <= '0';
     imx_cs_n <= '1';
     imx_da <= (others=>'0');
     imx_adv<= '1';
@@ -43,7 +46,7 @@ begin
     -- value goes here
     -- write data to address 0x000F
     wait for 40 ns;
-    imx_da <= X"000A";
+    imx_da <= X"0008";
     imx_adv <= '0';
     wait for 20 ns;
     -- data in
@@ -64,7 +67,7 @@ begin
     imx_rw <= '1';
 
     wait for 60 ns;
-    imx_da <= X"000C";
+    imx_da <= X"0008";
     imx_adv <= '0';
 
     wait for 20 ns;
@@ -73,7 +76,35 @@ begin
     wait for 80 ns;
     imx_cs_n <= '1';
 
+    wait for 100 ns;
+
+    -- read data from 0x0000
+    imx_da <= (others=>'0');
+    imx_adv <= '1';
+    imx_cs_n <= '1';
+    imx_rw <= '1';
+
     wait for 60 ns;
+    imx_da <= X"0000";
+    imx_adv <= '0';
+    wait for 20 ns;
+    imx_adv <= '1';
+    imx_cs_n <= '0';
+    wait for 80 ns;
+    imx_cs_n <= '1';
+
+    wait for 100 ns;
+    imx_da <= (others=>'0');
+    imx_adv <= '1';
+    imx_cs_n <= '1';
+
+    
+    wait for 60 ns;
+    button <= '1';
+    wait for 40 ns;
+    button <= '0';
+    wait for 60 ns;
+    
     assert false
       report "Simulation complete"
       severity failure;

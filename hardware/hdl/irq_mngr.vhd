@@ -25,7 +25,7 @@ library IEEE;
 -- ----------------------------------------------------------------------------
     generic
     (
-      id : natural := 0;
+      id : natural := 3;
       irq_count : integer := 16; -- always 16 default
       irq_level : std_logic := '1'
     );
@@ -128,6 +128,8 @@ begin
   if(gls_reset='1') then
     irq_ack <= (others => '0');
     wr_ack  <= '0';
+    -- enable irq 0 for the button hardwire first, we will set
+    -- it up later in the kernel
     irq_mask <= (others => '0');
   elsif(rising_edge(gls_clk)) then
     irq_ack <= (others => '0');

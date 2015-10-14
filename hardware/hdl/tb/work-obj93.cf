@@ -1,22 +1,31 @@
 v 3
-file . "test.vhdl" "20151007200412.000" "20151007225202.277":
-  entity wb_test at 1( 0) + 0 on 217;
-  architecture behavior of wb_test at 7( 76) + 0 on 218;
-file . "../interface_mngr.vhd" "20151007192451.000" "20151007225202.193":
-  entity interface_mngr at 1( 0) + 0 on 207;
-  architecture arch of interface_mngr at 25( 628) + 0 on 208;
-file . "../led.vhd" "20151007202547.000" "20151007225202.221":
-  entity led at 1( 0) + 0 on 211;
-  architecture arch of led at 22( 513) + 0 on 212;
-file . "../imx51_wb16_wrapper.vhd" "20151007184155.000" "20151007225202.181":
-  entity imx51_wb16_wrapper at 17( 550) + 0 on 205;
-  architecture rtl of imx51_wb16_wrapper at 48( 1729) + 0 on 206;
+file . "../debounce.vhd" "20151013084042.000" "20151013174319.098":
+  entity debounce at 3( 21) + 0 on 361;
+  architecture arch of debounce at 15( 275) + 0 on 362;
+file . "../irq_mngr.vhd" "20151013092614.000" "20151013174319.082":
+  entity irq_mngr at 19( 649) + 0 on 359;
+  architecture rtl of irq_mngr at 55( 2100) + 4 on 360;
+file . "../rstgen_syscon.vhd" "20151013084042.000" "20151013174319.143":
+  entity rstgen_syscon at 12( 309) + 0 on 367;
+  architecture rstgen_syscon_1 of rstgen_syscon at 34( 852) + 0 on 368;
+file . "../top_level.vhd" "20151013091304.000" "20151013174319.163":
+  entity top_level at 1( 0) + 0 on 369;
+  architecture rtl of top_level at 25( 490) + 0 on 370;
 file . "../default.vhd" "20151007205159.000" "20151007225202.207":
   entity default at 1( 0) + 0 on 209;
   architecture arch of default at 20( 462) + 0 on 210;
-file . "../top_level.vhd" "20151007200627.000" "20151007225202.253":
-  entity top_level at 1( 0) + 0 on 215;
-  architecture rtl of top_level at 23( 427) + 0 on 216;
-file . "../rstgen_syscon.vhd" "20131225195813.000" "20151007225202.237":
-  entity rstgen_syscon at 12( 309) + 0 on 213;
-  architecture rstgen_syscon_1 of rstgen_syscon at 34( 852) + 0 on 214;
+file . "../imx51_wb16_wrapper.vhd" "20151013084042.000" "20151013174319.048":
+  entity imx51_wb16_wrapper at 17( 550) + 0 on 355;
+  architecture rtl of imx51_wb16_wrapper at 48( 1729) + 0 on 356;
+file . "../led.vhd" "20151013084042.000" "20151013174319.130":
+  entity led at 1( 0) + 0 on 365;
+  architecture arch of led at 22( 513) + 0 on 366;
+file . "../interface_mngr.vhd" "20151013084042.000" "20151013174319.063":
+  entity interface_mngr at 1( 0) + 0 on 357;
+  architecture arch of interface_mngr at 25( 628) + 0 on 358;
+file . "test.vhdl" "20151013154303.000" "20151013174319.176":
+  entity wb_test at 1( 0) + 0 on 371;
+  architecture behavior of wb_test at 7( 76) + 0 on 372;
+file . "../button.vhd" "20151013095645.000" "20151013174319.115":
+  entity button at 1( 0) + 0 on 363;
+  architecture arch of button at 21( 460) + 0 on 364;

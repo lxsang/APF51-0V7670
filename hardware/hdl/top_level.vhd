@@ -94,7 +94,8 @@ begin
         irqport         => irq_port,
         gls_irq         => gls_irq
         );
-        
+
+  --gls_irq <= bt_irq;
     
     
 	led_ent: entity work.led

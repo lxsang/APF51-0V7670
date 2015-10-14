@@ -24,7 +24,7 @@ architecture arch of led is
 	Signal reg : std_logic_vector(15 downto 0) ;
 begin 
 
-	led <= '1';
+	led <= reg(0);
 	ack <= c_sel and strobe;
 	-- write process
 	write_proc : process( clk,reset ) 

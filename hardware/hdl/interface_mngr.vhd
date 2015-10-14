@@ -39,12 +39,20 @@ begin
 		elsif rising_edge(clk) then
           slave_sel <= (others => '0');
           if addr_in(15 downto 3) = "0000000000000" and strobe_in='1' then
-				slave_sel <= "001";
-			elsif addr_in(15 downto 3) = "0000000000001" and strobe_in='1' then 
+            slave_sel <= "001";
+          else
+            slave_sel(0) <= '0';
+          end if;
+          if addr_in(15 downto 3) = "0000000000001" and strobe_in='1' then 
               slave_sel <= "010";
-            elsif addr_in(15 downto 3) = "0000000000010" and strobe_in='1' then
+          else
+            slave_sel(1) <= '0';
+          end if;
+          if addr_in(15 downto 3) = "0000000000010" and strobe_in='1' then
               slave_sel <= "100";
-			end if; 
+          else
+            slave_sel(2)  <= '0';
+          end if; 
 		end if;
 	end process ; -- addressing_proc
 

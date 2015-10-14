@@ -6,16 +6,12 @@
 #include <linux/interrupt.h> // Required for the IRQ code
 #include <linux/ioport.h> // read write
 #include <asm/io.h>
-//#include <mach/iomux-mx51.h>
-//#include <mach/fpga.h>
-//#include <mach/hardware.h>
+
 /*
  *  Define the APF51 base
  */
-//#define MXC_CS1RCR1_ADDR 0x20
-//#define MX51_AIPS2_BASE_ADDR 0x83f00000
+
 #define APF51_FPGA_BASE 0xB8000000
-//#define APF51_FPGA_BASE (MX51_IO_ADDRESS(MX51_WEIM_BASE_ADDR) + MXC_CS1RCR1_ADDR) 
 #define APF51_FPGA_MAP_SIZE 0x10000
 #define IRQ_MNGR 0
 #define IRQ_MASK 0

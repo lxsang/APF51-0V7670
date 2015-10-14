@@ -33,12 +33,17 @@ static void print_irq_status(void)
  */
 static irq_handler_t obtrkn_bt_handler(unsigned int irq, void* dev_id, struct ptr_regs* regs)
 {
+    u16 data;
 	printk(KERN_INFO "OBTR: Interrupt (button state is%d)\n",gpio_get_value(IMX_BT));
 	no_presses++;
     print_irq_status();
+    // get the led status
+    data = (u16)ioread16(ptr_fpga+LED);
+    printk(KERN_INFO "OBTR: the led status is %d\n", data);
+    // toggle the led
+    iowrite16(1^data, ptr_fpga+LED);
     // reset the ack
     iowrite16(1, ptr_fpga+IRQ_MNGR+IRQ_ACK);
-    print_irq_status();
 	return (irq_handler_t) IRQ_HANDLED;
 }
 
@@ -133,6 +138,7 @@ static void __exit obtrkn_exit(void)
 	printk(KERN_INFO "OBTR: Good bye");
 	gpio_unexport(IMX_BT);
 	gpio_free(IMX_BT);
+    ptr_fpga = NULL;
 }
 
 

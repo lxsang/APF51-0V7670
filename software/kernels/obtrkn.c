@@ -10,10 +10,13 @@ MODULE_VERSION("0.1");
 static unsigned int irq_number; 
 // button pressed times
 static unsigned int no_presses = 0;
+static struct uio_info *info;
 
+/*
+  We dont need this any more since this will be handle
+  in use-space
+*/
 static void * ptr_fpga = NULL;
-
-
 static void print_irq_status(void)
 {
     u16 data;
@@ -27,10 +30,10 @@ static void print_irq_status(void)
     printk(KERN_INFO "OBTR: The pending interrupts is %d \n",data);
  }
 
-
 /**
  * The iRQ handler
- */
+   This is replaced by the irq handler of uio
+
 static irq_handler_t obtrkn_bt_handler(unsigned int irq, void* dev_id, struct ptr_regs* regs)
 {
     u16 data;
@@ -44,15 +47,40 @@ static irq_handler_t obtrkn_bt_handler(unsigned int irq, void* dev_id, struct pt
     iowrite16(1^data, ptr_fpga+LED);
     // reset the ack
     iowrite16(1, ptr_fpga+IRQ_MNGR+IRQ_ACK);
-	return (irq_handler_t) IRQ_HANDLED;
+    return (irq_handler_t) IRQ_HANDLED;
 }
+*/
+
+// the new irq_handle
+static irqreturn_t obtrkn_irq_handler(int irq, struct uio_info *dev_info)
+{
+    printk(KERN_INFO "OBTR: Interrupt (signal state is %d)\n",gpio_get_value(IMX_IRQ));
+    no_presses++;
+    print_irq_status();
+    printk(KERN_INFO "OBTR: In UIO handler, count = %d\n", no_presses);
+    iowrite16(1,ptr_fpga+IRQ_MNGR+IRQ_ACK);
+    // note that, the use space should write the ack to the hardware to clear the irq
+    return (irqreturn_t)IRQ_HANDLED;
+}
+
+static struct device *dev;
 
 static void free_all(void)
 {
 	free_irq(irq_number,NULL);
-	gpio_unexport(IMX_BT);
-	gpio_free(IMX_BT);
+	gpio_unexport(IMX_IRQ);
+	gpio_free(IMX_IRQ);
+    uio_unregister_device(info);
+    device_unregister(dev);
+    kfree(dev);
+    kfree(info);
     release_mem_region(APF51_FPGA_BASE,APF51_FPGA_MAP_SIZE);
+    ptr_fpga = NULL;
+}
+
+static void obtrdev_release(struct device *dev)
+{
+    printk(KERN_INFO "OBTR: releasing my uio device\n");
 }
 
 
@@ -65,33 +93,33 @@ static void free_all(void)
 {
 	int result = 0;
     u16 data;
-    printk(KERN_INFO "OBTR : Init the module with the switch %d\n", IMX_BT);
+    printk(KERN_INFO "OBTR : Init the module with irq signal at GPIO  %d\n", IMX_IRQ);
 	// set up the gpio for the switch
-	gpio_request(IMX_BT,"sysfs");
-	gpio_direction_input(IMX_BT);
-	gpio_set_debounce(IMX_BT,200);
-	gpio_export(IMX_BT,false);
+	gpio_request(IMX_IRQ,"sysfs");
+	gpio_direction_input(IMX_IRQ);
+	gpio_set_debounce(IMX_IRQ,200);
+	gpio_export(IMX_IRQ,false);
 
     
-	printk(KERN_INFO "OBTR: The imx button state is %d \n",gpio_get_value(IMX_BT));
+	printk(KERN_INFO "OBTR: The irq state is %d \n",gpio_get_value(IMX_IRQ));
 
 	// register the interrupt to the kernel
 	// First, map the GPIO number to the interrupt number
-	irq_number = gpio_to_irq(IMX_BT);
+	irq_number = gpio_to_irq(IMX_IRQ);
 	printk(KERN_INFO "OBTR: The interrupt number is %d\n", irq_number);
 	//request an interrupt line
-	result = request_irq(irq_number,
+	/*result = request_irq(irq_number,
 						(irq_handler_t) obtrkn_bt_handler,
                          IRQF_TRIGGER_RISING,
 						"button_interrupt",
 						NULL);
-
+    */
     if ( result < 0) {
         printk(KERN_INFO "OBTR: Cannot request the interrupt, error:  %d\n", result);
         goto error;
     }
     printk(KERN_INFO "OBTR : Interrupt request sucessful\n");
-
+    
     // memory allocation an mapping
     ptr_fpga = request_mem_region(APF51_FPGA_BASE,APF51_FPGA_MAP_SIZE,
                                   "apf51_fpga_map");
@@ -111,11 +139,32 @@ static void free_all(void)
     iowrite16(data,ptr_fpga+IRQ_MNGR+IRQ_MASK);
     // reset the pending by set the ack flag
     iowrite16(data, ptr_fpga+IRQ_MNGR+IRQ_ACK);
-
     // now try to read the interrupt manager paramerter
     print_irq_status();
+    
+    
+    // all the above stuffs must be setup in the use space
+    dev = kzalloc(sizeof(struct device), GFP_KERNEL);
+    dev_set_name(dev, "obtr_device");
+    dev->release = obtrdev_release;
+    device_register(dev);
+
+    info = kzalloc(sizeof(struct uio_info), GFP_KERNEL);
+    info->name = "obtr_device";
+    info->version = "0.1";
+    info->irq = irq_number;
+    info->irq_flags = IRQF_TRIGGER_RISING;
+    info->handler = obtrkn_irq_handler;
+    info->mem[0].memtype =  UIO_MEM_PHYS;
+    info->mem[0].addr = APF51_FPGA_BASE;
+    info->mem[0].size = APF51_FPGA_MAP_SIZE;
+    
+    if (uio_register_device(dev, info) < 0) {
+        printk(KERN_INFO  "OBTR: Failing to register uio device\n");
+        goto error;
+    }
+    printk(KERN_INFO "OBTR: Registered UIO handler for IRQ=%d\n", irq_number);
     printk(KERN_INFO "OBTR inserted \n");
-;
     return 0;
 
 error:
@@ -131,14 +180,15 @@ error:
 
 static void __exit obtrkn_exit(void)
 {
-	printk(KERN_INFO "OBTR: The current button state is %d\n", gpio_get_value(IMX_BT));
+	printk(KERN_INFO "OBTR: The current button state is %d\n", gpio_get_value(IMX_IRQ));
 	printk(KERN_INFO "OBTR: The button was pressed %d times\n",no_presses);
-	free_irq(irq_number,NULL);
-    release_mem_region(APF51_FPGA_BASE,APF51_FPGA_MAP_SIZE);
+	//free_irq(irq_number,NULL);
+    //release_mem_region(APF51_FPGA_BASE,APF51_FPGA_MAP_SIZE);
 	printk(KERN_INFO "OBTR: Good bye");
-	gpio_unexport(IMX_BT);
-	gpio_free(IMX_BT);
-    ptr_fpga = NULL;
+	//gpio_unexport(IMX_BT);
+	//gpio_free(IMX_BT);
+    //ptr_fpga = NULL;
+    free_all();
 }
 
 

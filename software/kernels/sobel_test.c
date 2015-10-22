@@ -11,6 +11,13 @@
 #include <string.h>
 #include <time.h>
 #include <sys/time.h>
+//#include <opencv/cvaux.h>
+#include <opencv/highgui.h>
+//#include <opencv/cxcore.h>
+#include <opencv/cv.h>
+
+#define NDATAW 9600
+#define IMG "/root/workspace/APF51-0V7670/software/cam_viewer/htdocs/images/tartine.jpg"  
 
 #define APF51_FPGA_MAP_SIZE 0x10000
 #define MEM_OFFSET 0x8
@@ -18,13 +25,11 @@
 #define R_COUNTER 0
 #define W_COUNTER 2
 #define ID_COUNTER 4
-#define ACCESS_NO 600//(2000*100)
-#define MBYTE       (1000000)
-#  ifndef CLK_TCK
-#   define CLK_TCK      CLOCKS_PER_SEC
-#  endif 
+#define TRIGGER_SOBEL 4
+#include <unistd.h>
 int ffpga ;
 void * ptr_fpga;
+int i = 0;
 
 void rw_counter_log()
 {
@@ -51,31 +56,33 @@ void* obtr_memcpy(void* dst, void* src, size_t len)
 	unsigned short* pDst = (unsigned short*) dst;
 	unsigned short* pSrc = (unsigned short*) src;
 	while(len--)
+	{
+
+		//printf(" %2X ", *pSrc);
 		*pDst++ = *pSrc++;
+		
+	}
 	return dst;
 }
-
-unsigned char buffer[16]={
-	1,2,2,1
-	1,1,0,3,
-	2,4,1,5,
-	2,1,2,0};
-int i = 0;
-
-void dump_mem_acess_time(clock_t tick1, clock_t tick2)
+void writeimage()
 {
-	int tick = tick2 - tick1;
-	float duration = ((float) tick)/((float) CLK_TCK);
-	printf("Wrote/read 128x16 bits words %d time in %g sec\n",ACCESS_NO,duration);
-	printf("Speed: %g Mbyte/s \n",
-		(float)((ACCESS_NO*128*2)/duration)/MBYTE);
-} 
+	IplImage* img = cvLoadImage(IMG,CV_LOAD_IMAGE_ANYDEPTH |
+								CV_LOAD_IMAGE_ANYCOLOR);
+  	if (!img)
+  	{
+    	printf("Cannot load image\n");
+    	return;
+  	}
+	// convert to grayscale
+	IplImage* gray_image  = cvCreateImage(cvGetSize(img),IPL_DEPTH_8U,1);
+	cvCvtColor( img, gray_image, CV_BGR2GRAY );
+	// write image to fpga
+	obtr_memcpy(ptr_fpga+MEM_OFFSET, img->imageData,NDATAW);
+}
 
 int main(int argc, char *argv[])
 {
-    unsigned short buff_out[128];
-	clock_t tick1, tick2;
-	init_buffer();
+	unsigned short buff_out[NDATAW];
 	ffpga = open("/dev/uio0", O_RDWR|O_SYNC);
     if(ffpga <0)
     {
@@ -89,60 +96,35 @@ int main(int argc, char *argv[])
         printf("MMap faile\n");
         return -1;
     }
-
+	// reset interrupt
+	*(unsigned short*)(ptr_fpga+2) = 0xFFFF;
 	reset_counter();
 	rw_counter_log();
-	//write the memory zone
-	// testing the access time
-	tick1 = clock();
-	for (i = 0; i < ACCESS_NO; i++) {
-		obtr_memcpy(ptr_fpga+MEM_OFFSET, buffer,128);
-	}
-	tick2 = clock();
+	//write the memory zoneOB
+	writeimage();
+	//obtr_memcpy(ptr_fpga+MEM_OFFSET, buffer,8);
+	// write dummy bytes to trgger sobel
+	*(unsigned short *)(ptr_fpga+TRIGGER_SOBEL) = 0xFFFF;
 	rw_counter_log();
-	dump_mem_acess_time(tick1, tick2);
 
-	
-	//obtr_memcpy(buff_out,ptr_fpga+MEM_OFFSET,128);
-	// test read speed
-	printf("Test read speed\n");
+	// wait for data
 	reset_counter();
-	rw_counter_log();
-	tick1 = clock();
-	for (i = 0; i < ACCESS_NO; i++) {
-		obtr_memcpy(buff_out,ptr_fpga+MEM_OFFSET,128);
-	}
-	tick2 = clock();
-	rw_counter_log();
-	dump_mem_acess_time(tick1,tick2);
-
-	int j = 0;
-	for(j = 0; j < ACCESS_NO;j++)
+	printf("\nWait for data\n");
+	uint32_t info;
+	ssize_t nb = read(ffpga,&info,sizeof(info));
+	if(nb = sizeof(info))
 	{
-		obtr_memcpy(buff_out,ptr_fpga+MEM_OFFSET,128);
-		for ( i = 0; i < 128; i++) {
-			if(buff_out[i] != buffer[i])
-				printf("Found different: read %d instead of % at index %d\n",buff_out[i], buffer[i],i);
+	   //sleep(3);
+		obtr_memcpy(buff_out,ptr_fpga+MEM_OFFSET,NDATAW);
+		rw_counter_log();
+		
+		for ( i = 0; i < NDATAW; i++) {
+			printf(" [%2X] ",buff_out[i] );
 		}
 	}
 	printf("Done check \n");
 
-	/*printf("Write by loop\n");
-	tick1 = clock();
-	int j;
-	for(j = 0; j < ACCESS_NO;j++)
-		for (i = 0; i < 128; i++) {
-		*(unsigned short*)(ptr_fpga+MEM_OFFSET+i*2) = buffer[i];
-		}
-		tick2 = clock()
-	dump_mem_acess_time(tick1,tick2);
-	printf("Read by loop\n");
-	for (i = 0; i < 128; i++) {
-		printf(" [%d] ",
-			   ( *(unsigned short*)(ptr_fpga+MEM_OFFSET+i*2)) 
-			);
-	}
-	*/
+
     munmap(ptr_fpga,APF51_FPGA_MAP_SIZE);
     close(ffpga);
     return 0;

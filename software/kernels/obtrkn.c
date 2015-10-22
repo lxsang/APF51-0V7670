@@ -135,8 +135,9 @@ static void obtrdev_release(struct device *dev)
     }
 
     // reset the mask to enable the irq at button
-    data = 1;
+    data = 0xFFFF;
     iowrite16(data,ptr_fpga+IRQ_MNGR+IRQ_MASK);
+	data = 1;
     // reset the pending by set the ack flag
     iowrite16(data, ptr_fpga+IRQ_MNGR+IRQ_ACK);
     // now try to read the interrupt manager paramerter

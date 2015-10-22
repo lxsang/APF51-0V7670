@@ -1,4 +1,4 @@
-#include "../plugin.h"
+#include "plugin.h"
 //#include <opencv/cvaux.h>
 #include <opencv/highgui.h>
 //#include <opencv/cxcore.h>

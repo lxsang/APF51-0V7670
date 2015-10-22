@@ -5,10 +5,10 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/top_level.vhd</arg>&quot; line <arg fmt="%s" index="2">36</arg>: Output port &lt;<arg fmt="%s" index="3">db_level</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">debounce_unit</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/top_level.vhd</arg>&quot; line <arg fmt="%s" index="2">37</arg>: Output port &lt;<arg fmt="%s" index="3">db_level</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">debounce_unit</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/top_level.vhd</arg>&quot; line <arg fmt="%s" index="2">72</arg>: Output port &lt;<arg fmt="%s" index="3">adv</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">interface</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/top_level.vhd</arg>&quot; line <arg fmt="%s" index="2">73</arg>: Output port &lt;<arg fmt="%s" index="3">adv</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">interface</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">wbm_ack</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -17,10 +17,7 @@
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">addr_in&lt;2:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">din</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/buffer_ctrl.vhd</arg>&quot; line <arg fmt="%s" index="2">45</arg>: Output port &lt;<arg fmt="%s" index="3">dout_b</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mem_ent</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/buffer_ctrl.vhd</arg>&quot; line <arg fmt="%s" index="2">58</arg>: Output port &lt;<arg fmt="%s" index="3">dout_b</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mem_ent</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">addr_b_reg</arg>&lt;<arg fmt="%d" index="2">7</arg>:<arg fmt="%d" index="3">0</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">dual_port_dual_clock</arg>&gt;.
@@ -114,9 +111,6 @@
 </msg>
 
 <msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">irq_old_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">irq_manager</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">address_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">imx51_wb_16</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">irq_pend_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">irq_manager</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -351,6 +345,8 @@
 
 <msg type="warning" file="Xst" num="1898" delta="new" >Due to constant pushing, FF/Latch &lt;<arg fmt="%s" index="1">irq_ack_15</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">irq_mngr</arg>&gt;.
 </msg>
+
+<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">top_level</arg> : the following signal(s) form a combinatorial loop: </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">imx51_wb_16/address_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_level</arg>&gt;.
 </msg>

@@ -324,8 +324,8 @@
     <property xil_pn:name="PROP_PostSynthSimTop" xil_pn:value="" xil_pn:valueState="default"/>
     <property xil_pn:name="PROP_PostXlateSimTop" xil_pn:value="" xil_pn:valueState="default"/>
     <property xil_pn:name="PROP_PreSynthesis" xil_pn:value="PreSynthesis" xil_pn:valueState="default"/>
-    <property xil_pn:name="PROP_intProjectCreationTimestamp" xil_pn:value="2015-10-15T22:43:10" xil_pn:valueState="non-default"/>
-    <property xil_pn:name="PROP_intWbtProjectID" xil_pn:value="FD43D37C21FF86B7549560B3806E3381" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="PROP_intProjectCreationTimestamp" xil_pn:value="2015-10-16T21:40:42" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="PROP_intWbtProjectID" xil_pn:value="B740115B6D13093ECF30E4D5CED6809C" xil_pn:valueState="non-default"/>
     <property xil_pn:name="PROP_intWorkingDirLocWRTProjDir" xil_pn:value="Same" xil_pn:valueState="non-default"/>
     <property xil_pn:name="PROP_intWorkingDirUsed" xil_pn:value="No" xil_pn:valueState="non-default"/>
   </properties>
@@ -342,26 +342,29 @@
     <file xil_pn:name="../buffer_ctrl.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="Implementation" xil_pn:seqID="3"/>
     </file>
-    <file xil_pn:name="../dual_port_dual_clock.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../rw_counter.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="Implementation" xil_pn:seqID="4"/>
     </file>
-    <file xil_pn:name="../../wb_irq/button.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../dual_port_dual_clock.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="Implementation" xil_pn:seqID="5"/>
     </file>
-    <file xil_pn:name="../../wb_irq/debounce.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../wb_irq/button.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="Implementation" xil_pn:seqID="6"/>
     </file>
-    <file xil_pn:name="../../wb_irq/rstgen_syscon.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../wb_irq/debounce.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="Implementation" xil_pn:seqID="7"/>
     </file>
-    <file xil_pn:name="../../wb_irq/irq_mngr.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../wb_irq/rstgen_syscon.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="Implementation" xil_pn:seqID="8"/>
     </file>
-    <file xil_pn:name="../../wb_irq/imx51_wb16_wrapper.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../wb_irq/irq_mngr.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="Implementation" xil_pn:seqID="9"/>
     </file>
-    <file xil_pn:name="top_level.ucf" xil_pn:type="FILE_UCF">
+    <file xil_pn:name="../../wb_irq/imx51_wb16_wrapper.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="Implementation" xil_pn:seqID="10"/>
+    </file>
+    <file xil_pn:name="top_level.ucf" xil_pn:type="FILE_UCF">
+      <association xil_pn:name="Implementation" xil_pn:seqID="11"/>
     </file>
   </files>
 

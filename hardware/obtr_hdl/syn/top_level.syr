@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.29 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.29 secs
  
 --> 
 Reading design: top_level.prj
@@ -129,6 +129,9 @@ Parsing architecture <arch> of entity <dual_port_dual_clock>.
 Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/buffer_ctrl.vhd" into library work
 Parsing entity <buffer_ctrl>.
 Parsing architecture <arch> of entity <buffer_ctrl>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/rw_counter.vhd" into library work
+Parsing entity <rw_counter>.
+Parsing architecture <arch> of entity <rw_counter>.
 Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/top_level.vhd" into library work
 Parsing entity <top_level>.
 Parsing architecture <RTL> of entity <top_level>.
@@ -156,16 +159,18 @@ Elaborating entity <buffer_ctrl> (architecture <arch>) from library <work>.
 
 Elaborating entity <dual_port_dual_clock> (architecture <arch>) with generics from library <work>.
 
+Elaborating entity <rw_counter> (architecture <arch>) from library <work>.
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <top_level>.
     Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/top_level.vhd".
-INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/top_level.vhd" line 36: Output port <db_level> of the instance <debounce_unit> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/top_level.vhd" line 72: Output port <adv> of the instance <interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/top_level.vhd" line 37: Output port <db_level> of the instance <debounce_unit> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/top_level.vhd" line 73: Output port <adv> of the instance <interface> is unconnected or connected to loadless signal.
     Summary:
-	inferred   2 Multiplexer(s).
+	inferred   3 Multiplexer(s).
 Unit <top_level> synthesized.
 
 Synthesizing Unit <debounce>.
@@ -234,10 +239,10 @@ Unit <imx51_wb16_wrapper> synthesized.
 Synthesizing Unit <interface_mngr>.
     Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/interface_mngr.vhd".
 WARNING:Xst:647 - Input <addr_in<2:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 2-bit register for signal <slave_sel>.
+    Found 3-bit register for signal <slave_sel>.
     Summary:
-	inferred   2 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
+	inferred   3 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
 Unit <interface_mngr> synthesized.
 
 Synthesizing Unit <irq_mngr>.
@@ -261,13 +266,13 @@ Unit <irq_mngr> synthesized.
 
 Synthesizing Unit <buffer_ctrl>.
     Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/buffer_ctrl.vhd".
-WARNING:Xst:647 - Input <din> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/buffer_ctrl.vhd" line 45: Output port <dout_b> of the instance <mem_ent> is unconnected or connected to loadless signal.
-    Found 8-bit register for signal <mem_addr>.
-    Found 8-bit subtractor for signal <GND_26_o_GND_26_o_sub_1_OUT<7:0>> created at line 38.
+INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/buffer_ctrl.vhd" line 58: Output port <dout_b> of the instance <mem_ent> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <ack_db>.
+    Found 16-bit subtractor for signal <GND_26_o_GND_26_o_sub_1_OUT<15:0>> created at line 55.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred   8 D-type flip-flop(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
 Unit <buffer_ctrl> synthesized.
 
 Synthesizing Unit <dual_port_dual_clock>.
@@ -282,28 +287,42 @@ Synthesizing Unit <dual_port_dual_clock>.
 	inferred   8 D-type flip-flop(s).
 Unit <dual_port_dual_clock> synthesized.
 
+Synthesizing Unit <rw_counter>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/rw_counter.vhd".
+    Found 16-bit register for signal <w_counter>.
+    Found 16-bit register for signal <r_counter>.
+    Found 16-bit register for signal <dout>.
+    Found 16-bit adder for signal <w_counter[15]_GND_36_o_add_6_OUT> created at line 1241.
+    Found 16-bit adder for signal <r_counter[15]_GND_36_o_add_7_OUT> created at line 1241.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  48 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <rw_counter> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 2
  256x16-bit dual-port RAM                              : 2
-# Adders/Subtractors                                   : 2
+# Adders/Subtractors                                   : 4
+ 16-bit adder                                          : 2
+ 16-bit subtractor                                     : 1
  21-bit subtractor                                     : 1
- 8-bit subtractor                                      : 1
-# Registers                                            : 16
- 1-bit register                                        : 4
- 16-bit register                                       : 8
- 2-bit register                                        : 1
+# Registers                                            : 19
+ 1-bit register                                        : 5
+ 16-bit register                                       : 11
  21-bit register                                       : 1
- 8-bit register                                        : 2
-# Multiplexers                                         : 15
+ 3-bit register                                        : 1
+ 8-bit register                                        : 1
+# Multiplexers                                         : 21
  1-bit 2-to-1 multiplexer                              : 2
- 16-bit 2-to-1 multiplexer                             : 6
+ 16-bit 2-to-1 multiplexer                             : 11
  16-bit 4-to-1 multiplexer                             : 1
- 2-bit 2-to-1 multiplexer                              : 1
  21-bit 2-to-1 multiplexer                             : 4
  21-bit 4-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 2
 # Tristates                                            : 16
  1-bit tristate buffer                                 : 16
 # FSMs                                                 : 1
@@ -344,7 +363,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_4> (without
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_3> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_2> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_1> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <address_0> of sequential type is unconnected in block <imx51_wb_16>.
 WARNING:Xst:1710 - FF/Latch <irq_pend_1> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <irq_pend_2> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <irq_pend_3> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
@@ -376,6 +394,11 @@ WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_13> is unconnected
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_14> is unconnected in block <irq_manager>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_15> is unconnected in block <irq_manager>.
 
+Synthesizing (advanced) Unit <rw_counter>.
+The following registers are absorbed into counter <w_counter>: 1 register on signal <w_counter>.
+The following registers are absorbed into counter <r_counter>: 1 register on signal <r_counter>.
+Unit <rw_counter> synthesized (advanced).
+
 Synthesizing (advanced) Unit <top_level>.
 INFO:Xst:3226 - The RAM <buffer_ent/mem_ent/Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <buffer_ent/mem_ent/addr_a_reg>
     -----------------------------------------------------------------------
@@ -387,7 +410,7 @@ INFO:Xst:3226 - The RAM <buffer_ent/mem_ent/Mram_ram> will be implemented as a B
     |     clkA           | connected to signal <gls_clk>       | rise     |
     |     weA            | connected to signal <buffer_ent/wr_op> | high     |
     |     addrA          | connected to signal <buffer_ent/mem_addr> |          |
-    |     diA            | connected to signal <("0000000",wbm_address<8:1>,"0")> |          |
+    |     diA            | connected to signal <wbm_writedata> |          |
     |     doA            | connected to signal <buffer_dout>   |          |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
@@ -401,16 +424,19 @@ Macro Statistics
 # RAMs                                                 : 1
  256x16-bit single-port block RAM                      : 1
 # Adders/Subtractors                                   : 2
+ 16-bit subtractor                                     : 1
  21-bit subtractor                                     : 1
- 8-bit subtractor                                      : 1
-# Registers                                            : 163
- Flip-Flops                                            : 163
-# Multiplexers                                         : 14
+# Counters                                             : 2
+ 16-bit up counter                                     : 2
+# Registers                                            : 173
+ Flip-Flops                                            : 173
+# Multiplexers                                         : 19
  1-bit 2-to-1 multiplexer                              : 2
- 16-bit 2-to-1 multiplexer                             : 6
+ 16-bit 2-to-1 multiplexer                             : 9
  16-bit 4-to-1 multiplexer                             : 1
  21-bit 2-to-1 multiplexer                             : 4
  21-bit 4-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 2
 # FSMs                                                 : 1
 
 =========================================================================
@@ -475,6 +501,7 @@ Optimizing FSM <debounce_unit/FSM_0> on signal <state_reg[1:2]> with user encodi
  wait0 | 10
  one   | 11
 -------------------
+WARNING:Xst:2170 - Unit top_level : the following signal(s) form a combinatorial loop: buffer_ent/state.
 
 Optimizing unit <top_level> ...
 
@@ -483,11 +510,14 @@ Optimizing unit <debounce> ...
 Optimizing unit <interface_mngr> ...
 
 Optimizing unit <irq_mngr> ...
+
+Optimizing unit <rw_counter> ...
 WARNING:Xst:2677 - Node <imx51_wb_16/address_0> of sequential type is unconnected in block <top_level>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 3.
+Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 4.
+FlipFlop debounce_unit/state_reg_FSM_FFd1 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -495,8 +525,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 104
- Flip-Flops                                            : 104
+# Registers                                            : 147
+ Flip-Flops                                            : 147
 
 =========================================================================
 
@@ -519,22 +549,22 @@ Top Level Output File Name         : top_level.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 164
+# BELS                             : 326
 #      GND                         : 1
-#      INV                         : 22
-#      LUT1                        : 1
-#      LUT2                        : 7
-#      LUT3                        : 35
-#      LUT4                        : 5
-#      LUT5                        : 26
-#      LUT6                        : 25
-#      MUXCY                       : 20
+#      INV                         : 26
+#      LUT1                        : 2
+#      LUT2                        : 6
+#      LUT3                        : 47
+#      LUT4                        : 53
+#      LUT5                        : 41
+#      LUT6                        : 35
+#      MUXCY                       : 55
 #      VCC                         : 1
-#      XORCY                       : 21
-# FlipFlops/Latches                : 104
+#      XORCY                       : 59
+# FlipFlops/Latches                : 147
 #      FD                          : 2
-#      FDC                         : 31
-#      FDCE                        : 71
+#      FDC                         : 34
+#      FDCE                        : 111
 # RAMS                             : 1
 #      RAMB8BWER                   : 1
 # Clock Buffers                    : 1
@@ -551,16 +581,16 @@ Selected Device : 6slx9csg225-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             104  out of  11440     0%  
- Number of Slice LUTs:                  121  out of   5720     2%  
-    Number used as Logic:               121  out of   5720     2%  
+ Number of Slice Registers:             147  out of  11440     1%  
+ Number of Slice LUTs:                  210  out of   5720     3%  
+    Number used as Logic:               210  out of   5720     3%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    144
-   Number with an unused Flip Flop:      40  out of    144    27%  
-   Number with an unused LUT:            23  out of    144    15%  
-   Number of fully used LUT-FF pairs:    81  out of    144    56%  
-   Number of unique control sets:         7
+ Number of LUT Flip Flop pairs used:    230
+   Number with an unused Flip Flop:      83  out of    230    36%  
+   Number with an unused LUT:            20  out of    230     8%  
+   Number of fully used LUT-FF pairs:   127  out of    230    55%  
+   Number of unique control sets:         9
 
 IO Utilization: 
  Number of IOs:                          22
@@ -592,7 +622,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-ext_clk                            | BUFGP                  | 105   |
+ext_clk                            | BUFGP                  | 148   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -603,10 +633,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 5.607ns (Maximum Frequency: 178.356MHz)
-   Minimum input arrival time before clock: 6.090ns
-   Maximum output required time after clock: 7.183ns
-   Maximum combinational path delay: 8.753ns
+   Minimum period: 5.141ns (Maximum Frequency: 194.524MHz)
+   Minimum input arrival time before clock: 6.659ns
+   Maximum output required time after clock: 8.094ns
+   Maximum combinational path delay: 9.599ns
 
 Timing Details:
 ---------------
@@ -614,10 +644,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'ext_clk'
-  Clock period: 5.607ns (frequency: 178.356MHz)
-  Total number of paths / destination ports: 1200 / 232
+  Clock period: 5.141ns (frequency: 194.524MHz)
+  Total number of paths / destination ports: 2343 / 366
 -------------------------------------------------------------------------
-Delay:               5.607ns (Levels of Logic = 17)
+Delay:               5.141ns (Levels of Logic = 16)
   Source:            debounce_unit/q_reg_0 (FF)
   Destination:       debounce_unit/state_reg_FSM_FFd1 (FF)
   Source Clock:      ext_clk rising
@@ -627,7 +657,7 @@ Delay:               5.607ns (Levels of Logic = 17)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.525   0.726  debounce_unit/q_reg_0 (debounce_unit/q_reg_0)
+     FDC:C->Q              3   0.525   0.766  debounce_unit/q_reg_0 (debounce_unit/q_reg_0)
      LUT1:I0->O            1   0.254   0.000  debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<0>_rt (debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<0>_rt)
      MUXCY:S->O            1   0.215   0.000  debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<0> (debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<1> (debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<1>)
@@ -641,20 +671,19 @@ Delay:               5.607ns (Levels of Logic = 17)
      MUXCY:CI->O           1   0.023   0.000  debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<9> (debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<9>)
      MUXCY:CI->O           1   0.023   0.000  debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<10> (debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<10>)
      MUXCY:CI->O           1   0.023   0.000  debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11> (debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>)
-     XORCY:CI->O           1   0.206   0.682  debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_xor<12> (debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<12>)
-     LUT5:I4->O            2   0.254   1.181  debounce_unit/Mmux_q_next41 (debounce_unit/q_next<12>)
-     LUT6:I0->O            2   0.254   0.726  debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>5_SW0 (N32)
-     LUT6:I5->O            1   0.254   0.000  debounce_unit/state_reg_FSM_FFd1-In1 (debounce_unit/state_reg_FSM_FFd1-In)
+     XORCY:CI->O           2   0.206   1.181  debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_xor<12> (debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<12>)
+     LUT6:I0->O            2   0.254   1.156  debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0 (N67)
+     LUT6:I1->O            2   0.254   0.000  debounce_unit/state_reg_FSM_FFd1-In1 (debounce_unit/state_reg_FSM_FFd1-In)
      FDC:D                     0.074          debounce_unit/state_reg_FSM_FFd1
     ----------------------------------------
-    Total                      5.607ns (2.292ns logic, 3.315ns route)
-                                       (40.9% logic, 59.1% route)
+    Total                      5.141ns (2.038ns logic, 3.103ns route)
+                                       (39.6% logic, 60.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'ext_clk'
-  Total number of paths / destination ports: 242 / 149
+  Total number of paths / destination ports: 951 / 248
 -------------------------------------------------------------------------
-Offset:              6.090ns (Levels of Logic = 4)
+Offset:              6.659ns (Levels of Logic = 5)
   Source:            button (PAD)
   Destination:       debounce_unit/state_reg_FSM_FFd1 (FF)
   Destination Clock: ext_clk rising
@@ -663,41 +692,42 @@ Offset:              6.090ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            24   1.328   1.810  button_IBUF (button_IBUF)
-     LUT5:I0->O            2   0.254   1.181  debounce_unit/Mmux_q_next11 (debounce_unit/q_next<0>)
-     LUT6:I0->O            2   0.254   0.954  debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>2 (debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>1)
-     LUT6:I3->O            1   0.235   0.000  debounce_unit/state_reg_FSM_FFd1-In1 (debounce_unit/state_reg_FSM_FFd1-In)
+     IBUF:I->O            26   1.328   1.875  button_IBUF (button_IBUF)
+     LUT6:I0->O            2   0.254   1.002  debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>1 (debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>)
+     LUT4:I0->O            1   0.254   0.682  debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>6 (debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>5)
+     LUT6:I5->O            1   0.254   0.682  debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW3 (N72)
+     LUT6:I5->O            2   0.254   0.000  debounce_unit/state_reg_FSM_FFd1-In1 (debounce_unit/state_reg_FSM_FFd1-In)
      FDC:D                     0.074          debounce_unit/state_reg_FSM_FFd1
     ----------------------------------------
-    Total                      6.090ns (2.145ns logic, 3.945ns route)
-                                       (35.2% logic, 64.8% route)
+    Total                      6.659ns (2.418ns logic, 4.241ns route)
+                                       (36.3% logic, 63.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'ext_clk'
-  Total number of paths / destination ports: 114 / 17
+  Total number of paths / destination ports: 162 / 17
 -------------------------------------------------------------------------
-Offset:              7.183ns (Levels of Logic = 3)
-  Source:            interface/slave_sel_0 (FF)
+Offset:              8.094ns (Levels of Logic = 3)
+  Source:            interface/slave_sel_2 (FF)
   Destination:       imx_da<15> (PAD)
   Source Clock:      ext_clk rising
 
-  Data Path: interface/slave_sel_0 to imx_da<15>
+  Data Path: interface/slave_sel_2 to imx_da<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              5   0.525   0.949  interface/slave_sel_0 (interface/slave_sel_0)
-     LUT4:I2->O           16   0.250   1.612  irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_46_o11 (irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_46_o)
-     LUT6:I1->O            1   0.254   0.681  Mmux_wbm_readdata18 (wbm_readdata<0>)
-     IOBUF:I->IO               2.912          imx_da_0_IOBUF (imx_da<0>)
+     FDC:C->Q             53   0.525   1.844  interface/slave_sel_2 (interface/slave_sel_2)
+     LUT5:I4->O           32   0.254   1.628  irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_47_o11 (irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_47_o)
+     LUT6:I4->O            1   0.250   0.681  Mmux_wbm_readdata16 (wbm_readdata<9>)
+     IOBUF:I->IO               2.912          imx_da_9_IOBUF (imx_da<9>)
     ----------------------------------------
-    Total                      7.183ns (3.941ns logic, 3.242ns route)
-                                       (54.9% logic, 45.1% route)
+    Total                      8.094ns (3.941ns logic, 4.153ns route)
+                                       (48.7% logic, 51.3% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 80 / 16
+  Total number of paths / destination ports: 96 / 16
 -------------------------------------------------------------------------
-Delay:               8.753ns (Levels of Logic = 4)
+Delay:               9.599ns (Levels of Logic = 4)
   Source:            imx_cs_n (PAD)
   Destination:       imx_da<15> (PAD)
 
@@ -705,13 +735,13 @@ Delay:               8.753ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            27   1.328   1.712  imx_cs_n_IBUF (imx_cs_n_IBUF)
-     LUT4:I0->O           16   0.254   1.612  irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_46_o11 (irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_46_o)
-     LUT6:I1->O            1   0.254   0.681  Mmux_wbm_readdata18 (wbm_readdata<0>)
-     IOBUF:I->IO               2.912          imx_da_0_IOBUF (imx_da<0>)
+     IBUF:I->O            88   1.328   2.546  imx_cs_n_IBUF (imx_cs_n_IBUF)
+     LUT5:I0->O           32   0.254   1.628  irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_47_o11 (irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_47_o)
+     LUT6:I4->O            1   0.250   0.681  Mmux_wbm_readdata16 (wbm_readdata<9>)
+     IOBUF:I->IO               2.912          imx_da_9_IOBUF (imx_da<9>)
     ----------------------------------------
-    Total                      8.753ns (4.748ns logic, 4.005ns route)
-                                       (54.2% logic, 45.8% route)
+    Total                      9.599ns (4.744ns logic, 4.855ns route)
+                                       (49.4% logic, 50.6% route)
 
 =========================================================================
 
@@ -723,21 +753,21 @@ Clock to Setup on destination clock ext_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-ext_clk        |    5.607|         |         |         |
+ext_clk        |    5.141|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 9.59 secs
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 16.94 secs
  
 --> 
 
 
-Total memory usage is 122020 kilobytes
+Total memory usage is 122180 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  112 (   0 filtered)
+Number of warnings :  111 (   0 filtered)
 Number of infos    :    5 (   0 filtered)
 

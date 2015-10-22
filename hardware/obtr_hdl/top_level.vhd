@@ -19,17 +19,18 @@ port
 );
 end entity;
 
-Architecture RTL of top_level is
-	signal c_sel: std_logic_vector(1 downto 0);
+architecture RTL of top_level is
+	signal c_sel: std_logic_vector(2 downto 0);
 	signal adv:std_logic;
 	signal wbm_address, wbm_readdata, wbm_writedata : std_logic_vector(15 downto 0) ;
 	signal wbm_strobe, wbm_write, wbm_ack, wbm_cycle: std_logic;
 	signal strobe,cycle, wr: std_logic;
     signal gls_reset, gls_clk: std_logic;
-    signal irq_dout, buffer_dout : std_logic_vector(15 downto 0);
-    signal irq_ack, bt_irq : std_logic;
+    signal irq_dout, buffer_dout, cnt_dout : std_logic_vector(15 downto 0);
+    signal irq_ack, bt_irq, cnt_ack : std_logic;
     signal irq_port: std_logic_vector(15 downto 0);
     signal buffer_ack: std_logic;
+    signal ack_tick : std_logic;
 begin
 
   -- connect button to debouce unit
@@ -109,19 +110,36 @@ begin
 		clk		=> gls_clk,
 		reset	=> gls_reset,
 		din		=> wbm_writedata,
-        addr    => wbm_address(8 downto 1),
+        addr    => wbm_address,
 		strobe	=> strobe,
 		cycle	=> cycle,	
 		c_sel	=> c_sel(1), 
 		--adv		=> adv,
 		ack		=> buffer_ack,
 		wr		=> wr,
+        ack_tick=> ack_tick,
 		dout	=> buffer_dout
-	);
+        );
+
+    rw_cnt_ent: entity work.rw_counter
+      port map(
+          clk       => gls_clk,
+          reset     => gls_reset,
+          addr      => wbm_address(2 downto 1),
+          strobe    => strobe,
+          cycle	    => cycle,
+          c_sel     => c_sel(2),
+          m_ack     => ack_tick,
+          ack	    => cnt_ack,
+          wr	    => wr,
+          dout      => cnt_dout
+          );
+
 
 	wbm_readdata <= buffer_dout when buffer_ack='1' else
                     irq_dout when irq_ack = '1' else
+                    cnt_dout when cnt_ack = '1' else
                     (others=>'0');
-	wbm_ack <= buffer_ack or irq_ack;
+	wbm_ack <= buffer_ack or irq_ack or cnt_ack;
 
 end architecture RTL;

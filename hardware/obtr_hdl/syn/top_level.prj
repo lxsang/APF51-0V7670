@@ -1,6 +1,7 @@
 vhdl work "../top_level.vhd"
 vhdl work "../interface_mngr.vhd"
 vhdl work "../buffer_ctrl.vhd"
+vhdl work "../rw_counter.vhd"
 vhdl work "../dual_port_dual_clock.vhd"
 vhdl work "../../wb_irq/button.vhd"
 vhdl work "../../wb_irq/debounce.vhd"

@@ -11,3 +11,9 @@ all:
 	ghdl -a test.vhdl
 	ghdl -e wb_test
 	ghdl -r wb_test --vcd=test.vcd
+	
+clkgen:
+	ghdl -a ../clock_gen.vhd
+	ghdl -a test_clk_gen.vhd
+	ghdl -e clk_gen_tb
+	ghdl -r clk_gen_tb --vcd=clk_gen.vcd

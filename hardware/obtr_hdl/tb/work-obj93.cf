@@ -1,40 +1,46 @@
 v 3
-file . "../../wb_irq/rstgen_syscon.vhd" "20151014164402.000" "20151016184035.806":
-  entity rstgen_syscon at 12( 309) + 0 on 709;
-  architecture rstgen_syscon_1 of rstgen_syscon at 34( 852) + 0 on 710;
-file . "../dual_port_dual_clock.vhd" "20151015193028.000" "20151016184035.776":
-  entity dual_port_dual_clock at 1( 0) + 0 on 705;
-  architecture arch of dual_port_dual_clock at 19( 439) + 0 on 706;
-file . "../../wb_irq/irq_mngr.vhd" "20151014164402.000" "20151016184035.751":
-  entity irq_mngr at 19( 649) + 0 on 701;
-  architecture rtl of irq_mngr at 55( 2100) + 4 on 702;
-file . "../../wb_irq/imx51_wb16_wrapper.vhd" "20151014164402.000" "20151016184035.705":
-  entity imx51_wb16_wrapper at 17( 550) + 0 on 695;
-  architecture rtl of imx51_wb16_wrapper at 48( 1729) + 0 on 696;
+file . "test_clk_gen.vhd" "20151023111409.000" "20151023131637.893":
+  entity clk_gen_tb at 2( 1) + 0 on 745;
+  architecture behavior of clk_gen_tb at 8( 83) + 0 on 746;
+file . "../../wb_irq/rstgen_syscon.vhd" "20151014164402.000" "20151023131308.275":
+  entity rstgen_syscon at 12( 309) + 0 on 729;
+  architecture rstgen_syscon_1 of rstgen_syscon at 34( 852) + 0 on 730;
+file . "../dual_port_dual_clock.vhd" "20151015193028.000" "20151023131308.247":
+  entity dual_port_dual_clock at 1( 0) + 0 on 725;
+  architecture arch of dual_port_dual_clock at 19( 439) + 0 on 726;
+file . "../../wb_irq/irq_mngr.vhd" "20151014164402.000" "20151023131308.216":
+  entity irq_mngr at 19( 649) + 0 on 721;
+  architecture rtl of irq_mngr at 55( 2100) + 4 on 722;
+file . "../../wb_irq/imx51_wb16_wrapper.vhd" "20151014164402.000" "20151023131308.163":
+  entity imx51_wb16_wrapper at 17( 550) + 0 on 715;
+  architecture rtl of imx51_wb16_wrapper at 48( 1729) + 0 on 716;
 file . "../button.vhd" "20151013095645.000" "20151013174319.115":
   entity button at 1( 0) + 0 on 363;
   architecture arch of button at 21( 460) + 0 on 364;
-file . "test.vhdl" "20151016164033.000" "20151016184035.841":
-  entity wb_test at 1( 0) + 0 on 713;
-  architecture behavior of wb_test at 7( 76) + 0 on 714;
-file . "../interface_mngr.vhd" "20151016160556.000" "20151016184035.719":
-  entity interface_mngr at 1( 0) + 0 on 697;
-  architecture arch of interface_mngr at 24( 616) + 0 on 698;
+file . "test.vhdl" "20151016192712.000" "20151023131308.303":
+  entity wb_test at 2( 1) + 0 on 733;
+  architecture behavior of wb_test at 8( 77) + 0 on 734;
+file . "../interface_mngr.vhd" "20151016160556.000" "20151023131308.176":
+  entity interface_mngr at 1( 0) + 0 on 717;
+  architecture arch of interface_mngr at 24( 616) + 0 on 718;
 file . "../led.vhd" "20151013084042.000" "20151013174319.130":
   entity led at 1( 0) + 0 on 365;
   architecture arch of led at 22( 513) + 0 on 366;
 file . "../default.vhd" "20151007205159.000" "20151007225202.207":
   entity default at 1( 0) + 0 on 209;
   architecture arch of default at 20( 462) + 0 on 210;
-file . "../top_level.vhd" "20151016163750.000" "20151016184035.826":
-  entity top_level at 1( 0) + 0 on 711;
-  architecture rtl of top_level at 22( 396) + 0 on 712;
-file . "../../wb_irq/debounce.vhd" "20151014164402.000" "20151016184035.763":
-  entity debounce at 3( 21) + 0 on 703;
-  architecture arch of debounce at 15( 275) + 0 on 704;
-file . "../buffer_ctrl.vhd" "20151016155149.000" "20151016184035.791":
-  entity buffer_ctrl at 2( 40) + 0 on 707;
-  architecture arch of buffer_ctrl at 23( 531) + 0 on 708;
-file . "../rw_counter.vhd" "20151016162221.000" "20151016184035.734":
-  entity rw_counter at 1( 0) + 0 on 699;
-  architecture arch of rw_counter at 19( 436) + 0 on 700;
+file . "../top_level.vhd" "20151018115533.000" "20151023131308.293":
+  entity top_level at 1( 0) + 0 on 731;
+  architecture rtl of top_level at 22( 396) + 0 on 732;
+file . "../../wb_irq/debounce.vhd" "20151014164402.000" "20151023131308.232":
+  entity debounce at 3( 21) + 0 on 723;
+  architecture arch of debounce at 15( 275) + 0 on 724;
+file . "../buffer_ctrl.vhd" "20151016155149.000" "20151023131308.263":
+  entity buffer_ctrl at 2( 40) + 0 on 727;
+  architecture arch of buffer_ctrl at 23( 531) + 0 on 728;
+file . "../rw_counter.vhd" "20151016162221.000" "20151023131308.201":
+  entity rw_counter at 1( 0) + 0 on 719;
+  architecture arch of rw_counter at 19( 436) + 0 on 720;
+file . "../clock_gen.vhd" "20151023111629.000" "20151023131637.878":
+  entity clock_gen at 1( 0) + 0 on 743;
+  architecture arch of clock_gen at 13( 205) + 0 on 744;

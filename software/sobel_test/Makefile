@@ -25,7 +25,7 @@ main: $(PLUGINSDEP) $(PLUGINS)
 		$(PLUGINSDEP) $(basename $@).o
 
 clean:
-		-rm -f *.o $(BUILDIRD)/*.dylib
+		-rm -f *.o $(BUILDIRD)/$(PLUGINS)
 
 pclean:clean
 		-rm *.o

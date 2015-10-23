@@ -4,7 +4,6 @@ EXT=dylib
 PLUGINS= sobel.$(EXT)
  UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
-    git pull
     PLUGINS_BASE=/root/workspace/ant-http/plugins
     BUILDIRD=/root/antd/plugins
 endif
@@ -26,7 +25,7 @@ main: $(PLUGINSDEP) $(PLUGINS)
 		$(PLUGINSDEP) $(basename $@).o
 
 clean:
-		-rm -f *.o *.dylib
+		-rm -f *.o $(BUILDIRD)/*.dylib
 
 pclean:clean
 		-rm *.o

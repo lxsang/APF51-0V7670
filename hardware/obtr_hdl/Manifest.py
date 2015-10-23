@@ -2,6 +2,7 @@ files = [
     "top_level.vhd",
     "interface_mngr.vhd",
     "buffer_ctrl.vhd",
+    "rw_counter.vhd",
     "dual_port_dual_clock.vhd",
     "../wb_irq/button.vhd",
     "../wb_irq/debounce.vhd",

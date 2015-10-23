@@ -24,24 +24,41 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
    a 50 Ohm transmission line loading model.  For the details of this model, 
    and for more information on accounting for different loading conditions, 
    please see the device datasheet.
+1 logic loop found and disabled.
+
+  ----------------------------------------------------------------------
+ ! Warning: The following connections close logic loops, and some paths !
+ !          through these connections may not be analyzed. To better    !
+ !          understand the logic associated with these loops, run a     !
+ !          Analyze Against User-Defined End-Point Analysis inside      !
+ !          Timing Analyzer (timingan) with the listed signal as a      !
+ !          source NET (*signal_name). The Timing Report will display   !
+ !          all the paths associated with this signal and the logic     !
+ !          loop will be reported.                                      !
+ !                                                                      !
+ ! Signal                            Driver            Load             !
+ ! --------------------------------  ----------------  ---------------- !
+ ! buffer_ent/state1                 SLICE_X7Y7.B      SLICE_X7Y7.B3    !
+  ---------------------------------------------------------------------- 
+
 
 ================================================================================
 Timing constraint: TS_ext_clk = PERIOD TIMEGRP "ext_clk" 10.5263 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 1200 paths analyzed, 368 endpoints analyzed, 0 failing endpoints
+ 2343 paths analyzed, 734 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   5.693ns.
+ Minimum period is   4.805ns.
 --------------------------------------------------------------------------------
 
-Paths for end point debounce_unit/state_reg_FSM_FFd1 (SLICE_X14Y28.A2), 111 paths
+Paths for end point debounce_unit/state_reg_FSM_FFd1 (SLICE_X16Y28.AX), 280 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     4.833ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     5.721ns (requirement - (data path - clock path skew + uncertainty))
   Source:               debounce_unit/q_reg_1 (FF)
   Destination:          debounce_unit/state_reg_FSM_FFd1 (FF)
   Requirement:          10.526ns
-  Data Path Delay:      5.648ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.010ns (0.293 - 0.303)
+  Data Path Delay:      4.760ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.294 - 0.304)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -56,42 +73,44 @@ Slack (setup path):     4.833ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y25.BQ      Tcko                  0.430   debounce_unit/q_reg<3>
+    SLICE_X19Y25.BQ      Tcko                  0.430   debounce_unit/q_reg<3>
                                                        debounce_unit/q_reg_1
-    SLICE_X12Y25.B1      net (fanout=2)        0.728   debounce_unit/q_reg<1>
-    SLICE_X12Y25.COUT    Topcyb                0.483   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y25.B1      net (fanout=3)        0.746   debounce_unit/q_reg<1>
+    SLICE_X18Y25.COUT    Topcyb                0.448   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<1>_INV_0
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.COUT    Tbyp                  0.093   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X12Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X12Y27.COUT    Tbyp                  0.093   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X12Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X12Y28.BMUX    Tcinb                 0.310   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X15Y27.D2      net (fanout=1)        0.993   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<13>
-    SLICE_X15Y27.D       Tilo                  0.259   debounce_unit/q_reg<13>
-                                                       debounce_unit/Mmux_q_next51
-    SLICE_X14Y28.B3      net (fanout=1)        0.586   debounce_unit/q_next<13>
-    SLICE_X14Y28.B       Tilo                  0.235   irq_manager/irq_r<0>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>5_SW0
-    SLICE_X14Y28.A2      net (fanout=2)        1.080   N32
-    SLICE_X14Y28.CLK     Tas                   0.349   irq_manager/irq_r<0>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.AMUX    Tcina                 0.210   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+    SLICE_X16Y28.D1      net (fanout=2)        1.069   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<16>
+    SLICE_X16Y28.D       Tilo                  0.254   irq_manager/irq_r<0>
+                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0
+    SLICE_X17Y28.A1      net (fanout=2)        0.672   N67
+    SLICE_X17Y28.A       Tilo                  0.259   debounce_unit/state_reg_FSM_FFd1_1
                                                        debounce_unit/state_reg_FSM_FFd1-In1
+    SLICE_X16Y28.AX      net (fanout=1)        0.302   debounce_unit/state_reg_FSM_FFd1-In
+    SLICE_X16Y28.CLK     Tdick                 0.085   irq_manager/irq_r<0>
                                                        debounce_unit/state_reg_FSM_FFd1
     -------------------------------------------------  ---------------------------
-    Total                                      5.648ns (2.252ns logic, 3.396ns route)
-                                                       (39.9% logic, 60.1% route)
+    Total                                      4.760ns (1.959ns logic, 2.801ns route)
+                                                       (41.2% logic, 58.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     4.842ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     5.730ns (requirement - (data path - clock path skew + uncertainty))
   Source:               debounce_unit/q_reg_0 (FF)
   Destination:          debounce_unit/state_reg_FSM_FFd1 (FF)
   Requirement:          10.526ns
-  Data Path Delay:      5.639ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.010ns (0.293 - 0.303)
+  Data Path Delay:      4.751ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.294 - 0.304)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -106,42 +125,44 @@ Slack (setup path):     4.842ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y25.AQ      Tcko                  0.430   debounce_unit/q_reg<3>
+    SLICE_X19Y25.AQ      Tcko                  0.430   debounce_unit/q_reg<3>
                                                        debounce_unit/q_reg_0
-    SLICE_X12Y25.A2      net (fanout=2)        0.728   debounce_unit/q_reg<0>
-    SLICE_X12Y25.COUT    Topcya                0.474   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y25.A2      net (fanout=3)        0.713   debounce_unit/q_reg<0>
+    SLICE_X18Y25.COUT    Topcya                0.472   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
                                                        debounce_unit/q_reg<0>_rt
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.COUT    Tbyp                  0.093   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X12Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X12Y27.COUT    Tbyp                  0.093   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X12Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X12Y28.BMUX    Tcinb                 0.310   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X15Y27.D2      net (fanout=1)        0.993   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<13>
-    SLICE_X15Y27.D       Tilo                  0.259   debounce_unit/q_reg<13>
-                                                       debounce_unit/Mmux_q_next51
-    SLICE_X14Y28.B3      net (fanout=1)        0.586   debounce_unit/q_next<13>
-    SLICE_X14Y28.B       Tilo                  0.235   irq_manager/irq_r<0>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>5_SW0
-    SLICE_X14Y28.A2      net (fanout=2)        1.080   N32
-    SLICE_X14Y28.CLK     Tas                   0.349   irq_manager/irq_r<0>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.AMUX    Tcina                 0.210   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+    SLICE_X16Y28.D1      net (fanout=2)        1.069   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<16>
+    SLICE_X16Y28.D       Tilo                  0.254   irq_manager/irq_r<0>
+                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0
+    SLICE_X17Y28.A1      net (fanout=2)        0.672   N67
+    SLICE_X17Y28.A       Tilo                  0.259   debounce_unit/state_reg_FSM_FFd1_1
                                                        debounce_unit/state_reg_FSM_FFd1-In1
+    SLICE_X16Y28.AX      net (fanout=1)        0.302   debounce_unit/state_reg_FSM_FFd1-In
+    SLICE_X16Y28.CLK     Tdick                 0.085   irq_manager/irq_r<0>
                                                        debounce_unit/state_reg_FSM_FFd1
     -------------------------------------------------  ---------------------------
-    Total                                      5.639ns (2.243ns logic, 3.396ns route)
-                                                       (39.8% logic, 60.2% route)
+    Total                                      4.751ns (1.983ns logic, 2.768ns route)
+                                                       (41.7% logic, 58.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     4.927ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debounce_unit/q_reg_5 (FF)
+Slack (setup path):     5.849ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               debounce_unit/q_reg_2 (FF)
   Destination:          debounce_unit/state_reg_FSM_FFd1 (FF)
   Requirement:          10.526ns
-  Data Path Delay:      5.552ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.012ns (0.293 - 0.305)
+  Data Path Delay:      4.632ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.294 - 0.304)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -152,46 +173,51 @@ Slack (setup path):     4.927ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_5 to debounce_unit/state_reg_FSM_FFd1
+  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_2 to debounce_unit/state_reg_FSM_FFd1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y26.BQ      Tcko                  0.430   debounce_unit/q_reg<6>
-                                                       debounce_unit/q_reg_5
-    SLICE_X12Y26.B1      net (fanout=2)        0.728   debounce_unit/q_reg<5>
-    SLICE_X12Y26.COUT    Topcyb                0.483   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<5>_INV_0
+    SLICE_X19Y25.CQ      Tcko                  0.430   debounce_unit/q_reg<3>
+                                                       debounce_unit/q_reg_2
+    SLICE_X18Y25.C1      net (fanout=3)        0.741   debounce_unit/q_reg<2>
+    SLICE_X18Y25.COUT    Topcyc                0.325   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<2>_INV_0
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X12Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X12Y27.COUT    Tbyp                  0.093   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X12Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X12Y28.BMUX    Tcinb                 0.310   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X15Y27.D2      net (fanout=1)        0.993   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<13>
-    SLICE_X15Y27.D       Tilo                  0.259   debounce_unit/q_reg<13>
-                                                       debounce_unit/Mmux_q_next51
-    SLICE_X14Y28.B3      net (fanout=1)        0.586   debounce_unit/q_next<13>
-    SLICE_X14Y28.B       Tilo                  0.235   irq_manager/irq_r<0>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>5_SW0
-    SLICE_X14Y28.A2      net (fanout=2)        1.080   N32
-    SLICE_X14Y28.CLK     Tas                   0.349   irq_manager/irq_r<0>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.AMUX    Tcina                 0.210   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+    SLICE_X16Y28.D1      net (fanout=2)        1.069   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<16>
+    SLICE_X16Y28.D       Tilo                  0.254   irq_manager/irq_r<0>
+                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0
+    SLICE_X17Y28.A1      net (fanout=2)        0.672   N67
+    SLICE_X17Y28.A       Tilo                  0.259   debounce_unit/state_reg_FSM_FFd1_1
                                                        debounce_unit/state_reg_FSM_FFd1-In1
+    SLICE_X16Y28.AX      net (fanout=1)        0.302   debounce_unit/state_reg_FSM_FFd1-In
+    SLICE_X16Y28.CLK     Tdick                 0.085   irq_manager/irq_r<0>
                                                        debounce_unit/state_reg_FSM_FFd1
     -------------------------------------------------  ---------------------------
-    Total                                      5.552ns (2.159ns logic, 3.393ns route)
-                                                       (38.9% logic, 61.1% route)
+    Total                                      4.632ns (1.836ns logic, 2.796ns route)
+                                                       (39.6% logic, 60.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point irq_manager/irq_r_0 (SLICE_X14Y28.C4), 75 paths
+Paths for end point irq_manager/irq_r_0 (SLICE_X16Y28.C2), 21 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     5.144ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     5.836ns (requirement - (data path - clock path skew + uncertainty))
   Source:               debounce_unit/q_reg_1 (FF)
   Destination:          irq_manager/irq_r_0 (FF)
   Requirement:          10.526ns
-  Data Path Delay:      5.337ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.010ns (0.293 - 0.303)
+  Data Path Delay:      4.645ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.294 - 0.304)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -206,36 +232,42 @@ Slack (setup path):     5.144ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y25.BQ      Tcko                  0.430   debounce_unit/q_reg<3>
+    SLICE_X19Y25.BQ      Tcko                  0.430   debounce_unit/q_reg<3>
                                                        debounce_unit/q_reg_1
-    SLICE_X12Y25.B1      net (fanout=2)        0.728   debounce_unit/q_reg<1>
-    SLICE_X12Y25.COUT    Topcyb                0.483   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y25.B1      net (fanout=3)        0.746   debounce_unit/q_reg<1>
+    SLICE_X18Y25.COUT    Topcyb                0.448   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<1>_INV_0
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CMUX    Tcinc                 0.279   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X13Y26.D2      net (fanout=1)        1.208   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<6>
-    SLICE_X13Y26.D       Tilo                  0.259   debounce_unit/q_reg<6>
-                                                       debounce_unit/Mmux_q_next181
-    SLICE_X15Y27.B2      net (fanout=1)        0.778   debounce_unit/q_next<6>
-    SLICE_X15Y27.B       Tilo                  0.259   debounce_unit/q_reg<13>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>1
-    SLICE_X14Y28.C4      net (fanout=2)        0.561   debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>
-    SLICE_X14Y28.CLK     Tas                   0.349   irq_manager/irq_r<0>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.CMUX    Tcinc                 0.289   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+    SLICE_X17Y27.C5      net (fanout=2)        0.651   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<18>
+    SLICE_X17Y27.C       Tilo                  0.259   debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>2
+                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW1
+    SLICE_X16Y28.C2      net (fanout=1)        1.198   N69
+    SLICE_X16Y28.CLK     Tas                   0.339   irq_manager/irq_r<0>
                                                        debounce_unit/Mmux_db_tick11
                                                        irq_manager/irq_r_0
     -------------------------------------------------  ---------------------------
-    Total                                      5.337ns (2.059ns logic, 3.278ns route)
-                                                       (38.6% logic, 61.4% route)
+    Total                                      4.645ns (2.038ns logic, 2.607ns route)
+                                                       (43.9% logic, 56.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.153ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     5.845ns (requirement - (data path - clock path skew + uncertainty))
   Source:               debounce_unit/q_reg_0 (FF)
   Destination:          irq_manager/irq_r_0 (FF)
   Requirement:          10.526ns
-  Data Path Delay:      5.328ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.010ns (0.293 - 0.303)
+  Data Path Delay:      4.636ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.294 - 0.304)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -250,36 +282,42 @@ Slack (setup path):     5.153ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y25.AQ      Tcko                  0.430   debounce_unit/q_reg<3>
+    SLICE_X19Y25.AQ      Tcko                  0.430   debounce_unit/q_reg<3>
                                                        debounce_unit/q_reg_0
-    SLICE_X12Y25.A2      net (fanout=2)        0.728   debounce_unit/q_reg<0>
-    SLICE_X12Y25.COUT    Topcya                0.474   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y25.A2      net (fanout=3)        0.713   debounce_unit/q_reg<0>
+    SLICE_X18Y25.COUT    Topcya                0.472   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
                                                        debounce_unit/q_reg<0>_rt
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CMUX    Tcinc                 0.279   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X13Y26.D2      net (fanout=1)        1.208   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<6>
-    SLICE_X13Y26.D       Tilo                  0.259   debounce_unit/q_reg<6>
-                                                       debounce_unit/Mmux_q_next181
-    SLICE_X15Y27.B2      net (fanout=1)        0.778   debounce_unit/q_next<6>
-    SLICE_X15Y27.B       Tilo                  0.259   debounce_unit/q_reg<13>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>1
-    SLICE_X14Y28.C4      net (fanout=2)        0.561   debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>
-    SLICE_X14Y28.CLK     Tas                   0.349   irq_manager/irq_r<0>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.CMUX    Tcinc                 0.289   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+    SLICE_X17Y27.C5      net (fanout=2)        0.651   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<18>
+    SLICE_X17Y27.C       Tilo                  0.259   debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>2
+                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW1
+    SLICE_X16Y28.C2      net (fanout=1)        1.198   N69
+    SLICE_X16Y28.CLK     Tas                   0.339   irq_manager/irq_r<0>
                                                        debounce_unit/Mmux_db_tick11
                                                        irq_manager/irq_r_0
     -------------------------------------------------  ---------------------------
-    Total                                      5.328ns (2.050ns logic, 3.278ns route)
-                                                       (38.5% logic, 61.5% route)
+    Total                                      4.636ns (2.062ns logic, 2.574ns route)
+                                                       (44.5% logic, 55.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.254ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debounce_unit/q_reg_3 (FF)
+Slack (setup path):     5.964ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               debounce_unit/q_reg_2 (FF)
   Destination:          irq_manager/irq_r_0 (FF)
   Requirement:          10.526ns
-  Data Path Delay:      5.227ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.010ns (0.293 - 0.303)
+  Data Path Delay:      4.517ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.294 - 0.304)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -290,43 +328,49 @@ Slack (setup path):     5.254ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_3 to irq_manager/irq_r_0
+  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_2 to irq_manager/irq_r_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y25.DQ      Tcko                  0.430   debounce_unit/q_reg<3>
-                                                       debounce_unit/q_reg_3
-    SLICE_X12Y25.D2      net (fanout=2)        0.789   debounce_unit/q_reg<3>
-    SLICE_X12Y25.COUT    Topcyd                0.312   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<3>_INV_0
+    SLICE_X19Y25.CQ      Tcko                  0.430   debounce_unit/q_reg<3>
+                                                       debounce_unit/q_reg_2
+    SLICE_X18Y25.C1      net (fanout=3)        0.741   debounce_unit/q_reg<2>
+    SLICE_X18Y25.COUT    Topcyc                0.325   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<2>_INV_0
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CMUX    Tcinc                 0.279   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X13Y26.D2      net (fanout=1)        1.208   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<6>
-    SLICE_X13Y26.D       Tilo                  0.259   debounce_unit/q_reg<6>
-                                                       debounce_unit/Mmux_q_next181
-    SLICE_X15Y27.B2      net (fanout=1)        0.778   debounce_unit/q_next<6>
-    SLICE_X15Y27.B       Tilo                  0.259   debounce_unit/q_reg<13>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>1
-    SLICE_X14Y28.C4      net (fanout=2)        0.561   debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>
-    SLICE_X14Y28.CLK     Tas                   0.349   irq_manager/irq_r<0>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.CMUX    Tcinc                 0.289   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+    SLICE_X17Y27.C5      net (fanout=2)        0.651   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<18>
+    SLICE_X17Y27.C       Tilo                  0.259   debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>2
+                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW1
+    SLICE_X16Y28.C2      net (fanout=1)        1.198   N69
+    SLICE_X16Y28.CLK     Tas                   0.339   irq_manager/irq_r<0>
                                                        debounce_unit/Mmux_db_tick11
                                                        irq_manager/irq_r_0
     -------------------------------------------------  ---------------------------
-    Total                                      5.227ns (1.888ns logic, 3.339ns route)
-                                                       (36.1% logic, 63.9% route)
+    Total                                      4.517ns (1.915ns logic, 2.602ns route)
+                                                       (42.4% logic, 57.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point debounce_unit/state_reg_FSM_FFd1 (SLICE_X14Y28.A5), 75 paths
+Paths for end point debounce_unit/state_reg_FSM_FFd1_1 (SLICE_X17Y28.A1), 93 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     5.319ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     5.994ns (requirement - (data path - clock path skew + uncertainty))
   Source:               debounce_unit/q_reg_1 (FF)
-  Destination:          debounce_unit/state_reg_FSM_FFd1 (FF)
+  Destination:          debounce_unit/state_reg_FSM_FFd1_1 (FF)
   Requirement:          10.526ns
-  Data Path Delay:      5.162ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.010ns (0.293 - 0.303)
+  Data Path Delay:      4.487ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.294 - 0.304)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -337,40 +381,46 @@ Slack (setup path):     5.319ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_1 to debounce_unit/state_reg_FSM_FFd1
+  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_1 to debounce_unit/state_reg_FSM_FFd1_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y25.BQ      Tcko                  0.430   debounce_unit/q_reg<3>
+    SLICE_X19Y25.BQ      Tcko                  0.430   debounce_unit/q_reg<3>
                                                        debounce_unit/q_reg_1
-    SLICE_X12Y25.B1      net (fanout=2)        0.728   debounce_unit/q_reg<1>
-    SLICE_X12Y25.COUT    Topcyb                0.483   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y25.B1      net (fanout=3)        0.746   debounce_unit/q_reg<1>
+    SLICE_X18Y25.COUT    Topcyb                0.448   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<1>_INV_0
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CMUX    Tcinc                 0.279   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X13Y26.D2      net (fanout=1)        1.208   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<6>
-    SLICE_X13Y26.D       Tilo                  0.259   debounce_unit/q_reg<6>
-                                                       debounce_unit/Mmux_q_next181
-    SLICE_X15Y27.B2      net (fanout=1)        0.778   debounce_unit/q_next<6>
-    SLICE_X15Y27.B       Tilo                  0.259   debounce_unit/q_reg<13>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>1
-    SLICE_X14Y28.A5      net (fanout=2)        0.386   debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>
-    SLICE_X14Y28.CLK     Tas                   0.349   irq_manager/irq_r<0>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.AMUX    Tcina                 0.210   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+    SLICE_X16Y28.D1      net (fanout=2)        1.069   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<16>
+    SLICE_X16Y28.D       Tilo                  0.254   irq_manager/irq_r<0>
+                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0
+    SLICE_X17Y28.A1      net (fanout=2)        0.672   N67
+    SLICE_X17Y28.CLK     Tas                   0.373   debounce_unit/state_reg_FSM_FFd1_1
                                                        debounce_unit/state_reg_FSM_FFd1-In1
-                                                       debounce_unit/state_reg_FSM_FFd1
+                                                       debounce_unit/state_reg_FSM_FFd1_1
     -------------------------------------------------  ---------------------------
-    Total                                      5.162ns (2.059ns logic, 3.103ns route)
-                                                       (39.9% logic, 60.1% route)
+    Total                                      4.487ns (1.988ns logic, 2.499ns route)
+                                                       (44.3% logic, 55.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.328ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     6.003ns (requirement - (data path - clock path skew + uncertainty))
   Source:               debounce_unit/q_reg_0 (FF)
-  Destination:          debounce_unit/state_reg_FSM_FFd1 (FF)
+  Destination:          debounce_unit/state_reg_FSM_FFd1_1 (FF)
   Requirement:          10.526ns
-  Data Path Delay:      5.153ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.010ns (0.293 - 0.303)
+  Data Path Delay:      4.478ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.294 - 0.304)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -381,40 +431,46 @@ Slack (setup path):     5.328ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_0 to debounce_unit/state_reg_FSM_FFd1
+  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_0 to debounce_unit/state_reg_FSM_FFd1_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y25.AQ      Tcko                  0.430   debounce_unit/q_reg<3>
+    SLICE_X19Y25.AQ      Tcko                  0.430   debounce_unit/q_reg<3>
                                                        debounce_unit/q_reg_0
-    SLICE_X12Y25.A2      net (fanout=2)        0.728   debounce_unit/q_reg<0>
-    SLICE_X12Y25.COUT    Topcya                0.474   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y25.A2      net (fanout=3)        0.713   debounce_unit/q_reg<0>
+    SLICE_X18Y25.COUT    Topcya                0.472   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
                                                        debounce_unit/q_reg<0>_rt
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CMUX    Tcinc                 0.279   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X13Y26.D2      net (fanout=1)        1.208   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<6>
-    SLICE_X13Y26.D       Tilo                  0.259   debounce_unit/q_reg<6>
-                                                       debounce_unit/Mmux_q_next181
-    SLICE_X15Y27.B2      net (fanout=1)        0.778   debounce_unit/q_next<6>
-    SLICE_X15Y27.B       Tilo                  0.259   debounce_unit/q_reg<13>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>1
-    SLICE_X14Y28.A5      net (fanout=2)        0.386   debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>
-    SLICE_X14Y28.CLK     Tas                   0.349   irq_manager/irq_r<0>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.AMUX    Tcina                 0.210   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+    SLICE_X16Y28.D1      net (fanout=2)        1.069   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<16>
+    SLICE_X16Y28.D       Tilo                  0.254   irq_manager/irq_r<0>
+                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0
+    SLICE_X17Y28.A1      net (fanout=2)        0.672   N67
+    SLICE_X17Y28.CLK     Tas                   0.373   debounce_unit/state_reg_FSM_FFd1_1
                                                        debounce_unit/state_reg_FSM_FFd1-In1
-                                                       debounce_unit/state_reg_FSM_FFd1
+                                                       debounce_unit/state_reg_FSM_FFd1_1
     -------------------------------------------------  ---------------------------
-    Total                                      5.153ns (2.050ns logic, 3.103ns route)
-                                                       (39.8% logic, 60.2% route)
+    Total                                      4.478ns (2.012ns logic, 2.466ns route)
+                                                       (44.9% logic, 55.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.429ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debounce_unit/q_reg_3 (FF)
-  Destination:          debounce_unit/state_reg_FSM_FFd1 (FF)
+Slack (setup path):     6.122ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               debounce_unit/q_reg_2 (FF)
+  Destination:          debounce_unit/state_reg_FSM_FFd1_1 (FF)
   Requirement:          10.526ns
-  Data Path Delay:      5.052ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.010ns (0.293 - 0.303)
+  Data Path Delay:      4.359ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.294 - 0.304)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -425,117 +481,125 @@ Slack (setup path):     5.429ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_3 to debounce_unit/state_reg_FSM_FFd1
+  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_2 to debounce_unit/state_reg_FSM_FFd1_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y25.DQ      Tcko                  0.430   debounce_unit/q_reg<3>
-                                                       debounce_unit/q_reg_3
-    SLICE_X12Y25.D2      net (fanout=2)        0.789   debounce_unit/q_reg<3>
-    SLICE_X12Y25.COUT    Topcyd                0.312   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<3>_INV_0
+    SLICE_X19Y25.CQ      Tcko                  0.430   debounce_unit/q_reg<3>
+                                                       debounce_unit/q_reg_2
+    SLICE_X18Y25.C1      net (fanout=3)        0.741   debounce_unit/q_reg<2>
+    SLICE_X18Y25.COUT    Topcyc                0.325   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<2>_INV_0
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X12Y26.CMUX    Tcinc                 0.279   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
+    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
                                                        debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X13Y26.D2      net (fanout=1)        1.208   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<6>
-    SLICE_X13Y26.D       Tilo                  0.259   debounce_unit/q_reg<6>
-                                                       debounce_unit/Mmux_q_next181
-    SLICE_X15Y27.B2      net (fanout=1)        0.778   debounce_unit/q_next<6>
-    SLICE_X15Y27.B       Tilo                  0.259   debounce_unit/q_reg<13>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>1
-    SLICE_X14Y28.A5      net (fanout=2)        0.386   debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>
-    SLICE_X14Y28.CLK     Tas                   0.349   irq_manager/irq_r<0>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
+    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
+    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
+    SLICE_X18Y29.AMUX    Tcina                 0.210   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
+    SLICE_X16Y28.D1      net (fanout=2)        1.069   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<16>
+    SLICE_X16Y28.D       Tilo                  0.254   irq_manager/irq_r<0>
+                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0
+    SLICE_X17Y28.A1      net (fanout=2)        0.672   N67
+    SLICE_X17Y28.CLK     Tas                   0.373   debounce_unit/state_reg_FSM_FFd1_1
                                                        debounce_unit/state_reg_FSM_FFd1-In1
-                                                       debounce_unit/state_reg_FSM_FFd1
+                                                       debounce_unit/state_reg_FSM_FFd1_1
     -------------------------------------------------  ---------------------------
-    Total                                      5.052ns (1.888ns logic, 3.164ns route)
-                                                       (37.4% logic, 62.6% route)
+    Total                                      4.359ns (1.865ns logic, 2.494ns route)
+                                                       (42.8% logic, 57.2% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_ext_clk = PERIOD TIMEGRP "ext_clk" 10.5263 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point buffer_ent/mem_ent/Mram_ram (RAMB8_X1Y2.ADDRAWRADDR9), 1 path
+Paths for end point irq_manager/readdata_7 (SLICE_X17Y6.D6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.389ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               buffer_ent/mem_addr_5 (FF)
-  Destination:          buffer_ent/mem_ent/Mram_ram (RAM)
+Slack (hold path):      0.437ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               irq_manager/readdata_7 (FF)
+  Destination:          irq_manager/readdata_7 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.391ns (Levels of Logic = 0)
-  Clock Path Skew:      0.002ns (0.070 - 0.068)
+  Data Path Delay:      0.437ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
   Source Clock:         ext_clk_BUFGP rising at 10.526ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: buffer_ent/mem_addr_5 to buffer_ent/mem_ent/Mram_ram
-    Location                Delay type         Delay(ns)  Physical Resource
-                                                          Logical Resource(s)
-    ----------------------------------------------------  -------------------
-    SLICE_X17Y4.AQ          Tcko                  0.198   buffer_ent/mem_addr<7>
-                                                          buffer_ent/mem_addr_5
-    RAMB8_X1Y2.ADDRAWRADDR9 net (fanout=1)        0.259   buffer_ent/mem_addr<5>
-    RAMB8_X1Y2.CLKAWRCLK    Trckc_ADDRA (-Th)     0.066   buffer_ent/mem_ent/Mram_ram
-                                                          buffer_ent/mem_ent/Mram_ram
-    ----------------------------------------------------  ---------------------------
-    Total                                         0.391ns (0.132ns logic, 0.259ns route)
-                                                          (33.8% logic, 66.2% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point buffer_ent/mem_ent/Mram_ram (RAMB8_X1Y2.ADDRAWRADDR4), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.397ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               buffer_ent/mem_addr_0 (FF)
-  Destination:          buffer_ent/mem_ent/Mram_ram (RAM)
-  Requirement:          0.000ns
-  Data Path Delay:      0.401ns (Levels of Logic = 0)
-  Clock Path Skew:      0.004ns (0.070 - 0.066)
-  Source Clock:         ext_clk_BUFGP rising at 10.526ns
-  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: buffer_ent/mem_addr_0 to buffer_ent/mem_ent/Mram_ram
-    Location                Delay type         Delay(ns)  Physical Resource
-                                                          Logical Resource(s)
-    ----------------------------------------------------  -------------------
-    SLICE_X16Y5.AQ          Tcko                  0.234   buffer_ent/mem_addr<3>
-                                                          buffer_ent/mem_addr_0
-    RAMB8_X1Y2.ADDRAWRADDR4 net (fanout=1)        0.233   buffer_ent/mem_addr<0>
-    RAMB8_X1Y2.CLKAWRCLK    Trckc_ADDRA (-Th)     0.066   buffer_ent/mem_ent/Mram_ram
-                                                          buffer_ent/mem_ent/Mram_ram
-    ----------------------------------------------------  ---------------------------
-    Total                                         0.401ns (0.168ns logic, 0.233ns route)
-                                                          (41.9% logic, 58.1% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point irq_manager/irq_mask_5 (SLICE_X10Y5.C4), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.430ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               imx51_wb_16/writedata_5 (FF)
-  Destination:          irq_manager/irq_mask_5 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.432ns (Levels of Logic = 1)
-  Clock Path Skew:      0.002ns (0.036 - 0.034)
-  Source Clock:         ext_clk_BUFGP rising at 10.526ns
-  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: imx51_wb_16/writedata_5 to irq_manager/irq_mask_5
+  Minimum Data Path at Fast Process Corner: irq_manager/readdata_7 to irq_manager/readdata_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X11Y5.BQ       Tcko                  0.198   imx51_wb_16/writedata<7>
-                                                       imx51_wb_16/writedata_5
-    SLICE_X10Y5.C4       net (fanout=1)        0.113   imx51_wb_16/writedata<5>
-    SLICE_X10Y5.CLK      Tah         (-Th)    -0.121   irq_manager/irq_mask<6>
-                                                       imx51_wb_16/Mmux_wbm_writedata121
-                                                       irq_manager/irq_mask_5
+    SLICE_X17Y6.DQ       Tcko                  0.198   irq_manager/readdata<7>
+                                                       irq_manager/readdata_7
+    SLICE_X17Y6.D6       net (fanout=2)        0.024   irq_manager/readdata<7>
+    SLICE_X17Y6.CLK      Tah         (-Th)    -0.215   irq_manager/readdata<7>
+                                                       irq_manager/readdata_7_dpot
+                                                       irq_manager/readdata_7
     -------------------------------------------------  ---------------------------
-    Total                                      0.432ns (0.319ns logic, 0.113ns route)
-                                                       (73.8% logic, 26.2% route)
+    Total                                      0.437ns (0.413ns logic, 0.024ns route)
+                                                       (94.5% logic, 5.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point irq_manager/readdata_15 (SLICE_X15Y8.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.441ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               irq_manager/readdata_15 (FF)
+  Destination:          irq_manager/readdata_15 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.441ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         ext_clk_BUFGP rising at 10.526ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: irq_manager/readdata_15 to irq_manager/readdata_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y8.DQ       Tcko                  0.198   irq_manager/readdata<15>
+                                                       irq_manager/readdata_15
+    SLICE_X15Y8.D6       net (fanout=2)        0.028   irq_manager/readdata<15>
+    SLICE_X15Y8.CLK      Tah         (-Th)    -0.215   irq_manager/readdata<15>
+                                                       irq_manager/readdata_15_dpot
+                                                       irq_manager/readdata_15
+    -------------------------------------------------  ---------------------------
+    Total                                      0.441ns (0.413ns logic, 0.028ns route)
+                                                       (93.7% logic, 6.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point debounce_unit/q_reg_7 (SLICE_X17Y26.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.444ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               debounce_unit/q_reg_7 (FF)
+  Destination:          debounce_unit/q_reg_7 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.444ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         ext_clk_BUFGP rising at 10.526ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: debounce_unit/q_reg_7 to debounce_unit/q_reg_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y26.DQ      Tcko                  0.198   debounce_unit/q_reg<7>
+                                                       debounce_unit/q_reg_7
+    SLICE_X17Y26.D6      net (fanout=3)        0.031   debounce_unit/q_reg<7>
+    SLICE_X17Y26.CLK     Tah         (-Th)    -0.215   debounce_unit/q_reg<7>
+                                                       debounce_unit/Mmux_q_next191
+                                                       debounce_unit/q_reg_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.444ns (0.413ns logic, 0.031ns route)
+                                                       (93.0% logic, 7.0% route)
 
 --------------------------------------------------------------------------------
 
@@ -546,7 +610,7 @@ Slack: 6.956ns (period - min period limit)
   Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
   Physical resource: buffer_ent/mem_ent/Mram_ram/CLKAWRCLK
   Logical resource: buffer_ent/mem_ent/Mram_ram/CLKAWRCLK
-  Location pin: RAMB8_X1Y2.CLKAWRCLK
+  Location pin: RAMB8_X1Y3.CLKAWRCLK
   Clock network: ext_clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 7.860ns (period - min period limit)
@@ -560,9 +624,9 @@ Slack: 7.860ns (period - min period limit)
 Slack: 10.046ns (period - min period limit)
   Period: 10.526ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: imx51_wb_16/writedata<15>/CLK
-  Logical resource: imx51_wb_16/writedata_12/CK
-  Location pin: SLICE_X8Y2.CLK
+  Physical resource: rw_cnt_ent/w_counter<3>/CLK
+  Logical resource: rw_cnt_ent/w_counter_0/CK
+  Location pin: SLICE_X4Y7.CLK
   Clock network: ext_clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -579,7 +643,7 @@ Clock to Setup on destination clock ext_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-ext_clk        |    5.693|         |         |         |
+ext_clk        |    4.805|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -588,23 +652,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 1200 paths, 0 nets, and 321 connections
+Constraints cover 2343 paths, 0 nets, and 643 connections
 
 Design statistics:
-   Minimum period:   5.693ns{1}   (Maximum frequency: 175.654MHz)
+   Minimum period:   4.805ns{1}   (Maximum frequency: 208.117MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Thu Oct 15 22:44:34 2015 
+Analysis completed Fri Oct 16 21:42:38 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 137 MB
+Peak Memory Usage: 139 MB
 
 
 

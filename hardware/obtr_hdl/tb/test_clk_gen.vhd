@@ -28,8 +28,7 @@ begin
   -- stimulus process
   stim_proc: process
   begin
-	  wait for 100 ns;
-    
+	 wait for 100 ns;
     assert false
       report "Simulation complete"
       severity failure;

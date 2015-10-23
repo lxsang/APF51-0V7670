@@ -4,14 +4,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.08 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.08 secs
  
 --> 
@@ -180,6 +180,7 @@ Synthesizing Unit <top_level>.
         BUF_DW = 16
 INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/sobel_hdl/top_level.vhd" line 43: Output port <db_level> of the instance <debounce_unit> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/sobel_hdl/top_level.vhd" line 79: Output port <adv> of the instance <interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/sobel_hdl/top_level.vhd" line 95: Output port <start> of the instance <irq_manager> is unconnected or connected to loadless signal.
     Summary:
 	inferred   3 Multiplexer(s).
 Unit <top_level> synthesized.
@@ -283,7 +284,7 @@ Synthesizing Unit <buffer_ctrl>.
         BUF_AW = 14
         BUF_DW = 16
 INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/sobel_hdl/buffer_ctrl.vhd" line 64: Output port <dout_a> of the instance <src_frame_ent> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/sobel_hdl/buffer_ctrl.vhd" line 108: Output port <dout_a> of the instance <dst_ent> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/sobel_hdl/buffer_ctrl.vhd" line 110: Output port <dout_a> of the instance <dst_ent> is unconnected or connected to loadless signal.
     Found 16-bit register for signal <dst_din>.
     Found 1-bit register for signal <src_addr<0>>.
     Found 1-bit register for signal <ack_db>.
@@ -700,11 +701,11 @@ Optimizing unit <sobel> ...
 Optimizing unit <irq_mngr> ...
 
 Optimizing unit <rw_counter> ...
-WARNING:Xst:2677 - Node <imx51_wb_16/address_0> of sequential type is unconnected in block <top_level>.
 WARNING:Xst:2677 - Node <buffer_ent/sobel_fltr_ent/mr_px_7> of sequential type is unconnected in block <top_level>.
 WARNING:Xst:2677 - Node <buffer_ent/sobel_fltr_ent/bm_px_7> of sequential type is unconnected in block <top_level>.
 WARNING:Xst:2677 - Node <buffer_ent/sobel_fltr_ent/ml_px_7> of sequential type is unconnected in block <top_level>.
 WARNING:Xst:2677 - Node <buffer_ent/sobel_fltr_ent/tm_px_7> of sequential type is unconnected in block <top_level>.
+WARNING:Xst:2677 - Node <irq_manager/start> of sequential type is unconnected in block <top_level>.
 WARNING:Xst:1710 - FF/Latch <buffer_ent/dst_din_8> (without init value) has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <buffer_ent/dst_din_0> (without init value) has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <buffer_ent/sobel_fltr_ent/src_addr_reg_0> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <buffer_ent/src_addr> 
@@ -715,6 +716,7 @@ Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 18.
 FlipFlop buffer_ent/sobel_fltr_ent/y_11 has been replicated 1 time(s)
 FlipFlop buffer_ent/sobel_fltr_ent/y_12 has been replicated 1 time(s)
+FlipFlop interface/slave_sel_2 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -722,8 +724,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 384
- Flip-Flops                                            : 384
+# Registers                                            : 385
+ Flip-Flops                                            : 385
 
 =========================================================================
 
@@ -746,25 +748,24 @@ Top Level Output File Name         : top_level.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1376
+# BELS                             : 1461
 #      GND                         : 1
 #      INV                         : 77
 #      LUT1                        : 72
-#      LUT2                        : 101
-#      LUT3                        : 133
-#      LUT4                        : 106
-#      LUT5                        : 102
-#      LUT6                        : 217
-#      MUXCY                       : 251
-#      MUXF7                       : 26
+#      LUT2                        : 68
+#      LUT3                        : 140
+#      LUT4                        : 123
+#      LUT5                        : 112
+#      LUT6                        : 298
+#      MUXCY                       : 252
+#      MUXF7                       : 27
 #      VCC                         : 1
-#      XORCY                       : 289
-# FlipFlops/Latches                : 384
+#      XORCY                       : 290
+# FlipFlops/Latches                : 385
 #      FD                          : 2
-#      FDC                         : 212
-#      FDCE                        : 123
+#      FDC                         : 213
+#      FDCE                        : 124
 #      FDPE                        : 46
-#      FDRE                        : 1
 # RAMS                             : 32
 #      RAMB16BWER                  : 32
 # Clock Buffers                    : 1
@@ -781,16 +782,16 @@ Selected Device : 6slx9csg225-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             384  out of  11440     3%  
- Number of Slice LUTs:                  808  out of   5720    14%  
-    Number used as Logic:               808  out of   5720    14%  
+ Number of Slice Registers:             385  out of  11440     3%  
+ Number of Slice LUTs:                  890  out of   5720    15%  
+    Number used as Logic:               890  out of   5720    15%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    837
-   Number with an unused Flip Flop:     453  out of    837    54%  
-   Number with an unused LUT:            29  out of    837     3%  
-   Number of fully used LUT-FF pairs:   355  out of    837    42%  
-   Number of unique control sets:        14
+ Number of LUT Flip Flop pairs used:    921
+   Number with an unused Flip Flop:     536  out of    921    58%  
+   Number with an unused LUT:            31  out of    921     3%  
+   Number of fully used LUT-FF pairs:   354  out of    921    38%  
+   Number of unique control sets:        13
 
 IO Utilization: 
  Number of IOs:                          22
@@ -822,7 +823,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-ext_clk                            | BUFGP                  | 416   |
+ext_clk                            | BUFGP                  | 417   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -834,9 +835,9 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 9.498ns (Maximum Frequency: 105.283MHz)
-   Minimum input arrival time before clock: 6.589ns
+   Minimum input arrival time before clock: 10.537ns
    Maximum output required time after clock: 7.756ns
-   Maximum combinational path delay: 9.375ns
+   Maximum combinational path delay: 9.383ns
 
 Timing Details:
 ---------------
@@ -845,7 +846,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'ext_clk'
   Clock period: 9.498ns (frequency: 105.283MHz)
-  Total number of paths / destination ports: 199447 / 1897
+  Total number of paths / destination ports: 314144 / 1897
 -------------------------------------------------------------------------
 Delay:               9.498ns (Levels of Logic = 13)
   Source:            buffer_ent/sobel_fltr_ent/sobel_ent/tbl_y_1 (FF)
@@ -878,25 +879,26 @@ Delay:               9.498ns (Levels of Logic = 13)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'ext_clk'
-  Total number of paths / destination ports: 1513 / 751
+  Total number of paths / destination ports: 4810 / 1187
 -------------------------------------------------------------------------
-Offset:              6.589ns (Levels of Logic = 4)
+Offset:              10.537ns (Levels of Logic = 5)
   Source:            imx_cs_n (PAD)
-  Destination:       buffer_ent/ack_db (FF)
+  Destination:       buffer_ent/sobel_fltr_ent/previous_line_13 (FF)
   Destination Clock: ext_clk rising
 
-  Data Path: imx_cs_n to buffer_ent/ack_db
+  Data Path: imx_cs_n to buffer_ent/sobel_fltr_ent/previous_line_13
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            96   1.328   2.286  imx_cs_n_IBUF (imx_cs_n_IBUF)
-     LUT2:I0->O           17   0.250   1.317  buffer_ent/ack11 (buffer_ack)
-     LUT3:I1->O            2   0.250   0.834  buffer_ent/ack_db_state_OR_69_o1 (buffer_ent/ack_db_state_OR_69_o)
-     LUT4:I2->O            1   0.250   0.000  buffer_ent/strobe_state_AND_60_o1 (buffer_ent/strobe_state_AND_60_o)
-     FDC:D                     0.074          buffer_ent/ack_db
+     IBUF:I->O            97   1.328   2.462  imx_cs_n_IBUF (imx_cs_n_IBUF)
+     LUT5:I1->O            2   0.254   0.726  interface/wr_out1 (wr)
+     LUT5:I4->O           19   0.254   1.261  buffer_ent/sobel_start2 (buffer_ent/sobel_start2)
+     LUT6:I5->O           74   0.254   2.007  buffer_ent/sobel_start4 (buffer_ent/sobel_start)
+     LUT4:I3->O           27   0.254   1.435  buffer_ent/sobel_fltr_ent/_n0317_inv1 (buffer_ent/sobel_fltr_ent/_n0317_inv)
+     FDCE:CE                   0.302          buffer_ent/sobel_fltr_ent/previous_line_5
     ----------------------------------------
-    Total                      6.589ns (2.152ns logic, 4.437ns route)
-                                       (32.7% logic, 67.3% route)
+    Total                     10.537ns (2.646ns logic, 7.891ns route)
+                                       (25.1% logic, 74.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'ext_clk'
@@ -923,7 +925,7 @@ Offset:              7.756ns (Levels of Logic = 3)
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 96 / 16
 -------------------------------------------------------------------------
-Delay:               9.375ns (Levels of Logic = 4)
+Delay:               9.383ns (Levels of Logic = 4)
   Source:            imx_cs_n (PAD)
   Destination:       imx_da<15> (PAD)
 
@@ -931,12 +933,12 @@ Delay:               9.375ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            96   1.328   2.286  imx_cs_n_IBUF (imx_cs_n_IBUF)
+     IBUF:I->O            97   1.328   2.294  imx_cs_n_IBUF (imx_cs_n_IBUF)
      LUT2:I0->O           17   0.250   1.664  buffer_ent/ack11 (buffer_ack)
      LUT6:I0->O            1   0.254   0.681  Mmux_wbm_readdata16 (wbm_readdata<9>)
      IOBUF:I->IO               2.912          imx_da_9_IOBUF (imx_da<9>)
     ----------------------------------------
-    Total                      9.375ns (4.744ns logic, 4.631ns route)
+    Total                      9.383ns (4.744ns logic, 4.639ns route)
                                        (50.6% logic, 49.4% route)
 
 =========================================================================
@@ -955,15 +957,15 @@ ext_clk        |    9.498|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 17.00 secs
-Total CPU time to Xst completion: 15.47 secs
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 21.06 secs
  
 --> 
 
 
-Total memory usage is 145948 kilobytes
+Total memory usage is 145676 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  131 (   0 filtered)
-Number of infos    :    8 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
 

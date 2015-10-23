@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Oct 22 18:45:07 2015
+// Written by: Map P.20131013 on Thu Oct 22 22:12:23 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -169,7 +169,8 @@ TIMEGRP ext_clk = BEL "reset_gen/dly" BEL "reset_gen/rst" BEL
         "imx51_wb_16/address_7" BEL "imx51_wb_16/address_6" BEL
         "imx51_wb_16/address_5" BEL "imx51_wb_16/address_4" BEL
         "imx51_wb_16/address_3" BEL "imx51_wb_16/address_2" BEL
-        "imx51_wb_16/address_1" BEL "debounce_unit/state_reg_FSM_FFd1" BEL
+        "imx51_wb_16/address_1" BEL "imx51_wb_16/address_0" BEL
+        "debounce_unit/state_reg_FSM_FFd1" BEL
         "debounce_unit/state_reg_FSM_FFd2" BEL "debounce_unit/q_reg_20" BEL
         "debounce_unit/q_reg_19" BEL "debounce_unit/q_reg_18" BEL
         "debounce_unit/q_reg_17" BEL "debounce_unit/q_reg_16" BEL
@@ -405,42 +406,42 @@ TIMEGRP ext_clk = BEL "reset_gen/dly" BEL "reset_gen/rst" BEL
         "irq_manager/readdata_5" BEL "irq_manager/readdata_4" BEL
         "irq_manager/readdata_3" BEL "irq_manager/readdata_2" BEL
         "irq_manager/readdata_1" BEL "irq_manager/readdata_0" BEL
-        "irq_manager/start" BEL "irq_manager/irq_ack_1" BEL
-        "irq_manager/irq_ack_0" BEL "irq_manager/irq_old_1" BEL
-        "irq_manager/irq_old_0" BEL "irq_manager/wr_ack" BEL
-        "irq_manager/irq_pend_1" BEL "irq_manager/irq_pend_0" BEL
-        "irq_manager/rd_ack" BEL "irq_manager/irq_r_1" BEL
-        "irq_manager/irq_r_0" BEL "irq_manager/irq_mask_15" BEL
-        "irq_manager/irq_mask_14" BEL "irq_manager/irq_mask_13" BEL
-        "irq_manager/irq_mask_12" BEL "irq_manager/irq_mask_11" BEL
-        "irq_manager/irq_mask_10" BEL "irq_manager/irq_mask_9" BEL
-        "irq_manager/irq_mask_8" BEL "irq_manager/irq_mask_7" BEL
-        "irq_manager/irq_mask_6" BEL "irq_manager/irq_mask_5" BEL
-        "irq_manager/irq_mask_4" BEL "irq_manager/irq_mask_3" BEL
-        "irq_manager/irq_mask_2" BEL "irq_manager/irq_mask_1" BEL
-        "irq_manager/irq_mask_0" BEL "rw_cnt_ent/r_counter_15" BEL
-        "rw_cnt_ent/r_counter_14" BEL "rw_cnt_ent/r_counter_13" BEL
-        "rw_cnt_ent/r_counter_12" BEL "rw_cnt_ent/r_counter_11" BEL
-        "rw_cnt_ent/r_counter_10" BEL "rw_cnt_ent/r_counter_9" BEL
-        "rw_cnt_ent/r_counter_8" BEL "rw_cnt_ent/r_counter_7" BEL
-        "rw_cnt_ent/r_counter_6" BEL "rw_cnt_ent/r_counter_5" BEL
-        "rw_cnt_ent/r_counter_4" BEL "rw_cnt_ent/r_counter_3" BEL
-        "rw_cnt_ent/r_counter_2" BEL "rw_cnt_ent/r_counter_1" BEL
-        "rw_cnt_ent/r_counter_0" BEL "rw_cnt_ent/w_counter_15" BEL
-        "rw_cnt_ent/w_counter_14" BEL "rw_cnt_ent/w_counter_13" BEL
-        "rw_cnt_ent/w_counter_12" BEL "rw_cnt_ent/w_counter_11" BEL
-        "rw_cnt_ent/w_counter_10" BEL "rw_cnt_ent/w_counter_9" BEL
-        "rw_cnt_ent/w_counter_8" BEL "rw_cnt_ent/w_counter_7" BEL
-        "rw_cnt_ent/w_counter_6" BEL "rw_cnt_ent/w_counter_5" BEL
-        "rw_cnt_ent/w_counter_4" BEL "rw_cnt_ent/w_counter_3" BEL
-        "rw_cnt_ent/w_counter_2" BEL "rw_cnt_ent/w_counter_1" BEL
-        "rw_cnt_ent/w_counter_0" BEL "rw_cnt_ent/dout_15" BEL
-        "rw_cnt_ent/dout_14" BEL "rw_cnt_ent/dout_13" BEL "rw_cnt_ent/dout_12"
-        BEL "rw_cnt_ent/dout_11" BEL "rw_cnt_ent/dout_10" BEL
-        "rw_cnt_ent/dout_9" BEL "rw_cnt_ent/dout_8" BEL "rw_cnt_ent/dout_7"
-        BEL "rw_cnt_ent/dout_6" BEL "rw_cnt_ent/dout_5" BEL
-        "rw_cnt_ent/dout_4" BEL "rw_cnt_ent/dout_3" BEL "rw_cnt_ent/dout_2"
-        BEL "rw_cnt_ent/dout_1" BEL "rw_cnt_ent/dout_0" BEL
+        "irq_manager/irq_ack_1" BEL "irq_manager/irq_ack_0" BEL
+        "irq_manager/irq_old_1" BEL "irq_manager/irq_old_0" BEL
+        "irq_manager/wr_ack" BEL "irq_manager/irq_pend_1" BEL
+        "irq_manager/irq_pend_0" BEL "irq_manager/rd_ack" BEL
+        "irq_manager/irq_r_1" BEL "irq_manager/irq_r_0" BEL
+        "irq_manager/irq_mask_15" BEL "irq_manager/irq_mask_14" BEL
+        "irq_manager/irq_mask_13" BEL "irq_manager/irq_mask_12" BEL
+        "irq_manager/irq_mask_11" BEL "irq_manager/irq_mask_10" BEL
+        "irq_manager/irq_mask_9" BEL "irq_manager/irq_mask_8" BEL
+        "irq_manager/irq_mask_7" BEL "irq_manager/irq_mask_6" BEL
+        "irq_manager/irq_mask_5" BEL "irq_manager/irq_mask_4" BEL
+        "irq_manager/irq_mask_3" BEL "irq_manager/irq_mask_2" BEL
+        "irq_manager/irq_mask_1" BEL "irq_manager/irq_mask_0" BEL
+        "rw_cnt_ent/r_counter_15" BEL "rw_cnt_ent/r_counter_14" BEL
+        "rw_cnt_ent/r_counter_13" BEL "rw_cnt_ent/r_counter_12" BEL
+        "rw_cnt_ent/r_counter_11" BEL "rw_cnt_ent/r_counter_10" BEL
+        "rw_cnt_ent/r_counter_9" BEL "rw_cnt_ent/r_counter_8" BEL
+        "rw_cnt_ent/r_counter_7" BEL "rw_cnt_ent/r_counter_6" BEL
+        "rw_cnt_ent/r_counter_5" BEL "rw_cnt_ent/r_counter_4" BEL
+        "rw_cnt_ent/r_counter_3" BEL "rw_cnt_ent/r_counter_2" BEL
+        "rw_cnt_ent/r_counter_1" BEL "rw_cnt_ent/r_counter_0" BEL
+        "rw_cnt_ent/w_counter_15" BEL "rw_cnt_ent/w_counter_14" BEL
+        "rw_cnt_ent/w_counter_13" BEL "rw_cnt_ent/w_counter_12" BEL
+        "rw_cnt_ent/w_counter_11" BEL "rw_cnt_ent/w_counter_10" BEL
+        "rw_cnt_ent/w_counter_9" BEL "rw_cnt_ent/w_counter_8" BEL
+        "rw_cnt_ent/w_counter_7" BEL "rw_cnt_ent/w_counter_6" BEL
+        "rw_cnt_ent/w_counter_5" BEL "rw_cnt_ent/w_counter_4" BEL
+        "rw_cnt_ent/w_counter_3" BEL "rw_cnt_ent/w_counter_2" BEL
+        "rw_cnt_ent/w_counter_1" BEL "rw_cnt_ent/w_counter_0" BEL
+        "rw_cnt_ent/dout_15" BEL "rw_cnt_ent/dout_14" BEL "rw_cnt_ent/dout_13"
+        BEL "rw_cnt_ent/dout_12" BEL "rw_cnt_ent/dout_11" BEL
+        "rw_cnt_ent/dout_10" BEL "rw_cnt_ent/dout_9" BEL "rw_cnt_ent/dout_8"
+        BEL "rw_cnt_ent/dout_7" BEL "rw_cnt_ent/dout_6" BEL
+        "rw_cnt_ent/dout_5" BEL "rw_cnt_ent/dout_4" BEL "rw_cnt_ent/dout_3"
+        BEL "rw_cnt_ent/dout_2" BEL "rw_cnt_ent/dout_1" BEL
+        "rw_cnt_ent/dout_0" BEL "interface/slave_sel_2_1" BEL
         "buffer_ent/sobel_fltr_ent/y_12_1" BEL
         "buffer_ent/sobel_fltr_ent/y_11_1" BEL "ext_clk_BUFGP/BUFG" PIN
         "buffer_ent/dst_ent/Mram_ram8_pins<28>" PIN

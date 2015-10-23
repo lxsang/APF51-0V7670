@@ -17,9 +17,9 @@ begin
 
   uut: entity work.top_level
     generic map(
-      IMG_W=>128,
-      IMG_H=>128,
-      BUF_AW=>14,
+      IMG_W=>4,
+      IMG_H=>4,
+      BUF_AW=>8,
       BUF_DW=>16
       )
     port map(
@@ -68,7 +68,8 @@ begin
     wait for 10 ns;
     start <= '0';
 
-    wait for 2500 us;
+    wait for 10000 ns;
+    --wait for 2500 us;
     assert false
       report "Simulation complete"
       severity failure;

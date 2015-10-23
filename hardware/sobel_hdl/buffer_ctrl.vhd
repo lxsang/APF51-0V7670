@@ -12,7 +12,7 @@ entity buffer_ctrl is
     );
   port(                       
     clk       : in std_logic;
-    start     : in std_logic;
+    --start     : in std_logic;
     reset	  : in std_logic;
     din		  : in std_logic_vector(15 downto 0);
     addr      : in std_logic_vector(15 downto 0);
@@ -37,7 +37,7 @@ architecture arch of buffer_ctrl is
   signal dout_b, dst_din, dst_din_next: std_logic_vector(BUF_DW-1 downto 0);
   signal filter_din, filter_dout : std_logic_vector(7 downto 0);
   signal src_addr_map,src_addr, src_addr_next,dst_addr, dst_addr_map: std_logic_vector(BUF_AW-1 downto 0);
-  signal dst_we: std_logic;
+  signal dst_we, sobel_start: std_logic;
 -- signal str_addr : std_logic_vector(15 downto 0);
 --  signal test_addr: std_logic_vector(7 downto 0);
 begin
@@ -87,6 +87,8 @@ begin
                   (dst_wr = '1') else dst_din;
   dst_addr_map <= "0" & dst_addr(BUF_AW-1 downto 1);
   -- sobel filter
+  sobel_start <= '1' when (unsigned(mem_addr) = IMG_W) and wr_op = '1'
+                 else '0';
   sobel_fltr_ent: entity work.filter
     generic map(
       AW => BUF_AW,
@@ -96,7 +98,7 @@ begin
     port map(
     clk     => clk,
     reset   => reset,
-    start   => start,
+    start   => sobel_start,
     finish  => finish,
     src_addr=> src_addr_next,
     dst_addr=> dst_addr,

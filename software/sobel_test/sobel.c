@@ -127,7 +127,6 @@ void execute(int client,const char* method,dictionary rq)
 
 		obtr_memcpy(buff_out,ptr_fpga+MEM_OFFSET,NDATAW);
 
-		// convert to grayscale
 		IplImage* gray_image  = cvCreateImage(cvSize(IMG_W,IMG_H),IPL_DEPTH_8U,1);
 		gray_image->imageData = (unsigned char*)buff_out;
 		int params[3] = {0};

@@ -122,7 +122,7 @@ begin
       port map(
 		clk		=> gls_clk,
 		reset	=> gls_reset,
-        start   => sobel_start,
+        --start   => sobel_start,
 		din		=> wbm_writedata,
         addr    => wbm_address,
 		strobe	=> strobe,

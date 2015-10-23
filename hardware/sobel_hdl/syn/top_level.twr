@@ -38,7 +38,7 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
  !                                                                      !
  ! Signal                            Driver            Load             !
  ! --------------------------------  ----------------  ---------------- !
- ! buffer_ent/ack_db_state_OR_69_o   SLICE_X11Y9.A     SLICE_X11Y9.A1   !
+ ! buffer_ent/ack_db_state_OR_69_o   SLICE_X12Y5.A     SLICE_X12Y5.A1   !
   ---------------------------------------------------------------------- 
 
 
@@ -46,18 +46,406 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_ext_clk = PERIOD TIMEGRP "ext_clk" 10.5263 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 199447 paths analyzed, 3235 endpoints analyzed, 0 failing endpoints
+ 314144 paths analyzed, 3600 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   9.885ns.
+ Minimum period is   9.924ns.
 --------------------------------------------------------------------------------
 
-Paths for end point buffer_ent/dst_ent/Mram_ram13 (RAMB16_X0Y22.DIA0), 1411 paths
+Paths for end point buffer_ent/src_frame_ent/Mram_ram2 (RAMB16_X1Y0.ADDRB1), 274 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     0.641ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_0 (FF)
-  Destination:          buffer_ent/dst_ent/Mram_ram13 (RAM)
+Slack (setup path):     0.602ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               buffer_ent/sobel_fltr_ent/y_0 (FF)
+  Destination:          buffer_ent/src_frame_ent/Mram_ram2 (RAM)
   Requirement:          10.526ns
-  Data Path Delay:      9.866ns (Levels of Logic = 6)
+  Data Path Delay:      9.904ns (Levels of Logic = 5)
+  Clock Path Skew:      0.015ns (0.664 - 0.649)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/y_0 to buffer_ent/src_frame_ent/Mram_ram2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y20.AQ       Tcko                  0.430   buffer_ent/sobel_fltr_ent/y<3>
+                                                       buffer_ent/sobel_fltr_ent/y_0
+    SLICE_X12Y21.A6      net (fanout=17)       0.938   buffer_ent/sobel_fltr_ent/y<0>
+    SLICE_X12Y21.AMUX    Topaa                 0.456   buffer_ent/sobel_fltr_ent/n0233<0>
+                                                       buffer_ent/sobel_fltr_ent/y<0>_rt
+                                                       buffer_ent/sobel_fltr_ent/Madd_n0233_xor<0>
+    SLICE_X6Y20.A4       net (fanout=10)       0.988   buffer_ent/sobel_fltr_ent/n0233<0>
+    SLICE_X6Y20.CMUX     Topac                 0.636   buffer_ent/sobel_fltr_ent/Madd_current_line[13]_GND_29_o_add_75_OUT_cy<3>
+                                                       buffer_ent/sobel_fltr_ent/Madd_current_line[13]_GND_29_o_add_75_OUT_lut<0>_INV_0
+                                                       buffer_ent/sobel_fltr_ent/Madd_current_line[13]_GND_29_o_add_75_OUT_cy<3>
+    SLICE_X2Y17.B6       net (fanout=1)        0.973   buffer_ent/sobel_fltr_ent/current_line[13]_GND_29_o_add_75_OUT<2>
+    SLICE_X2Y17.B        Tilo                  0.235   buffer_ent/sobel_fltr_ent/src_addr_reg[13]_current_line[13]_mux_76_OUT<2>
+                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_reg[13]_current_line[13]_mux_76_OUT71
+    SLICE_X2Y17.D1       net (fanout=1)        0.548   buffer_ent/sobel_fltr_ent/src_addr_reg[13]_current_line[13]_mux_76_OUT<2>
+    SLICE_X2Y17.CMUX     Topdc                 0.402   buffer_ent/sobel_fltr_ent/src_addr_reg[13]_current_line[13]_mux_76_OUT<2>
+                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_66_F
+                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_66
+    SLICE_X5Y16.B6       net (fanout=1)        0.799   buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_66
+    SLICE_X5Y16.B        Tilo                  0.259   buffer_ent/sobel_fltr_ent/src_addr_reg<3>
+                                                       buffer_ent/sobel_fltr_ent/state<3>_inv_inv61
+    RAMB16_X1Y0.ADDRB1   net (fanout=16)       2.840   buffer_ent/src_addr_next<2>
+    RAMB16_X1Y0.CLKB     Trcck_ADDRB           0.400   buffer_ent/src_frame_ent/Mram_ram2
+                                                       buffer_ent/src_frame_ent/Mram_ram2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.904ns (2.818ns logic, 7.086ns route)
+                                                       (28.5% logic, 71.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.692ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               buffer_ent/sobel_fltr_ent/y_0 (FF)
+  Destination:          buffer_ent/src_frame_ent/Mram_ram2 (RAM)
+  Requirement:          10.526ns
+  Data Path Delay:      9.814ns (Levels of Logic = 5)
+  Clock Path Skew:      0.015ns (0.664 - 0.649)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/y_0 to buffer_ent/src_frame_ent/Mram_ram2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y20.AQ       Tcko                  0.430   buffer_ent/sobel_fltr_ent/y<3>
+                                                       buffer_ent/sobel_fltr_ent/y_0
+    SLICE_X12Y21.A6      net (fanout=17)       0.938   buffer_ent/sobel_fltr_ent/y<0>
+    SLICE_X12Y21.AMUX    Topaa                 0.456   buffer_ent/sobel_fltr_ent/n0233<0>
+                                                       buffer_ent/sobel_fltr_ent/y<0>_rt
+                                                       buffer_ent/sobel_fltr_ent/Madd_n0233_xor<0>
+    SLICE_X8Y19.A4       net (fanout=10)       1.066   buffer_ent/sobel_fltr_ent/n0233<0>
+    SLICE_X8Y19.CMUX     Topac                 0.633   buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_70_OUT<13:0>_cy<3>
+                                                       buffer_ent/sobel_fltr_ent/n0233<0>_rt
+                                                       buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_70_OUT<13:0>_cy<3>
+    SLICE_X2Y17.A3       net (fanout=1)        1.014   buffer_ent/sobel_fltr_ent/GND_29_o_GND_29_o_sub_70_OUT<2>
+    SLICE_X2Y17.A        Tilo                  0.235   buffer_ent/sobel_fltr_ent/src_addr_reg[13]_current_line[13]_mux_76_OUT<2>
+                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_reg[13]_GND_29_o_mux_70_OUT71
+    SLICE_X2Y17.D3       net (fanout=1)        0.342   buffer_ent/sobel_fltr_ent/src_addr_reg[13]_GND_29_o_mux_70_OUT<2>
+    SLICE_X2Y17.CMUX     Topdc                 0.402   buffer_ent/sobel_fltr_ent/src_addr_reg[13]_current_line[13]_mux_76_OUT<2>
+                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_66_F
+                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_66
+    SLICE_X5Y16.B6       net (fanout=1)        0.799   buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_66
+    SLICE_X5Y16.B        Tilo                  0.259   buffer_ent/sobel_fltr_ent/src_addr_reg<3>
+                                                       buffer_ent/sobel_fltr_ent/state<3>_inv_inv61
+    RAMB16_X1Y0.ADDRB1   net (fanout=16)       2.840   buffer_ent/src_addr_next<2>
+    RAMB16_X1Y0.CLKB     Trcck_ADDRB           0.400   buffer_ent/src_frame_ent/Mram_ram2
+                                                       buffer_ent/src_frame_ent/Mram_ram2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.814ns (2.815ns logic, 6.999ns route)
+                                                       (28.7% logic, 71.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.950ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               buffer_ent/sobel_fltr_ent/y_5 (FF)
+  Destination:          buffer_ent/src_frame_ent/Mram_ram2 (RAM)
+  Requirement:          10.526ns
+  Data Path Delay:      9.546ns (Levels of Logic = 4)
+  Clock Path Skew:      0.005ns (0.664 - 0.659)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/y_5 to buffer_ent/src_frame_ent/Mram_ram2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y22.BQ       Tcko                  0.430   buffer_ent/sobel_fltr_ent/y<6>
+                                                       buffer_ent/sobel_fltr_ent/y_5
+    SLICE_X7Y24.B1       net (fanout=6)        1.746   buffer_ent/sobel_fltr_ent/y<5>
+    SLICE_X7Y24.B        Tilo                  0.259   buffer_ent/sobel_fltr_ent/y[13]_GND_29_o_equal_53_o<13>
+                                                       buffer_ent/sobel_fltr_ent/y[13]_GND_29_o_equal_53_o<13>1
+    SLICE_X2Y17.B2       net (fanout=41)       1.628   buffer_ent/sobel_fltr_ent/y[13]_GND_29_o_equal_53_o<13>
+    SLICE_X2Y17.B        Tilo                  0.235   buffer_ent/sobel_fltr_ent/src_addr_reg[13]_current_line[13]_mux_76_OUT<2>
+                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_reg[13]_current_line[13]_mux_76_OUT71
+    SLICE_X2Y17.D1       net (fanout=1)        0.548   buffer_ent/sobel_fltr_ent/src_addr_reg[13]_current_line[13]_mux_76_OUT<2>
+    SLICE_X2Y17.CMUX     Topdc                 0.402   buffer_ent/sobel_fltr_ent/src_addr_reg[13]_current_line[13]_mux_76_OUT<2>
+                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_66_F
+                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_66
+    SLICE_X5Y16.B6       net (fanout=1)        0.799   buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_66
+    SLICE_X5Y16.B        Tilo                  0.259   buffer_ent/sobel_fltr_ent/src_addr_reg<3>
+                                                       buffer_ent/sobel_fltr_ent/state<3>_inv_inv61
+    RAMB16_X1Y0.ADDRB1   net (fanout=16)       2.840   buffer_ent/src_addr_next<2>
+    RAMB16_X1Y0.CLKB     Trcck_ADDRB           0.400   buffer_ent/src_frame_ent/Mram_ram2
+                                                       buffer_ent/src_frame_ent/Mram_ram2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.546ns (1.985ns logic, 7.561ns route)
+                                                       (20.8% logic, 79.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point buffer_ent/dst_ent/Mram_ram16 (RAMB16_X0Y16.DIA0), 7234 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.639ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_1 (FF)
+  Destination:          buffer_ent/dst_ent/Mram_ram16 (RAM)
+  Requirement:          10.526ns
+  Data Path Delay:      9.873ns (Levels of Logic = 5)
+  Clock Path Skew:      0.021ns (0.732 - 0.711)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_1 to buffer_ent/dst_ent/Mram_ram16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y21.BQ      Tcko                  0.525   buffer_ent/sobel_fltr_ent/sobel_ent/blr_x<3>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_1
+    SLICE_X20Y22.B3      net (fanout=1)        1.214   buffer_ent/sobel_fltr_ent/sobel_ent/blr_x<1>
+    SLICE_X20Y22.BMUX    Tilo                  0.326   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<3>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT1
+    SLICE_X20Y22.C5      net (fanout=2)        0.442   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT1
+    SLICE_X20Y22.DQ      Tad_logic             1.014   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<3>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_lut<0>2
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_cy<0>_2
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<3>_rt
+    SLICE_X23Y27.A3      net (fanout=2)        1.080   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<3>
+    SLICE_X23Y27.A       Tilo                  0.259   N267
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output31
+    SLICE_X21Y29.C3      net (fanout=5)        1.596   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output3
+    SLICE_X21Y29.C       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>4
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>62_SW2
+    SLICE_X18Y29.B2      net (fanout=4)        1.185   N80
+    SLICE_X18Y29.B       Tilo                  0.235   buffer_ent/dst_din<15>
+                                                       buffer_ent/mux611
+    RAMB16_X0Y16.DIA0    net (fanout=1)        1.438   buffer_ent/dst_din_next<15>
+    RAMB16_X0Y16.CLKA    Trdck_DIA             0.300   buffer_ent/dst_ent/Mram_ram16
+                                                       buffer_ent/dst_ent/Mram_ram16
+    -------------------------------------------------  ---------------------------
+    Total                                      9.873ns (2.918ns logic, 6.955ns route)
+                                                       (29.6% logic, 70.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.728ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_6 (FF)
+  Destination:          buffer_ent/dst_ent/Mram_ram16 (RAM)
+  Requirement:          10.526ns
+  Data Path Delay:      9.787ns (Levels of Logic = 6)
+  Clock Path Skew:      0.024ns (0.732 - 0.708)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_6 to buffer_ent/dst_ent/Mram_ram16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y22.CQ      Tcko                  0.525   buffer_ent/sobel_fltr_ent/sobel_ent/blr_x<7>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_6
+    SLICE_X20Y23.C3      net (fanout=1)        1.184   buffer_ent/sobel_fltr_ent/sobel_ent/blr_x<6>
+    SLICE_X20Y23.CMUX    Tilo                  0.326   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<6>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT6
+    SLICE_X20Y23.DX      net (fanout=2)        1.008   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT6
+    SLICE_X20Y23.COUT    Tdxcy                 0.109   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<6>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_cy<0>_6
+    SLICE_X20Y24.CIN     net (fanout=1)        0.082   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_cy<0>7
+    SLICE_X20Y24.AMUX    Tcina                 0.220   buffer_ent/sobel_fltr_ent/sobel_ent/gy<1>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_xor<0>_7
+    SLICE_X23Y27.A2      net (fanout=11)       1.061   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<8>
+    SLICE_X23Y27.A       Tilo                  0.259   N267
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output31
+    SLICE_X21Y29.C3      net (fanout=5)        1.596   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output3
+    SLICE_X21Y29.C       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>4
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>62_SW2
+    SLICE_X18Y29.B2      net (fanout=4)        1.185   N80
+    SLICE_X18Y29.B       Tilo                  0.235   buffer_ent/dst_din<15>
+                                                       buffer_ent/mux611
+    RAMB16_X0Y16.DIA0    net (fanout=1)        1.438   buffer_ent/dst_din_next<15>
+    RAMB16_X0Y16.CLKA    Trdck_DIA             0.300   buffer_ent/dst_ent/Mram_ram16
+                                                       buffer_ent/dst_ent/Mram_ram16
+    -------------------------------------------------  ---------------------------
+    Total                                      9.787ns (2.233ns logic, 7.554ns route)
+                                                       (22.8% logic, 77.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.755ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_1 (FF)
+  Destination:          buffer_ent/dst_ent/Mram_ram16 (RAM)
+  Requirement:          10.526ns
+  Data Path Delay:      9.757ns (Levels of Logic = 5)
+  Clock Path Skew:      0.021ns (0.732 - 0.711)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_1 to buffer_ent/dst_ent/Mram_ram16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y21.BQ      Tcko                  0.525   buffer_ent/sobel_fltr_ent/sobel_ent/blr_x<3>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_1
+    SLICE_X20Y22.B3      net (fanout=1)        1.214   buffer_ent/sobel_fltr_ent/sobel_ent/blr_x<1>
+    SLICE_X20Y22.BMUX    Tilo                  0.326   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<3>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT1
+    SLICE_X20Y22.CX      net (fanout=2)        0.529   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT1
+    SLICE_X20Y22.DQ      Tito_logic            0.811   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<3>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_cy<0>_2
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<3>_rt
+    SLICE_X23Y27.A3      net (fanout=2)        1.080   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<3>
+    SLICE_X23Y27.A       Tilo                  0.259   N267
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output31
+    SLICE_X21Y29.C3      net (fanout=5)        1.596   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output3
+    SLICE_X21Y29.C       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>4
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>62_SW2
+    SLICE_X18Y29.B2      net (fanout=4)        1.185   N80
+    SLICE_X18Y29.B       Tilo                  0.235   buffer_ent/dst_din<15>
+                                                       buffer_ent/mux611
+    RAMB16_X0Y16.DIA0    net (fanout=1)        1.438   buffer_ent/dst_din_next<15>
+    RAMB16_X0Y16.CLKA    Trdck_DIA             0.300   buffer_ent/dst_ent/Mram_ram16
+                                                       buffer_ent/dst_ent/Mram_ram16
+    -------------------------------------------------  ---------------------------
+    Total                                      9.757ns (2.715ns logic, 7.042ns route)
+                                                       (27.8% logic, 72.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point buffer_ent/dst_ent/Mram_ram12 (RAMB16_X0Y22.DIA0), 974 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.652ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_6 (FF)
+  Destination:          buffer_ent/dst_ent/Mram_ram12 (RAM)
+  Requirement:          10.526ns
+  Data Path Delay:      9.861ns (Levels of Logic = 7)
+  Clock Path Skew:      0.022ns (0.730 - 0.708)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_6 to buffer_ent/dst_ent/Mram_ram12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y22.CQ      Tcko                  0.525   buffer_ent/sobel_fltr_ent/sobel_ent/blr_x<7>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_6
+    SLICE_X20Y23.C3      net (fanout=1)        1.184   buffer_ent/sobel_fltr_ent/sobel_ent/blr_x<6>
+    SLICE_X20Y23.CMUX    Tilo                  0.326   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<6>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT6
+    SLICE_X20Y23.DX      net (fanout=2)        1.008   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT6
+    SLICE_X20Y23.COUT    Tdxcy                 0.109   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<6>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_cy<0>_6
+    SLICE_X20Y24.CIN     net (fanout=1)        0.082   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_cy<0>7
+    SLICE_X20Y24.AMUX    Tcina                 0.220   buffer_ent/sobel_fltr_ent/sobel_ent/gy<1>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_xor<0>_7
+    SLICE_X21Y25.A5      net (fanout=11)       0.459   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<8>
+    SLICE_X21Y25.A       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/gx<8>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Mmux_gx_next91
+    SLICE_X21Y25.B4      net (fanout=8)        0.826   buffer_ent/sobel_fltr_ent/sobel_ent/gx_next<8>
+    SLICE_X21Y25.B       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/gx<8>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>21
+    SLICE_X20Y31.B5      net (fanout=2)        0.668   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>2
+    SLICE_X20Y31.B       Tilo                  0.254   buffer_ent/dst_din<5>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>33
+    SLICE_X23Y30.D4      net (fanout=10)       0.564   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>2
+    SLICE_X23Y30.D       Tilo                  0.259   buffer_ent/dst_din<11>
+                                                       buffer_ent/mux211
+    RAMB16_X0Y22.DIA0    net (fanout=1)        2.559   buffer_ent/dst_din_next<11>
+    RAMB16_X0Y22.CLKA    Trdck_DIA             0.300   buffer_ent/dst_ent/Mram_ram12
+                                                       buffer_ent/dst_ent/Mram_ram12
+    -------------------------------------------------  ---------------------------
+    Total                                      9.861ns (2.511ns logic, 7.350ns route)
+                                                       (25.5% logic, 74.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.754ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_4 (FF)
+  Destination:          buffer_ent/dst_ent/Mram_ram12 (RAM)
+  Requirement:          10.526ns
+  Data Path Delay:      9.759ns (Levels of Logic = 7)
+  Clock Path Skew:      0.022ns (0.730 - 0.708)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_4 to buffer_ent/dst_ent/Mram_ram12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y22.AQ      Tcko                  0.525   buffer_ent/sobel_fltr_ent/sobel_ent/blr_x<7>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_4
+    SLICE_X20Y23.A2      net (fanout=1)        1.318   buffer_ent/sobel_fltr_ent/sobel_ent/blr_x<4>
+    SLICE_X20Y23.AMUX    Tilo                  0.326   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<6>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT4
+    SLICE_X20Y23.BX      net (fanout=2)        0.725   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT4
+    SLICE_X20Y23.COUT    Tbxcy                 0.156   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<6>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_cy<0>_6
+    SLICE_X20Y24.CIN     net (fanout=1)        0.082   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_cy<0>7
+    SLICE_X20Y24.AMUX    Tcina                 0.220   buffer_ent/sobel_fltr_ent/sobel_ent/gy<1>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_xor<0>_7
+    SLICE_X21Y25.A5      net (fanout=11)       0.459   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<8>
+    SLICE_X21Y25.A       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/gx<8>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Mmux_gx_next91
+    SLICE_X21Y25.B4      net (fanout=8)        0.826   buffer_ent/sobel_fltr_ent/sobel_ent/gx_next<8>
+    SLICE_X21Y25.B       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/gx<8>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>21
+    SLICE_X20Y31.B5      net (fanout=2)        0.668   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>2
+    SLICE_X20Y31.B       Tilo                  0.254   buffer_ent/dst_din<5>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>33
+    SLICE_X23Y30.D4      net (fanout=10)       0.564   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>2
+    SLICE_X23Y30.D       Tilo                  0.259   buffer_ent/dst_din<11>
+                                                       buffer_ent/mux211
+    RAMB16_X0Y22.DIA0    net (fanout=1)        2.559   buffer_ent/dst_din_next<11>
+    RAMB16_X0Y22.CLKA    Trdck_DIA             0.300   buffer_ent/dst_ent/Mram_ram12
+                                                       buffer_ent/dst_ent/Mram_ram12
+    -------------------------------------------------  ---------------------------
+    Total                                      9.759ns (2.558ns logic, 7.201ns route)
+                                                       (26.2% logic, 73.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.779ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               buffer_ent/sobel_fltr_ent/sobel_ent/tbm_y_3 (FF)
+  Destination:          buffer_ent/dst_ent/Mram_ram12 (RAM)
+  Requirement:          10.526ns
+  Data Path Delay:      9.728ns (Levels of Logic = 7)
   Clock Path Skew:      0.016ns (0.730 - 0.714)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
@@ -69,419 +457,50 @@ Slack (setup path):     0.641ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_0 to buffer_ent/dst_ent/Mram_ram13
+  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/sobel_ent/tbm_y_3 to buffer_ent/dst_ent/Mram_ram12
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y25.AQ      Tcko                  0.476   buffer_ent/sobel_fltr_ent/sobel_ent/blr_x<3>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/blr_x_0
-    SLICE_X20Y25.C4      net (fanout=2)        0.546   buffer_ent/sobel_fltr_ent/sobel_ent/blr_x<0>
-    SLICE_X20Y25.C       Tilo                  0.255   buffer_ent/sobel_fltr_ent/sobel_ent/gx<0>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT
-    SLICE_X20Y23.B4      net (fanout=2)        0.556   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT
-    SLICE_X20Y23.BQ      Tad_logic             0.942   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<3>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_lut<0>1
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_cy<0>_2
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<1>_rt
-    SLICE_X21Y23.C4      net (fanout=2)        0.331   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<1>
-    SLICE_X21Y23.C       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/gx<1>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Mmux_gx_next21
-    SLICE_X21Y27.B1      net (fanout=2)        1.711   buffer_ent/sobel_fltr_ent/sobel_ent/gx_next<1>
-    SLICE_X21Y27.B       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/gx<8>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>21
-    SLICE_X20Y32.B4      net (fanout=2)        0.999   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>2
-    SLICE_X20Y32.B       Tilo                  0.254   buffer_ent/dst_din<4>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>33
-    SLICE_X20Y34.B5      net (fanout=10)       0.468   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>2
-    SLICE_X20Y34.B       Tilo                  0.254   buffer_ent/dst_din<13>
-                                                       buffer_ent/mux311
-    RAMB16_X0Y22.DIA0    net (fanout=1)        2.256   buffer_ent/dst_din_next<12>
-    RAMB16_X0Y22.CLKA    Trdck_DIA             0.300   buffer_ent/dst_ent/Mram_ram13
-                                                       buffer_ent/dst_ent/Mram_ram13
-    -------------------------------------------------  ---------------------------
-    Total                                      9.866ns (2.999ns logic, 6.867ns route)
-                                                       (30.4% logic, 69.6% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     0.680ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               buffer_ent/sobel_fltr_ent/sobel_ent/tbr_y_3 (FF)
-  Destination:          buffer_ent/dst_ent/Mram_ram13 (RAM)
-  Requirement:          10.526ns
-  Data Path Delay:      9.818ns (Levels of Logic = 7)
-  Clock Path Skew:      0.007ns (0.730 - 0.723)
-  Source Clock:         ext_clk_BUFGP rising at 0.000ns
-  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/sobel_ent/tbr_y_3 to buffer_ent/dst_ent/Mram_ram13
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X22Y19.DQ      Tcko                  0.476   buffer_ent/sobel_fltr_ent/sobel_ent/tbr_y<3>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/tbr_y_3
-    SLICE_X22Y22.D5      net (fanout=1)        1.097   buffer_ent/sobel_fltr_ent/sobel_ent/tbr_y<3>
+    SLICE_X22Y25.CQ      Tcko                  0.476   buffer_ent/sobel_fltr_ent/sobel_ent/tbm_y<4>
+                                                       buffer_ent/sobel_fltr_ent/sobel_ent/tbm_y_3
+    SLICE_X22Y22.D4      net (fanout=1)        1.245   buffer_ent/sobel_fltr_ent/sobel_ent/tbm_y<3>
     SLICE_X22Y22.DMUX    Tilo                  0.298   buffer_ent/sobel_fltr_ent/sobel_ent/tbl_y[8]_tbr_y[8]_add_17_OUT<3>
                                                        buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tbl_y[8]_tbr_y[8]_add_17_OUT3
-    SLICE_X22Y23.A5      net (fanout=2)        0.744   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tbl_y[8]_tbr_y[8]_add_17_OUT3
-    SLICE_X22Y23.COUT    Topcya                0.472   buffer_ent/sobel_fltr_ent/sobel_ent/tbl_y[8]_tbr_y[8]_add_17_OUT<6>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tbl_y[8]_tbr_y[8]_add_17_OUT_lut<0>4
+    SLICE_X22Y23.AX      net (fanout=2)        0.677   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tbl_y[8]_tbr_y[8]_add_17_OUT3
+    SLICE_X22Y23.COUT    Taxcy                 0.281   buffer_ent/sobel_fltr_ent/sobel_ent/tbl_y[8]_tbr_y[8]_add_17_OUT<6>
                                                        buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tbl_y[8]_tbr_y[8]_add_17_OUT_cy<0>_6
     SLICE_X22Y24.CIN     net (fanout=1)        0.082   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tbl_y[8]_tbr_y[8]_add_17_OUT_cy<0>7
-    SLICE_X22Y24.AMUX    Tcina                 0.210   buffer_ent/sobel_fltr_ent/sobel_ent/gy_next<0>
+    SLICE_X22Y24.AMUX    Tcina                 0.210   N409
                                                        buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tbl_y[8]_tbr_y[8]_add_17_OUT_xor<0>_7
-    SLICE_X21Y24.D6      net (fanout=7)        0.396   buffer_ent/sobel_fltr_ent/sobel_ent/tbl_y[8]_tbr_y[8]_add_17_OUT<8>
-    SLICE_X21Y24.D       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/gy<8>
+    SLICE_X20Y27.D5      net (fanout=7)        0.741   buffer_ent/sobel_fltr_ent/sobel_ent/tbl_y[8]_tbr_y[8]_add_17_OUT<8>
+    SLICE_X20Y27.D       Tilo                  0.254   buffer_ent/sobel_fltr_ent/sobel_ent/gy<8>
                                                        buffer_ent/sobel_fltr_ent/sobel_ent/Mmux_gy_next91
-    SLICE_X19Y25.B1      net (fanout=9)        0.968   buffer_ent/sobel_fltr_ent/sobel_ent/gy_next<8>
-    SLICE_X19Y25.B       Tilo                  0.259   buffer_ent/dst_din<1>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>11
-    SLICE_X20Y32.B6      net (fanout=4)        1.025   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>1
-    SLICE_X20Y32.B       Tilo                  0.254   buffer_ent/dst_din<4>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>33
-    SLICE_X20Y34.B5      net (fanout=10)       0.468   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>2
-    SLICE_X20Y34.B       Tilo                  0.254   buffer_ent/dst_din<13>
-                                                       buffer_ent/mux311
-    RAMB16_X0Y22.DIA0    net (fanout=1)        2.256   buffer_ent/dst_din_next<12>
-    RAMB16_X0Y22.CLKA    Trdck_DIA             0.300   buffer_ent/dst_ent/Mram_ram13
-                                                       buffer_ent/dst_ent/Mram_ram13
-    -------------------------------------------------  ---------------------------
-    Total                                      9.818ns (2.782ns logic, 7.036ns route)
-                                                       (28.3% logic, 71.7% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     0.710ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x_0 (FF)
-  Destination:          buffer_ent/dst_ent/Mram_ram13 (RAM)
-  Requirement:          10.526ns
-  Data Path Delay:      9.795ns (Levels of Logic = 6)
-  Clock Path Skew:      0.014ns (0.730 - 0.716)
-  Source Clock:         ext_clk_BUFGP rising at 0.000ns
-  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x_0 to buffer_ent/dst_ent/Mram_ram13
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X20Y26.AQ      Tcko                  0.525   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x<3>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x_0
-    SLICE_X20Y25.C6      net (fanout=2)        0.426   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x<0>
-    SLICE_X20Y25.C       Tilo                  0.255   buffer_ent/sobel_fltr_ent/sobel_ent/gx<0>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT
-    SLICE_X20Y23.B4      net (fanout=2)        0.556   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT
-    SLICE_X20Y23.BQ      Tad_logic             0.942   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<3>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_lut<0>1
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Madd_tlr_x[8]_blr_x[8]_add_15_OUT_cy<0>_2
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<1>_rt
-    SLICE_X21Y23.C4      net (fanout=2)        0.331   buffer_ent/sobel_fltr_ent/sobel_ent/tlr_x[8]_blr_x[8]_add_15_OUT<1>
-    SLICE_X21Y23.C       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/gx<1>
-                                                       buffer_ent/sobel_fltr_ent/sobel_ent/Mmux_gx_next21
-    SLICE_X21Y27.B1      net (fanout=2)        1.711   buffer_ent/sobel_fltr_ent/sobel_ent/gx_next<1>
-    SLICE_X21Y27.B       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/gx<8>
+    SLICE_X21Y25.B5      net (fanout=9)        0.601   buffer_ent/sobel_fltr_ent/sobel_ent/gy_next<8>
+    SLICE_X21Y25.B       Tilo                  0.259   buffer_ent/sobel_fltr_ent/sobel_ent/gx<8>
                                                        buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>21
-    SLICE_X20Y32.B4      net (fanout=2)        0.999   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>2
-    SLICE_X20Y32.B       Tilo                  0.254   buffer_ent/dst_din<4>
+    SLICE_X20Y31.B5      net (fanout=2)        0.668   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_lut<0>2
+    SLICE_X20Y31.B       Tilo                  0.254   buffer_ent/dst_din<5>
                                                        buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>33
-    SLICE_X20Y34.B5      net (fanout=10)       0.468   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>2
-    SLICE_X20Y34.B       Tilo                  0.254   buffer_ent/dst_din<13>
-                                                       buffer_ent/mux311
-    RAMB16_X0Y22.DIA0    net (fanout=1)        2.256   buffer_ent/dst_din_next<12>
-    RAMB16_X0Y22.CLKA    Trdck_DIA             0.300   buffer_ent/dst_ent/Mram_ram13
-                                                       buffer_ent/dst_ent/Mram_ram13
-    -------------------------------------------------  ---------------------------
-    Total                                      9.795ns (3.048ns logic, 6.747ns route)
-                                                       (31.1% logic, 68.9% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point buffer_ent/dst_ent/Mram_ram12 (RAMB16_X1Y28.ADDRB8), 8 paths
---------------------------------------------------------------------------------
-Slack (setup path):     0.645ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               imx51_wb_16/address_4 (FF)
-  Destination:          buffer_ent/dst_ent/Mram_ram12 (RAM)
-  Requirement:          10.526ns
-  Data Path Delay:      9.817ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.029ns (0.742 - 0.771)
-  Source Clock:         ext_clk_BUFGP rising at 0.000ns
-  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: imx51_wb_16/address_4 to buffer_ent/dst_ent/Mram_ram12
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X16Y9.DQ       Tcko                  0.525   imx51_wb_16/address<4>
-                                                       imx51_wb_16/address_4
-    SLICE_X18Y15.B4      net (fanout=3)        0.966   imx51_wb_16/address<4>
-    SLICE_X18Y15.COUT    Topcyb                0.448   buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_cy<6>
-                                                       buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_lut<4>_INV_0
-                                                       buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_cy<6>
-    SLICE_X18Y16.CIN     net (fanout=1)        0.003   buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_cy<6>
-    SLICE_X18Y16.CMUX    Tcinc                 0.289   buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_cy<10>
-                                                       buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_cy<10>
-    SLICE_X16Y16.A3      net (fanout=1)        0.586   buffer_ent/GND_27_o_GND_27_o_sub_3_OUT<9>
-    SLICE_X16Y16.AMUX    Tilo                  0.326   buffer_ent/sobel_fltr_ent/src_addr_reg[13]_current_line[13]_mux_76_OUT<0>
-                                                       buffer_ent/Mmux_mem_addr141
-    RAMB16_X1Y28.ADDRB8  net (fanout=32)       6.274   buffer_ent/mem_addr<9>
-    RAMB16_X1Y28.CLKB    Trcck_ADDRB           0.400   buffer_ent/dst_ent/Mram_ram12
+    SLICE_X23Y30.D4      net (fanout=10)       0.564   buffer_ent/sobel_fltr_ent/sobel_ent/Madd_output_cy<0>2
+    SLICE_X23Y30.D       Tilo                  0.259   buffer_ent/dst_din<11>
+                                                       buffer_ent/mux211
+    RAMB16_X0Y22.DIA0    net (fanout=1)        2.559   buffer_ent/dst_din_next<11>
+    RAMB16_X0Y22.CLKA    Trdck_DIA             0.300   buffer_ent/dst_ent/Mram_ram12
                                                        buffer_ent/dst_ent/Mram_ram12
     -------------------------------------------------  ---------------------------
-    Total                                      9.817ns (1.988ns logic, 7.829ns route)
-                                                       (20.3% logic, 79.7% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     0.724ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               imx51_wb_16/address_8 (FF)
-  Destination:          buffer_ent/dst_ent/Mram_ram12 (RAM)
-  Requirement:          10.526ns
-  Data Path Delay:      9.741ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.026ns (0.742 - 0.768)
-  Source Clock:         ext_clk_BUFGP rising at 0.000ns
-  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: imx51_wb_16/address_8 to buffer_ent/dst_ent/Mram_ram12
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X16Y8.DQ       Tcko                  0.525   imx51_wb_16/address<8>
-                                                       imx51_wb_16/address_8
-    SLICE_X18Y16.B4      net (fanout=3)        1.017   imx51_wb_16/address<8>
-    SLICE_X18Y16.CMUX    Topbc                 0.613   buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_cy<10>
-                                                       buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_lut<8>_INV_0
-                                                       buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_cy<10>
-    SLICE_X16Y16.A3      net (fanout=1)        0.586   buffer_ent/GND_27_o_GND_27_o_sub_3_OUT<9>
-    SLICE_X16Y16.AMUX    Tilo                  0.326   buffer_ent/sobel_fltr_ent/src_addr_reg[13]_current_line[13]_mux_76_OUT<0>
-                                                       buffer_ent/Mmux_mem_addr141
-    RAMB16_X1Y28.ADDRB8  net (fanout=32)       6.274   buffer_ent/mem_addr<9>
-    RAMB16_X1Y28.CLKB    Trcck_ADDRB           0.400   buffer_ent/dst_ent/Mram_ram12
-                                                       buffer_ent/dst_ent/Mram_ram12
-    -------------------------------------------------  ---------------------------
-    Total                                      9.741ns (1.864ns logic, 7.877ns route)
-                                                       (19.1% logic, 80.9% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     0.773ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               imx51_wb_16/address_3 (FF)
-  Destination:          buffer_ent/dst_ent/Mram_ram12 (RAM)
-  Requirement:          10.526ns
-  Data Path Delay:      9.690ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.028ns (0.742 - 0.770)
-  Source Clock:         ext_clk_BUFGP rising at 0.000ns
-  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: imx51_wb_16/address_3 to buffer_ent/dst_ent/Mram_ram12
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X15Y9.CQ       Tcko                  0.430   imx51_wb_16/address<3>
-                                                       imx51_wb_16/address_3
-    SLICE_X18Y15.A5      net (fanout=3)        0.910   imx51_wb_16/address<3>
-    SLICE_X18Y15.COUT    Topcya                0.472   buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_cy<6>
-                                                       imx51_wb_16/address<3>_rt
-                                                       buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_cy<6>
-    SLICE_X18Y16.CIN     net (fanout=1)        0.003   buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_cy<6>
-    SLICE_X18Y16.CMUX    Tcinc                 0.289   buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_cy<10>
-                                                       buffer_ent/Msub_GND_27_o_GND_27_o_sub_3_OUT<15:0>_cy<10>
-    SLICE_X16Y16.A3      net (fanout=1)        0.586   buffer_ent/GND_27_o_GND_27_o_sub_3_OUT<9>
-    SLICE_X16Y16.AMUX    Tilo                  0.326   buffer_ent/sobel_fltr_ent/src_addr_reg[13]_current_line[13]_mux_76_OUT<0>
-                                                       buffer_ent/Mmux_mem_addr141
-    RAMB16_X1Y28.ADDRB8  net (fanout=32)       6.274   buffer_ent/mem_addr<9>
-    RAMB16_X1Y28.CLKB    Trcck_ADDRB           0.400   buffer_ent/dst_ent/Mram_ram12
-                                                       buffer_ent/dst_ent/Mram_ram12
-    -------------------------------------------------  ---------------------------
-    Total                                      9.690ns (1.917ns logic, 7.773ns route)
-                                                       (19.8% logic, 80.2% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point buffer_ent/src_frame_ent/Mram_ram2 (RAMB16_X0Y0.ADDRB8), 454 paths
---------------------------------------------------------------------------------
-Slack (setup path):     0.666ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               buffer_ent/sobel_fltr_ent/y_9 (FF)
-  Destination:          buffer_ent/src_frame_ent/Mram_ram2 (RAM)
-  Requirement:          10.526ns
-  Data Path Delay:      9.919ns (Levels of Logic = 4)
-  Clock Path Skew:      0.094ns (0.706 - 0.612)
-  Source Clock:         ext_clk_BUFGP rising at 0.000ns
-  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/y_9 to buffer_ent/src_frame_ent/Mram_ram2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X12Y23.DQ      Tcko                  0.525   buffer_ent/sobel_fltr_ent/y<9>
-                                                       buffer_ent/sobel_fltr_ent/y_9
-    SLICE_X12Y29.A4      net (fanout=6)        1.259   buffer_ent/sobel_fltr_ent/y<9>
-    SLICE_X12Y29.AMUX    Topaa                 0.456   buffer_ent/sobel_fltr_ent/Madd_n0228_cy<12>
-                                                       buffer_ent/sobel_fltr_ent/Madd_n0228_lut<9>
-                                                       buffer_ent/sobel_fltr_ent/Madd_n0228_cy<12>
-    SLICE_X14Y22.B4      net (fanout=3)        1.348   buffer_ent/sobel_fltr_ent/n0228<9>
-    SLICE_X14Y22.BMUX    Topbb                 0.428   buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_50_OUT<13:0>_cy<11>
-                                                       buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_50_OUT<13:0>_lut<9>_INV_0
-                                                       buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_50_OUT<13:0>_cy<11>
-    SLICE_X12Y19.D5      net (fanout=1)        0.866   buffer_ent/sobel_fltr_ent/GND_29_o_GND_29_o_sub_50_OUT<9>
-    SLICE_X12Y19.CMUX    Topdc                 0.456   buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_713
-                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_713_F
-                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_713
-    SLICE_X13Y24.D6      net (fanout=1)        0.872   buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_713
-    SLICE_X13Y24.D       Tilo                  0.259   buffer_ent/sobel_fltr_ent/src_addr_reg<9>
-                                                       buffer_ent/sobel_fltr_ent/state<3>_inv_inv131
-    RAMB16_X0Y0.ADDRB8   net (fanout=16)       3.050   buffer_ent/src_addr_next<9>
-    RAMB16_X0Y0.CLKB     Trcck_ADDRB           0.400   buffer_ent/src_frame_ent/Mram_ram2
-                                                       buffer_ent/src_frame_ent/Mram_ram2
-    -------------------------------------------------  ---------------------------
-    Total                                      9.919ns (2.524ns logic, 7.395ns route)
-                                                       (25.4% logic, 74.6% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     0.697ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               buffer_ent/sobel_fltr_ent/y_7 (FF)
-  Destination:          buffer_ent/src_frame_ent/Mram_ram2 (RAM)
-  Requirement:          10.526ns
-  Data Path Delay:      9.888ns (Levels of Logic = 6)
-  Clock Path Skew:      0.094ns (0.706 - 0.612)
-  Source Clock:         ext_clk_BUFGP rising at 0.000ns
-  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/y_7 to buffer_ent/src_frame_ent/Mram_ram2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X13Y23.DQ      Tcko                  0.430   buffer_ent/sobel_fltr_ent/y<7>
-                                                       buffer_ent/sobel_fltr_ent/y_7
-    SLICE_X12Y17.C6      net (fanout=7)        0.903   buffer_ent/sobel_fltr_ent/y<7>
-    SLICE_X12Y17.CMUX    Topcc                 0.495   buffer_ent/sobel_fltr_ent/Madd_n0238_cy<8>
-                                                       buffer_ent/sobel_fltr_ent/Madd_n0238_lut<7>
-                                                       buffer_ent/sobel_fltr_ent/Madd_n0238_cy<8>
-    SLICE_X18Y19.D5      net (fanout=3)        1.541   buffer_ent/sobel_fltr_ent/n0238<7>
-    SLICE_X18Y19.COUT    Topcyd                0.290   buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_83_OUT<13:0>_cy<7>
-                                                       buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_83_OUT<13:0>_lut<7>_INV_0
-                                                       buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_83_OUT<13:0>_cy<7>
-    SLICE_X18Y20.CIN     net (fanout=1)        0.003   buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_83_OUT<13:0>_cy<7>
-    SLICE_X18Y20.BMUX    Tcinb                 0.277   buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_83_OUT<13:0>_cy<11>
-                                                       buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_83_OUT<13:0>_cy<11>
-    SLICE_X13Y21.D6      net (fanout=1)        0.682   buffer_ent/sobel_fltr_ent/GND_29_o_GND_29_o_sub_83_OUT<9>
-    SLICE_X13Y21.D       Tilo                  0.259   buffer_ent/sobel_fltr_ent/y<11>
-                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_613_SW0
-    SLICE_X13Y24.C4      net (fanout=1)        0.806   N172
-    SLICE_X13Y24.C       Tilo                  0.259   buffer_ent/sobel_fltr_ent/src_addr_reg<9>
-                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_613
-    SLICE_X13Y24.D5      net (fanout=1)        0.234   buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_613
-    SLICE_X13Y24.D       Tilo                  0.259   buffer_ent/sobel_fltr_ent/src_addr_reg<9>
-                                                       buffer_ent/sobel_fltr_ent/state<3>_inv_inv131
-    RAMB16_X0Y0.ADDRB8   net (fanout=16)       3.050   buffer_ent/src_addr_next<9>
-    RAMB16_X0Y0.CLKB     Trcck_ADDRB           0.400   buffer_ent/src_frame_ent/Mram_ram2
-                                                       buffer_ent/src_frame_ent/Mram_ram2
-    -------------------------------------------------  ---------------------------
-    Total                                      9.888ns (2.669ns logic, 7.219ns route)
-                                                       (27.0% logic, 73.0% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     0.740ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               buffer_ent/sobel_fltr_ent/y_6 (FF)
-  Destination:          buffer_ent/src_frame_ent/Mram_ram2 (RAM)
-  Requirement:          10.526ns
-  Data Path Delay:      9.845ns (Levels of Logic = 6)
-  Clock Path Skew:      0.094ns (0.706 - 0.612)
-  Source Clock:         ext_clk_BUFGP rising at 0.000ns
-  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: buffer_ent/sobel_fltr_ent/y_6 to buffer_ent/src_frame_ent/Mram_ram2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X13Y23.BQ      Tcko                  0.430   buffer_ent/sobel_fltr_ent/y<7>
-                                                       buffer_ent/sobel_fltr_ent/y_6
-    SLICE_X12Y17.B5      net (fanout=6)        0.705   buffer_ent/sobel_fltr_ent/y<6>
-    SLICE_X12Y17.CMUX    Topbc                 0.650   buffer_ent/sobel_fltr_ent/Madd_n0238_cy<8>
-                                                       buffer_ent/sobel_fltr_ent/Madd_n0238_lut<6>
-                                                       buffer_ent/sobel_fltr_ent/Madd_n0238_cy<8>
-    SLICE_X18Y19.D5      net (fanout=3)        1.541   buffer_ent/sobel_fltr_ent/n0238<7>
-    SLICE_X18Y19.COUT    Topcyd                0.290   buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_83_OUT<13:0>_cy<7>
-                                                       buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_83_OUT<13:0>_lut<7>_INV_0
-                                                       buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_83_OUT<13:0>_cy<7>
-    SLICE_X18Y20.CIN     net (fanout=1)        0.003   buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_83_OUT<13:0>_cy<7>
-    SLICE_X18Y20.BMUX    Tcinb                 0.277   buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_83_OUT<13:0>_cy<11>
-                                                       buffer_ent/sobel_fltr_ent/Msub_GND_29_o_GND_29_o_sub_83_OUT<13:0>_cy<11>
-    SLICE_X13Y21.D6      net (fanout=1)        0.682   buffer_ent/sobel_fltr_ent/GND_29_o_GND_29_o_sub_83_OUT<9>
-    SLICE_X13Y21.D       Tilo                  0.259   buffer_ent/sobel_fltr_ent/y<11>
-                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_613_SW0
-    SLICE_X13Y24.C4      net (fanout=1)        0.806   N172
-    SLICE_X13Y24.C       Tilo                  0.259   buffer_ent/sobel_fltr_ent/src_addr_reg<9>
-                                                       buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_613
-    SLICE_X13Y24.D5      net (fanout=1)        0.234   buffer_ent/sobel_fltr_ent/Mmux_src_addr_next_613
-    SLICE_X13Y24.D       Tilo                  0.259   buffer_ent/sobel_fltr_ent/src_addr_reg<9>
-                                                       buffer_ent/sobel_fltr_ent/state<3>_inv_inv131
-    RAMB16_X0Y0.ADDRB8   net (fanout=16)       3.050   buffer_ent/src_addr_next<9>
-    RAMB16_X0Y0.CLKB     Trcck_ADDRB           0.400   buffer_ent/src_frame_ent/Mram_ram2
-                                                       buffer_ent/src_frame_ent/Mram_ram2
-    -------------------------------------------------  ---------------------------
-    Total                                      9.845ns (2.824ns logic, 7.021ns route)
-                                                       (28.7% logic, 71.3% route)
+    Total                                      9.728ns (2.591ns logic, 7.137ns route)
+                                                       (26.6% logic, 73.4% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_ext_clk = PERIOD TIMEGRP "ext_clk" 10.5263 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point buffer_ent/sobel_fltr_ent/bm_px_0 (SLICE_X22Y16.A6), 1 path
+Paths for end point buffer_ent/sobel_fltr_ent/tr_px_2 (SLICE_X18Y19.D6), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.408ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               buffer_ent/sobel_fltr_ent/bm_px_0 (FF)
-  Destination:          buffer_ent/sobel_fltr_ent/bm_px_0 (FF)
+  Source:               buffer_ent/sobel_fltr_ent/tr_px_2 (FF)
+  Destination:          buffer_ent/sobel_fltr_ent/tr_px_2 (FF)
   Requirement:          0.000ns
   Data Path Delay:      0.408ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
@@ -489,27 +508,27 @@ Slack (hold path):      0.408ns (requirement - (clock path skew + uncertainty - 
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: buffer_ent/sobel_fltr_ent/bm_px_0 to buffer_ent/sobel_fltr_ent/bm_px_0
+  Minimum Data Path at Fast Process Corner: buffer_ent/sobel_fltr_ent/tr_px_2 to buffer_ent/sobel_fltr_ent/tr_px_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y16.AQ      Tcko                  0.200   buffer_ent/sobel_fltr_ent/bm_px<3>
-                                                       buffer_ent/sobel_fltr_ent/bm_px_0
-    SLICE_X22Y16.A6      net (fanout=1)        0.018   buffer_ent/sobel_fltr_ent/bm_px<0>
-    SLICE_X22Y16.CLK     Tah         (-Th)    -0.190   buffer_ent/sobel_fltr_ent/bm_px<3>
-                                                       buffer_ent/sobel_fltr_ent/Mmux_bm_px_next11
-                                                       buffer_ent/sobel_fltr_ent/bm_px_0
+    SLICE_X18Y19.DQ      Tcko                  0.200   buffer_ent/sobel_fltr_ent/tr_px<2>
+                                                       buffer_ent/sobel_fltr_ent/tr_px_2
+    SLICE_X18Y19.D6      net (fanout=1)        0.018   buffer_ent/sobel_fltr_ent/tr_px<2>
+    SLICE_X18Y19.CLK     Tah         (-Th)    -0.190   buffer_ent/sobel_fltr_ent/tr_px<2>
+                                                       buffer_ent/sobel_fltr_ent/Mmux_tr_px_next31
+                                                       buffer_ent/sobel_fltr_ent/tr_px_2
     -------------------------------------------------  ---------------------------
     Total                                      0.408ns (0.390ns logic, 0.018ns route)
                                                        (95.6% logic, 4.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point buffer_ent/sobel_fltr_ent/bm_px_3 (SLICE_X22Y16.D6), 1 path
+Paths for end point buffer_ent/sobel_fltr_ent/tr_px_3 (SLICE_X18Y20.A6), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.408ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               buffer_ent/sobel_fltr_ent/bm_px_3 (FF)
-  Destination:          buffer_ent/sobel_fltr_ent/bm_px_3 (FF)
+  Source:               buffer_ent/sobel_fltr_ent/tr_px_3 (FF)
+  Destination:          buffer_ent/sobel_fltr_ent/tr_px_3 (FF)
   Requirement:          0.000ns
   Data Path Delay:      0.408ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
@@ -517,27 +536,27 @@ Slack (hold path):      0.408ns (requirement - (clock path skew + uncertainty - 
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: buffer_ent/sobel_fltr_ent/bm_px_3 to buffer_ent/sobel_fltr_ent/bm_px_3
+  Minimum Data Path at Fast Process Corner: buffer_ent/sobel_fltr_ent/tr_px_3 to buffer_ent/sobel_fltr_ent/tr_px_3
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y16.DQ      Tcko                  0.200   buffer_ent/sobel_fltr_ent/bm_px<3>
-                                                       buffer_ent/sobel_fltr_ent/bm_px_3
-    SLICE_X22Y16.D6      net (fanout=1)        0.018   buffer_ent/sobel_fltr_ent/bm_px<3>
-    SLICE_X22Y16.CLK     Tah         (-Th)    -0.190   buffer_ent/sobel_fltr_ent/bm_px<3>
-                                                       buffer_ent/sobel_fltr_ent/Mmux_bm_px_next41
-                                                       buffer_ent/sobel_fltr_ent/bm_px_3
+    SLICE_X18Y20.AQ      Tcko                  0.200   buffer_ent/sobel_fltr_ent/tr_px<6>
+                                                       buffer_ent/sobel_fltr_ent/tr_px_3
+    SLICE_X18Y20.A6      net (fanout=1)        0.018   buffer_ent/sobel_fltr_ent/tr_px<3>
+    SLICE_X18Y20.CLK     Tah         (-Th)    -0.190   buffer_ent/sobel_fltr_ent/tr_px<6>
+                                                       buffer_ent/sobel_fltr_ent/Mmux_tr_px_next41
+                                                       buffer_ent/sobel_fltr_ent/tr_px_3
     -------------------------------------------------  ---------------------------
     Total                                      0.408ns (0.390ns logic, 0.018ns route)
                                                        (95.6% logic, 4.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point buffer_ent/sobel_fltr_ent/dst_addr_reg_2 (SLICE_X22Y29.D6), 1 path
+Paths for end point buffer_ent/sobel_fltr_ent/tr_px_6 (SLICE_X18Y20.D6), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.408ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               buffer_ent/sobel_fltr_ent/dst_addr_reg_2 (FF)
-  Destination:          buffer_ent/sobel_fltr_ent/dst_addr_reg_2 (FF)
+  Source:               buffer_ent/sobel_fltr_ent/tr_px_6 (FF)
+  Destination:          buffer_ent/sobel_fltr_ent/tr_px_6 (FF)
   Requirement:          0.000ns
   Data Path Delay:      0.408ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
@@ -545,16 +564,16 @@ Slack (hold path):      0.408ns (requirement - (clock path skew + uncertainty - 
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: buffer_ent/sobel_fltr_ent/dst_addr_reg_2 to buffer_ent/sobel_fltr_ent/dst_addr_reg_2
+  Minimum Data Path at Fast Process Corner: buffer_ent/sobel_fltr_ent/tr_px_6 to buffer_ent/sobel_fltr_ent/tr_px_6
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y29.DQ      Tcko                  0.200   buffer_ent/sobel_fltr_ent/dst_addr_reg<2>
-                                                       buffer_ent/sobel_fltr_ent/dst_addr_reg_2
-    SLICE_X22Y29.D6      net (fanout=1)        0.018   buffer_ent/sobel_fltr_ent/dst_addr_reg<2>
-    SLICE_X22Y29.CLK     Tah         (-Th)    -0.190   buffer_ent/sobel_fltr_ent/dst_addr_reg<2>
-                                                       buffer_ent/sobel_fltr_ent/Mmux_dst_addr_next71
-                                                       buffer_ent/sobel_fltr_ent/dst_addr_reg_2
+    SLICE_X18Y20.DQ      Tcko                  0.200   buffer_ent/sobel_fltr_ent/tr_px<6>
+                                                       buffer_ent/sobel_fltr_ent/tr_px_6
+    SLICE_X18Y20.D6      net (fanout=1)        0.018   buffer_ent/sobel_fltr_ent/tr_px<6>
+    SLICE_X18Y20.CLK     Tah         (-Th)    -0.190   buffer_ent/sobel_fltr_ent/tr_px<6>
+                                                       buffer_ent/sobel_fltr_ent/Mmux_tr_px_next71
+                                                       buffer_ent/sobel_fltr_ent/tr_px_6
     -------------------------------------------------  ---------------------------
     Total                                      0.408ns (0.390ns logic, 0.018ns route)
                                                        (95.6% logic, 4.4% route)
@@ -568,7 +587,7 @@ Slack: 6.956ns (period - min period limit)
   Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
   Physical resource: buffer_ent/dst_ent/Mram_ram1/CLKA
   Logical resource: buffer_ent/dst_ent/Mram_ram1/CLKA
-  Location pin: RAMB16_X0Y28.CLKA
+  Location pin: RAMB16_X0Y30.CLKA
   Clock network: ext_clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 6.956ns (period - min period limit)
@@ -576,7 +595,7 @@ Slack: 6.956ns (period - min period limit)
   Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
   Physical resource: buffer_ent/dst_ent/Mram_ram1/CLKB
   Logical resource: buffer_ent/dst_ent/Mram_ram1/CLKB
-  Location pin: RAMB16_X0Y28.CLKB
+  Location pin: RAMB16_X0Y30.CLKB
   Clock network: ext_clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 6.956ns (period - min period limit)
@@ -584,7 +603,7 @@ Slack: 6.956ns (period - min period limit)
   Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
   Physical resource: buffer_ent/dst_ent/Mram_ram2/CLKA
   Logical resource: buffer_ent/dst_ent/Mram_ram2/CLKA
-  Location pin: RAMB16_X0Y26.CLKA
+  Location pin: RAMB16_X0Y24.CLKA
   Clock network: ext_clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -601,7 +620,7 @@ Clock to Setup on destination clock ext_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-ext_clk        |    9.885|         |         |         |
+ext_clk        |    9.924|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -610,23 +629,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 199447 paths, 0 nets, and 4106 connections
+Constraints cover 314144 paths, 0 nets, and 4659 connections
 
 Design statistics:
-   Minimum period:   9.885ns{1}   (Maximum frequency: 101.163MHz)
+   Minimum period:   9.924ns{1}   (Maximum frequency: 100.766MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Thu Oct 22 18:45:43 2015 
+Analysis completed Thu Oct 22 22:13:04 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 146 MB
+Peak Memory Usage: 147 MB
 
 
 

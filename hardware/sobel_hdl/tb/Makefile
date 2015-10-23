@@ -13,6 +13,7 @@ system:
 	ghdl -a ../../wb_irq/rstgen_syscon.vhd
 	ghdl -a ../top_level.vhd
 	ghdl -a imx_in.vhd
+	ghdl -a imx_in_4x4.vhd
 	ghdl -a sobel_test.vhd
 	ghdl -e sobel_test
 	ghdl -r sobel_test --vcd=sobel_test.vcd

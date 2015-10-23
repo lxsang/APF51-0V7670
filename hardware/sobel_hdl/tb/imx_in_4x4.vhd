@@ -20,7 +20,10 @@ architecture arch of imx_in is
   type ram_type is array (0 to 2**8-1) of std_logic_vector(15 downto 0) ;
   
 	signal ram:ram_type  := (
-
+      X"0201",X"0102",
+      X"0101",X"0300",
+      X"0402",X"0501",
+      X"0102",X"0002",
       others=>(others=>'0')
       );
   type state_type is(IDLE,WR1, WR2,WR3,WR4);
@@ -67,7 +70,7 @@ begin
             --state_next <= WR1;
           elsif(ram_addr < dlen) then
             adv <= '0';
-            da<= std_logic_vector(("0"&ram_addr&"0") + offset);
+            da<= std_logic_vector(("0000000"&ram_addr&"0") + offset);
             state_next <= WR1;
           elsif ram_addr = dlen then
             -- start the sobel calcul

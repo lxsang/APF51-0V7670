@@ -116,6 +116,7 @@ void execute(int client,const char* method,dictionary rq)
 	//write the memory zoneOB
 	writeimage();
 	// write dummy bytes to trgger sobel
+	// we don't need this any more
 	*(unsigned short *)(ptr_fpga+TRIGGER_SOBEL) = 0xFFFF;
 
 	LOG("\nWait for data\n");

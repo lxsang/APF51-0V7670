@@ -26,7 +26,7 @@ var sidebar_config = {
 	      	nodes: 
 	      	[ 
 	            { id: 'level-picam', text: 'Camera viewer', icon: 'fa-camera' },
-	           // { id: 'level-2-3', text: 'Level 2.3', icon: 'fa-star-empty' }
+	            { id: 'level-sobel', text: 'Sobel', icon: 'fa-camera' }
 	        ]
 	    }
 	],
@@ -46,7 +46,10 @@ var sidebar_config = {
 				break;
 			case  'level-picam':
 				w2ui.layout.content('main', w2ui.picam_layout);
-				break;
+			break;
+			case 'level-sobel':
+			w2ui.layout.content('main', w2ui.sobel_layout);
+			break;
 			default: //do nothing
 				w2ui.layout.content('main',"Empty page");
 				console.log('Event: ' + event.type + ' Target: ' + event.target);

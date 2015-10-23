@@ -31,7 +31,6 @@
 #include <unistd.h>
 int ffpga ;
 void * ptr_fpga;
-int i = 0;
 
 void* obtr_memcpy(void* dst, void* src, size_t len)
 {
@@ -53,7 +52,7 @@ void writeimage()
 								CV_LOAD_IMAGE_ANYCOLOR);
   	if (!img)
   	{
-    	printf("Cannot load image\n");
+    	printf("%s","Cannot load image\n");
     	return;
   	}
 	// convert to grayscale
@@ -72,40 +71,59 @@ call __init__ = init;
 
 void init()
 {
-	printf("Finish init\n");
+	printf("%s","Connect to the fpga\n");
+	ffpga = open("/dev/uio0", O_RDWR|O_SYNC);
+    	if(ffpga <0)
+    	{
+        	printf("%s","Cannot open /dev/uio0\n");
+        	return;
+    	}
+    	ptr_fpga = mmap(0,APF51_FPGA_MAP_SIZE,PROT_READ|PROT_WRITE, MAP_SHARED, ffpga, 0);
+    	if(ptr_fpga == MAP_FAILED)
+    	{
+		ptr_fpga = NULL;
+        	printf("%s","MMap faile\n");
+        	return;
+    	}
 }
-
+void pexit()
+{
+	printf("%s","Disconnect from FPGA\n");
+	if(ptr_fpga)
+	{
+		munmap(ptr_fpga,APF51_FPGA_MAP_SIZE);
+    		close(ffpga);
+	}
+	printf("%s","Done\n");
+}
+void origin(int client,const char* method,dictionary rq)
+{
+	jpeg(client);
+	__fb(client,IMG);
+}
 void execute(int client,const char* method,dictionary rq)
 {
+	int i;
 	unsigned short buff_out[NDATAW];
-	ffpga = open("/dev/uio0", O_RDWR|O_SYNC);
-    if(ffpga <0)
-    {
+        if(! ptr_fpga)
+	{
 		html(client);
-        __t(client,"Cannot open /dev/uio0\n");
-        return -1;
-    }
-
-    ptr_fpga = mmap(0,APF51_FPGA_MAP_SIZE,PROT_READ|PROT_WRITE, MAP_SHARED, ffpga, 0);
-    if(ptr_fpga == MAP_FAILED)
-    {
-		html(client);
-        __t(client,"MMap faile\n");
-        return -1;
-    }
+		__t(client,"Unable to comunicate with FPGA\n");
+        	return;
+	}
 	// reset interrupt
 	*(unsigned short*)(ptr_fpga+2) = 0xFFFF;
 	//write the memory zoneOB
 	writeimage();
 	// write dummy bytes to trgger sobel
 	*(unsigned short *)(ptr_fpga+TRIGGER_SOBEL) = 0xFFFF;
-	
-	printf("\nWait for data\n");
+
+	LOG("\nWait for data\n");
 	uint32_t info;
 	ssize_t nb = read(ffpga,&info,sizeof(info));
 	if(nb = sizeof(info))
 	{
-	  
+
 		obtr_memcpy(buff_out,ptr_fpga+MEM_OFFSET,NDATAW);
 
 		// convert to grayscale
@@ -117,14 +135,14 @@ void execute(int client,const char* method,dictionary rq)
 		CvMat* tmp = cvEncodeImage(".jpg", gray_image,params);
 		jpeg(client);
 		for(i=0; i < tmp->rows; i++)
-		{   
+		{
 			__b(client,tmp->data.ptr + i*(tmp->step),tmp->cols);
 		}
 	}
 	//printf("Done check \n");
 
-    munmap(ptr_fpga,APF51_FPGA_MAP_SIZE);
-    close(ffpga);
+	 //munmap(ptr_fpga,APF51_FPGA_MAP_SIZE);
+	 //close(ffpga);
 	//__fb(client,htdocs("images/ex.jpg"));
-	
+
 }

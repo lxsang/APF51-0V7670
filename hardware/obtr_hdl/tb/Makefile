@@ -17,3 +17,16 @@ clkgen:
 	ghdl -a test_clk_gen.vhd
 	ghdl -e clk_gen_tb
 	ghdl -r clk_gen_tb --vcd=clk_gen.vcd
+
+mult:
+	ghdl -a ../mult9x9.vhd
+	ghdl -a mult_test.vhd
+	ghdl -e mult_test
+	ghdl -r mult_test --vcd=mult_test.vcd
+
+hsv:
+	ghdl -a ../mult9x9.vhd
+	ghdl -a ../hsvfilter.vhd
+	ghdl -a hsvfilter_test.vhd
+	ghdl -e hsvfilter_test
+	ghdl -r hsvfilter_test --vcd=hsvfilter_test.vcd

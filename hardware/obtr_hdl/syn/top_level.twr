@@ -38,7 +38,7 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
  !                                                                      !
  ! Signal                            Driver            Load             !
  ! --------------------------------  ----------------  ---------------- !
- ! buffer_ent/state1                 SLICE_X7Y7.B      SLICE_X7Y7.B3    !
+ ! camera_ent/ack_db_state_OR_49_o   SLICE_X9Y8.B      SLICE_X9Y8.B3    !
   ---------------------------------------------------------------------- 
 
 
@@ -46,19 +46,19 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_ext_clk = PERIOD TIMEGRP "ext_clk" 10.5263 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 2343 paths analyzed, 734 endpoints analyzed, 0 failing endpoints
+ 4213 paths analyzed, 1041 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   4.805ns.
+ Minimum period is   9.720ns.
 --------------------------------------------------------------------------------
 
-Paths for end point debounce_unit/state_reg_FSM_FFd1 (SLICE_X16Y28.AX), 280 paths
+Paths for end point camera_ent/frame_ent/Mram_ram28 (RAMB16_X1Y30.ADDRB10), 10 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     5.721ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debounce_unit/q_reg_1 (FF)
-  Destination:          debounce_unit/state_reg_FSM_FFd1 (FF)
+Slack (setup path):     0.806ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               imx51_wb_16/address_11 (FF)
+  Destination:          camera_ent/frame_ent/Mram_ram28 (RAM)
   Requirement:          10.526ns
-  Data Path Delay:      4.760ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.010ns (0.294 - 0.304)
+  Data Path Delay:      9.630ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.055ns (0.750 - 0.805)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -69,48 +69,33 @@ Slack (setup path):     5.721ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_1 to debounce_unit/state_reg_FSM_FFd1
+  Maximum Data Path at Slow Process Corner: imx51_wb_16/address_11 to camera_ent/frame_ent/Mram_ram28
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y25.BQ      Tcko                  0.430   debounce_unit/q_reg<3>
-                                                       debounce_unit/q_reg_1
-    SLICE_X18Y25.B1      net (fanout=3)        0.746   debounce_unit/q_reg<1>
-    SLICE_X18Y25.COUT    Topcyb                0.448   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<1>_INV_0
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.AMUX    Tcina                 0.210   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-    SLICE_X16Y28.D1      net (fanout=2)        1.069   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<16>
-    SLICE_X16Y28.D       Tilo                  0.254   irq_manager/irq_r<0>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0
-    SLICE_X17Y28.A1      net (fanout=2)        0.672   N67
-    SLICE_X17Y28.A       Tilo                  0.259   debounce_unit/state_reg_FSM_FFd1_1
-                                                       debounce_unit/state_reg_FSM_FFd1-In1
-    SLICE_X16Y28.AX      net (fanout=1)        0.302   debounce_unit/state_reg_FSM_FFd1-In
-    SLICE_X16Y28.CLK     Tdick                 0.085   irq_manager/irq_r<0>
-                                                       debounce_unit/state_reg_FSM_FFd1
+    SLICE_X11Y3.CQ       Tcko                  0.430   imx51_wb_16/address<12>
+                                                       imx51_wb_16/address_11
+    SLICE_X10Y15.A1      net (fanout=3)        2.314   imx51_wb_16/address<11>
+    SLICE_X10Y15.AMUX    Topaa                 0.449   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_lut<11>_INV_0
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+    SLICE_X11Y15.B1      net (fanout=1)        0.729   camera_ent/GND_26_o_GND_26_o_sub_1_OUT<11>
+    SLICE_X11Y15.B       Tilo                  0.259   camera_ent/mem_addr<14>
+                                                       camera_ent/Mmux_mem_addr21
+    RAMB16_X1Y30.ADDRB10 net (fanout=32)       5.049   camera_ent/mem_addr<11>
+    RAMB16_X1Y30.CLKB    Trcck_ADDRB           0.400   camera_ent/frame_ent/Mram_ram28
+                                                       camera_ent/frame_ent/Mram_ram28
     -------------------------------------------------  ---------------------------
-    Total                                      4.760ns (1.959ns logic, 2.801ns route)
-                                                       (41.2% logic, 58.8% route)
+    Total                                      9.630ns (1.538ns logic, 8.092ns route)
+                                                       (16.0% logic, 84.0% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.730ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debounce_unit/q_reg_0 (FF)
-  Destination:          debounce_unit/state_reg_FSM_FFd1 (FF)
+Slack (setup path):     1.607ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               imx51_wb_16/address_8 (FF)
+  Destination:          camera_ent/frame_ent/Mram_ram28 (RAM)
   Requirement:          10.526ns
-  Data Path Delay:      4.751ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.010ns (0.294 - 0.304)
+  Data Path Delay:      8.833ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.051ns (0.750 - 0.801)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -121,48 +106,36 @@ Slack (setup path):     5.730ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_0 to debounce_unit/state_reg_FSM_FFd1
+  Maximum Data Path at Slow Process Corner: imx51_wb_16/address_8 to camera_ent/frame_ent/Mram_ram28
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y25.AQ      Tcko                  0.430   debounce_unit/q_reg<3>
-                                                       debounce_unit/q_reg_0
-    SLICE_X18Y25.A2      net (fanout=3)        0.713   debounce_unit/q_reg<0>
-    SLICE_X18Y25.COUT    Topcya                0.472   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-                                                       debounce_unit/q_reg<0>_rt
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.AMUX    Tcina                 0.210   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-    SLICE_X16Y28.D1      net (fanout=2)        1.069   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<16>
-    SLICE_X16Y28.D       Tilo                  0.254   irq_manager/irq_r<0>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0
-    SLICE_X17Y28.A1      net (fanout=2)        0.672   N67
-    SLICE_X17Y28.A       Tilo                  0.259   debounce_unit/state_reg_FSM_FFd1_1
-                                                       debounce_unit/state_reg_FSM_FFd1-In1
-    SLICE_X16Y28.AX      net (fanout=1)        0.302   debounce_unit/state_reg_FSM_FFd1-In
-    SLICE_X16Y28.CLK     Tdick                 0.085   irq_manager/irq_r<0>
-                                                       debounce_unit/state_reg_FSM_FFd1
+    SLICE_X10Y5.DQ       Tcko                  0.476   imx51_wb_16/address<8>
+                                                       imx51_wb_16/address_8
+    SLICE_X10Y14.B3      net (fanout=3)        1.259   imx51_wb_16/address<8>
+    SLICE_X10Y14.COUT    Topcyb                0.448   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_lut<8>_INV_0
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+    SLICE_X10Y15.CIN     net (fanout=1)        0.003   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+    SLICE_X10Y15.AMUX    Tcina                 0.210   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+    SLICE_X11Y15.B1      net (fanout=1)        0.729   camera_ent/GND_26_o_GND_26_o_sub_1_OUT<11>
+    SLICE_X11Y15.B       Tilo                  0.259   camera_ent/mem_addr<14>
+                                                       camera_ent/Mmux_mem_addr21
+    RAMB16_X1Y30.ADDRB10 net (fanout=32)       5.049   camera_ent/mem_addr<11>
+    RAMB16_X1Y30.CLKB    Trcck_ADDRB           0.400   camera_ent/frame_ent/Mram_ram28
+                                                       camera_ent/frame_ent/Mram_ram28
     -------------------------------------------------  ---------------------------
-    Total                                      4.751ns (1.983ns logic, 2.768ns route)
-                                                       (41.7% logic, 58.3% route)
+    Total                                      8.833ns (1.793ns logic, 7.040ns route)
+                                                       (20.3% logic, 79.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.849ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debounce_unit/q_reg_2 (FF)
-  Destination:          debounce_unit/state_reg_FSM_FFd1 (FF)
+Slack (setup path):     1.740ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               imx51_wb_16/address_9 (FF)
+  Destination:          camera_ent/frame_ent/Mram_ram28 (RAM)
   Requirement:          10.526ns
-  Data Path Delay:      4.632ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.010ns (0.294 - 0.304)
+  Data Path Delay:      8.696ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.055ns (0.750 - 0.805)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -173,51 +146,39 @@ Slack (setup path):     5.849ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_2 to debounce_unit/state_reg_FSM_FFd1
+  Maximum Data Path at Slow Process Corner: imx51_wb_16/address_9 to camera_ent/frame_ent/Mram_ram28
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y25.CQ      Tcko                  0.430   debounce_unit/q_reg<3>
-                                                       debounce_unit/q_reg_2
-    SLICE_X18Y25.C1      net (fanout=3)        0.741   debounce_unit/q_reg<2>
-    SLICE_X18Y25.COUT    Topcyc                0.325   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<2>_INV_0
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.AMUX    Tcina                 0.210   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-    SLICE_X16Y28.D1      net (fanout=2)        1.069   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<16>
-    SLICE_X16Y28.D       Tilo                  0.254   irq_manager/irq_r<0>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0
-    SLICE_X17Y28.A1      net (fanout=2)        0.672   N67
-    SLICE_X17Y28.A       Tilo                  0.259   debounce_unit/state_reg_FSM_FFd1_1
-                                                       debounce_unit/state_reg_FSM_FFd1-In1
-    SLICE_X16Y28.AX      net (fanout=1)        0.302   debounce_unit/state_reg_FSM_FFd1-In
-    SLICE_X16Y28.CLK     Tdick                 0.085   irq_manager/irq_r<0>
-                                                       debounce_unit/state_reg_FSM_FFd1
+    SLICE_X11Y3.AQ       Tcko                  0.430   imx51_wb_16/address<12>
+                                                       imx51_wb_16/address_9
+    SLICE_X10Y14.C3      net (fanout=3)        1.291   imx51_wb_16/address<9>
+    SLICE_X10Y14.COUT    Topcyc                0.325   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_lut<9>_INV_0
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+    SLICE_X10Y15.CIN     net (fanout=1)        0.003   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+    SLICE_X10Y15.AMUX    Tcina                 0.210   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+    SLICE_X11Y15.B1      net (fanout=1)        0.729   camera_ent/GND_26_o_GND_26_o_sub_1_OUT<11>
+    SLICE_X11Y15.B       Tilo                  0.259   camera_ent/mem_addr<14>
+                                                       camera_ent/Mmux_mem_addr21
+    RAMB16_X1Y30.ADDRB10 net (fanout=32)       5.049   camera_ent/mem_addr<11>
+    RAMB16_X1Y30.CLKB    Trcck_ADDRB           0.400   camera_ent/frame_ent/Mram_ram28
+                                                       camera_ent/frame_ent/Mram_ram28
     -------------------------------------------------  ---------------------------
-    Total                                      4.632ns (1.836ns logic, 2.796ns route)
-                                                       (39.6% logic, 60.4% route)
+    Total                                      8.696ns (1.624ns logic, 7.072ns route)
+                                                       (18.7% logic, 81.3% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point irq_manager/irq_r_0 (SLICE_X16Y28.C2), 21 paths
+Paths for end point camera_ent/frame_ent/Mram_ram27 (RAMB16_X1Y28.ADDRB10), 10 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     5.836ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debounce_unit/q_reg_1 (FF)
-  Destination:          irq_manager/irq_r_0 (FF)
+Slack (setup path):     1.033ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               imx51_wb_16/address_11 (FF)
+  Destination:          camera_ent/frame_ent/Mram_ram27 (RAM)
   Requirement:          10.526ns
-  Data Path Delay:      4.645ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.010ns (0.294 - 0.304)
+  Data Path Delay:      9.394ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.064ns (0.741 - 0.805)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -228,46 +189,33 @@ Slack (setup path):     5.836ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_1 to irq_manager/irq_r_0
+  Maximum Data Path at Slow Process Corner: imx51_wb_16/address_11 to camera_ent/frame_ent/Mram_ram27
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y25.BQ      Tcko                  0.430   debounce_unit/q_reg<3>
-                                                       debounce_unit/q_reg_1
-    SLICE_X18Y25.B1      net (fanout=3)        0.746   debounce_unit/q_reg<1>
-    SLICE_X18Y25.COUT    Topcyb                0.448   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<1>_INV_0
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.CMUX    Tcinc                 0.289   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-    SLICE_X17Y27.C5      net (fanout=2)        0.651   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<18>
-    SLICE_X17Y27.C       Tilo                  0.259   debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>2
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW1
-    SLICE_X16Y28.C2      net (fanout=1)        1.198   N69
-    SLICE_X16Y28.CLK     Tas                   0.339   irq_manager/irq_r<0>
-                                                       debounce_unit/Mmux_db_tick11
-                                                       irq_manager/irq_r_0
+    SLICE_X11Y3.CQ       Tcko                  0.430   imx51_wb_16/address<12>
+                                                       imx51_wb_16/address_11
+    SLICE_X10Y15.A1      net (fanout=3)        2.314   imx51_wb_16/address<11>
+    SLICE_X10Y15.AMUX    Topaa                 0.449   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_lut<11>_INV_0
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+    SLICE_X11Y15.B1      net (fanout=1)        0.729   camera_ent/GND_26_o_GND_26_o_sub_1_OUT<11>
+    SLICE_X11Y15.B       Tilo                  0.259   camera_ent/mem_addr<14>
+                                                       camera_ent/Mmux_mem_addr21
+    RAMB16_X1Y28.ADDRB10 net (fanout=32)       4.813   camera_ent/mem_addr<11>
+    RAMB16_X1Y28.CLKB    Trcck_ADDRB           0.400   camera_ent/frame_ent/Mram_ram27
+                                                       camera_ent/frame_ent/Mram_ram27
     -------------------------------------------------  ---------------------------
-    Total                                      4.645ns (2.038ns logic, 2.607ns route)
-                                                       (43.9% logic, 56.1% route)
+    Total                                      9.394ns (1.538ns logic, 7.856ns route)
+                                                       (16.4% logic, 83.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.845ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debounce_unit/q_reg_0 (FF)
-  Destination:          irq_manager/irq_r_0 (FF)
+Slack (setup path):     1.834ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               imx51_wb_16/address_8 (FF)
+  Destination:          camera_ent/frame_ent/Mram_ram27 (RAM)
   Requirement:          10.526ns
-  Data Path Delay:      4.636ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.010ns (0.294 - 0.304)
+  Data Path Delay:      8.597ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.060ns (0.741 - 0.801)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -278,46 +226,36 @@ Slack (setup path):     5.845ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_0 to irq_manager/irq_r_0
+  Maximum Data Path at Slow Process Corner: imx51_wb_16/address_8 to camera_ent/frame_ent/Mram_ram27
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y25.AQ      Tcko                  0.430   debounce_unit/q_reg<3>
-                                                       debounce_unit/q_reg_0
-    SLICE_X18Y25.A2      net (fanout=3)        0.713   debounce_unit/q_reg<0>
-    SLICE_X18Y25.COUT    Topcya                0.472   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-                                                       debounce_unit/q_reg<0>_rt
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.CMUX    Tcinc                 0.289   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-    SLICE_X17Y27.C5      net (fanout=2)        0.651   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<18>
-    SLICE_X17Y27.C       Tilo                  0.259   debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>2
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW1
-    SLICE_X16Y28.C2      net (fanout=1)        1.198   N69
-    SLICE_X16Y28.CLK     Tas                   0.339   irq_manager/irq_r<0>
-                                                       debounce_unit/Mmux_db_tick11
-                                                       irq_manager/irq_r_0
+    SLICE_X10Y5.DQ       Tcko                  0.476   imx51_wb_16/address<8>
+                                                       imx51_wb_16/address_8
+    SLICE_X10Y14.B3      net (fanout=3)        1.259   imx51_wb_16/address<8>
+    SLICE_X10Y14.COUT    Topcyb                0.448   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_lut<8>_INV_0
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+    SLICE_X10Y15.CIN     net (fanout=1)        0.003   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+    SLICE_X10Y15.AMUX    Tcina                 0.210   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+    SLICE_X11Y15.B1      net (fanout=1)        0.729   camera_ent/GND_26_o_GND_26_o_sub_1_OUT<11>
+    SLICE_X11Y15.B       Tilo                  0.259   camera_ent/mem_addr<14>
+                                                       camera_ent/Mmux_mem_addr21
+    RAMB16_X1Y28.ADDRB10 net (fanout=32)       4.813   camera_ent/mem_addr<11>
+    RAMB16_X1Y28.CLKB    Trcck_ADDRB           0.400   camera_ent/frame_ent/Mram_ram27
+                                                       camera_ent/frame_ent/Mram_ram27
     -------------------------------------------------  ---------------------------
-    Total                                      4.636ns (2.062ns logic, 2.574ns route)
-                                                       (44.5% logic, 55.5% route)
+    Total                                      8.597ns (1.793ns logic, 6.804ns route)
+                                                       (20.9% logic, 79.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.964ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debounce_unit/q_reg_2 (FF)
-  Destination:          irq_manager/irq_r_0 (FF)
+Slack (setup path):     1.967ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               imx51_wb_16/address_9 (FF)
+  Destination:          camera_ent/frame_ent/Mram_ram27 (RAM)
   Requirement:          10.526ns
-  Data Path Delay:      4.517ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.010ns (0.294 - 0.304)
+  Data Path Delay:      8.460ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.064ns (0.741 - 0.805)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -328,49 +266,39 @@ Slack (setup path):     5.964ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_2 to irq_manager/irq_r_0
+  Maximum Data Path at Slow Process Corner: imx51_wb_16/address_9 to camera_ent/frame_ent/Mram_ram27
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y25.CQ      Tcko                  0.430   debounce_unit/q_reg<3>
-                                                       debounce_unit/q_reg_2
-    SLICE_X18Y25.C1      net (fanout=3)        0.741   debounce_unit/q_reg<2>
-    SLICE_X18Y25.COUT    Topcyc                0.325   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<2>_INV_0
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.CMUX    Tcinc                 0.289   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-    SLICE_X17Y27.C5      net (fanout=2)        0.651   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<18>
-    SLICE_X17Y27.C       Tilo                  0.259   debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>2
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW1
-    SLICE_X16Y28.C2      net (fanout=1)        1.198   N69
-    SLICE_X16Y28.CLK     Tas                   0.339   irq_manager/irq_r<0>
-                                                       debounce_unit/Mmux_db_tick11
-                                                       irq_manager/irq_r_0
+    SLICE_X11Y3.AQ       Tcko                  0.430   imx51_wb_16/address<12>
+                                                       imx51_wb_16/address_9
+    SLICE_X10Y14.C3      net (fanout=3)        1.291   imx51_wb_16/address<9>
+    SLICE_X10Y14.COUT    Topcyc                0.325   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_lut<9>_INV_0
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+    SLICE_X10Y15.CIN     net (fanout=1)        0.003   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+    SLICE_X10Y15.AMUX    Tcina                 0.210   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+    SLICE_X11Y15.B1      net (fanout=1)        0.729   camera_ent/GND_26_o_GND_26_o_sub_1_OUT<11>
+    SLICE_X11Y15.B       Tilo                  0.259   camera_ent/mem_addr<14>
+                                                       camera_ent/Mmux_mem_addr21
+    RAMB16_X1Y28.ADDRB10 net (fanout=32)       4.813   camera_ent/mem_addr<11>
+    RAMB16_X1Y28.CLKB    Trcck_ADDRB           0.400   camera_ent/frame_ent/Mram_ram27
+                                                       camera_ent/frame_ent/Mram_ram27
     -------------------------------------------------  ---------------------------
-    Total                                      4.517ns (1.915ns logic, 2.602ns route)
-                                                       (42.4% logic, 57.6% route)
+    Total                                      8.460ns (1.624ns logic, 6.836ns route)
+                                                       (19.2% logic, 80.8% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point debounce_unit/state_reg_FSM_FFd1_1 (SLICE_X17Y28.A1), 93 paths
+Paths for end point camera_ent/frame_ent/Mram_ram32 (RAMB16_X0Y30.ADDRB12), 12 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     5.994ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debounce_unit/q_reg_1 (FF)
-  Destination:          debounce_unit/state_reg_FSM_FFd1_1 (FF)
+Slack (setup path):     1.223ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               imx51_wb_16/address_11 (FF)
+  Destination:          camera_ent/frame_ent/Mram_ram32 (RAM)
   Requirement:          10.526ns
-  Data Path Delay:      4.487ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.010ns (0.294 - 0.304)
+  Data Path Delay:      9.255ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.013ns (0.792 - 0.805)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -381,46 +309,33 @@ Slack (setup path):     5.994ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_1 to debounce_unit/state_reg_FSM_FFd1_1
+  Maximum Data Path at Slow Process Corner: imx51_wb_16/address_11 to camera_ent/frame_ent/Mram_ram32
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y25.BQ      Tcko                  0.430   debounce_unit/q_reg<3>
-                                                       debounce_unit/q_reg_1
-    SLICE_X18Y25.B1      net (fanout=3)        0.746   debounce_unit/q_reg<1>
-    SLICE_X18Y25.COUT    Topcyb                0.448   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<1>_INV_0
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.AMUX    Tcina                 0.210   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-    SLICE_X16Y28.D1      net (fanout=2)        1.069   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<16>
-    SLICE_X16Y28.D       Tilo                  0.254   irq_manager/irq_r<0>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0
-    SLICE_X17Y28.A1      net (fanout=2)        0.672   N67
-    SLICE_X17Y28.CLK     Tas                   0.373   debounce_unit/state_reg_FSM_FFd1_1
-                                                       debounce_unit/state_reg_FSM_FFd1-In1
-                                                       debounce_unit/state_reg_FSM_FFd1_1
+    SLICE_X11Y3.CQ       Tcko                  0.430   imx51_wb_16/address<12>
+                                                       imx51_wb_16/address_11
+    SLICE_X10Y15.A1      net (fanout=3)        2.314   imx51_wb_16/address<11>
+    SLICE_X10Y15.CMUX    Topac                 0.636   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_lut<11>_INV_0
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+    SLICE_X11Y11.B4      net (fanout=1)        0.958   camera_ent/GND_26_o_GND_26_o_sub_1_OUT<13>
+    SLICE_X11Y11.B       Tilo                  0.259   imx51_wb_16/address<4>
+                                                       camera_ent/Mmux_mem_addr41
+    RAMB16_X0Y30.ADDRB12 net (fanout=32)       4.258   camera_ent/mem_addr<13>
+    RAMB16_X0Y30.CLKB    Trcck_ADDRB           0.400   camera_ent/frame_ent/Mram_ram32
+                                                       camera_ent/frame_ent/Mram_ram32
     -------------------------------------------------  ---------------------------
-    Total                                      4.487ns (1.988ns logic, 2.499ns route)
-                                                       (44.3% logic, 55.7% route)
+    Total                                      9.255ns (1.725ns logic, 7.530ns route)
+                                                       (18.6% logic, 81.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     6.003ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debounce_unit/q_reg_0 (FF)
-  Destination:          debounce_unit/state_reg_FSM_FFd1_1 (FF)
+Slack (setup path):     2.132ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               imx51_wb_16/address_8 (FF)
+  Destination:          camera_ent/frame_ent/Mram_ram32 (RAM)
   Requirement:          10.526ns
-  Data Path Delay:      4.478ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.010ns (0.294 - 0.304)
+  Data Path Delay:      8.350ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.009ns (0.792 - 0.801)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -431,46 +346,36 @@ Slack (setup path):     6.003ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_0 to debounce_unit/state_reg_FSM_FFd1_1
+  Maximum Data Path at Slow Process Corner: imx51_wb_16/address_8 to camera_ent/frame_ent/Mram_ram32
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y25.AQ      Tcko                  0.430   debounce_unit/q_reg<3>
-                                                       debounce_unit/q_reg_0
-    SLICE_X18Y25.A2      net (fanout=3)        0.713   debounce_unit/q_reg<0>
-    SLICE_X18Y25.COUT    Topcya                0.472   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-                                                       debounce_unit/q_reg<0>_rt
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.AMUX    Tcina                 0.210   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-    SLICE_X16Y28.D1      net (fanout=2)        1.069   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<16>
-    SLICE_X16Y28.D       Tilo                  0.254   irq_manager/irq_r<0>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0
-    SLICE_X17Y28.A1      net (fanout=2)        0.672   N67
-    SLICE_X17Y28.CLK     Tas                   0.373   debounce_unit/state_reg_FSM_FFd1_1
-                                                       debounce_unit/state_reg_FSM_FFd1-In1
-                                                       debounce_unit/state_reg_FSM_FFd1_1
+    SLICE_X10Y5.DQ       Tcko                  0.476   imx51_wb_16/address<8>
+                                                       imx51_wb_16/address_8
+    SLICE_X10Y14.B3      net (fanout=3)        1.259   imx51_wb_16/address<8>
+    SLICE_X10Y14.COUT    Topcyb                0.448   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_lut<8>_INV_0
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+    SLICE_X10Y15.CIN     net (fanout=1)        0.003   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>
+    SLICE_X10Y15.CMUX    Tcinc                 0.289   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+    SLICE_X11Y11.B4      net (fanout=1)        0.958   camera_ent/GND_26_o_GND_26_o_sub_1_OUT<13>
+    SLICE_X11Y11.B       Tilo                  0.259   imx51_wb_16/address<4>
+                                                       camera_ent/Mmux_mem_addr41
+    RAMB16_X0Y30.ADDRB12 net (fanout=32)       4.258   camera_ent/mem_addr<13>
+    RAMB16_X0Y30.CLKB    Trcck_ADDRB           0.400   camera_ent/frame_ent/Mram_ram32
+                                                       camera_ent/frame_ent/Mram_ram32
     -------------------------------------------------  ---------------------------
-    Total                                      4.478ns (2.012ns logic, 2.466ns route)
-                                                       (44.9% logic, 55.1% route)
+    Total                                      8.350ns (1.872ns logic, 6.478ns route)
+                                                       (22.4% logic, 77.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     6.122ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debounce_unit/q_reg_2 (FF)
-  Destination:          debounce_unit/state_reg_FSM_FFd1_1 (FF)
+Slack (setup path):     2.245ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               imx51_wb_16/address_12 (FF)
+  Destination:          camera_ent/frame_ent/Mram_ram32 (RAM)
   Requirement:          10.526ns
-  Data Path Delay:      4.359ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.010ns (0.294 - 0.304)
+  Data Path Delay:      8.233ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.013ns (0.792 - 0.805)
   Source Clock:         ext_clk_BUFGP rising at 0.000ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.035ns
@@ -481,73 +386,88 @@ Slack (setup path):     6.122ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debounce_unit/q_reg_2 to debounce_unit/state_reg_FSM_FFd1_1
+  Maximum Data Path at Slow Process Corner: imx51_wb_16/address_12 to camera_ent/frame_ent/Mram_ram32
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y25.CQ      Tcko                  0.430   debounce_unit/q_reg<3>
-                                                       debounce_unit/q_reg_2
-    SLICE_X18Y25.C1      net (fanout=3)        0.741   debounce_unit/q_reg<2>
-    SLICE_X18Y25.COUT    Topcyc                0.325   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_lut<2>_INV_0
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<3>
-    SLICE_X18Y26.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<7>
-    SLICE_X18Y27.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<11>
-    SLICE_X18Y28.COUT    Tbyp                  0.091   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.CIN     net (fanout=1)        0.003   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<15>
-    SLICE_X18Y29.AMUX    Tcina                 0.210   debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-                                                       debounce_unit/Msub_GND_5_o_GND_5_o_sub_12_OUT<20:0>_cy<19>
-    SLICE_X16Y28.D1      net (fanout=2)        1.069   debounce_unit/GND_5_o_GND_5_o_sub_12_OUT<16>
-    SLICE_X16Y28.D       Tilo                  0.254   irq_manager/irq_r<0>
-                                                       debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>35_SW0
-    SLICE_X17Y28.A1      net (fanout=2)        0.672   N67
-    SLICE_X17Y28.CLK     Tas                   0.373   debounce_unit/state_reg_FSM_FFd1_1
-                                                       debounce_unit/state_reg_FSM_FFd1-In1
-                                                       debounce_unit/state_reg_FSM_FFd1_1
+    SLICE_X11Y3.DQ       Tcko                  0.430   imx51_wb_16/address<12>
+                                                       imx51_wb_16/address_12
+    SLICE_X10Y15.B3      net (fanout=3)        1.315   imx51_wb_16/address<12>
+    SLICE_X10Y15.CMUX    Topbc                 0.613   camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_lut<12>_INV_0
+                                                       camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<14>
+    SLICE_X11Y11.B4      net (fanout=1)        0.958   camera_ent/GND_26_o_GND_26_o_sub_1_OUT<13>
+    SLICE_X11Y11.B       Tilo                  0.259   imx51_wb_16/address<4>
+                                                       camera_ent/Mmux_mem_addr41
+    RAMB16_X0Y30.ADDRB12 net (fanout=32)       4.258   camera_ent/mem_addr<13>
+    RAMB16_X0Y30.CLKB    Trcck_ADDRB           0.400   camera_ent/frame_ent/Mram_ram32
+                                                       camera_ent/frame_ent/Mram_ram32
     -------------------------------------------------  ---------------------------
-    Total                                      4.359ns (1.865ns logic, 2.494ns route)
-                                                       (42.8% logic, 57.2% route)
+    Total                                      8.233ns (1.702ns logic, 6.531ns route)
+                                                       (20.7% logic, 79.3% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_ext_clk = PERIOD TIMEGRP "ext_clk" 10.5263 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point irq_manager/readdata_7 (SLICE_X17Y6.D6), 1 path
+Paths for end point irq_manager/irq_mask_5 (SLICE_X6Y7.C4), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.437ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               irq_manager/readdata_7 (FF)
-  Destination:          irq_manager/readdata_7 (FF)
+Slack (hold path):      0.430ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               imx51_wb_16/writedata_5 (FF)
+  Destination:          irq_manager/irq_mask_5 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.437ns (Levels of Logic = 1)
+  Data Path Delay:      0.432ns (Levels of Logic = 1)
+  Clock Path Skew:      0.002ns (0.031 - 0.029)
+  Source Clock:         ext_clk_BUFGP rising at 10.526ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: imx51_wb_16/writedata_5 to irq_manager/irq_mask_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y7.BQ        Tcko                  0.198   imx51_wb_16/writedata<7>
+                                                       imx51_wb_16/writedata_5
+    SLICE_X6Y7.C4        net (fanout=1)        0.113   imx51_wb_16/writedata<5>
+    SLICE_X6Y7.CLK       Tah         (-Th)    -0.121   irq_manager/irq_mask<6>
+                                                       imx51_wb_16/Mmux_wbm_writedata121
+                                                       irq_manager/irq_mask_5
+    -------------------------------------------------  ---------------------------
+    Total                                      0.432ns (0.319ns logic, 0.113ns route)
+                                                       (73.8% logic, 26.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point irq_manager/readdata_12 (SLICE_X13Y4.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.436ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               irq_manager/readdata_12 (FF)
+  Destination:          irq_manager/readdata_12 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.436ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         ext_clk_BUFGP rising at 10.526ns
   Destination Clock:    ext_clk_BUFGP rising at 10.526ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: irq_manager/readdata_7 to irq_manager/readdata_7
+  Minimum Data Path at Fast Process Corner: irq_manager/readdata_12 to irq_manager/readdata_12
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y6.DQ       Tcko                  0.198   irq_manager/readdata<7>
-                                                       irq_manager/readdata_7
-    SLICE_X17Y6.D6       net (fanout=2)        0.024   irq_manager/readdata<7>
-    SLICE_X17Y6.CLK      Tah         (-Th)    -0.215   irq_manager/readdata<7>
-                                                       irq_manager/readdata_7_dpot
-                                                       irq_manager/readdata_7
+    SLICE_X13Y4.AQ       Tcko                  0.198   irq_manager/readdata<15>
+                                                       irq_manager/readdata_12
+    SLICE_X13Y4.A6       net (fanout=2)        0.023   irq_manager/readdata<12>
+    SLICE_X13Y4.CLK      Tah         (-Th)    -0.215   irq_manager/readdata<15>
+                                                       irq_manager/readdata_12_dpot
+                                                       irq_manager/readdata_12
     -------------------------------------------------  ---------------------------
-    Total                                      0.437ns (0.413ns logic, 0.024ns route)
-                                                       (94.5% logic, 5.5% route)
+    Total                                      0.436ns (0.413ns logic, 0.023ns route)
+                                                       (94.7% logic, 5.3% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point irq_manager/readdata_15 (SLICE_X15Y8.D6), 1 path
+Paths for end point irq_manager/readdata_15 (SLICE_X13Y4.D6), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.441ns (requirement - (clock path skew + uncertainty - data path))
   Source:               irq_manager/readdata_15 (FF)
@@ -563,10 +483,10 @@ Slack (hold path):      0.441ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X15Y8.DQ       Tcko                  0.198   irq_manager/readdata<15>
+    SLICE_X13Y4.DQ       Tcko                  0.198   irq_manager/readdata<15>
                                                        irq_manager/readdata_15
-    SLICE_X15Y8.D6       net (fanout=2)        0.028   irq_manager/readdata<15>
-    SLICE_X15Y8.CLK      Tah         (-Th)    -0.215   irq_manager/readdata<15>
+    SLICE_X13Y4.D6       net (fanout=2)        0.028   irq_manager/readdata<15>
+    SLICE_X13Y4.CLK      Tah         (-Th)    -0.215   irq_manager/readdata<15>
                                                        irq_manager/readdata_15_dpot
                                                        irq_manager/readdata_15
     -------------------------------------------------  ---------------------------
@@ -575,58 +495,30 @@ Slack (hold path):      0.441ns (requirement - (clock path skew + uncertainty - 
 
 --------------------------------------------------------------------------------
 
-Paths for end point debounce_unit/q_reg_7 (SLICE_X17Y26.D6), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.444ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               debounce_unit/q_reg_7 (FF)
-  Destination:          debounce_unit/q_reg_7 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.444ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
-  Source Clock:         ext_clk_BUFGP rising at 10.526ns
-  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: debounce_unit/q_reg_7 to debounce_unit/q_reg_7
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X17Y26.DQ      Tcko                  0.198   debounce_unit/q_reg<7>
-                                                       debounce_unit/q_reg_7
-    SLICE_X17Y26.D6      net (fanout=3)        0.031   debounce_unit/q_reg<7>
-    SLICE_X17Y26.CLK     Tah         (-Th)    -0.215   debounce_unit/q_reg<7>
-                                                       debounce_unit/Mmux_q_next191
-                                                       debounce_unit/q_reg_7
-    -------------------------------------------------  ---------------------------
-    Total                                      0.444ns (0.413ns logic, 0.031ns route)
-                                                       (93.0% logic, 7.0% route)
-
---------------------------------------------------------------------------------
-
 Component Switching Limit Checks: TS_ext_clk = PERIOD TIMEGRP "ext_clk" 10.5263 ns HIGH 50%;
 --------------------------------------------------------------------------------
 Slack: 6.956ns (period - min period limit)
   Period: 10.526ns
-  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
-  Physical resource: buffer_ent/mem_ent/Mram_ram/CLKAWRCLK
-  Logical resource: buffer_ent/mem_ent/Mram_ram/CLKAWRCLK
-  Location pin: RAMB8_X1Y3.CLKAWRCLK
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: camera_ent/frame_ent/Mram_ram10/CLKB
+  Logical resource: camera_ent/frame_ent/Mram_ram10/CLKB
+  Location pin: RAMB16_X1Y12.CLKB
   Clock network: ext_clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 7.860ns (period - min period limit)
+Slack: 6.956ns (period - min period limit)
   Period: 10.526ns
-  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
-  Physical resource: ext_clk_BUFGP/BUFG/I0
-  Logical resource: ext_clk_BUFGP/BUFG/I0
-  Location pin: BUFGMUX_X2Y9.I0
-  Clock network: ext_clk_BUFGP/IBUFG
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: camera_ent/frame_ent/Mram_ram11/CLKB
+  Logical resource: camera_ent/frame_ent/Mram_ram11/CLKB
+  Location pin: RAMB16_X1Y6.CLKB
+  Clock network: ext_clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 10.046ns (period - min period limit)
+Slack: 6.956ns (period - min period limit)
   Period: 10.526ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: rw_cnt_ent/w_counter<3>/CLK
-  Logical resource: rw_cnt_ent/w_counter_0/CK
-  Location pin: SLICE_X4Y7.CLK
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: camera_ent/frame_ent/Mram_ram12/CLKB
+  Logical resource: camera_ent/frame_ent/Mram_ram12/CLKB
+  Location pin: RAMB16_X0Y6.CLKB
   Clock network: ext_clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -643,7 +535,7 @@ Clock to Setup on destination clock ext_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-ext_clk        |    4.805|         |         |         |
+ext_clk        |    9.720|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -652,23 +544,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 2343 paths, 0 nets, and 643 connections
+Constraints cover 4213 paths, 0 nets, and 918 connections
 
 Design statistics:
-   Minimum period:   4.805ns{1}   (Maximum frequency: 208.117MHz)
+   Minimum period:   9.720ns{1}   (Maximum frequency: 102.881MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Fri Oct 16 21:42:38 2015 
+Analysis completed Thu Nov  5 15:57:22 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 139 MB
+Peak Memory Usage: 140 MB
 
 
 

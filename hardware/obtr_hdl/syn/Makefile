@@ -38,15 +38,18 @@ CWD := $(shell pwd)
 
 FILES := top_level.ucf \
 ../top_level.vhd \
+../clock_gen.vhd \
 ../interface_mngr.vhd \
-../buffer_ctrl.vhd \
+../camera_unit.vhd \
 ../rw_counter.vhd \
 ../dual_port_dual_clock.vhd \
-../../wb_irq/button.vhd \
-../../wb_irq/debounce.vhd \
 ../../wb_irq/rstgen_syscon.vhd \
-../../wb_irq/irq_mngr.vhd \
+../irq_mngr.vhd \
 ../../wb_irq/imx51_wb16_wrapper.vhd \
+../ov7670_capture.vhd \
+../ov7670_controller.vhd \
+../ov7670_registers.vhd \
+../i2c_sender.vhd \
 run.tcl \
 obtr_prj.xise
 

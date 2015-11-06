@@ -1,4 +1,24 @@
--- This is the memory buffer controller
+-- The MIT License (MIT)
+--
+-- Copyright (c) Sang LE xsang.le@gmail.com
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy
+-- of this software and associated documentation files (the "Software"), to deal
+-- in the Software without restriction, including without limitation the rights
+-- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-- copies of the Software, and to permit persons to whom the Software is
+-- furnished to do so, subject to the following conditions:
+--
+-- The above copyright notice and this permission notice shall be included in
+-- all copies or substantial portions of the Software.
+--
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-- THE SOFTWARE.
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -41,9 +61,11 @@ architecture arch of camera_unit is
   	constant OFFSET: unsigned(15 downto 0) := X"0008";
   	signal mem_addr : std_logic_vector(15 downto 0);
   	signal wr_op, px_wr, ack_db, state : std_logic := '0';
-  	signal fr_din, fr_din_next: std_logic_vector(BUF_DW-1 downto 0);
-	signal cam_dout: std_logic_vector(7 downto 0) ;
+  	--signal fr_din, fr_din_next: std_logic_vector(BUF_DW-1 downto 0);
+	signal cam_dout: std_logic_vector(15 downto 0) ;
 	signal clk_45: std_logic;
+	signal fr_addr: std_logic_vector(BUF_AW-1 downto 0) ;
+	--signal fr_addr_map: std_logic_vector(BUF_AW-1 downto 0) ;
 begin
   ack <=  strobe and cycle and c_sel;
   state <= (ack_db or state) and (strobe and cycle and c_sel);
@@ -52,9 +74,9 @@ begin
   begin
     if reset = '1' then
       ack_db <= '0';
-      fr_din <= (others=>'0');
+      --fr_din <= (others=>'0');
     elsif rising_edge(clk) then
-      fr_din <= fr_din_next;
+      --fr_din <= fr_din_next;
       ack_db <= strobe and cycle and c_sel and (not ack_db) and (not state);
     end if;
   end process;
@@ -72,7 +94,7 @@ clkgen_unit:entity work.clock_gen
 -- controller unit
 cam_ctrl: entity work.ov7670_controller
 	port map(
-		clk45   		=> clk45,
+		clk45   		=> clk_45,
        	resend 			=> resend, 		-- to host
 	   	config_finished => cfinish, 	-- to led
        	sioc  			=> OV7670_SIOC, -- to camera
@@ -80,9 +102,9 @@ cam_ctrl: entity work.ov7670_controller
        	reset 			=> OV7670_RESET,-- to camera
        	pwdn  			=> OV7670_PWDN  -- to camera
 	);
-capture_unit:eitity work.ov7670_capture
+capture_unit: entity work.ov7670_capture
 	port map(
-		pclk  => pclk,
+		pclk  => OV7670_PCLK,
 	   	vsync => OV7670_VSYNC, 	-- from camera
 	   	href  => OV7670_HREF,	-- from camera
 	   	d     => OV7670_D, 		-- from camera
@@ -92,13 +114,13 @@ capture_unit:eitity work.ov7670_capture
 		frame_irq => frame_irq
 	);
 
-wr_op <= (px_wr and  fr_addr(0));
-fr_din_next <= cam_dout&fr_din(7 downto 0)  when wr_op = '1' else
-                 fr_din(15 downto 8)&cam_dout when
-                (px_wr = '1') else fr_din;
-fr_addr_map <= "0" & fr_addr(BUF_AW-1 downto 1);
+--wr_op <= (px_wr and  fr_addr(0));
+--fr_din_next <= cam_dout&fr_din(7 downto 0)  when wr_op = '1' else
+--                 fr_din(15 downto 8)&cam_dout when
+--                (px_wr = '1') else fr_din;
+--fr_addr_map <= fr_addr(BUF_AW downto 1);
  -- end process;
-  frame_ent: entity work.duaport_dual_clock
+  frame_ent: entity work.dual_port_dual_clock
     generic map(
       ADDR_WIDTH => BUF_AW,
       DATA_WIDTH => BUF_DW
@@ -106,10 +128,10 @@ fr_addr_map <= "0" & fr_addr(BUF_AW-1 downto 1);
     port map(
     clka    => OV7670_PCLK,
 	clkb 	=> clk,
-    we      => wr_op, 		-- stack data to 16 bit
-    addr_a  => fr_addr_map, 
+    we      => px_wr,--wr_op, 		
+    addr_a  => fr_addr,--fr_addr_map, 
     addr_b  => mem_addr(BUF_AW downto 1), 	-- requested by host
-    din_a   => fr_din_next, 				-- stacked data from camera
+    din_a   => cam_dout,--fr_din_next, 		-- stacked data from camera
     dout_a  => open,
     dout_b  => dout -- to host
     );

@@ -1,0 +1,527 @@
+$date
+  Thu Nov  5 17:53:06 2015
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$var reg 1 ! clk $end
+$var reg 1 " reset $end
+$var reg 1 # start $end
+$var reg 1 $ ready $end
+$var reg 1 % pixon $end
+$var reg 8 & r[7:0] $end
+$var reg 8 ' g[7:0] $end
+$var reg 8 ( b[7:0] $end
+$scope module uut $end
+$var reg 1 ) clk $end
+$var reg 1 * reset $end
+$var reg 8 + r_in[7:0] $end
+$var reg 8 , g_in[7:0] $end
+$var reg 8 - b_in[7:0] $end
+$var reg 1 . start $end
+$var reg 1 / pixon $end
+$var reg 1 0 ready $end
+$var reg 9 1 r[8:0] $end
+$var reg 9 2 g[8:0] $end
+$var reg 9 3 b[8:0] $end
+$var reg 9 4 min[8:0] $end
+$var reg 9 5 v[8:0] $end
+$var reg 18 6 ph[17:0] $end
+$var reg 18 7 subx4[17:0] $end
+$var reg 18 8 subx64[17:0] $end
+$var reg 18 9 subx[17:0] $end
+$var reg 18 : ph_th_l[17:0] $end
+$var reg 18 ; ph_th_h[17:0] $end
+$var reg 9 < s[8:0] $end
+$var reg 9 = sub[8:0] $end
+$var reg 9 > sub1[8:0] $end
+$var reg 9 ? sub2[8:0] $end
+$var reg 9 @ adder[8:0] $end
+$var reg 1 A mult1_ready $end
+$var reg 1 B mult2_ready $end
+$scope module mult1 $end
+$var reg 1 C clk $end
+$var reg 1 D reset $end
+$var reg 1 E start $end
+$var reg 9 F a_in[8:0] $end
+$var reg 9 G b_in[8:0] $end
+$var reg 18 H r[17:0] $end
+$var reg 1 I ready $end
+$comment state_reg is not handled $end
+$comment state_next is not handled $end
+$var reg 9 J a_reg[8:0] $end
+$var reg 9 K a_next[8:0] $end
+$var reg 4 L n_reg[3:0] $end
+$var reg 4 M n_next[3:0] $end
+$var reg 19 N p_reg[18:0] $end
+$var reg 19 O p_next[18:0] $end
+$var reg 10 P pu_next[9:0] $end
+$var reg 10 Q pu_reg[9:0] $end
+$var reg 9 R pl_reg[8:0] $end
+$var reg 9 S ua_in[8:0] $end
+$var reg 9 T ub_in[8:0] $end
+$var reg 1 U rsign $end
+$upscope $end
+$scope module mult2 $end
+$var reg 1 V clk $end
+$var reg 1 W reset $end
+$var reg 1 X start $end
+$var reg 9 Y a_in[8:0] $end
+$var reg 9 Z b_in[8:0] $end
+$var reg 18 [ r[17:0] $end
+$var reg 1 \ ready $end
+$comment state_reg is not handled $end
+$comment state_next is not handled $end
+$var reg 9 ] a_reg[8:0] $end
+$var reg 9 ^ a_next[8:0] $end
+$var reg 4 _ n_reg[3:0] $end
+$var reg 4 ` n_next[3:0] $end
+$var reg 19 a p_reg[18:0] $end
+$var reg 19 b p_next[18:0] $end
+$var reg 10 c pu_next[9:0] $end
+$var reg 10 d pu_reg[9:0] $end
+$var reg 9 e pl_reg[8:0] $end
+$var reg 9 f ua_in[8:0] $end
+$var reg 9 g ub_in[8:0] $end
+$var reg 1 h rsign $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+1"
+0#
+1$
+0%
+b00000000 &
+b00000000 '
+b00000000 (
+0)
+1*
+b00000000 +
+b00000000 ,
+b00000000 -
+0.
+0/
+10
+b000000000 1
+b000000000 2
+b000000000 3
+b000000000 4
+b000000000 5
+b000000000000000000 6
+b000000000000000000 7
+b000000000000000000 8
+bUUUUUUUUUUUUUUUUUU 9
+b000000000000000000 :
+b000000000000000000 ;
+b000000000 <
+b000000000 =
+b111000100 >
+b000111100 ?
+b001111000 @
+1A
+1B
+0C
+1D
+0E
+b111000100 F
+b000000000 G
+b000000000000000000 H
+1I
+b000000000 J
+b000000000 K
+b0000 L
+b0000 M
+b0000000000000000000 N
+b0000000000000000000 O
+bUUUUUUUUUU P
+b0000000000 Q
+b000000000 R
+b000111100 S
+b000000000 T
+1U
+0V
+1W
+0X
+b000111100 Y
+b000000000 Z
+b000000000000000000 [
+1\
+b000000000 ]
+b000000000 ^
+b0000 _
+b0000 `
+b0000000000000000000 a
+b0000000000000000000 b
+bUUUUUUUUUU c
+b0000000000 d
+b000000000 e
+b000111100 f
+b000000000 g
+0h
+#10000000
+1!
+1)
+1C
+1V
+#20000000
+0!
+0)
+0C
+0V
+#30000000
+1!
+0"
+1#
+b10010110 &
+b10010110 '
+b10010110 (
+1)
+0*
+b10010110 +
+b10010110 ,
+b10010110 -
+1.
+b010010110 1
+b010010110 2
+b010010110 3
+b010010110 4
+b010010110 5
+b111000100 >
+b000111100 ?
+b001111000 @
+1C
+0D
+1E
+b111000100 F
+1I
+b000111100 K
+b1001 M
+b0000000000 P
+1U
+1V
+0W
+1X
+b000111100 Y
+1\
+b010110100 ^
+b1001 `
+b0000000000 c
+b000111100 f
+#40000000
+0!
+0)
+0C
+0V
+#50000000
+1!
+0#
+0$
+1)
+0.
+00
+0A
+0B
+1C
+0E
+0I
+b000111100 J
+b000111100 K
+b1001 L
+b1000 M
+1V
+0X
+0\
+b010110100 ]
+b010110100 ^
+b1001 _
+b1000 `
+#60000000
+0!
+0)
+0C
+0V
+#70000000
+1!
+1)
+1C
+b1000 L
+b0111 M
+1V
+b1000 _
+b0111 `
+#80000000
+0!
+0)
+0C
+0V
+#90000000
+1!
+1)
+1C
+b0111 L
+b0110 M
+1V
+b0111 _
+b0110 `
+#100000000
+0!
+0)
+0C
+0V
+#110000000
+1!
+1)
+1C
+b0110 L
+b0101 M
+1V
+b0110 _
+b0101 `
+#120000000
+0!
+0)
+0C
+0V
+#130000000
+1!
+1)
+1C
+b0101 L
+b0100 M
+1V
+b0101 _
+b0100 `
+#140000000
+0!
+0)
+0C
+0V
+#150000000
+1!
+1)
+1C
+b0100 L
+b0011 M
+1V
+b0100 _
+b0011 `
+#160000000
+0!
+0)
+0C
+0V
+#170000000
+1!
+1)
+1C
+b0011 L
+b0010 M
+1V
+b0011 _
+b0010 `
+#180000000
+0!
+0)
+0C
+0V
+#190000000
+1!
+1)
+1C
+b0010 L
+b0001 M
+1V
+b0010 _
+b0001 `
+#200000000
+0!
+0)
+0C
+0V
+#210000000
+1!
+1)
+1C
+b0001 L
+b0000 M
+1V
+b0001 _
+b0000 `
+#220000000
+0!
+0)
+0C
+0V
+#230000000
+1!
+1$
+1)
+10
+1A
+1B
+1C
+1I
+b0000 L
+1V
+1\
+b0000 _
+#240000000
+0!
+0)
+0C
+0V
+#250000000
+1!
+1)
+1C
+1V
+#260000000
+0!
+0)
+0C
+0V
+#270000000
+1!
+1)
+1C
+1V
+#280000000
+0!
+0)
+0C
+0V
+#290000000
+1!
+1)
+1C
+1V
+#300000000
+0!
+0)
+0C
+0V
+#310000000
+1!
+1)
+1C
+1V
+#320000000
+0!
+0)
+0C
+0V
+#330000000
+1!
+1)
+1C
+1V
+#340000000
+0!
+0)
+0C
+0V
+#350000000
+1!
+1)
+1C
+1V
+#360000000
+0!
+0)
+0C
+0V
+#370000000
+1!
+1)
+1C
+1V
+#380000000
+0!
+0)
+0C
+0V
+#390000000
+1!
+1)
+1C
+1V
+#400000000
+0!
+0)
+0C
+0V
+#410000000
+1!
+1)
+1C
+1V
+#420000000
+0!
+0)
+0C
+0V
+#430000000
+1!
+1)
+1C
+1V
+#440000000
+0!
+0)
+0C
+0V
+#450000000
+1!
+1)
+1C
+1V
+#460000000
+0!
+0)
+0C
+0V
+#470000000
+1!
+1)
+1C
+1V
+#480000000
+0!
+0)
+0C
+0V
+#490000000
+1!
+1)
+1C
+1V
+#500000000
+0!
+0)
+0C
+0V
+#510000000
+1!
+1)
+1C
+1V
+#520000000
+0!
+0)
+0C
+0V
+#530000000
+1!
+1)
+1C
+1V
+#540000000
+0!
+0)
+0C
+0V

@@ -1,3 +1,24 @@
+-- The MIT License (MIT)
+--
+-- Copyright (c) Sang LE xsang.le@gmail.com
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy
+-- of this software and associated documentation files (the "Software"), to deal
+-- in the Software without restriction, including without limitation the rights
+-- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-- copies of the Software, and to permit persons to whom the Software is
+-- furnished to do so, subject to the following conditions:
+--
+-- The above copyright notice and this permission notice shall be included in
+-- all copies or substantial portions of the Software.
+--
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-- THE SOFTWARE.
 library IEEE;
   use IEEE.std_logic_1164.all;
   use IEEE.numeric_std.all;
@@ -15,7 +36,7 @@ port
     -- Global Signals
     ext_clk   : in std_logic;
     button    : in std_logic;
-    gls_irq   : out std_logic
+    gls_irq   : out std_logic;
 	
 	--- CAMERA PINS GOES HERE
 	OV7670_VSYNC	: in std_logic;
@@ -112,7 +133,7 @@ begin
     
 	camera_ent: entity work.camera_unit
     generic map(
-      BUF_AW  =>14;
+      BUF_AW  =>15,
       BUF_DW  =>16
       )
     port map(                       
@@ -124,7 +145,7 @@ begin
 		c_sel	=> c_sel(1), 
 		ack		=> buffer_ack,
     	ack_tick=> ack_tick,
-		dout	=> buffer_dout
+		dout	=> buffer_dout,
       	cfinish => led,
   		resend 	=>  resend,
 		frame_irq=>frame_irq,

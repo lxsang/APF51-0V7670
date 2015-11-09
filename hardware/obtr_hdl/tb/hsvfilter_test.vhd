@@ -9,8 +9,8 @@ end hsvfilter_test;
 architecture behavior of hsvfilter_test is
   -- Component declaration for the unit under test
   -- inputs
-  signal  clk,reset, start,ready, pixon: std_logic;
-  signal R,G,B: std_logic_vector(7 downto 0) ;
+  signal  clk,reset, start,ready: std_logic;
+  signal R,G,B, pixon: std_logic_vector(7 downto 0) ;
   constant clk_period: time := 20 ns;
 begin
   uut: entity work.hsvfilter port map(
@@ -45,9 +45,9 @@ begin
     reset <= '0';
 
     -- value goes here
-    R <= X"96";
-	G <= X"96";
-	B <= X"96";
+    R <= X"5E";
+	G <= X"72";
+	B <= X"4E";
     start <= '1';
     wait for 20 ns;
     start <= '0';

@@ -69,7 +69,7 @@ begin
           pu_next <= p_next(2*W downto W);
           state_next <= ADDnSHIFT;
         end if;
-        ready <= '1';
+        --ready <= '1';
 
       when ADDnSHIFT=>
         n_next <= n_reg - 1;
@@ -83,7 +83,7 @@ begin
         p_next <= "0" & pu_next & pl_reg(W-1 downto 1);
         if(n_next = "0000") then
           state_next <= IDLE;
-          --ready <= '1';
+          ready <= '1';
         end if;
     end case;
     

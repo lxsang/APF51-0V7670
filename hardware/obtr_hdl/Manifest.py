@@ -2,6 +2,8 @@ files = [
     "top_level.vhd",
     "../ov7670_interface/clock_gen.vhd",
     "interface_mngr.vhd",
+    "hsvfilter.vhd",
+    "mult9x9.vhd",
     "camera_unit.vhd",
     "../ov7670_interface/rw_counter.vhd",
     "../ov7670_interface/dual_port_dual_clock.vhd",

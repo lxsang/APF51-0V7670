@@ -146,6 +146,7 @@ begin
 		ack		=> buffer_ack,
     	ack_tick=> ack_tick,
 		dout	=> buffer_dout,
+		filter 	=> '1',
       	cfinish => led,
   		resend 	=>  resend,
 		frame_irq=>frame_irq,

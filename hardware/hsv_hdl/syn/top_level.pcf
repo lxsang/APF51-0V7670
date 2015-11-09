@@ -1,0 +1,147 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sun Nov 08 20:05:04 2015
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "gls_irq" LOCATE = SITE "P3" LEVEL 1;
+COMP "imx_adv" LOCATE = SITE "R9" LEVEL 1;
+COMP "ext_clk" LOCATE = SITE "N8" LEVEL 1;
+COMP "imx_da<0>" LOCATE = SITE "N6" LEVEL 1;
+COMP "imx_da<1>" LOCATE = SITE "L5" LEVEL 1;
+COMP "imx_da<2>" LOCATE = SITE "L6" LEVEL 1;
+COMP "imx_da<3>" LOCATE = SITE "R5" LEVEL 1;
+COMP "imx_da<4>" LOCATE = SITE "P5" LEVEL 1;
+COMP "imx_da<5>" LOCATE = SITE "N11" LEVEL 1;
+COMP "imx_da<6>" LOCATE = SITE "M11" LEVEL 1;
+COMP "imx_da<7>" LOCATE = SITE "P11" LEVEL 1;
+COMP "imx_da<8>" LOCATE = SITE "L8" LEVEL 1;
+COMP "imx_da<9>" LOCATE = SITE "K8" LEVEL 1;
+COMP "button" LOCATE = SITE "G15" LEVEL 1;
+COMP "imx_rw" LOCATE = SITE "R6" LEVEL 1;
+COMP "imx_cs_n" LOCATE = SITE "R11" LEVEL 1;
+COMP "imx_da<10>" LOCATE = SITE "M8" LEVEL 1;
+COMP "imx_da<11>" LOCATE = SITE "M10" LEVEL 1;
+COMP "imx_da<12>" LOCATE = SITE "L9" LEVEL 1;
+COMP "imx_da<13>" LOCATE = SITE "R10" LEVEL 1;
+COMP "imx_da<14>" LOCATE = SITE "N5" LEVEL 1;
+COMP "imx_da<15>" LOCATE = SITE "M5" LEVEL 1;
+TIMEGRP ext_clk = BEL "reset_gen/dly" BEL "reset_gen/rst" BEL
+        "imx51_wb_16/writedata_15" BEL "imx51_wb_16/writedata_14" BEL
+        "imx51_wb_16/writedata_13" BEL "imx51_wb_16/writedata_12" BEL
+        "imx51_wb_16/writedata_11" BEL "imx51_wb_16/writedata_10" BEL
+        "imx51_wb_16/writedata_9" BEL "imx51_wb_16/writedata_8" BEL
+        "imx51_wb_16/writedata_7" BEL "imx51_wb_16/writedata_6" BEL
+        "imx51_wb_16/writedata_5" BEL "imx51_wb_16/writedata_4" BEL
+        "imx51_wb_16/writedata_3" BEL "imx51_wb_16/writedata_2" BEL
+        "imx51_wb_16/writedata_1" BEL "imx51_wb_16/writedata_0" BEL
+        "imx51_wb_16/address_15" BEL "imx51_wb_16/address_14" BEL
+        "imx51_wb_16/address_13" BEL "imx51_wb_16/address_12" BEL
+        "imx51_wb_16/address_11" BEL "imx51_wb_16/address_10" BEL
+        "imx51_wb_16/address_9" BEL "imx51_wb_16/address_8" BEL
+        "imx51_wb_16/address_7" BEL "imx51_wb_16/address_6" BEL
+        "imx51_wb_16/address_5" BEL "imx51_wb_16/address_4" BEL
+        "imx51_wb_16/address_3" BEL "imx51_wb_16/address_2" BEL
+        "imx51_wb_16/address_1" BEL "debounce_unit/state_reg_FSM_FFd1" BEL
+        "debounce_unit/state_reg_FSM_FFd2" BEL "debounce_unit/q_reg_20" BEL
+        "debounce_unit/q_reg_19" BEL "debounce_unit/q_reg_18" BEL
+        "debounce_unit/q_reg_17" BEL "debounce_unit/q_reg_16" BEL
+        "debounce_unit/q_reg_15" BEL "debounce_unit/q_reg_14" BEL
+        "debounce_unit/q_reg_13" BEL "debounce_unit/q_reg_12" BEL
+        "debounce_unit/q_reg_11" BEL "debounce_unit/q_reg_10" BEL
+        "debounce_unit/q_reg_9" BEL "debounce_unit/q_reg_8" BEL
+        "debounce_unit/q_reg_7" BEL "debounce_unit/q_reg_6" BEL
+        "debounce_unit/q_reg_5" BEL "debounce_unit/q_reg_4" BEL
+        "debounce_unit/q_reg_3" BEL "debounce_unit/q_reg_2" BEL
+        "debounce_unit/q_reg_1" BEL "debounce_unit/q_reg_0" BEL
+        "interface/slave_sel_1" BEL "interface/slave_sel_0" BEL
+        "irq_manager/readdata_15" BEL "irq_manager/readdata_14" BEL
+        "irq_manager/readdata_13" BEL "irq_manager/readdata_12" BEL
+        "irq_manager/readdata_11" BEL "irq_manager/readdata_10" BEL
+        "irq_manager/readdata_9" BEL "irq_manager/readdata_8" BEL
+        "irq_manager/readdata_7" BEL "irq_manager/readdata_6" BEL
+        "irq_manager/readdata_5" BEL "irq_manager/readdata_4" BEL
+        "irq_manager/readdata_3" BEL "irq_manager/readdata_2" BEL
+        "irq_manager/readdata_1" BEL "irq_manager/readdata_0" BEL
+        "irq_manager/start" BEL "irq_manager/irq_ack_1" BEL
+        "irq_manager/irq_ack_0" BEL "irq_manager/irq_old_1" BEL
+        "irq_manager/irq_old_0" BEL "irq_manager/wr_ack" BEL
+        "irq_manager/irq_pend_1" BEL "irq_manager/irq_pend_0" BEL
+        "irq_manager/rd_ack" BEL "irq_manager/irq_r_1" BEL
+        "irq_manager/irq_r_0" BEL "irq_manager/irq_mask_15" BEL
+        "irq_manager/irq_mask_14" BEL "irq_manager/irq_mask_13" BEL
+        "irq_manager/irq_mask_12" BEL "irq_manager/irq_mask_11" BEL
+        "irq_manager/irq_mask_10" BEL "irq_manager/irq_mask_9" BEL
+        "irq_manager/irq_mask_8" BEL "irq_manager/irq_mask_7" BEL
+        "irq_manager/irq_mask_6" BEL "irq_manager/irq_mask_5" BEL
+        "irq_manager/irq_mask_4" BEL "irq_manager/irq_mask_3" BEL
+        "irq_manager/irq_mask_2" BEL "irq_manager/irq_mask_1" BEL
+        "irq_manager/irq_mask_0" BEL "rw_cnt_ent/dout_15" BEL
+        "rw_cnt_ent/dout_14" BEL "rw_cnt_ent/dout_13" BEL "rw_cnt_ent/dout_12"
+        BEL "rw_cnt_ent/dout_11" BEL "rw_cnt_ent/dout_10" BEL
+        "rw_cnt_ent/dout_9" BEL "rw_cnt_ent/dout_8" BEL "rw_cnt_ent/dout_7"
+        BEL "rw_cnt_ent/dout_6" BEL "rw_cnt_ent/dout_5" BEL
+        "rw_cnt_ent/dout_4" BEL "rw_cnt_ent/dout_3" BEL "rw_cnt_ent/dout_2"
+        BEL "rw_cnt_ent/dout_1" BEL "rw_cnt_ent/dout_0" BEL "rw_cnt_ent/B_7"
+        BEL "rw_cnt_ent/B_6" BEL "rw_cnt_ent/B_5" BEL "rw_cnt_ent/B_4" BEL
+        "rw_cnt_ent/B_3" BEL "rw_cnt_ent/B_2" BEL "rw_cnt_ent/B_1" BEL
+        "rw_cnt_ent/B_0" BEL "rw_cnt_ent/G_15" BEL "rw_cnt_ent/G_14" BEL
+        "rw_cnt_ent/G_13" BEL "rw_cnt_ent/G_12" BEL "rw_cnt_ent/G_11" BEL
+        "rw_cnt_ent/G_10" BEL "rw_cnt_ent/G_9" BEL "rw_cnt_ent/G_8" BEL
+        "rw_cnt_ent/G_7" BEL "rw_cnt_ent/G_6" BEL "rw_cnt_ent/G_5" BEL
+        "rw_cnt_ent/G_4" BEL "rw_cnt_ent/G_3" BEL "rw_cnt_ent/G_2" BEL
+        "rw_cnt_ent/G_1" BEL "rw_cnt_ent/G_0" BEL "rw_cnt_ent/R_15" BEL
+        "rw_cnt_ent/R_14" BEL "rw_cnt_ent/R_13" BEL "rw_cnt_ent/R_12" BEL
+        "rw_cnt_ent/R_11" BEL "rw_cnt_ent/R_10" BEL "rw_cnt_ent/R_9" BEL
+        "rw_cnt_ent/R_8" BEL "rw_cnt_ent/R_7" BEL "rw_cnt_ent/R_6" BEL
+        "rw_cnt_ent/R_5" BEL "rw_cnt_ent/R_4" BEL "rw_cnt_ent/R_3" BEL
+        "rw_cnt_ent/R_2" BEL "rw_cnt_ent/R_1" BEL "rw_cnt_ent/R_0" BEL
+        "rw_cnt_ent/filter_unit/mult1/n_reg_3" BEL
+        "rw_cnt_ent/filter_unit/mult1/n_reg_2" BEL
+        "rw_cnt_ent/filter_unit/mult1/n_reg_1" BEL
+        "rw_cnt_ent/filter_unit/mult1/n_reg_0" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_17" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_16" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_15" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_14" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_13" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_12" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_11" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_10" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_9" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_8" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_7" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_6" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_5" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_4" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_3" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_2" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_1" BEL
+        "rw_cnt_ent/filter_unit/mult1/p_reg_0" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_17" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_16" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_15" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_14" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_13" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_12" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_11" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_10" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_9" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_8" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_7" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_6" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_5" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_4" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_3" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_2" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_1" BEL
+        "rw_cnt_ent/filter_unit/mult2/p_reg_0" BEL
+        "rw_cnt_ent/filter_unit/mult1/a_reg_5" BEL
+        "rw_cnt_ent/filter_unit/mult1/a_reg_4" BEL
+        "rw_cnt_ent/filter_unit/mult1/a_reg_3" BEL
+        "rw_cnt_ent/filter_unit/mult1/a_reg_2" BEL
+        "rw_cnt_ent/filter_unit/mult2/a_reg_4" BEL
+        "rw_cnt_ent/filter_unit/mult1/state_reg" BEL
+        "rw_cnt_ent/filter_unit/tick" BEL "ext_clk_BUFGP/BUFG";
+TS_ext_clk = PERIOD TIMEGRP "ext_clk" 10.5263 ns HIGH 50%;
+SCHEMATIC END;
+

@@ -1,0 +1,1011 @@
+Release 14.7 - xst P.20131013 (lin)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+Reading design: top_level.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top_level.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top_level"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-csg225
+
+---- Source Options
+Top Module Name                    : top_level
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/wb_irq/rstgen_syscon.vhd" into library work
+Parsing entity <rstgen_syscon>.
+Parsing architecture <rstgen_syscon_1> of entity <rstgen_syscon>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/wb_irq/imx51_wb16_wrapper.vhd" into library work
+Parsing entity <imx51_wb16_wrapper>.
+Parsing architecture <RTL> of entity <imx51_wb16_wrapper>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/interface_mngr.vhd" into library work
+Parsing entity <interface_mngr>.
+Parsing architecture <arch> of entity <interface_mngr>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/irq_mngr.vhd" into library work
+Parsing entity <irq_mngr>.
+Parsing architecture <RTL> of entity <irq_mngr>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/clock_gen.vhd" into library work
+Parsing entity <clock_gen>.
+Parsing architecture <arch> of entity <clock_gen>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/i2c_sender.vhd" into library work
+Parsing entity <i2c_sender>.
+Parsing architecture <Behavioral> of entity <i2c_sender>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/ov7670_registers.vhd" into library work
+Parsing entity <ov7670_registers>.
+Parsing architecture <Behavioral> of entity <ov7670_registers>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/ov7670_controller.vhd" into library work
+Parsing entity <ov7670_controller>.
+Parsing architecture <Behavioral> of entity <ov7670_controller>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/ov7670_capture.vhd" into library work
+Parsing entity <ov7670_capture>.
+Parsing architecture <Behavioral> of entity <ov7670_capture>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/dual_port_dual_clock.vhd" into library work
+Parsing entity <dual_port_dual_clock>.
+Parsing architecture <arch> of entity <dual_port_dual_clock>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/camera_unit.vhd" into library work
+Parsing entity <camera_unit>.
+Parsing architecture <arch> of entity <camera_unit>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/rw_counter.vhd" into library work
+Parsing entity <rw_counter>.
+Parsing architecture <arch> of entity <rw_counter>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/top_level.vhd" into library work
+Parsing entity <top_level>.
+Parsing architecture <RTL> of entity <top_level>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <top_level> (architecture <RTL>) from library <work>.
+
+Elaborating entity <rstgen_syscon> (architecture <rstgen_syscon_1>) with generics from library <work>.
+
+Elaborating entity <imx51_wb16_wrapper> (architecture <RTL>) from library <work>.
+
+Elaborating entity <interface_mngr> (architecture <arch>) from library <work>.
+
+Elaborating entity <irq_mngr> (architecture <RTL>) with generics from library <work>.
+
+Elaborating entity <camera_unit> (architecture <arch>) with generics from library <work>.
+
+Elaborating entity <clock_gen> (architecture <arch>) from library <work>.
+
+Elaborating entity <ov7670_controller> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <i2c_sender> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <ov7670_registers> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <ov7670_capture> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <dual_port_dual_clock> (architecture <arch>) with generics from library <work>.
+
+Elaborating entity <rw_counter> (architecture <arch>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top_level>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/top_level.vhd".
+WARNING:Xst:647 - Input <button> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/top_level.vhd" line 98: Output port <adv> of the instance <interface> is unconnected or connected to loadless signal.
+    Summary:
+	inferred   3 Multiplexer(s).
+Unit <top_level> synthesized.
+
+Synthesizing Unit <rstgen_syscon>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/wb_irq/rstgen_syscon.vhd".
+        invert_reset = '0'
+    Found 1-bit register for signal <rst>.
+    Found 1-bit register for signal <dly>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <rstgen_syscon> synthesized.
+
+Synthesizing Unit <imx51_wb16_wrapper>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/wb_irq/imx51_wb16_wrapper.vhd".
+WARNING:Xst:647 - Input <wbm_ack> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit register for signal <address>.
+    Found 16-bit register for signal <writedata>.
+    Found 1-bit tristate buffer for signal <imx_da<15>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<14>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<13>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<12>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<11>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<10>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<9>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<8>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<7>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<6>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<5>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<4>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<3>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<2>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<1>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<0>> created at line 85
+    Summary:
+	inferred  32 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred  16 Tristate(s).
+Unit <imx51_wb16_wrapper> synthesized.
+
+Synthesizing Unit <interface_mngr>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/interface_mngr.vhd".
+WARNING:Xst:647 - Input <addr_in<2:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 3-bit register for signal <slave_sel>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <interface_mngr> synthesized.
+
+Synthesizing Unit <irq_mngr>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/irq_mngr.vhd".
+        id = 3
+        irq_count = 16
+        irq_level = '1'
+    Found 16-bit register for signal <irq_mask>.
+    Found 1-bit register for signal <rd_ack>.
+    Found 1-bit register for signal <wr_ack>.
+    Found 16-bit register for signal <irq_old>.
+    Found 16-bit register for signal <irq_pend>.
+    Found 16-bit register for signal <readdata>.
+    Found 16-bit register for signal <irq_ack>.
+    Found 16-bit register for signal <irq_r>.
+    Found 1-bit register for signal <start>.
+    Found 16-bit 4-to-1 multiplexer for signal <GND_24_o_irq_mask[15]_mux_14_OUT> created at line 110.
+    Summary:
+	inferred  99 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+Unit <irq_mngr> synthesized.
+
+Synthesizing Unit <camera_unit>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/camera_unit.vhd".
+        BUF_AW = 15
+        BUF_DW = 16
+INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/camera_unit.vhd" line 123: Output port <dout_a> of the instance <frame_ent> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <ack_db>.
+    Found 16-bit subtractor for signal <GND_26_o_GND_26_o_sub_1_OUT<15:0>> created at line 84.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <camera_unit> synthesized.
+
+Synthesizing Unit <clock_gen>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/clock_gen.vhd".
+    Found 1-bit register for signal <sig24>.
+    Found 1-bit register for signal <sig45>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <clock_gen> synthesized.
+
+Synthesizing Unit <ov7670_controller>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/ov7670_controller.vhd".
+    Summary:
+	no macro.
+Unit <ov7670_controller> synthesized.
+
+Synthesizing Unit <i2c_sender>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/i2c_sender.vhd".
+    Found 1-bit register for signal <sioc>.
+    Found 32-bit register for signal <data_sr>.
+    Found 32-bit register for signal <busy_sr>.
+    Found 8-bit register for signal <divider>.
+    Found 1-bit register for signal <taken>.
+    Found 8-bit adder for signal <divider[7]_GND_29_o_add_23_OUT> created at line 1241.
+    Found 4x2-bit Read Only RAM for signal <_n0104>
+    Found 1-bit tristate buffer for signal <siod> created at line 27
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  74 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Tristate(s).
+Unit <i2c_sender> synthesized.
+
+Synthesizing Unit <ov7670_registers>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/ov7670_registers.vhd".
+    Found 16-bit register for signal <sreg>.
+    Found 8-bit register for signal <address>.
+    Found 8-bit adder for signal <address[7]_GND_37_o_add_2_OUT> created at line 1241.
+    Found 256x16-bit Read Only RAM for signal <address[7]_PWR_16_o_wide_mux_5_OUT>
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  24 D-type flip-flop(s).
+Unit <ov7670_registers> synthesized.
+
+Synthesizing Unit <ov7670_capture>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/ov7670_capture.vhd".
+    Found 15-bit register for signal <address>.
+    Found 2-bit register for signal <line>.
+    Found 1-bit register for signal <href_hold>.
+    Found 16-bit register for signal <d_latch>.
+    Found 1-bit register for signal <we_reg>.
+    Found 7-bit register for signal <href_last>.
+    Found 8-bit register for signal <latched_d>.
+    Found 1-bit register for signal <latched_href>.
+    Found 1-bit register for signal <latched_vsync>.
+    Found 1-bit register for signal <frame_irq>.
+    Found finite state machine <FSM_0> for signal <line>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 1                                              |
+    | Clock              | pclk (rising_edge)                             |
+    | Reset              | latched_vsync (positive)                       |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Power Up State     | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 15-bit adder for signal <address[14]_GND_38_o_add_2_OUT> created at line 1241.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  51 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <ov7670_capture> synthesized.
+
+Synthesizing Unit <dual_port_dual_clock>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/dual_port_dual_clock.vhd".
+        ADDR_WIDTH = 15
+        DATA_WIDTH = 16
+    Found 15-bit register for signal <addr_b_reg>.
+    Found 15-bit register for signal <addr_a_reg>.
+    Found 32768x16-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Summary:
+	inferred   2 RAM(s).
+	inferred  30 D-type flip-flop(s).
+Unit <dual_port_dual_clock> synthesized.
+
+Synthesizing Unit <rw_counter>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/ov7670_interface/rw_counter.vhd".
+    Found 16-bit register for signal <w_counter>.
+    Found 16-bit register for signal <r_counter>.
+    Found 16-bit register for signal <dout>.
+    Found 16-bit adder for signal <w_counter[15]_GND_40_o_add_6_OUT> created at line 1241.
+    Found 16-bit adder for signal <r_counter[15]_GND_40_o_add_7_OUT> created at line 1241.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  48 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <rw_counter> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 256x16-bit single-port Read Only RAM                  : 1
+ 32768x16-bit dual-port RAM                            : 2
+ 4x2-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 6
+ 15-bit adder                                          : 1
+ 16-bit adder                                          : 2
+ 16-bit subtractor                                     : 1
+ 8-bit adder                                           : 2
+# Registers                                            : 38
+ 1-bit register                                        : 15
+ 15-bit register                                       : 3
+ 16-bit register                                       : 13
+ 3-bit register                                        : 1
+ 32-bit register                                       : 2
+ 7-bit register                                        : 1
+ 8-bit register                                        : 3
+# Multiplexers                                         : 19
+ 1-bit 2-to-1 multiplexer                              : 2
+ 16-bit 2-to-1 multiplexer                             : 11
+ 16-bit 4-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 2
+ 7-bit 2-to-1 multiplexer                              : 1
+# Tristates                                            : 17
+ 1-bit tristate buffer                                 : 17
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <irq_r_15> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_14> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_13> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_12> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_11> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_10> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_9> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_8> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_7> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_6> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_5> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_4> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_3> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_2> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_1> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_15> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_14> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_13> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_12> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_11> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_10> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_9> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_8> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_7> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_6> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_5> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_4> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_3> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_2> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_1> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_1> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_2> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_3> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_4> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_5> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_6> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_7> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_8> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_9> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_10> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_11> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_12> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_13> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_14> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_15> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_1> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_2> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_3> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_4> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_5> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_6> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_7> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_8> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_9> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_10> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_11> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_12> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_13> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_14> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_15> is unconnected in block <irq_manager>.
+
+Synthesizing (advanced) Unit <dual_port_dual_clock>.
+INFO:Xst:3227 - The RAM <Mram_ram>, combined with <Mram_ram1>, will be implemented as a BLOCK RAM, absorbing the following register(s): <addr_a_reg> <addr_b_reg>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32768-word x 16-bit                 |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clka>          | rise     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <addr_a>        |          |
+    |     diA            | connected to signal <din_a>         |          |
+    |     doA            | connected to signal <dout_a>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32768-word x 16-bit                 |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clkb>          | rise     |
+    |     addrB          | connected to signal <addr_b>        |          |
+    |     doB            | connected to signal <dout_b>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <dual_port_dual_clock> synthesized (advanced).
+
+Synthesizing (advanced) Unit <i2c_sender>.
+The following registers are absorbed into counter <divider>: 1 register on signal <divider>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0104> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 2-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <divider<7:6>>  |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <i2c_sender> synthesized (advanced).
+
+Synthesizing (advanced) Unit <ov7670_capture>.
+The following registers are absorbed into counter <address>: 1 register on signal <address>.
+Unit <ov7670_capture> synthesized (advanced).
+
+Synthesizing (advanced) Unit <ov7670_registers>.
+The following registers are absorbed into counter <address>: 1 register on signal <address>.
+INFO:Xst:3230 - The RAM description <Mram_address[7]_PWR_16_o_wide_mux_5_OUT> will not be implemented on the device block RAM because of limited available resources. If you would like this RAM to be implemented in block RAM, please select a larger device or increase the value specified by the BRAM_Utilization_Ratio constraint.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <ov7670_registers> synthesized (advanced).
+
+Synthesizing (advanced) Unit <rw_counter>.
+The following registers are absorbed into counter <w_counter>: 1 register on signal <w_counter>.
+The following registers are absorbed into counter <r_counter>: 1 register on signal <r_counter>.
+Unit <rw_counter> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 256x16-bit single-port distributed Read Only RAM      : 1
+ 32768x16-bit dual-port block RAM                      : 1
+ 4x2-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 1
+ 16-bit subtractor                                     : 1
+# Counters                                             : 5
+ 15-bit up counter                                     : 1
+ 16-bit up counter                                     : 2
+ 8-bit up counter                                      : 2
+# Registers                                            : 273
+ Flip-Flops                                            : 273
+# Multiplexers                                         : 17
+ 1-bit 2-to-1 multiplexer                              : 2
+ 16-bit 2-to-1 multiplexer                             : 9
+ 16-bit 4-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 2
+ 7-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <irq_r_1> in Unit <irq_mngr> is equivalent to the following 14 FFs/Latches, which will be removed : <irq_r_2> <irq_r_3> <irq_r_4> <irq_r_5> <irq_r_6> <irq_r_7> <irq_r_8> <irq_r_9> <irq_r_10> <irq_r_11> <irq_r_12> <irq_r_13> <irq_r_14> <irq_r_15> 
+WARNING:Xst:1710 - FF/Latch <irq_r_1> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_1> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_2> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_3> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_4> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_5> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_6> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_7> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_8> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_9> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_10> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_11> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_12> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_13> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_14> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_15> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_1> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_2> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_3> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_4> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_5> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_6> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_7> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_8> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_9> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_10> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_11> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_12> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_13> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_14> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_15> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_1> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_2> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_3> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_4> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_5> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_6> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_7> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_8> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_9> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_10> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_11> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_12> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_13> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_14> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_15> is unconnected in block <irq_mngr>.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <camera_ent/capture_unit/FSM_0> on signal <line[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+WARNING:Xst:1293 - FF/Latch <data_sr_0> has a constant value of 1 in block <i2c_sender>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2170 - Unit top_level : the following signal(s) form a combinatorial loop: camera_ent/ack_db_state_OR_49_o.
+
+Optimizing unit <top_level> ...
+
+Optimizing unit <ov7670_capture> ...
+
+Optimizing unit <ov7670_registers> ...
+
+Optimizing unit <rw_counter> ...
+
+Optimizing unit <interface_mngr> ...
+
+Optimizing unit <irq_mngr> ...
+WARNING:Xst:2677 - Node <imx51_wb_16/address_0> of sequential type is unconnected in block <top_level>.
+INFO:Xst:3203 - The FF/Latch <camera_ent/cam_ctrl/Inst_i2c_sender/busy_sr_0> in Unit <top_level> is the opposite to the following FF/Latch, which will be removed : <camera_ent/cam_ctrl/Inst_i2c_sender/data_sr_1> 
+INFO:Xst:3203 - The FF/Latch <camera_ent/cam_ctrl/Inst_i2c_sender/busy_sr_1> in Unit <top_level> is the opposite to the following FF/Latch, which will be removed : <camera_ent/cam_ctrl/Inst_i2c_sender/data_sr_2> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 8.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 275
+ Flip-Flops                                            : 275
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top_level.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 480
+#      GND                         : 1
+#      INV                         : 18
+#      LUT1                        : 28
+#      LUT2                        : 17
+#      LUT3                        : 56
+#      LUT4                        : 55
+#      LUT5                        : 43
+#      LUT6                        : 115
+#      MUXCY                       : 70
+#      VCC                         : 1
+#      XORCY                       : 76
+# FlipFlops/Latches                : 275
+#      FD                          : 88
+#      FD_1                        : 10
+#      FDC                         : 10
+#      FDCE                        : 95
+#      FDE                         : 16
+#      FDPE                        : 16
+#      FDR                         : 10
+#      FDRE                        : 30
+# RAMS                             : 32
+#      RAMB16BWER                  : 32
+# Clock Buffers                    : 3
+#      BUFG                        : 1
+#      BUFGP                       : 2
+# IO Buffers                       : 36
+#      IBUF                        : 13
+#      IOBUF                       : 16
+#      OBUF                        : 6
+#      OBUFT                       : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9csg225-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             275  out of  11440     2%  
+ Number of Slice LUTs:                  332  out of   5720     5%  
+    Number used as Logic:               332  out of   5720     5%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    376
+   Number with an unused Flip Flop:     101  out of    376    26%  
+   Number with an unused LUT:            44  out of    376    11%  
+   Number of fully used LUT-FF pairs:   231  out of    376    61%  
+   Number of unique control sets:        16
+
+IO Utilization: 
+ Number of IOs:                          39
+ Number of bonded IOBs:                  38  out of    160    23%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               32  out of     32   100%  
+    Number using Block RAM only:         32
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+ext_clk                            | BUFGP                  | 158   |
+camera_ent/clkgen_unit/sig45       | BUFG                   | 96    |
+OV7670_PCLK                        | BUFGP                  | 53    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 5.680ns (Maximum Frequency: 176.056MHz)
+   Minimum input arrival time before clock: 6.635ns
+   Maximum output required time after clock: 9.120ns
+   Maximum combinational path delay: 10.548ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ext_clk'
+  Clock period: 5.054ns (frequency: 197.881MHz)
+  Total number of paths / destination ports: 4213 / 743
+-------------------------------------------------------------------------
+Delay:               5.054ns (Levels of Logic = 14)
+  Source:            imx51_wb_16/address_3 (FF)
+  Destination:       camera_ent/frame_ent/Mram_ram32 (RAM)
+  Source Clock:      ext_clk rising
+  Destination Clock: ext_clk rising
+
+  Data Path: imx51_wb_16/address_3 to camera_ent/frame_ent/Mram_ram32
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.525   0.766  imx51_wb_16/address_3 (imx51_wb_16/address_3)
+     LUT1:I0->O            1   0.254   0.000  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<3>_rt (camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<3>_rt)
+     MUXCY:S->O            1   0.215   0.000  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<3> (camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<4> (camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<5> (camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<6> (camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<7> (camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<8> (camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<9> (camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10> (camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<11> (camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<12> (camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<13> (camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_cy<13>)
+     XORCY:CI->O           1   0.206   0.682  camera_ent/Msub_GND_26_o_GND_26_o_sub_1_OUT<15:0>_xor<14> (camera_ent/GND_26_o_GND_26_o_sub_1_OUT<14>)
+     LUT3:I2->O           32   0.254   1.519  camera_ent/Mmux_mem_addr51 (camera_ent/mem_addr<14>)
+     RAMB16BWER:ADDRB13        0.400          camera_ent/frame_ent/Mram_ram32
+    ----------------------------------------
+    Total                      5.054ns (2.087ns logic, 2.967ns route)
+                                       (41.3% logic, 58.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'camera_ent/clkgen_unit/sig45'
+  Clock period: 5.680ns (frequency: 176.056MHz)
+  Total number of paths / destination ports: 2723 / 118
+-------------------------------------------------------------------------
+Delay:               5.680ns (Levels of Logic = 4)
+  Source:            camera_ent/cam_ctrl/Inst_i2c_sender/divider_4 (FF)
+  Destination:       camera_ent/cam_ctrl/Inst_i2c_sender/data_sr_19 (FF)
+  Source Clock:      camera_ent/clkgen_unit/sig45 rising
+  Destination Clock: camera_ent/clkgen_unit/sig45 rising
+
+  Data Path: camera_ent/cam_ctrl/Inst_i2c_sender/divider_4 to camera_ent/cam_ctrl/Inst_i2c_sender/data_sr_19
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             3   0.525   0.994  camera_ent/cam_ctrl/Inst_i2c_sender/divider_4 (camera_ent/cam_ctrl/Inst_i2c_sender/divider_4)
+     LUT3:I0->O            2   0.235   0.726  camera_ent/cam_ctrl/Inst_i2c_sender/divider[7]_PWR_13_o_equal_23_o<7>_SW0 (N4)
+     LUT6:I5->O           16   0.254   1.182  camera_ent/cam_ctrl/Inst_i2c_sender/divider[7]_PWR_13_o_equal_23_o<7> (camera_ent/cam_ctrl/Inst_i2c_sender/divider[7]_PWR_13_o_equal_23_o)
+     LUT4:I3->O           16   0.254   1.182  camera_ent/cam_ctrl/Inst_i2c_sender/_n0092_inv1 (camera_ent/cam_ctrl/Inst_i2c_sender/_n0092_inv)
+     LUT5:I4->O            1   0.254   0.000  camera_ent/cam_ctrl/Inst_i2c_sender/data_sr_19_rstpot (camera_ent/cam_ctrl/Inst_i2c_sender/data_sr_19_rstpot)
+     FD:D                      0.074          camera_ent/cam_ctrl/Inst_i2c_sender/data_sr_19
+    ----------------------------------------
+    Total                      5.680ns (1.596ns logic, 4.084ns route)
+                                       (28.1% logic, 71.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'OV7670_PCLK'
+  Clock period: 4.772ns (frequency: 209.556MHz)
+  Total number of paths / destination ports: 233 / 99
+-------------------------------------------------------------------------
+Delay:               2.386ns (Levels of Logic = 0)
+  Source:            camera_ent/capture_unit/latched_vsync (FF)
+  Destination:       camera_ent/capture_unit/line_FSM_FFd1 (FF)
+  Source Clock:      OV7670_PCLK falling
+  Destination Clock: OV7670_PCLK rising
+
+  Data Path: camera_ent/capture_unit/latched_vsync to camera_ent/capture_unit/line_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD_1:C->Q            25   0.525   1.402  camera_ent/capture_unit/latched_vsync (camera_ent/capture_unit/latched_vsync)
+     FDR:R                     0.459          camera_ent/capture_unit/href_last_0
+    ----------------------------------------
+    Total                      2.386ns (0.984ns logic, 1.402ns route)
+                                       (41.2% logic, 58.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ext_clk'
+  Total number of paths / destination ports: 1327 / 647
+-------------------------------------------------------------------------
+Offset:              6.635ns (Levels of Logic = 4)
+  Source:            imx_cs_n (PAD)
+  Destination:       interface/slave_sel_2 (FF)
+  Destination Clock: ext_clk rising
+
+  Data Path: imx_cs_n to interface/slave_sel_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            96   1.328   2.633  imx_cs_n_IBUF (imx_cs_n_IBUF)
+     LUT6:I0->O            1   0.254   0.682  interface/PWR_7_o_strobe_in_AND_14_o1 (interface/PWR_7_o_strobe_in_AND_14_o1)
+     LUT4:I3->O            2   0.254   1.156  interface/PWR_7_o_strobe_in_AND_14_o3 (interface/PWR_7_o_strobe_in_AND_14_o)
+     LUT5:I0->O            1   0.254   0.000  interface/Mmux_GND_23_o_GND_23_o_mux_5_OUT31 (interface/GND_23_o_GND_23_o_mux_5_OUT<2>)
+     FDC:D                     0.074          interface/slave_sel_2
+    ----------------------------------------
+    Total                      6.635ns (2.164ns logic, 4.471ns route)
+                                       (32.6% logic, 67.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'OV7670_PCLK'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              2.083ns (Levels of Logic = 1)
+  Source:            OV7670_VSYNC (PAD)
+  Destination:       camera_ent/capture_unit/latched_vsync (FF)
+  Destination Clock: OV7670_PCLK falling
+
+  Data Path: OV7670_VSYNC to camera_ent/capture_unit/latched_vsync
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  OV7670_VSYNC_IBUF (OV7670_VSYNC_IBUF)
+     FD_1:D                    0.074          camera_ent/capture_unit/latched_vsync
+    ----------------------------------------
+    Total                      2.083ns (1.402ns logic, 0.681ns route)
+                                       (67.3% logic, 32.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ext_clk'
+  Total number of paths / destination ports: 258 / 17
+-------------------------------------------------------------------------
+Offset:              9.120ns (Levels of Logic = 4)
+  Source:            interface/slave_sel_2 (FF)
+  Destination:       imx_da<15> (PAD)
+  Source Clock:      ext_clk rising
+
+  Data Path: interface/slave_sel_2 to imx_da<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             38   0.525   1.848  interface/slave_sel_2 (interface/slave_sel_2)
+     LUT5:I2->O           32   0.235   1.748  irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_46_o11 (irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_46_o)
+     LUT6:I3->O            1   0.235   0.682  Mmux_wbm_readdata161 (Mmux_wbm_readdata16)
+     LUT6:I5->O            1   0.254   0.681  Mmux_wbm_readdata162 (wbm_readdata<9>)
+     IOBUF:I->IO               2.912          imx_da_9_IOBUF (imx_da<9>)
+    ----------------------------------------
+    Total                      9.120ns (4.161ns logic, 4.959ns route)
+                                       (45.6% logic, 54.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'camera_ent/clkgen_unit/sig45'
+  Total number of paths / destination ports: 25 / 4
+-------------------------------------------------------------------------
+Offset:              7.783ns (Levels of Logic = 3)
+  Source:            camera_ent/cam_ctrl/Inst_ov7670_registers/sreg_5 (FF)
+  Destination:       led (PAD)
+  Source Clock:      camera_ent/clkgen_unit/sig45 rising
+
+  Data Path: camera_ent/cam_ctrl/Inst_ov7670_registers/sreg_5 to led
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.525   1.181  camera_ent/cam_ctrl/Inst_ov7670_registers/sreg_5 (camera_ent/cam_ctrl/Inst_ov7670_registers/sreg_5)
+     LUT6:I0->O            3   0.254   0.874  camera_ent/cam_ctrl/Inst_ov7670_registers/finished<15>2 (camera_ent/cam_ctrl/Inst_ov7670_registers/finished<15>1)
+     LUT6:I4->O           48   0.250   1.787  camera_ent/cam_ctrl/Inst_ov7670_registers/finished<15>3 (led_OBUF)
+     OBUF:I->O                 2.912          led_OBUF (led)
+    ----------------------------------------
+    Total                      7.783ns (3.941ns logic, 3.842ns route)
+                                       (50.6% logic, 49.4% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 112 / 16
+-------------------------------------------------------------------------
+Delay:               10.548ns (Levels of Logic = 5)
+  Source:            imx_cs_n (PAD)
+  Destination:       imx_da<15> (PAD)
+
+  Data Path: imx_cs_n to imx_da<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            96   1.328   2.454  imx_cs_n_IBUF (imx_cs_n_IBUF)
+     LUT5:I1->O           32   0.254   1.748  irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_46_o11 (irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_46_o)
+     LUT6:I3->O            1   0.235   0.682  Mmux_wbm_readdata161 (Mmux_wbm_readdata16)
+     LUT6:I5->O            1   0.254   0.681  Mmux_wbm_readdata162 (wbm_readdata<9>)
+     IOBUF:I->IO               2.912          imx_da_9_IOBUF (imx_da<9>)
+    ----------------------------------------
+    Total                     10.548ns (4.983ns logic, 5.565ns route)
+                                       (47.2% logic, 52.8% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock OV7670_PCLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+OV7670_PCLK    |    4.048|    2.386|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock camera_ent/clkgen_unit/sig45
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+camera_ent/clkgen_unit/sig45|    5.680|         |         |         |
+ext_clk                     |    1.959|         |         |         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ext_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+OV7670_PCLK    |    4.247|         |         |         |
+ext_clk        |    5.054|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 16.69 secs
+ 
+--> 
+
+
+Total memory usage is 144332 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  112 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
+

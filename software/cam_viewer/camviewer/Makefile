@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-W -Wall -g -std=c99 `pkg-config --cflags opencv`
 EXT=dylib
-PLUGINS= camviewer.$(EXT)
+PLUGINS= camviewer.$(EXT) hsv.$(EXT)
  UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
     PLUGINS_BASE=/root/workspace/ant-http/plugins

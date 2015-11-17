@@ -1,0 +1,3207 @@
+httpd.c:60: Using configuration : /root/antd/config.ini
+httpd.c:88: httpd running on port 9191
+plugin_manager.c:489: Client 19
+plugin_manager.c:490: Path : 'pluginsman'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'pluginsman'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :cmd=get-records&limit=100&offset=0
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4
+Connect to the fpga
+sum: 239906267, n: 6060
+[x,y] = [123,228]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679483459
+sum: 228712774, n: 5952
+[x,y] = [120,26]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679483567
+sum: 240872172, n: 6252
+[x,y] = [120,127]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679483675
+sum: 242454909, n: 6454
+[x,y] = [117,126]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679483799
+sum: 216858391, n: 6922
+[x,y] = [97,288]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679483902
+sum: 83353195, n: 5761
+[x,y] = [45,68]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679483940
+sum: 67392802, n: 5676
+[x,y] = [37,33]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679483978
+sum: 50203225, n: 4530
+[x,y] = [34,202]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484018
+sum: 49773370, n: 3716
+[x,y] = [41,274]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484056
+sum: 70148354, n: 4815
+[x,y] = [45,168]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484093
+sum: 78794736, n: 5085
+[x,y] = [48,135]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484140
+sum: 101827242, n: 5435
+[x,y] = [58,175]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484177
+sum: 143105027, n: 6374
+[x,y] = [70,51]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484218
+sum: 143682007, n: 6549
+[x,y] = [68,179]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484259
+sum: 61570, n: 170
+[x,y] = [1,42]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484302
+sum: 842564, n: 481
+[x,y] = [5,151]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484340
+sum: 194688623, n: 7065
+[x,y] = [86,36]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484381
+sum: 169115049, n: 6242
+[x,y] = [84,213]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484418
+sum: 185090061, n: 6455
+[x,y] = [89,193]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484456
+sum: 211157176, n: 6765
+[x,y] = [97,173]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484503
+sum: 208407596, n: 6609
+[x,y] = [98,173]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484542
+sum: 198984923, n: 6437
+[x,y] = [96,192]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484582
+sum: 192456636, n: 6531
+[x,y] = [92,28]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484622
+sum: 181340249, n: 6214
+[x,y] = [91,62]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484660
+sum: 191273968, n: 6168
+[x,y] = [96,290]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484699
+sum: 199303889, n: 6678
+[x,y] = [93,84]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484735
+sum: 180308287, n: 6311
+[x,y] = [89,90]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484775
+sum: 165467837, n: 5875
+[x,y] = [88,4]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484816
+sum: 140298920, n: 5498
+[x,y] = [79,238]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484853
+sum: 107457009, n: 5254
+[x,y] = [63,292]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484895
+sum: 73175546, n: 4364
+[x,y] = [52,127]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484932
+sum: 44443482, n: 3312
+[x,y] = [41,298]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679484973
+sum: 25973612, n: 2546
+[x,y] = [31,281]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485009
+sum: 22211096, n: 1926
+[x,y] = [36,12]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485043
+sum: 22273, n: 18
+[x,y] = [3,277]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485078
+sum: 480, n: 8
+[x,y] = [0,60]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485107
+sum: 5935545, n: 220
+[x,y] = [84,99]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485138
+sum: 3223232, n: 81
+[x,y] = [124,112]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485169
+sum: 1890063, n: 59
+[x,y] = [100,34]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485200
+sum: 2711115, n: 80
+[x,y] = [105,288]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485228
+sum: 1811029, n: 47
+[x,y] = [120,132]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485257
+sum: 1808197, n: 47
+[x,y] = [120,72]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485284
+sum: 1110238, n: 28
+[x,y] = [123,291]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485311
+sum: 1212371, n: 32
+[x,y] = [118,126]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485339
+sum: 1184515, n: 26
+[x,y] = [142,118]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485369
+sum: 1302786, n: 31
+[x,y] = [131,105]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485399
+sum: 1799154, n: 41
+[x,y] = [137,41]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485428
+sum: 1688377, n: 37
+[x,y] = [142,191]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485458
+sum: 1765051, n: 42
+[x,y] = [131,105]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485489
+sum: 1817075, n: 41
+[x,y] = [138,158]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485521
+sum: 1785800, n: 42
+[x,y] = [132,279]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485550
+sum: 1479468, n: 39
+[x,y] = [118,175]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485578
+sum: 1241919, n: 35
+[x,y] = [110,283]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485607
+sum: 1046980, n: 24
+[x,y] = [136,104]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485635
+sum: 1806625, n: 40
+[x,y] = [141,45]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485669
+sum: 2062799, n: 57
+[x,y] = [113,29]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485699
+sum: 3273473, n: 92
+[x,y] = [111,61]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485729
+sum: 1877235, n: 60
+[x,y] = [97,247]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485766
+sum: 4293811, n: 202
+[x,y] = [66,136]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485795
+sum: 3452650, n: 210
+[x,y] = [51,121]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485824
+sum: 4377342, n: 493
+[x,y] = [27,238]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485852
+sum: 4671460, n: 720
+[x,y] = [20,88]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485886
+sum: 6917279, n: 1229
+[x,y] = [17,188]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485923
+sum: 9310658, n: 1213
+[x,y] = [23,315]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485958
+sum: 8049501, n: 1463
+[x,y] = [17,62]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679485993
+sum: 13640661, n: 1943
+[x,y] = [21,300]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486043
+sum: 27640693, n: 2926
+[x,y] = [29,166]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486076
+sum: 34474261, n: 3021
+[x,y] = [35,211]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486112
+sum: 41555715, n: 3253
+[x,y] = [39,294]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486147
+sum: 69830677, n: 4045
+[x,y] = [53,303]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486176
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486209
+sum: 0, n: 0
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486242
+sum: 46855606, n: 3415
+[x,y] = [42,280]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486275
+sum: 0, n: 0
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486308
+sum: 84411650, n: 3813
+[x,y] = [69,57]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486341
+sum: 98739318, n: 4280
+[x,y] = [72,29]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486376
+sum: 13368, n: 3
+[x,y] = [13,296]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486411
+sum: 87238686, n: 3907
+[x,y] = [69,248]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486444
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486481
+sum: 14847, n: 5
+[x,y] = [9,89]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486518
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486552
+sum: 83174710, n: 4152
+[x,y] = [62,192]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486587
+sum: 70, n: 1
+[x,y] = [0,70]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486622
+sum: 27148418, n: 3562
+[x,y] = [23,261]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486662
+sum: 72911493, n: 3449
+[x,y] = [66,19]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486696
+sum: 46, n: 1
+[x,y] = [0,46]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486731
+sum: 60982483, n: 3226
+[x,y] = [59,23]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486764
+sum: 70871176, n: 2782
+[x,y] = [79,194]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486797
+sum: 399, n: 1
+[x,y] = [1,79]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486833
+sum: 8887900, n: 439
+[x,y] = [63,85]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486868
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486905
+sum: 113760107, n: 3608
+[x,y] = [98,169]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486945
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679486978
+sum: 343235, n: 120
+[x,y] = [8,300]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487018
+sum: 81998246, n: 3091
+[x,y] = [82,288]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487063
+sum: 6149, n: 3
+[x,y] = [6,129]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487101
+sum: 82701941, n: 2841
+[x,y] = [90,310]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487141
+sum: 77852729, n: 2865
+[x,y] = [84,293]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487172
+sum: 1229, n: 1
+[x,y] = [3,269]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487206
+sum: 198302, n: 199
+[x,y] = [3,36]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487240
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487275
+sum: 1113, n: 2
+[x,y] = [1,236]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487309
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487342
+sum: 0, n: 0
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487379
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487412
+sum: 30380062, n: 2839
+[x,y] = [33,140]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487450
+sum: 87880099, n: 2849
+[x,y] = [96,125]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487487
+sum: 4885, n: 2
+[x,y] = [7,202]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487522
+sum: 75313752, n: 2914
+[x,y] = [80,245]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487557
+sum: 1925, n: 2
+[x,y] = [3,2]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487589
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487623
+sum: 0, n: 0
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487658
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487692
+sum: 2709, n: 2
+[x,y] = [4,74]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487724
+sum: 77927778, n: 2453
+[x,y] = [99,88]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487757
+sum: 2657, n: 1
+[x,y] = [8,97]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487796
+sum: 86637319, n: 2501
+[x,y] = [108,81]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487830
+sum: 0, n: 0
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487863
+sum: 1449, n: 3
+[x,y] = [1,163]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487899
+sum: 0, n: 0
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487929
+sum: 669067, n: 40
+[x,y] = [52,86]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487961
+sum: 90384521, n: 1821
+[x,y] = [155,34]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679487995
+sum: 85954515, n: 1715
+[x,y] = [156,199]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488029
+sum: 46440884, n: 990
+[x,y] = [146,189]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488063
+sum: 77837025, n: 1596
+[x,y] = [152,130]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488096
+sum: 61952883, n: 1413
+[x,y] = [137,4]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488129
+sum: 67383491, n: 1594
+[x,y] = [132,33]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488171
+sum: 48220168, n: 1274
+[x,y] = [118,89]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488208
+sum: 42162449, n: 1189
+[x,y] = [110,260]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488244
+sum: 40796548, n: 1258
+[x,y] = [101,109]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488277
+sum: 32409772, n: 1149
+[x,y] = [88,46]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488310
+sum: 40732174, n: 1692
+[x,y] = [75,73]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488341
+sum: 34331092, n: 1623
+[x,y] = [66,32]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488373
+sum: 38594359, n: 1477
+[x,y] = [81,210]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488404
+sum: 52475435, n: 1717
+[x,y] = [95,162]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488439
+sum: 46415457, n: 1461
+[x,y] = [99,89]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488471
+sum: 61091407, n: 1957
+[x,y] = [97,176]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488503
+sum: 56418859, n: 1796
+[x,y] = [98,53]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488536
+sum: 54890984, n: 1827
+[x,y] = [93,284]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488568
+sum: 43987083, n: 1643
+[x,y] = [83,212]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488603
+sum: 40299403, n: 1723
+[x,y] = [73,29]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488637
+sum: 33381191, n: 1658
+[x,y] = [62,293]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488670
+sum: 31252189, n: 1834
+[x,y] = [53,80]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488701
+sum: 20348505, n: 1277
+[x,y] = [49,254]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488737
+sum: 51409005, n: 2546
+[x,y] = [63,32]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488769
+sum: 127130, n: 14
+[x,y] = [28,120]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488802
+sum: 72989950, n: 2555
+[x,y] = [89,87]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488834
+sum: 18066189, n: 1753
+[x,y] = [32,65]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488874
+sum: 43302, n: 84
+[x,y] = [1,195]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488904
+sum: 8197, n: 42
+[x,y] = [0,195]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488939
+sum: 14514469, n: 1925
+[x,y] = [23,179]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679488972
+sum: 20333244, n: 1561
+[x,y] = [40,225]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489003
+sum: 1533530, n: 122
+[x,y] = [39,89]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489038
+sum: 22957116, n: 1863
+[x,y] = [38,162]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489072
+sum: 40224281, n: 2203
+[x,y] = [57,18]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489111
+sum: 36759347, n: 1680
+[x,y] = [68,120]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489147
+sum: 58781477, n: 2506
+[x,y] = [73,96]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489182
+sum: 0, n: 0
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489211
+sum: 49404247, n: 2104
+[x,y] = [73,121]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489245
+sum: 14781629, n: 2042
+[x,y] = [22,198]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489278
+sum: 52271084, n: 2056
+[x,y] = [79,143]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489313
+sum: 46166937, n: 1805
+[x,y] = [79,297]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489346
+sum: 456, n: 2
+[x,y] = [0,228]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489377
+sum: 62536792, n: 2074
+[x,y] = [94,72]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489412
+sum: 40292362, n: 1889
+[x,y] = [66,209]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489445
+sum: 123474, n: 19
+[x,y] = [20,98]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489478
+sum: 32200224, n: 1901
+[x,y] = [52,298]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489513
+sum: 37271621, n: 2287
+[x,y] = [50,297]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489550
+sum: 52296625, n: 2046
+[x,y] = [79,280]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489581
+sum: 35780364, n: 1877
+[x,y] = [59,182]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489618
+sum: 54185921, n: 2202
+[x,y] = [76,287]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489651
+sum: 69718948, n: 1650
+[x,y] = [132,13]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489686
+sum: 36344858, n: 2190
+[x,y] = [51,275]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489720
+sum: 38318434, n: 1673
+[x,y] = [71,184]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489753
+sum: 3313, n: 1
+[x,y] = [10,113]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489786
+sum: 76267030, n: 1751
+[x,y] = [136,36]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489821
+sum: 55380906, n: 1899
+[x,y] = [91,43]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489855
+sum: 97464857, n: 2158
+[x,y] = [141,44]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489888
+sum: 28116688, n: 1770
+[x,y] = [49,205]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489921
+sum: 47212652, n: 1547
+[x,y] = [95,118]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489953
+sum: 29227697, n: 1691
+[x,y] = [54,4]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679489986
+sum: 27132, n: 3
+[x,y] = [28,84]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490017
+sum: 37022233, n: 2149
+[x,y] = [53,267]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490052
+sum: 69442610, n: 1595
+[x,y] = [136,17]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490085
+sum: 15012, n: 6
+[x,y] = [7,262]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490117
+sum: 29578679, n: 1690
+[x,y] = [54,222]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490149
+sum: 210840, n: 19
+[x,y] = [34,216]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490181
+sum: 90941959, n: 2039
+[x,y] = [139,121]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490213
+sum: 42314419, n: 1688
+[x,y] = [78,107]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490244
+sum: 4500, n: 2
+[x,y] = [7,10]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490277
+sum: 13700, n: 3
+[x,y] = [14,86]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490310
+sum: 74293332, n: 1959
+[x,y] = [118,164]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490348
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490383
+sum: 76774927, n: 1713
+[x,y] = [140,18]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490415
+sum: 217441, n: 19
+[x,y] = [35,244]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490448
+sum: 0, n: 0
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490479
+sum: 30487968, n: 1741
+[x,y] = [54,231]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490510
+sum: 67444020, n: 1673
+[x,y] = [125,313]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490544
+sum: 88032828, n: 1963
+[x,y] = [140,46]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490576
+sum: 33325943, n: 1898
+[x,y] = [54,278]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490617
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490650
+sum: 91920648, n: 2032
+[x,y] = [141,116]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490682
+sum: 41013705, n: 2083
+[x,y] = [61,169]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490713
+sum: 2573, n: 2
+[x,y] = [4,6]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490745
+sum: 93251707, n: 2041
+[x,y] = [142,249]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490780
+sum: 70946545, n: 1671
+[x,y] = [132,217]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490812
+sum: 80804279, n: 1786
+[x,y] = [141,123]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490848
+sum: 28592874, n: 1582
+[x,y] = [56,153]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490884
+sum: 67737122, n: 1513
+[x,y] = [139,290]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490916
+sum: 84508938, n: 1885
+[x,y] = [140,32]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490950
+sum: 74178943, n: 1704
+[x,y] = [136,12]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679490983
+sum: 72845153, n: 1632
+[x,y] = [139,155]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491014
+sum: 103823956, n: 2280
+[x,y] = [142,96]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491047
+sum: 70373194, n: 1799
+[x,y] = [122,77]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491080
+sum: 67232712, n: 1491
+[x,y] = [140,292]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491114
+sum: 82290447, n: 1949
+[x,y] = [131,301]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491153
+sum: 48174048, n: 1710
+[x,y] = [88,11]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491183
+sum: 90996466, n: 2003
+[x,y] = [141,310]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491215
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491246
+sum: 14325, n: 6
+[x,y] = [7,147]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491280
+sum: 65603581, n: 1559
+[x,y] = [131,160]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491320
+sum: 37229785, n: 1835
+[x,y] = [63,128]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491351
+sum: 98536841, n: 2117
+[x,y] = [145,145]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491383
+sum: 467985, n: 26
+[x,y] = [56,79]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491418
+sum: 86163522, n: 1890
+[x,y] = [142,149]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491450
+sum: 84035856, n: 1883
+[x,y] = [139,148]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491481
+sum: 175876, n: 16
+[x,y] = [34,112]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491516
+sum: 78797624, n: 1757
+[x,y] = [140,47]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491549
+sum: 88402359, n: 1999
+[x,y] = [138,63]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491580
+sum: 182230, n: 13
+[x,y] = [43,257]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491615
+sum: 70815358, n: 1550
+[x,y] = [142,247]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491650
+sum: 28293098, n: 1654
+[x,y] = [53,145]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491681
+sum: 9, n: 2
+[x,y] = [0,4]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491714
+sum: 84101942, n: 1839
+[x,y] = [142,292]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491750
+sum: 66606363, n: 1548
+[x,y] = [134,147]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491781
+sum: 161458, n: 16
+[x,y] = [31,171]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491815
+sum: 82264729, n: 1825
+[x,y] = [140,276]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491847
+sum: 575693, n: 31
+[x,y] = [58,10]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491882
+sum: 87535115, n: 1901
+[x,y] = [143,286]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491918
+sum: 43539262, n: 1857
+[x,y] = [73,86]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491950
+sum: 174090, n: 17
+[x,y] = [32,0]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679491985
+sum: 79135400, n: 1747
+[x,y] = [141,177]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492018
+sum: 49795366, n: 1974
+[x,y] = [78,265]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492052
+sum: 140041, n: 16
+[x,y] = [27,112]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492092
+sum: 96562952, n: 2082
+[x,y] = [144,299]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492124
+sum: 331568, n: 21
+[x,y] = [49,108]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492155
+sum: 5604, n: 2
+[x,y] = [8,242]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492193
+sum: 93060826, n: 2030
+[x,y] = [143,82]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492225
+sum: 88393347, n: 2126
+[x,y] = [129,297]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492257
+sum: 79783056, n: 1764
+[x,y] = [141,108]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492295
+sum: 0, n: 0
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492327
+sum: 54725753, n: 1479
+[x,y] = [115,201]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492358
+sum: 74597090, n: 1639
+[x,y] = [142,73]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492392
+sum: 78080003, n: 1830
+[x,y] = [133,106]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492423
+sum: 56506, n: 8
+[x,y] = [22,23]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492458
+sum: 45686, n: 5
+[x,y] = [28,177]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492497
+sum: 89767295, n: 1989
+[x,y] = [141,11]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492531
+sum: 104525481, n: 2289
+[x,y] = [142,224]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492564
+sum: 100999148, n: 2211
+[x,y] = [142,240]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492600
+sum: 92414463, n: 2025
+[x,y] = [142,196]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492633
+sum: 89102589, n: 2004
+[x,y] = [138,302]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492665
+sum: 91845528, n: 1978
+[x,y] = [145,33]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492700
+sum: 91431564, n: 2161
+[x,y] = [132,69]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492731
+sum: 106180984, n: 2327
+[x,y] = [142,189]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492763
+sum: 89526303, n: 1966
+[x,y] = [142,97]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492798
+sum: 103754345, n: 2250
+[x,y] = [144,33]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492833
+sum: 82435725, n: 1811
+[x,y] = [142,79]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492867
+sum: 79510249, n: 1895
+[x,y] = [131,37]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492900
+sum: 83915096, n: 1869
+[x,y] = [140,98]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492932
+sum: 93870497, n: 2060
+[x,y] = [142,128]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679492968
+sum: 92082594, n: 2027
+[x,y] = [141,308]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493004
+sum: 86734014, n: 1912
+[x,y] = [141,242]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493040
+sum: 88919242, n: 1920
+[x,y] = [144,232]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493072
+sum: 106136149, n: 2353
+[x,y] = [140,306]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493105
+sum: 98826425, n: 2108
+[x,y] = [146,161]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493137
+sum: 93215155, n: 1928
+[x,y] = [151,28]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493170
+sum: 82136651, n: 1747
+[x,y] = [146,295]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493203
+sum: 91753123, n: 1943
+[x,y] = [147,182]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493237
+sum: 112276486, n: 2347
+[x,y] = [149,158]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493275
+sum: 93916090, n: 2046
+[x,y] = [143,142]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493307
+sum: 98037857, n: 2103
+[x,y] = [145,218]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493339
+sum: 93096573, n: 1965
+[x,y] = [148,17]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493374
+sum: 86235088, n: 1799
+[x,y] = [149,255]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493407
+sum: 116455512, n: 2409
+[x,y] = [151,21]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493442
+sum: 103283983, n: 2131
+[x,y] = [151,147]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493473
+sum: 111447622, n: 2277
+[x,y] = [152,304]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493506
+sum: 102253564, n: 2171
+[x,y] = [147,59]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493540
+sum: 105159211, n: 2201
+[x,y] = [149,97]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493576
+sum: 103605742, n: 2136
+[x,y] = [151,184]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493608
+sum: 90571893, n: 1924
+[x,y] = [147,34]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493641
+sum: 86253847, n: 1829
+[x,y] = [147,119]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493673
+sum: 103962571, n: 2153
+[x,y] = [150,287]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493705
+sum: 99271259, n: 2082
+[x,y] = [149,0]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493739
+sum: 99251754, n: 2061
+[x,y] = [150,157]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493772
+sum: 112347433, n: 2317
+[x,y] = [151,168]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493806
+sum: 84144198, n: 1710
+[x,y] = [153,247]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493839
+sum: 101634415, n: 2072
+[x,y] = [153,91]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493873
+sum: 108813154, n: 2215
+[x,y] = [153,165]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493906
+sum: 107323753, n: 2213
+[x,y] = [151,176]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493942
+sum: 96085336, n: 1976
+[x,y] = [151,306]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679493974
+sum: 84218295, n: 1718
+[x,y] = [153,61]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494006
+sum: 111311281, n: 2236
+[x,y] = [155,181]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494039
+sum: 89764036, n: 1885
+[x,y] = [148,260]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494071
+sum: 111769847, n: 2268
+[x,y] = [154,1]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494104
+sum: 102548768, n: 2114
+[x,y] = [151,189]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494137
+sum: 90846214, n: 1884
+[x,y] = [150,219]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494172
+sum: 97532459, n: 2003
+[x,y] = [152,53]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494206
+sum: 86126745, n: 1778
+[x,y] = [151,120]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494237
+sum: 95532768, n: 1980
+[x,y] = [150,248]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494270
+sum: 101467995, n: 2072
+[x,y] = [153,11]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494310
+sum: 105216441, n: 2128
+[x,y] = [154,163]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494342
+sum: 94310919, n: 1970
+[x,y] = [149,193]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494378
+sum: 69140003, n: 1474
+[x,y] = [146,186]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494411
+sum: 88492152, n: 1860
+[x,y] = [148,216]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494445
+sum: 95760112, n: 2008
+[x,y] = [149,9]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494479
+sum: 104625294, n: 2301
+[x,y] = [142,29]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494512
+sum: 101847746, n: 2110
+[x,y] = [150,269]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494545
+sum: 89554038, n: 1863
+[x,y] = [150,69]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494576
+sum: 97579597, n: 2076
+[x,y] = [146,283]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494612
+sum: 106578370, n: 2183
+[x,y] = [152,181]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494647
+sum: 97560378, n: 1993
+[x,y] = [152,311]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494680
+sum: 89621062, n: 1860
+[x,y] = [150,183]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494714
+sum: 103672145, n: 2143
+[x,y] = [151,57]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494750
+sum: 97158681, n: 2021
+[x,y] = [150,74]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494783
+sum: 98621035, n: 2060
+[x,y] = [149,194]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494818
+sum: 88793571, n: 1893
+[x,y] = [146,186]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494852
+sum: 102231402, n: 2108
+[x,y] = [151,176]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494886
+sum: 97361690, n: 2057
+[x,y] = [147,291]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494919
+sum: 97305031, n: 2393
+[x,y] = [127,22]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494954
+sum: 84099085, n: 1774
+[x,y] = [148,46]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679494988
+sum: 102669290, n: 2140
+[x,y] = [149,296]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495021
+sum: 95717512, n: 2130
+[x,y] = [140,137]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495056
+sum: 86878193, n: 1816
+[x,y] = [149,160]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495089
+sum: 90530336, n: 1916
+[x,y] = [147,209]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495124
+sum: 73101741, n: 1532
+[x,y] = [149,36]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495160
+sum: 89725172, n: 1892
+[x,y] = [148,63]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495196
+sum: 92256646, n: 1973
+[x,y] = [146,39]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495228
+sum: 93136241, n: 1931
+[x,y] = [150,232]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495262
+sum: 90568914, n: 1930
+[x,y] = [146,206]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495294
+sum: 92578395, n: 2089
+[x,y] = [138,157]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495326
+sum: 108723498, n: 2263
+[x,y] = [150,43]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495361
+sum: 81757405, n: 1726
+[x,y] = [148,8]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495397
+sum: 75688958, n: 1617
+[x,y] = [146,88]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495432
+sum: 1913, n: 1
+[x,y] = [5,313]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495467
+sum: 98736793, n: 2074
+[x,y] = [148,246]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495499
+sum: 78160998, n: 1756
+[x,y] = [139,30]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495533
+sum: 107312138, n: 2246
+[x,y] = [149,99]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495569
+sum: 76713803, n: 1857
+[x,y] = [129,30]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495610
+sum: 97361695, n: 2128
+[x,y] = [142,312]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495642
+sum: 99524323, n: 2046
+[x,y] = [152,3]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495678
+sum: 86216122, n: 1974
+[x,y] = [136,155]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495711
+sum: 81829769, n: 1757
+[x,y] = [145,173]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495745
+sum: 87649228, n: 1837
+[x,y] = [149,33]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495779
+sum: 91095486, n: 1888
+[x,y] = [150,249]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495811
+sum: 88062107, n: 1804
+[x,y] = [152,174]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495843
+sum: 77843280, n: 1616
+[x,y] = [150,170]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495877
+sum: 94720823, n: 1953
+[x,y] = [151,180]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495910
+sum: 96475481, n: 1934
+[x,y] = [155,283]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495943
+sum: 68479789, n: 2050
+[x,y] = [104,124]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679495982
+sum: 85801928, n: 1781
+[x,y] = [150,176]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496015
+sum: 6068, n: 2
+[x,y] = [9,154]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496048
+sum: 94862314, n: 1737
+[x,y] = [170,212]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496081
+sum: 71597488, n: 1745
+[x,y] = [128,70]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496115
+sum: 199240, n: 21
+[x,y] = [29,207]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496151
+sum: 62203111, n: 1745
+[x,y] = [111,126]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496183
+sum: 81422898, n: 1387
+[x,y] = [183,144]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496221
+sum: 105764957, n: 1676
+[x,y] = [197,65]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496258
+sum: 82948478, n: 1348
+[x,y] = [192,94]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496295
+sum: 90165261, n: 1431
+[x,y] = [196,288]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496327
+sum: 95363367, n: 1564
+[x,y] = [190,174]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496360
+sum: 76363951, n: 1283
+[x,y] = [185,319]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496393
+sum: 98121237, n: 1598
+[x,y] = [191,282]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496428
+sum: 100606321, n: 1753
+[x,y] = [179,110]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496460
+sum: 89296752, n: 1657
+[x,y] = [168,130]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496493
+sum: 97826765, n: 1809
+[x,y] = [168,317]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496527
+sum: 109709252, n: 2057
+[x,y] = [166,214]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496560
+sum: 109907558, n: 2053
+[x,y] = [167,95]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496594
+sum: 103297756, n: 2141
+[x,y] = [150,247]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496630
+sum: 11039306, n: 1063
+[x,y] = [32,145]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496670
+sum: 113371022, n: 3552
+[x,y] = [99,237]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496710
+sum: 115355626, n: 4212
+[x,y] = [85,187]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496752
+sum: 139530337, n: 5206
+[x,y] = [83,241]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496798
+sum: 158173600, n: 6570
+[x,y] = [75,75]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496841
+sum: 173791915, n: 6919
+[x,y] = [78,158]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496886
+sum: 97617873, n: 4277
+[x,y] = [71,103]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496928
+sum: 117022189, n: 4691
+[x,y] = [77,306]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679496966
+sum: 225412596, n: 7250
+[x,y] = [97,51]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497011
+sum: 223579501, n: 7222
+[x,y] = [96,238]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497056
+sum: 195571427, n: 6777
+[x,y] = [90,58]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497097
+sum: 171313793, n: 7788
+[x,y] = [68,237]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497139
+sum: 233201426, n: 7318
+[x,y] = [99,186]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497181
+sum: 247798733, n: 7200
+[x,y] = [107,176]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497224
+sum: 250456270, n: 6918
+[x,y] = [113,43]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497269
+sum: 261551631, n: 7378
+[x,y] = [110,250]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497314
+sum: 275889909, n: 7431
+[x,y] = [116,6]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497356
+sum: 261226863, n: 6829
+[x,y] = [119,172]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497410
+sum: 303048693, n: 7729
+[x,y] = [122,169]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497456
+sum: 274295613, n: 7270
+[x,y] = [117,289]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497503
+sum: 278660073, n: 7207
+[x,y] = [120,265]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497551
+sum: 256766873, n: 6739
+[x,y] = [119,21]
+plugin_manager.c:489: Client 5
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497593
+sum: 271916889, n: 7198
+[x,y] = [118,16]
+plugin_manager.c:489: Client 4
+plugin_manager.c:490: Path : 'hsv'
+plugin_manager.c:491: Method:GET
+plugin_manager.c:492: Plugin name 'hsv'
+plugin_manager.c:493: Plugin func. 'execute'
+plugin_manager.c:494: query :res=4&fetch=1447679497639
+sum: 287729478, n: 7482
+[x,y] = [120,56]
+plugin_manager.c:418: Unload all plugins
+plugin_manager.c:431: Cant not find exit method from pluginsman : /root/antd/plugins/pluginsman.dylib: undefined symbol: pexit 
+Disconnect from FPGA
+Done

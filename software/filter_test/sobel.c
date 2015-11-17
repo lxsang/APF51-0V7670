@@ -17,7 +17,7 @@
 //#include <opencv/cxcore.h>
 #include <opencv/cv.h>
 #include "plugin.h"
-#define NDATAW 9600
+#define NDATAW 1200//9600
 #define IMG "/root/workspace/APF51-0V7670/software/sobel_test/test.jpg"  
 #define IMG_W 160
 #define IMG_H 120
@@ -105,6 +105,7 @@ void execute(int client,const char* method,dictionary rq)
 {
 	int i;
 	unsigned short buff_out[NDATAW];
+	uchar img_data[IMG_H*IMG_W];
         if(! ptr_fpga)
 	{
 		html(client);
@@ -126,9 +127,19 @@ void execute(int client,const char* method,dictionary rq)
 	{
 
 		obtr_memcpy(buff_out,ptr_fpga+MEM_OFFSET,NDATAW);
+		for (int i = 0; i < NDATAW ; i++) {
+			unsigned short tmp = buff_out[i];
+			for (int j=0; j<16; j++) {
+				if(tmp & (1<<j))
+					img_data[i*16+j] = 255;
+				else
+					img_data[i*16+j] = 0;
+			}
+
+		}
 
 		IplImage* gray_image  = cvCreateImage(cvSize(IMG_W,IMG_H),IPL_DEPTH_8U,1);
-		gray_image->imageData = (unsigned char*)buff_out;
+		gray_image->imageData = (unsigned char*)img_data;
 		int params[3] = {0};
 		params[0] = CV_IMWRITE_JPEG_QUALITY;
 		params[1] = 80;

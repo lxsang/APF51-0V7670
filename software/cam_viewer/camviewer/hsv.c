@@ -17,26 +17,18 @@
 //#include <opencv/cxcore.h>
 #include <opencv/cv.h>
 #include "plugin.h"
-#define IMG_W 160
-#define IMG_H 120
-#define NDATAW IMG_W*IMG_H //
 
 
 #define APF51_FPGA_MAP_SIZE 0x10000
 #define MEM_OFFSET 0x8
-#define RW_COUNTER_BASE 0xFFF8
-#define R_COUNTER 0
-#define W_COUNTER 2
-#define ID_COUNTER 4
+#define POS_OFFSET 0xFFF0
+#define R_QQVGA 2
+#define R_Q_VGA 4
 #define TRIGGER_CONFIG 4
-#define RED_MASK 0xF800
-#define GREEN_MASK 0x07E0
-#define BLUE_MASK 0x001F
 #include <unistd.h>
 int ffpga ;
 void * ptr_fpga;
-static unsigned short buff_out[NDATAW];
-static uchar img888[NDATAW*3];
+
 void* obtr_memcpy(void* dst, void* src, size_t len)
 {
 	unsigned short* pDst = (unsigned short*) dst;
@@ -56,32 +48,7 @@ void* obtr_memcpy(void* dst, void* src, size_t len)
 void init();
 call __init__ = init;
 //sqldb db;
-void cv565_888(unsigned short* src, IplImage* dst)
-{
-	float factor5Bit = 255.0 / 31.0;
-	float factor6Bit = 255.0 / 63.0;
 
-	for(int i = 0; i < IMG_H; i++)
-	{
-		for(int j = 0; j < IMG_W; j++)
-		{
-			unsigned short rgb565 = src[i + j];
-			uchar r5 = (rgb565 & RED_MASK)   >> 11;
-			uchar g6 = (rgb565 & GREEN_MASK) >> 5;
-			uchar b5 = (rgb565 & BLUE_MASK);
-
-			// round answer to closest intensity in 8-bit space...
-			uchar r8 = floor((r5 * factor5Bit) + 0.5);
-			uchar g8 = floor((g6 * factor6Bit) + 0.5);
-			uchar b8 = floor((b5 * factor5Bit) + 0.5);
-
-			dst->imageData[i*dst->widthStep + j]       = r8;
-			dst->imageData[i*dst->widthStep + (j + 1)] = g8;
-			dst->imageData[i*dst->widthStep + (j + 2)] = b8;
-		}
-	}
-	
-}
 void init()
 {
 	printf("%s","Connect to the fpga\n");
@@ -100,6 +67,7 @@ void init()
     	}
 		// trigger config
 		*(unsigned short *)(ptr_fpga+TRIGGER_CONFIG) = 0xFFFF;
+	sleep(1);
 }
 void pexit()
 {
@@ -114,10 +82,25 @@ void pexit()
 
 void execute(int client,const char* method,dictionary rq)
 {
-	int i;
-	//unsigned short buff_out[NDATAW];
-	//uchar img888[NDATAW*3];
-        if(! ptr_fpga)
+	int w, h;
+	int res = R_INT(rq,"res");
+	if (res == 2) {
+		w = 160; h = 120;
+	} else if(res == 4)
+	{
+		w = 320; h = 240;
+	}
+	else
+	{
+		w = 640; h = 480;
+		res = 0;
+	}
+	unsigned short buff_out[w*h/16];
+	uchar img_data[w*h];
+	int nword = w*h/16;
+	unsigned short chunk[2];
+	int npx, x, y, sum;
+    if(! ptr_fpga)
 	{
 		html(client);
 		__t(client,"Unable to comunicate with FPGA\n");
@@ -125,51 +108,70 @@ void execute(int client,const char* method,dictionary rq)
 	}
 	// reset interrupt
 	*(unsigned short*)(ptr_fpga+2) = 0xFFFF;
-	
-	printf("\nWait for data\n");
+	// setting up the resolution
+	*(unsigned short*)(ptr_fpga+MEM_OFFSET+res) = 0xFFFF;
+	//printf("\nWait for data\n");
 	uint32_t info;
 	ssize_t nb = read(ffpga,&info,sizeof(info));
 	//printf("IRQ: %d\n",nb);
 	if(nb = sizeof(info))
 	{
+		// get the image
+		obtr_memcpy(buff_out,ptr_fpga+MEM_OFFSET,nword);
+		// get the sum
+		obtr_memcpy(chunk,ptr_fpga+POS_OFFSET,2);
+		memcpy(&x, (char*)chunk, 4);
+		obtr_memcpy(chunk,ptr_fpga+POS_OFFSET+4,2);
+		memcpy(&y, (char*)chunk, 4);
+		obtr_memcpy(chunk,ptr_fpga+POS_OFFSET+8,2);
+                memcpy(&npx, (char*)chunk, 4);
+		printf("sum x: %d, sum y: %d, n: %d\n",x,y, npx);
+		//obtr_memcpy(buff_out,ptr_fpga+MEM_OFFSET,nword);
+		//sum = x = y = npx = 0;
+		for (int i = 0; i < nword ; i++) {
+                        unsigned short tmp = buff_out[i];
+                        for (int j=0; j<16; j++) {
+                                if(tmp & (1<<j))
+                                { 
+					img_data[i*16+j] = 255;
+					/*npx++;
+					sum = i*16+j;
+					x+= sum/w;
+					y+= sum%w;*/
+				}
+                                else
+                                        img_data[i*16+j] = 0;
+                        }
 
-		obtr_memcpy(buff_out,ptr_fpga+MEM_OFFSET,NDATAW);
-		IplImage* gray_image  = cvCreateImage(cvSize(IMG_W,IMG_H),IPL_DEPTH_8U,3);	
-		float factor5Bit = 255.0 / 31.0;
-		float factor6Bit = 255.0 / 63.0;
-		uchar r5,g6,b5,r8,g8,b8;
-		unsigned short rgb565;
-		for (int i = 0; i < NDATAW; i++) {
-			rgb565 = buff_out[i];//*((unsigned short*) ptr_fpga+MEM_OFFSET+ (i*2));
-			r5 = (rgb565 & RED_MASK)   >> 11;
-			g6 = (rgb565 & GREEN_MASK) >> 5;
-			b5 = (rgb565 & BLUE_MASK);
-
-			// round answer to closest intensity in 8-bit space...
-			r8 = floor((r5 * factor5Bit) + 0.5);
-			g8 = floor((g6 * factor6Bit) + 0.5);
-		    b8 = floor((b5 * factor5Bit) + 0.5);
-			img888[i*3]       = b8;
-			img888[i*3 + 1]   = g8;
-			img888[i*3+ 2]    = r8;
-		  }
-		
-		//cv565_888(buff_out,gray_image);
-		gray_image->imageData = (uchar*)img888;
+                }
+		IplImage* gray_image  = cvCreateImage(cvSize(w,h),IPL_DEPTH_8U,1);
+		//cvSetData(gray_image,img_data,gray_image->widthStep);
+		gray_image->imageData = (uchar*)img_data;
+		if(npx > 100)
+                {
+                       // int avg = y/npx;
+			x = x/npx;
+			y = y/npx;
+			///y = y > w?(y%w):y;
+			//y = (y - x*w)/npx;
+			//x = x / npx;
+			
+                        printf("[x,y] = [%d,%d]\n", x,y);
+			// draw the circle
+			cvCircle(gray_image, cvPoint(y,x), 10, cvScalar(255,0,0,0), 1, 8, 0);
+                }
 		int params[3] = {0};
 		params[0] = CV_IMWRITE_JPEG_QUALITY;
 		params[1] = 90;
 		CvMat* tmp = cvEncodeImage(".jpg", gray_image,params);
 		jpeg(client);
-		for(i=0; i < tmp->rows; i++)
+		for(int i=0; i < tmp->rows; i++)
 		{
 			__b(client,tmp->data.ptr + i*(tmp->step),tmp->cols);
 		}
 		cvReleaseImage(&gray_image);
 		cvReleaseMat(&tmp);
 	}
-	
-	
 	//printf("Done check \n");
 
 	 //munmap(ptr_fpga,APF51_FPGA_MAP_SIZE);
@@ -177,4 +179,3 @@ void execute(int client,const char* method,dictionary rq)
 	//__fb(client,htdocs("images/ex.jpg"));
 
 }
-

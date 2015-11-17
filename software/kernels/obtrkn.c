@@ -9,7 +9,7 @@ MODULE_VERSION("0.1");
 // interrup number
 static unsigned int irq_number; 
 // button pressed times
-static unsigned int no_presses = 0;
+//static unsigned int no_presses = 0;
 static struct uio_info *info;
 
 /*
@@ -54,11 +54,11 @@ static irq_handler_t obtrkn_bt_handler(unsigned int irq, void* dev_id, struct pt
 // the new irq_handle
 static irqreturn_t obtrkn_irq_handler(int irq, struct uio_info *dev_info)
 {
-    printk(KERN_INFO "OBTR: Interrupt (signal state is %d)\n",gpio_get_value(IMX_IRQ));
-    no_presses++;
-    print_irq_status();
-    printk(KERN_INFO "OBTR: In UIO handler, count = %d\n", no_presses);
-    iowrite16(1,ptr_fpga+IRQ_MNGR+IRQ_ACK);
+    //printk(KERN_INFO "OBTR: Interrupt (signal state is %d)\n",gpio_get_value(IMX_IRQ));
+    //no_presses++;
+    //print_irq_status();
+    //printk(KERN_INFO "OBTR: In UIO handler, count = %d\n", no_presses);
+    iowrite16(0xFFFF,ptr_fpga+IRQ_MNGR+IRQ_ACK);
     // note that, the use space should write the ack to the hardware to clear the irq
     return (irqreturn_t)IRQ_HANDLED;
 }
@@ -182,7 +182,7 @@ error:
 static void __exit obtrkn_exit(void)
 {
 	printk(KERN_INFO "OBTR: The current button state is %d\n", gpio_get_value(IMX_IRQ));
-	printk(KERN_INFO "OBTR: The button was pressed %d times\n",no_presses);
+	//printk(KERN_INFO "OBTR: The button was pressed %d times\n",no_presses);
 	//free_irq(irq_number,NULL);
     //release_mem_region(APF51_FPGA_BASE,APF51_FPGA_MAP_SIZE);
 	printk(KERN_INFO "OBTR: Good bye");

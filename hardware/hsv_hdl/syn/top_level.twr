@@ -1,0 +1,725 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/unwrapped/trce -intstyle ise -v 3 -s 2 -n 3
+-fastpaths -xml top_level.twx top_level.ncd -o top_level.twr top_level.pcf -ucf
+top_level.ucf
+
+Design file:              top_level.ncd
+Physical constraint file: top_level.pcf
+Device,package,speed:     xc6slx9,csg225,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+1 logic loop found and disabled.
+
+  ----------------------------------------------------------------------
+ ! Warning: The following connections close logic loops, and some paths !
+ !          through these connections may not be analyzed. To better    !
+ !          understand the logic associated with these loops, run a     !
+ !          Analyze Against User-Defined End-Point Analysis inside      !
+ !          Timing Analyzer (timingan) with the listed signal as a      !
+ !          source NET (*signal_name). The Timing Report will display   !
+ !          all the paths associated with this signal and the logic     !
+ !          loop will be reported.                                      !
+ !                                                                      !
+ ! Signal                            Driver            Load             !
+ ! --------------------------------  ----------------  ---------------- !
+ ! t/filter_unit/state_tick_OR_91_o  SLICE_X13Y22.B    SLICE_X13Y22.B3  !
+  ---------------------------------------------------------------------- 
+
+
+================================================================================
+Timing constraint: TS_ext_clk = PERIOD TIMEGRP "ext_clk" 10.5263 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 13433666 paths analyzed, 791 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   9.837ns.
+--------------------------------------------------------------------------------
+
+Paths for end point rw_cnt_ent/dout_5 (SLICE_X8Y21.C5), 883544 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.689ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rw_cnt_ent/G_5 (FF)
+  Destination:          rw_cnt_ent/dout_5 (FF)
+  Requirement:          10.526ns
+  Data Path Delay:      9.709ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.093ns (0.622 - 0.715)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: rw_cnt_ent/G_5 to rw_cnt_ent/dout_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y13.BQ       Tcko                  0.430   rw_cnt_ent/G<7>
+                                                       rw_cnt_ent/G_5
+    SLICE_X8Y13.B2       net (fanout=14)       1.456   rw_cnt_ent/G<5>
+    SLICE_X8Y13.B        Tilo                  0.254   N51
+                                                       rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o1_SW2
+    SLICE_X8Y13.A4       net (fanout=1)        0.640   N50
+    SLICE_X8Y13.A        Tilo                  0.254   N51
+                                                       rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o21
+    SLICE_X11Y13.C1      net (fanout=14)       0.804   rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o
+    SLICE_X11Y13.C       Tilo                  0.259   N102
+                                                       rw_cnt_ent/filter_unit/V[8]_R[8]_equal_14_o83
+    SLICE_X10Y12.A4      net (fanout=7)        0.509   rw_cnt_ent/filter_unit/V[8]_R[8]_equal_14_o
+    SLICE_X10Y12.AMUX    Topaa                 0.449   rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<3>
+                                                       rw_cnt_ent/filter_unit/Mmux_sub_rs_lut<0>
+                                                       rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<3>
+    SLICE_X10Y15.A5      net (fanout=3)        0.832   rw_cnt_ent/filter_unit/sub<0>
+    SLICE_X10Y15.BMUX    Topab                 0.519   rw_cnt_ent/filter_unit/Msub_PH_cy<5>
+                                                       rw_cnt_ent/filter_unit/Msub_PH_lut<2>_INV_0
+                                                       rw_cnt_ent/filter_unit/Msub_PH_cy<5>
+    SLICE_X10Y19.A4      net (fanout=2)        1.492   rw_cnt_ent/filter_unit/PH<3>
+    SLICE_X10Y19.COUT    Topcya                0.495   rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_cy<3>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_lutdi
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_cy<3>
+    SLICE_X10Y20.CIN     net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_cy<3>
+    SLICE_X10Y20.DMUX    Tcind                 0.267   rw_cnt_ent/filter_unit/PH_th_h[17]_PH[17]_LessThan_32_o
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_cy<7>
+    SLICE_X8Y21.C5       net (fanout=8)        0.707   rw_cnt_ent/filter_unit/PH_th_h[17]_PH[17]_LessThan_32_o
+    SLICE_X8Y21.CLK      Tas                   0.339   rw_cnt_ent/dout<5>
+                                                       rw_cnt_ent/Mmux_GND_27_o_GND_27_o_mux_5_OUT121
+                                                       rw_cnt_ent/dout_5
+    -------------------------------------------------  ---------------------------
+    Total                                      9.709ns (3.266ns logic, 6.443ns route)
+                                                       (33.6% logic, 66.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.712ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rw_cnt_ent/G_5 (FF)
+  Destination:          rw_cnt_ent/dout_5 (FF)
+  Requirement:          10.526ns
+  Data Path Delay:      9.686ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.093ns (0.622 - 0.715)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: rw_cnt_ent/G_5 to rw_cnt_ent/dout_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y13.BQ       Tcko                  0.430   rw_cnt_ent/G<7>
+                                                       rw_cnt_ent/G_5
+    SLICE_X8Y13.B2       net (fanout=14)       1.456   rw_cnt_ent/G<5>
+    SLICE_X8Y13.B        Tilo                  0.254   N51
+                                                       rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o1_SW2
+    SLICE_X8Y13.A4       net (fanout=1)        0.640   N50
+    SLICE_X8Y13.A        Tilo                  0.254   N51
+                                                       rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o21
+    SLICE_X11Y13.C1      net (fanout=14)       0.804   rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o
+    SLICE_X11Y13.C       Tilo                  0.259   N102
+                                                       rw_cnt_ent/filter_unit/V[8]_R[8]_equal_14_o83
+    SLICE_X10Y12.A4      net (fanout=7)        0.509   rw_cnt_ent/filter_unit/V[8]_R[8]_equal_14_o
+    SLICE_X10Y12.AMUX    Topaa                 0.449   rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<3>
+                                                       rw_cnt_ent/filter_unit/Mmux_sub_rs_lut<0>
+                                                       rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<3>
+    SLICE_X10Y15.A5      net (fanout=3)        0.832   rw_cnt_ent/filter_unit/sub<0>
+    SLICE_X10Y15.BMUX    Topab                 0.519   rw_cnt_ent/filter_unit/Msub_PH_cy<5>
+                                                       rw_cnt_ent/filter_unit/Msub_PH_lut<2>_INV_0
+                                                       rw_cnt_ent/filter_unit/Msub_PH_cy<5>
+    SLICE_X10Y19.A4      net (fanout=2)        1.492   rw_cnt_ent/filter_unit/PH<3>
+    SLICE_X10Y19.COUT    Topcya                0.472   rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_cy<3>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_lut<0>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_cy<3>
+    SLICE_X10Y20.CIN     net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_cy<3>
+    SLICE_X10Y20.DMUX    Tcind                 0.267   rw_cnt_ent/filter_unit/PH_th_h[17]_PH[17]_LessThan_32_o
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_cy<7>
+    SLICE_X8Y21.C5       net (fanout=8)        0.707   rw_cnt_ent/filter_unit/PH_th_h[17]_PH[17]_LessThan_32_o
+    SLICE_X8Y21.CLK      Tas                   0.339   rw_cnt_ent/dout<5>
+                                                       rw_cnt_ent/Mmux_GND_27_o_GND_27_o_mux_5_OUT121
+                                                       rw_cnt_ent/dout_5
+    -------------------------------------------------  ---------------------------
+    Total                                      9.686ns (3.243ns logic, 6.443ns route)
+                                                       (33.5% logic, 66.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.741ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rw_cnt_ent/R_2 (FF)
+  Destination:          rw_cnt_ent/dout_5 (FF)
+  Requirement:          10.526ns
+  Data Path Delay:      9.665ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.085ns (0.622 - 0.707)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: rw_cnt_ent/R_2 to rw_cnt_ent/dout_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y10.CQ      Tcko                  0.430   rw_cnt_ent/R<3>
+                                                       rw_cnt_ent/R_2
+    SLICE_X9Y10.D2       net (fanout=11)       0.771   rw_cnt_ent/R<2>
+    SLICE_X9Y10.D        Tilo                  0.259   rw_cnt_ent/G<3>
+                                                       rw_cnt_ent/filter_unit/R[8]_G[8]_LessThan_4_o2
+    SLICE_X8Y11.CX       net (fanout=1)        0.689   rw_cnt_ent/filter_unit/R[8]_G[8]_LessThan_4_o1
+    SLICE_X8Y11.CMUX     Tcxc                  0.182   N60
+                                                       rw_cnt_ent/filter_unit/R[8]_G[8]_LessThan_4_o1
+    SLICE_X9Y13.B5       net (fanout=1)        0.626   rw_cnt_ent/filter_unit/R[8]_G[8]_LessThan_4_o2
+    SLICE_X9Y13.B        Tilo                  0.259   rw_cnt_ent/G<7>
+                                                       rw_cnt_ent/filter_unit/R[8]_R[8]_AND_53_o
+    SLICE_X9Y16.C6       net (fanout=14)       1.455   rw_cnt_ent/filter_unit/R[8]_R[8]_AND_53_o
+    SLICE_X9Y16.C        Tilo                  0.259   rw_cnt_ent/filter_unit/mult1/a_reg<4>
+                                                       rw_cnt_ent/filter_unit/V[8]_G[8]_equal_15_o83
+    SLICE_X7Y23.B3       net (fanout=35)       1.827   rw_cnt_ent/filter_unit/mult1/ua_in<4>
+    SLICE_X7Y23.B        Tilo                  0.259   rw_cnt_ent/filter_unit/mult2/p_reg<8>
+                                                       rw_cnt_ent/filter_unit/mult2/Mmux_r81
+    SLICE_X10Y20.C3      net (fanout=1)        1.079   rw_cnt_ent/filter_unit/PH_th_h<16>
+    SLICE_X10Y20.DMUX    Topcd                 0.524   rw_cnt_ent/filter_unit/PH_th_h[17]_PH[17]_LessThan_32_o
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_lutdi6
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_cy<7>
+    SLICE_X8Y21.C5       net (fanout=8)        0.707   rw_cnt_ent/filter_unit/PH_th_h[17]_PH[17]_LessThan_32_o
+    SLICE_X8Y21.CLK      Tas                   0.339   rw_cnt_ent/dout<5>
+                                                       rw_cnt_ent/Mmux_GND_27_o_GND_27_o_mux_5_OUT121
+                                                       rw_cnt_ent/dout_5
+    -------------------------------------------------  ---------------------------
+    Total                                      9.665ns (2.511ns logic, 7.154ns route)
+                                                       (26.0% logic, 74.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point rw_cnt_ent/dout_2 (SLICE_X11Y18.C6), 767221 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.705ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rw_cnt_ent/G_5 (FF)
+  Destination:          rw_cnt_ent/dout_2 (FF)
+  Requirement:          10.526ns
+  Data Path Delay:      9.698ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.088ns (0.627 - 0.715)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: rw_cnt_ent/G_5 to rw_cnt_ent/dout_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y13.BQ       Tcko                  0.430   rw_cnt_ent/G<7>
+                                                       rw_cnt_ent/G_5
+    SLICE_X8Y13.B2       net (fanout=14)       1.456   rw_cnt_ent/G<5>
+    SLICE_X8Y13.B        Tilo                  0.254   N51
+                                                       rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o1_SW2
+    SLICE_X8Y13.A4       net (fanout=1)        0.640   N50
+    SLICE_X8Y13.A        Tilo                  0.254   N51
+                                                       rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o21
+    SLICE_X9Y15.B1       net (fanout=14)       1.038   rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o
+    SLICE_X9Y15.B        Tilo                  0.259   rw_cnt_ent/filter_unit/G[8]_B[8]_AND_54_o11
+                                                       rw_cnt_ent/filter_unit/Mmux_V51
+    SLICE_X8Y16.AX       net (fanout=4)        0.692   rw_cnt_ent/filter_unit/V<4>
+    SLICE_X8Y16.COUT     Taxcy                 0.248   rw_cnt_ent/filter_unit/Msub_S_cy<7>
+                                                       rw_cnt_ent/filter_unit/Msub_S_cy<7>
+    SLICE_X8Y17.CIN      net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Msub_S_cy<7>
+    SLICE_X8Y17.AMUX     Tcina                 0.220   rw_cnt_ent/filter_unit/PH_th_l<2>
+                                                       rw_cnt_ent/filter_unit/Msub_S_xor<8>
+    SLICE_X13Y19.A6      net (fanout=42)       1.180   rw_cnt_ent/filter_unit/S<8>
+    SLICE_X13Y19.A       Tilo                  0.259   rw_cnt_ent/filter_unit/PH_th_l<1>
+                                                       rw_cnt_ent/filter_unit/mult1/Mmux_r101
+    SLICE_X8Y18.A5       net (fanout=1)        0.975   rw_cnt_ent/filter_unit/PH_th_l<1>
+    SLICE_X8Y18.COUT     Topcya                0.474   rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_lut<0>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+    SLICE_X8Y19.CIN      net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+    SLICE_X8Y19.DMUX     Tcind                 0.305   rw_cnt_ent/filter_unit/PH[17]_PH_th_l[17]_LessThan_31_o
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<7>
+    SLICE_X11Y18.C6      net (fanout=8)        0.635   rw_cnt_ent/filter_unit/PH[17]_PH_th_l[17]_LessThan_31_o
+    SLICE_X11Y18.CLK     Tas                   0.373   rw_cnt_ent/dout<2>
+                                                       rw_cnt_ent/Mmux_GND_27_o_GND_27_o_mux_5_OUT91
+                                                       rw_cnt_ent/dout_2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.698ns (3.076ns logic, 6.622ns route)
+                                                       (31.7% logic, 68.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.718ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rw_cnt_ent/G_5 (FF)
+  Destination:          rw_cnt_ent/dout_2 (FF)
+  Requirement:          10.526ns
+  Data Path Delay:      9.685ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.088ns (0.627 - 0.715)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: rw_cnt_ent/G_5 to rw_cnt_ent/dout_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y13.BQ       Tcko                  0.430   rw_cnt_ent/G<7>
+                                                       rw_cnt_ent/G_5
+    SLICE_X8Y13.B2       net (fanout=14)       1.456   rw_cnt_ent/G<5>
+    SLICE_X8Y13.B        Tilo                  0.254   N51
+                                                       rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o1_SW2
+    SLICE_X8Y13.A4       net (fanout=1)        0.640   N50
+    SLICE_X8Y13.A        Tilo                  0.254   N51
+                                                       rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o21
+    SLICE_X9Y15.B1       net (fanout=14)       1.038   rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o
+    SLICE_X9Y15.B        Tilo                  0.259   rw_cnt_ent/filter_unit/G[8]_B[8]_AND_54_o11
+                                                       rw_cnt_ent/filter_unit/Mmux_V51
+    SLICE_X8Y16.A5       net (fanout=4)        0.453   rw_cnt_ent/filter_unit/V<4>
+    SLICE_X8Y16.COUT     Topcya                0.474   rw_cnt_ent/filter_unit/Msub_S_cy<7>
+                                                       rw_cnt_ent/filter_unit/Msub_S_lut<4>
+                                                       rw_cnt_ent/filter_unit/Msub_S_cy<7>
+    SLICE_X8Y17.CIN      net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Msub_S_cy<7>
+    SLICE_X8Y17.AMUX     Tcina                 0.220   rw_cnt_ent/filter_unit/PH_th_l<2>
+                                                       rw_cnt_ent/filter_unit/Msub_S_xor<8>
+    SLICE_X13Y19.A6      net (fanout=42)       1.180   rw_cnt_ent/filter_unit/S<8>
+    SLICE_X13Y19.A       Tilo                  0.259   rw_cnt_ent/filter_unit/PH_th_l<1>
+                                                       rw_cnt_ent/filter_unit/mult1/Mmux_r101
+    SLICE_X8Y18.A5       net (fanout=1)        0.975   rw_cnt_ent/filter_unit/PH_th_l<1>
+    SLICE_X8Y18.COUT     Topcya                0.474   rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_lut<0>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+    SLICE_X8Y19.CIN      net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+    SLICE_X8Y19.DMUX     Tcind                 0.305   rw_cnt_ent/filter_unit/PH[17]_PH_th_l[17]_LessThan_31_o
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<7>
+    SLICE_X11Y18.C6      net (fanout=8)        0.635   rw_cnt_ent/filter_unit/PH[17]_PH_th_l[17]_LessThan_31_o
+    SLICE_X11Y18.CLK     Tas                   0.373   rw_cnt_ent/dout<2>
+                                                       rw_cnt_ent/Mmux_GND_27_o_GND_27_o_mux_5_OUT91
+                                                       rw_cnt_ent/dout_2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.685ns (3.302ns logic, 6.383ns route)
+                                                       (34.1% logic, 65.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.719ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rw_cnt_ent/R_2 (FF)
+  Destination:          rw_cnt_ent/dout_2 (FF)
+  Requirement:          10.526ns
+  Data Path Delay:      9.692ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.080ns (0.627 - 0.707)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: rw_cnt_ent/R_2 to rw_cnt_ent/dout_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y10.CQ      Tcko                  0.430   rw_cnt_ent/R<3>
+                                                       rw_cnt_ent/R_2
+    SLICE_X9Y10.D2       net (fanout=11)       0.771   rw_cnt_ent/R<2>
+    SLICE_X9Y10.D        Tilo                  0.259   rw_cnt_ent/G<3>
+                                                       rw_cnt_ent/filter_unit/R[8]_G[8]_LessThan_4_o2
+    SLICE_X8Y11.CX       net (fanout=1)        0.689   rw_cnt_ent/filter_unit/R[8]_G[8]_LessThan_4_o1
+    SLICE_X8Y11.CMUX     Tcxc                  0.182   N60
+                                                       rw_cnt_ent/filter_unit/R[8]_G[8]_LessThan_4_o1
+    SLICE_X9Y13.B5       net (fanout=1)        0.626   rw_cnt_ent/filter_unit/R[8]_G[8]_LessThan_4_o2
+    SLICE_X9Y13.B        Tilo                  0.259   rw_cnt_ent/G<7>
+                                                       rw_cnt_ent/filter_unit/R[8]_R[8]_AND_53_o
+    SLICE_X8Y14.B6       net (fanout=14)       0.873   rw_cnt_ent/filter_unit/R[8]_R[8]_AND_53_o
+    SLICE_X8Y14.B        Tilo                  0.254   rw_cnt_ent/filter_unit/G[8]_B[8]_AND_54_o1
+                                                       rw_cnt_ent/filter_unit/Mmux_V61
+    SLICE_X8Y16.B5       net (fanout=4)        0.439   rw_cnt_ent/filter_unit/V<5>
+    SLICE_X8Y16.COUT     Topcyb                0.483   rw_cnt_ent/filter_unit/Msub_S_cy<7>
+                                                       rw_cnt_ent/filter_unit/Msub_S_lut<5>
+                                                       rw_cnt_ent/filter_unit/Msub_S_cy<7>
+    SLICE_X8Y17.CIN      net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Msub_S_cy<7>
+    SLICE_X8Y17.AMUX     Tcina                 0.220   rw_cnt_ent/filter_unit/PH_th_l<2>
+                                                       rw_cnt_ent/filter_unit/Msub_S_xor<8>
+    SLICE_X13Y19.A6      net (fanout=42)       1.180   rw_cnt_ent/filter_unit/S<8>
+    SLICE_X13Y19.A       Tilo                  0.259   rw_cnt_ent/filter_unit/PH_th_l<1>
+                                                       rw_cnt_ent/filter_unit/mult1/Mmux_r101
+    SLICE_X8Y18.A5       net (fanout=1)        0.975   rw_cnt_ent/filter_unit/PH_th_l<1>
+    SLICE_X8Y18.COUT     Topcya                0.474   rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_lut<0>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+    SLICE_X8Y19.CIN      net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+    SLICE_X8Y19.DMUX     Tcind                 0.305   rw_cnt_ent/filter_unit/PH[17]_PH_th_l[17]_LessThan_31_o
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<7>
+    SLICE_X11Y18.C6      net (fanout=8)        0.635   rw_cnt_ent/filter_unit/PH[17]_PH_th_l[17]_LessThan_31_o
+    SLICE_X11Y18.CLK     Tas                   0.373   rw_cnt_ent/dout<2>
+                                                       rw_cnt_ent/Mmux_GND_27_o_GND_27_o_mux_5_OUT91
+                                                       rw_cnt_ent/dout_2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.692ns (3.498ns logic, 6.194ns route)
+                                                       (36.1% logic, 63.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point rw_cnt_ent/dout_1 (SLICE_X9Y19.B6), 767221 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.734ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rw_cnt_ent/G_5 (FF)
+  Destination:          rw_cnt_ent/dout_1 (FF)
+  Requirement:          10.526ns
+  Data Path Delay:      9.669ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.088ns (0.627 - 0.715)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: rw_cnt_ent/G_5 to rw_cnt_ent/dout_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y13.BQ       Tcko                  0.430   rw_cnt_ent/G<7>
+                                                       rw_cnt_ent/G_5
+    SLICE_X8Y13.B2       net (fanout=14)       1.456   rw_cnt_ent/G<5>
+    SLICE_X8Y13.B        Tilo                  0.254   N51
+                                                       rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o1_SW2
+    SLICE_X8Y13.A4       net (fanout=1)        0.640   N50
+    SLICE_X8Y13.A        Tilo                  0.254   N51
+                                                       rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o21
+    SLICE_X9Y15.B1       net (fanout=14)       1.038   rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o
+    SLICE_X9Y15.B        Tilo                  0.259   rw_cnt_ent/filter_unit/G[8]_B[8]_AND_54_o11
+                                                       rw_cnt_ent/filter_unit/Mmux_V51
+    SLICE_X8Y16.AX       net (fanout=4)        0.692   rw_cnt_ent/filter_unit/V<4>
+    SLICE_X8Y16.COUT     Taxcy                 0.248   rw_cnt_ent/filter_unit/Msub_S_cy<7>
+                                                       rw_cnt_ent/filter_unit/Msub_S_cy<7>
+    SLICE_X8Y17.CIN      net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Msub_S_cy<7>
+    SLICE_X8Y17.AMUX     Tcina                 0.220   rw_cnt_ent/filter_unit/PH_th_l<2>
+                                                       rw_cnt_ent/filter_unit/Msub_S_xor<8>
+    SLICE_X13Y19.A6      net (fanout=42)       1.180   rw_cnt_ent/filter_unit/S<8>
+    SLICE_X13Y19.A       Tilo                  0.259   rw_cnt_ent/filter_unit/PH_th_l<1>
+                                                       rw_cnt_ent/filter_unit/mult1/Mmux_r101
+    SLICE_X8Y18.A5       net (fanout=1)        0.975   rw_cnt_ent/filter_unit/PH_th_l<1>
+    SLICE_X8Y18.COUT     Topcya                0.474   rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_lut<0>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+    SLICE_X8Y19.CIN      net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+    SLICE_X8Y19.DMUX     Tcind                 0.305   rw_cnt_ent/filter_unit/PH[17]_PH_th_l[17]_LessThan_31_o
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<7>
+    SLICE_X9Y19.B6       net (fanout=8)        0.606   rw_cnt_ent/filter_unit/PH[17]_PH_th_l[17]_LessThan_31_o
+    SLICE_X9Y19.CLK      Tas                   0.373   rw_cnt_ent/dout<1>
+                                                       rw_cnt_ent/Mmux_GND_27_o_GND_27_o_mux_5_OUT81
+                                                       rw_cnt_ent/dout_1
+    -------------------------------------------------  ---------------------------
+    Total                                      9.669ns (3.076ns logic, 6.593ns route)
+                                                       (31.8% logic, 68.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.747ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rw_cnt_ent/G_5 (FF)
+  Destination:          rw_cnt_ent/dout_1 (FF)
+  Requirement:          10.526ns
+  Data Path Delay:      9.656ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.088ns (0.627 - 0.715)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: rw_cnt_ent/G_5 to rw_cnt_ent/dout_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y13.BQ       Tcko                  0.430   rw_cnt_ent/G<7>
+                                                       rw_cnt_ent/G_5
+    SLICE_X8Y13.B2       net (fanout=14)       1.456   rw_cnt_ent/G<5>
+    SLICE_X8Y13.B        Tilo                  0.254   N51
+                                                       rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o1_SW2
+    SLICE_X8Y13.A4       net (fanout=1)        0.640   N50
+    SLICE_X8Y13.A        Tilo                  0.254   N51
+                                                       rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o21
+    SLICE_X9Y15.B1       net (fanout=14)       1.038   rw_cnt_ent/filter_unit/G[8]_B[8]_LessThan_6_o
+    SLICE_X9Y15.B        Tilo                  0.259   rw_cnt_ent/filter_unit/G[8]_B[8]_AND_54_o11
+                                                       rw_cnt_ent/filter_unit/Mmux_V51
+    SLICE_X8Y16.A5       net (fanout=4)        0.453   rw_cnt_ent/filter_unit/V<4>
+    SLICE_X8Y16.COUT     Topcya                0.474   rw_cnt_ent/filter_unit/Msub_S_cy<7>
+                                                       rw_cnt_ent/filter_unit/Msub_S_lut<4>
+                                                       rw_cnt_ent/filter_unit/Msub_S_cy<7>
+    SLICE_X8Y17.CIN      net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Msub_S_cy<7>
+    SLICE_X8Y17.AMUX     Tcina                 0.220   rw_cnt_ent/filter_unit/PH_th_l<2>
+                                                       rw_cnt_ent/filter_unit/Msub_S_xor<8>
+    SLICE_X13Y19.A6      net (fanout=42)       1.180   rw_cnt_ent/filter_unit/S<8>
+    SLICE_X13Y19.A       Tilo                  0.259   rw_cnt_ent/filter_unit/PH_th_l<1>
+                                                       rw_cnt_ent/filter_unit/mult1/Mmux_r101
+    SLICE_X8Y18.A5       net (fanout=1)        0.975   rw_cnt_ent/filter_unit/PH_th_l<1>
+    SLICE_X8Y18.COUT     Topcya                0.474   rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_lut<0>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+    SLICE_X8Y19.CIN      net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+    SLICE_X8Y19.DMUX     Tcind                 0.305   rw_cnt_ent/filter_unit/PH[17]_PH_th_l[17]_LessThan_31_o
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<7>
+    SLICE_X9Y19.B6       net (fanout=8)        0.606   rw_cnt_ent/filter_unit/PH[17]_PH_th_l[17]_LessThan_31_o
+    SLICE_X9Y19.CLK      Tas                   0.373   rw_cnt_ent/dout<1>
+                                                       rw_cnt_ent/Mmux_GND_27_o_GND_27_o_mux_5_OUT81
+                                                       rw_cnt_ent/dout_1
+    -------------------------------------------------  ---------------------------
+    Total                                      9.656ns (3.302ns logic, 6.354ns route)
+                                                       (34.2% logic, 65.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.748ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rw_cnt_ent/R_2 (FF)
+  Destination:          rw_cnt_ent/dout_1 (FF)
+  Requirement:          10.526ns
+  Data Path Delay:      9.663ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.080ns (0.627 - 0.707)
+  Source Clock:         ext_clk_BUFGP rising at 0.000ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: rw_cnt_ent/R_2 to rw_cnt_ent/dout_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y10.CQ      Tcko                  0.430   rw_cnt_ent/R<3>
+                                                       rw_cnt_ent/R_2
+    SLICE_X9Y10.D2       net (fanout=11)       0.771   rw_cnt_ent/R<2>
+    SLICE_X9Y10.D        Tilo                  0.259   rw_cnt_ent/G<3>
+                                                       rw_cnt_ent/filter_unit/R[8]_G[8]_LessThan_4_o2
+    SLICE_X8Y11.CX       net (fanout=1)        0.689   rw_cnt_ent/filter_unit/R[8]_G[8]_LessThan_4_o1
+    SLICE_X8Y11.CMUX     Tcxc                  0.182   N60
+                                                       rw_cnt_ent/filter_unit/R[8]_G[8]_LessThan_4_o1
+    SLICE_X9Y13.B5       net (fanout=1)        0.626   rw_cnt_ent/filter_unit/R[8]_G[8]_LessThan_4_o2
+    SLICE_X9Y13.B        Tilo                  0.259   rw_cnt_ent/G<7>
+                                                       rw_cnt_ent/filter_unit/R[8]_R[8]_AND_53_o
+    SLICE_X8Y14.B6       net (fanout=14)       0.873   rw_cnt_ent/filter_unit/R[8]_R[8]_AND_53_o
+    SLICE_X8Y14.B        Tilo                  0.254   rw_cnt_ent/filter_unit/G[8]_B[8]_AND_54_o1
+                                                       rw_cnt_ent/filter_unit/Mmux_V61
+    SLICE_X8Y16.B5       net (fanout=4)        0.439   rw_cnt_ent/filter_unit/V<5>
+    SLICE_X8Y16.COUT     Topcyb                0.483   rw_cnt_ent/filter_unit/Msub_S_cy<7>
+                                                       rw_cnt_ent/filter_unit/Msub_S_lut<5>
+                                                       rw_cnt_ent/filter_unit/Msub_S_cy<7>
+    SLICE_X8Y17.CIN      net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Msub_S_cy<7>
+    SLICE_X8Y17.AMUX     Tcina                 0.220   rw_cnt_ent/filter_unit/PH_th_l<2>
+                                                       rw_cnt_ent/filter_unit/Msub_S_xor<8>
+    SLICE_X13Y19.A6      net (fanout=42)       1.180   rw_cnt_ent/filter_unit/S<8>
+    SLICE_X13Y19.A       Tilo                  0.259   rw_cnt_ent/filter_unit/PH_th_l<1>
+                                                       rw_cnt_ent/filter_unit/mult1/Mmux_r101
+    SLICE_X8Y18.A5       net (fanout=1)        0.975   rw_cnt_ent/filter_unit/PH_th_l<1>
+    SLICE_X8Y18.COUT     Topcya                0.474   rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_lut<0>
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+    SLICE_X8Y19.CIN      net (fanout=1)        0.003   rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<3>
+    SLICE_X8Y19.DMUX     Tcind                 0.305   rw_cnt_ent/filter_unit/PH[17]_PH_th_l[17]_LessThan_31_o
+                                                       rw_cnt_ent/filter_unit/Mcompar_PH[17]_PH_th_l[17]_LessThan_31_o_cy<7>
+    SLICE_X9Y19.B6       net (fanout=8)        0.606   rw_cnt_ent/filter_unit/PH[17]_PH_th_l[17]_LessThan_31_o
+    SLICE_X9Y19.CLK      Tas                   0.373   rw_cnt_ent/dout<1>
+                                                       rw_cnt_ent/Mmux_GND_27_o_GND_27_o_mux_5_OUT81
+                                                       rw_cnt_ent/dout_1
+    -------------------------------------------------  ---------------------------
+    Total                                      9.663ns (3.498ns logic, 6.165ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_ext_clk = PERIOD TIMEGRP "ext_clk" 10.5263 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point rw_cnt_ent/dout_12 (SLICE_X12Y2.B6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.411ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               rw_cnt_ent/R_12 (FF)
+  Destination:          rw_cnt_ent/dout_12 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.413ns (Levels of Logic = 1)
+  Clock Path Skew:      0.002ns (0.042 - 0.040)
+  Source Clock:         ext_clk_BUFGP rising at 10.526ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: rw_cnt_ent/R_12 to rw_cnt_ent/dout_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y2.AQ       Tcko                  0.198   rw_cnt_ent/R<15>
+                                                       rw_cnt_ent/R_12
+    SLICE_X12Y2.B6       net (fanout=1)        0.018   rw_cnt_ent/R<12>
+    SLICE_X12Y2.CLK      Tah         (-Th)    -0.197   rw_cnt_ent/dout<14>
+                                                       rw_cnt_ent/Mmux_GND_27_o_GND_27_o_mux_5_OUT41
+                                                       rw_cnt_ent/dout_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.413ns (0.395ns logic, 0.018ns route)
+                                                       (95.6% logic, 4.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point rw_cnt_ent/filter_unit/mult2/p_reg_0 (SLICE_X6Y17.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.414ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               rw_cnt_ent/filter_unit/mult2/p_reg_0 (FF)
+  Destination:          rw_cnt_ent/filter_unit/mult2/p_reg_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.414ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         ext_clk_BUFGP rising at 10.526ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: rw_cnt_ent/filter_unit/mult2/p_reg_0 to rw_cnt_ent/filter_unit/mult2/p_reg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y17.AQ       Tcko                  0.200   rw_cnt_ent/filter_unit/mult2/p_reg<3>
+                                                       rw_cnt_ent/filter_unit/mult2/p_reg_0
+    SLICE_X6Y17.A6       net (fanout=12)       0.024   rw_cnt_ent/filter_unit/mult2/p_reg<0>
+    SLICE_X6Y17.CLK      Tah         (-Th)    -0.190   rw_cnt_ent/filter_unit/mult2/p_reg<3>
+                                                       rw_cnt_ent/filter_unit/mult2/Mmux_p_next11
+                                                       rw_cnt_ent/filter_unit/mult2/p_reg_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.414ns (0.390ns logic, 0.024ns route)
+                                                       (94.2% logic, 5.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point rw_cnt_ent/filter_unit/mult2/p_reg_3 (SLICE_X6Y17.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.423ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               rw_cnt_ent/filter_unit/mult2/p_reg_3 (FF)
+  Destination:          rw_cnt_ent/filter_unit/mult2/p_reg_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.423ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         ext_clk_BUFGP rising at 10.526ns
+  Destination Clock:    ext_clk_BUFGP rising at 10.526ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: rw_cnt_ent/filter_unit/mult2/p_reg_3 to rw_cnt_ent/filter_unit/mult2/p_reg_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y17.DQ       Tcko                  0.200   rw_cnt_ent/filter_unit/mult2/p_reg<3>
+                                                       rw_cnt_ent/filter_unit/mult2/p_reg_3
+    SLICE_X6Y17.D6       net (fanout=4)        0.033   rw_cnt_ent/filter_unit/mult2/p_reg<3>
+    SLICE_X6Y17.CLK      Tah         (-Th)    -0.190   rw_cnt_ent/filter_unit/mult2/p_reg<3>
+                                                       rw_cnt_ent/filter_unit/mult2/Mmux_p_next131
+                                                       rw_cnt_ent/filter_unit/mult2/p_reg_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.423ns (0.390ns logic, 0.033ns route)
+                                                       (92.2% logic, 7.8% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_ext_clk = PERIOD TIMEGRP "ext_clk" 10.5263 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 7.860ns (period - min period limit)
+  Period: 10.526ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: ext_clk_BUFGP/BUFG/I0
+  Logical resource: ext_clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X2Y9.I0
+  Clock network: ext_clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 10.046ns (period - min period limit)
+  Period: 10.526ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: irq_manager/readdata<14>/CLK
+  Logical resource: irq_manager/readdata_9/CK
+  Location pin: SLICE_X8Y2.CLK
+  Clock network: ext_clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 10.046ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 10.526ns
+  High pulse: 5.263ns
+  High pulse limit: 0.240ns (Trpw)
+  Physical resource: irq_manager/readdata<14>/SR
+  Logical resource: irq_manager/readdata_9/SR
+  Location pin: SLICE_X8Y2.SR
+  Clock network: reset_gen/rst
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock ext_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ext_clk        |    9.837|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 13433666 paths, 0 nets, and 1610 connections
+
+Design statistics:
+   Minimum period:   9.837ns{1}   (Maximum frequency: 101.657MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sun Nov  8 20:06:22 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 140 MB
+
+
+

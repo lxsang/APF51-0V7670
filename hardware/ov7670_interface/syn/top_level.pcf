@@ -1,0 +1,301 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Nov 06 11:07:24 2015
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "led" LOCATE = SITE "G14" LEVEL 1;
+COMP "OV7670_D<0>" LOCATE = SITE "H1" LEVEL 1;
+COMP "OV7670_D<1>" LOCATE = SITE "K3" LEVEL 1;
+COMP "OV7670_D<2>" LOCATE = SITE "K1" LEVEL 1;
+COMP "OV7670_D<3>" LOCATE = SITE "D4" LEVEL 1;
+COMP "OV7670_D<4>" LOCATE = SITE "E3" LEVEL 1;
+COMP "OV7670_D<5>" LOCATE = SITE "C2" LEVEL 1;
+COMP "OV7670_D<6>" LOCATE = SITE "C1" LEVEL 1;
+COMP "OV7670_D<7>" LOCATE = SITE "K5" LEVEL 1;
+COMP "gls_irq" LOCATE = SITE "P3" LEVEL 1;
+COMP "OV7670_HREF" LOCATE = SITE "J3" LEVEL 1;
+COMP "OV7670_PCLK" LOCATE = SITE "K4" LEVEL 1;
+COMP "OV7670_SIOC" LOCATE = SITE "L2" LEVEL 1;
+COMP "OV7670_SIOD" LOCATE = SITE "J1" LEVEL 1;
+COMP "imx_adv" LOCATE = SITE "R9" LEVEL 1;
+COMP "OV7670_XCLK" LOCATE = SITE "J4" LEVEL 1;
+COMP "OV7670_PWDN" LOCATE = SITE "G1" LEVEL 1;
+COMP "ext_clk" LOCATE = SITE "N8" LEVEL 1;
+COMP "imx_da<0>" LOCATE = SITE "N6" LEVEL 1;
+COMP "imx_da<1>" LOCATE = SITE "L5" LEVEL 1;
+COMP "imx_da<2>" LOCATE = SITE "L6" LEVEL 1;
+COMP "imx_da<3>" LOCATE = SITE "R5" LEVEL 1;
+COMP "imx_da<4>" LOCATE = SITE "P5" LEVEL 1;
+COMP "imx_da<5>" LOCATE = SITE "N11" LEVEL 1;
+COMP "imx_da<6>" LOCATE = SITE "M11" LEVEL 1;
+COMP "imx_da<7>" LOCATE = SITE "P11" LEVEL 1;
+COMP "imx_da<8>" LOCATE = SITE "L8" LEVEL 1;
+COMP "imx_da<9>" LOCATE = SITE "K8" LEVEL 1;
+COMP "button" LOCATE = SITE "G15" LEVEL 1;
+COMP "imx_rw" LOCATE = SITE "R6" LEVEL 1;
+COMP "OV7670_RESET" LOCATE = SITE "H3" LEVEL 1;
+COMP "imx_cs_n" LOCATE = SITE "R11" LEVEL 1;
+COMP "OV7670_VSYNC" LOCATE = SITE "J2" LEVEL 1;
+COMP "imx_da<10>" LOCATE = SITE "M8" LEVEL 1;
+COMP "imx_da<11>" LOCATE = SITE "M10" LEVEL 1;
+COMP "imx_da<12>" LOCATE = SITE "L9" LEVEL 1;
+COMP "imx_da<13>" LOCATE = SITE "R10" LEVEL 1;
+COMP "imx_da<14>" LOCATE = SITE "N5" LEVEL 1;
+COMP "imx_da<15>" LOCATE = SITE "M5" LEVEL 1;
+PIN camera_ent/frame_ent/Mram_ram32_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram32" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram32_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram32" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram31_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram31" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram31_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram31" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram30_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram30" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram30_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram30" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram29_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram29" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram29_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram29" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram28_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram28" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram28_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram28" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram27_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram27" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram27_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram27" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram26_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram26" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram26_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram26" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram25_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram25" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram25_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram25" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram23_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram23" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram23_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram23" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram22_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram22" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram22_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram22" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram24_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram24" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram24_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram24" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram21_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram21" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram21_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram21" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram20_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram20" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram20_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram20" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram19_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram19" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram19_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram19" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram18_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram18" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram18_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram18" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram17_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram17" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram17_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram17" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram16_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram16" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram16_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram16" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram14_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram14" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram14_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram14" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram13_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram13" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram13_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram13" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram15_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram15" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram15_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram15" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram12_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram12" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram12_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram12" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram11_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram11" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram11_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram11" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram10_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram10" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram10_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram10" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram9_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram9" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram9_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram9" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram8_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram8" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram8_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram8" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram7_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram7" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram7_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram7" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram5_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram5" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram5_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram5" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram4_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram4" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram4_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram4" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram6_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram6" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram6_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram6" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram3_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram3" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram3_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram3" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram2_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram2" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram2_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram2" PINNAME CLKB;
+PIN camera_ent/frame_ent/Mram_ram1_pins<28> = BEL
+        "camera_ent/frame_ent/Mram_ram1" PINNAME CLKA;
+PIN camera_ent/frame_ent/Mram_ram1_pins<29> = BEL
+        "camera_ent/frame_ent/Mram_ram1" PINNAME CLKB;
+TIMEGRP ext_clk = BEL "reset_gen/dly" BEL "reset_gen/rst" BEL
+        "camera_ent/inst_LPM_FF1" BEL "camera_ent/clkgen_unit/sig45" BEL
+        "camera_ent/ack_db" BEL "imx51_wb_16/writedata_15" BEL
+        "imx51_wb_16/writedata_14" BEL "imx51_wb_16/writedata_13" BEL
+        "imx51_wb_16/writedata_12" BEL "imx51_wb_16/writedata_11" BEL
+        "imx51_wb_16/writedata_10" BEL "imx51_wb_16/writedata_9" BEL
+        "imx51_wb_16/writedata_8" BEL "imx51_wb_16/writedata_7" BEL
+        "imx51_wb_16/writedata_6" BEL "imx51_wb_16/writedata_5" BEL
+        "imx51_wb_16/writedata_4" BEL "imx51_wb_16/writedata_3" BEL
+        "imx51_wb_16/writedata_2" BEL "imx51_wb_16/writedata_1" BEL
+        "imx51_wb_16/writedata_0" BEL "imx51_wb_16/address_15" BEL
+        "imx51_wb_16/address_14" BEL "imx51_wb_16/address_13" BEL
+        "imx51_wb_16/address_12" BEL "imx51_wb_16/address_11" BEL
+        "imx51_wb_16/address_10" BEL "imx51_wb_16/address_9" BEL
+        "imx51_wb_16/address_8" BEL "imx51_wb_16/address_7" BEL
+        "imx51_wb_16/address_6" BEL "imx51_wb_16/address_5" BEL
+        "imx51_wb_16/address_4" BEL "imx51_wb_16/address_3" BEL
+        "imx51_wb_16/address_2" BEL "imx51_wb_16/address_1" BEL
+        "rw_cnt_ent/r_counter_15" BEL "rw_cnt_ent/r_counter_14" BEL
+        "rw_cnt_ent/r_counter_13" BEL "rw_cnt_ent/r_counter_12" BEL
+        "rw_cnt_ent/r_counter_11" BEL "rw_cnt_ent/r_counter_10" BEL
+        "rw_cnt_ent/r_counter_9" BEL "rw_cnt_ent/r_counter_8" BEL
+        "rw_cnt_ent/r_counter_7" BEL "rw_cnt_ent/r_counter_6" BEL
+        "rw_cnt_ent/r_counter_5" BEL "rw_cnt_ent/r_counter_4" BEL
+        "rw_cnt_ent/r_counter_3" BEL "rw_cnt_ent/r_counter_2" BEL
+        "rw_cnt_ent/r_counter_1" BEL "rw_cnt_ent/r_counter_0" BEL
+        "rw_cnt_ent/w_counter_15" BEL "rw_cnt_ent/w_counter_14" BEL
+        "rw_cnt_ent/w_counter_13" BEL "rw_cnt_ent/w_counter_12" BEL
+        "rw_cnt_ent/w_counter_11" BEL "rw_cnt_ent/w_counter_10" BEL
+        "rw_cnt_ent/w_counter_9" BEL "rw_cnt_ent/w_counter_8" BEL
+        "rw_cnt_ent/w_counter_7" BEL "rw_cnt_ent/w_counter_6" BEL
+        "rw_cnt_ent/w_counter_5" BEL "rw_cnt_ent/w_counter_4" BEL
+        "rw_cnt_ent/w_counter_3" BEL "rw_cnt_ent/w_counter_2" BEL
+        "rw_cnt_ent/w_counter_1" BEL "rw_cnt_ent/w_counter_0" BEL
+        "rw_cnt_ent/dout_15" BEL "rw_cnt_ent/dout_14" BEL "rw_cnt_ent/dout_13"
+        BEL "rw_cnt_ent/dout_12" BEL "rw_cnt_ent/dout_11" BEL
+        "rw_cnt_ent/dout_10" BEL "rw_cnt_ent/dout_9" BEL "rw_cnt_ent/dout_8"
+        BEL "rw_cnt_ent/dout_7" BEL "rw_cnt_ent/dout_6" BEL
+        "rw_cnt_ent/dout_5" BEL "rw_cnt_ent/dout_4" BEL "rw_cnt_ent/dout_3"
+        BEL "rw_cnt_ent/dout_2" BEL "rw_cnt_ent/dout_1" BEL
+        "rw_cnt_ent/dout_0" BEL "interface/slave_sel_2" BEL
+        "interface/slave_sel_1" BEL "interface/slave_sel_0" BEL
+        "irq_manager/readdata_15" BEL "irq_manager/readdata_14" BEL
+        "irq_manager/readdata_13" BEL "irq_manager/readdata_12" BEL
+        "irq_manager/readdata_11" BEL "irq_manager/readdata_10" BEL
+        "irq_manager/readdata_9" BEL "irq_manager/readdata_8" BEL
+        "irq_manager/readdata_7" BEL "irq_manager/readdata_6" BEL
+        "irq_manager/readdata_5" BEL "irq_manager/readdata_4" BEL
+        "irq_manager/readdata_3" BEL "irq_manager/readdata_2" BEL
+        "irq_manager/readdata_1" BEL "irq_manager/readdata_0" BEL
+        "irq_manager/irq_ack_0" BEL "irq_manager/irq_old_0" BEL
+        "irq_manager/wr_ack" BEL "irq_manager/irq_pend_0" BEL
+        "irq_manager/rd_ack" BEL "irq_manager/irq_r_0" BEL
+        "irq_manager/irq_mask_15" BEL "irq_manager/irq_mask_14" BEL
+        "irq_manager/irq_mask_13" BEL "irq_manager/irq_mask_12" BEL
+        "irq_manager/irq_mask_11" BEL "irq_manager/irq_mask_10" BEL
+        "irq_manager/irq_mask_9" BEL "irq_manager/irq_mask_8" BEL
+        "irq_manager/irq_mask_7" BEL "irq_manager/irq_mask_6" BEL
+        "irq_manager/irq_mask_5" BEL "irq_manager/irq_mask_4" BEL
+        "irq_manager/irq_mask_3" BEL "irq_manager/irq_mask_2" BEL
+        "irq_manager/irq_mask_1" BEL "irq_manager/irq_mask_0" BEL
+        "irq_manager/start" BEL "ext_clk_BUFGP/BUFG" PIN
+        "camera_ent/frame_ent/Mram_ram32_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram32_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram31_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram31_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram30_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram30_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram29_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram29_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram28_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram28_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram27_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram27_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram26_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram26_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram25_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram25_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram23_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram23_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram22_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram22_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram24_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram24_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram21_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram21_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram20_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram20_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram19_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram19_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram18_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram18_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram17_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram17_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram16_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram16_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram14_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram14_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram13_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram13_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram15_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram15_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram12_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram12_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram11_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram11_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram10_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram10_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram9_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram9_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram8_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram8_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram7_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram7_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram5_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram5_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram4_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram4_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram6_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram6_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram3_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram3_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram2_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram2_pins<29>" PIN
+        "camera_ent/frame_ent/Mram_ram1_pins<28>" PIN
+        "camera_ent/frame_ent/Mram_ram1_pins<29>";
+TS_ext_clk = PERIOD TIMEGRP "ext_clk" 10.5263 ns HIGH 50%;
+SCHEMATIC END;
+

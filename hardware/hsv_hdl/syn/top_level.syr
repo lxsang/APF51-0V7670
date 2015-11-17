@@ -1,0 +1,933 @@
+Release 14.7 - xst P.20131013 (lin)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.23 secs
+ 
+--> 
+Reading design: top_level.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top_level.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top_level"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-csg225
+
+---- Source Options
+Top Module Name                    : top_level
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/wb_irq/debounce.vhd" into library work
+Parsing entity <debounce>.
+Parsing architecture <arch> of entity <debounce>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/wb_irq/rstgen_syscon.vhd" into library work
+Parsing entity <rstgen_syscon>.
+Parsing architecture <rstgen_syscon_1> of entity <rstgen_syscon>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/wb_irq/imx51_wb16_wrapper.vhd" into library work
+Parsing entity <imx51_wb16_wrapper>.
+Parsing architecture <RTL> of entity <imx51_wb16_wrapper>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/hsv_hdl/interface_mngr.vhd" into library work
+Parsing entity <interface_mngr>.
+Parsing architecture <arch> of entity <interface_mngr>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/hsv_hdl/irq_mngr.vhd" into library work
+Parsing entity <irq_mngr>.
+Parsing architecture <RTL> of entity <irq_mngr>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/mult9x9.vhd" into library work
+Parsing entity <mult9x9>.
+Parsing architecture <arch> of entity <mult9x9>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/hsvfilter.vhd" into library work
+Parsing entity <hsvfilter>.
+Parsing architecture <arch> of entity <hsvfilter>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/hsv_hdl/filter.vhd" into library work
+Parsing entity <filter>.
+Parsing architecture <arch> of entity <filter>.
+Parsing VHDL file "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/hsv_hdl/top_level.vhd" into library work
+Parsing entity <top_level>.
+Parsing architecture <RTL> of entity <top_level>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <top_level> (architecture <RTL>) with generics from library <work>.
+
+Elaborating entity <debounce> (architecture <arch>) from library <work>.
+
+Elaborating entity <rstgen_syscon> (architecture <rstgen_syscon_1>) with generics from library <work>.
+
+Elaborating entity <imx51_wb16_wrapper> (architecture <RTL>) from library <work>.
+
+Elaborating entity <interface_mngr> (architecture <arch>) from library <work>.
+
+Elaborating entity <irq_mngr> (architecture <RTL>) with generics from library <work>.
+
+Elaborating entity <filter> (architecture <arch>) from library <work>.
+
+Elaborating entity <hsvfilter> (architecture <arch>) with generics from library <work>.
+
+Elaborating entity <mult9x9> (architecture <arch>) from library <work>.
+WARNING:HDLCompiler:92 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/mult9x9.vhd" Line 66: ub_in should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/mult9x9.vhd" Line 67: ua_in should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/mult9x9.vhd" Line 78: pu_reg should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/mult9x9.vhd" Line 80: pu_reg should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/mult9x9.vhd" Line 83: pu_next should be on the sensitivity list of the process
+WARNING:HDLCompiler:634 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/hsv_hdl/top_level.vhd" Line 37: Net <ack_tick> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top_level>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/hsv_hdl/top_level.vhd".
+        IMG_W = 160
+        IMG_H = 120
+        BUF_AW = 14
+        BUF_DW = 16
+INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/hsv_hdl/top_level.vhd" line 42: Output port <db_level> of the instance <debounce_unit> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/hsv_hdl/top_level.vhd" line 78: Output port <adv> of the instance <interface> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <ack_tick> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <top_level> synthesized.
+
+Synthesizing Unit <debounce>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/wb_irq/debounce.vhd".
+    Found 21-bit register for signal <q_reg>.
+    Found 2-bit register for signal <state_reg>.
+    Found finite state machine <FSM_0> for signal <state_reg>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | zero                                           |
+    | Power Up State     | zero                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 21-bit subtractor for signal <GND_5_o_GND_5_o_sub_12_OUT<20:0>> created at line 1308.
+    Found 21-bit 4-to-1 multiplexer for signal <q_next> created at line 37.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  21 D-type flip-flop(s).
+	inferred   7 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <debounce> synthesized.
+
+Synthesizing Unit <rstgen_syscon>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/wb_irq/rstgen_syscon.vhd".
+        invert_reset = '0'
+    Found 1-bit register for signal <rst>.
+    Found 1-bit register for signal <dly>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <rstgen_syscon> synthesized.
+
+Synthesizing Unit <imx51_wb16_wrapper>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/wb_irq/imx51_wb16_wrapper.vhd".
+WARNING:Xst:647 - Input <wbm_ack> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit register for signal <address>.
+    Found 16-bit register for signal <writedata>.
+    Found 1-bit tristate buffer for signal <imx_da<15>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<14>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<13>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<12>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<11>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<10>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<9>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<8>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<7>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<6>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<5>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<4>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<3>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<2>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<1>> created at line 85
+    Found 1-bit tristate buffer for signal <imx_da<0>> created at line 85
+    Summary:
+	inferred  32 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred  16 Tristate(s).
+Unit <imx51_wb16_wrapper> synthesized.
+
+Synthesizing Unit <interface_mngr>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/hsv_hdl/interface_mngr.vhd".
+WARNING:Xst:647 - Input <addr_in<2:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 3-bit register for signal <slave_sel>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <interface_mngr> synthesized.
+
+Synthesizing Unit <irq_mngr>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/hsv_hdl/irq_mngr.vhd".
+        id = 3
+        irq_count = 16
+        irq_level = '1'
+    Found 16-bit register for signal <irq_mask>.
+    Found 1-bit register for signal <rd_ack>.
+    Found 1-bit register for signal <wr_ack>.
+    Found 16-bit register for signal <irq_old>.
+    Found 16-bit register for signal <irq_pend>.
+    Found 16-bit register for signal <readdata>.
+    Found 16-bit register for signal <irq_ack>.
+    Found 16-bit register for signal <irq_r>.
+    Found 1-bit register for signal <start>.
+    Found 16-bit 4-to-1 multiplexer for signal <GND_25_o_irq_mask[15]_mux_14_OUT> created at line 110.
+    Summary:
+	inferred  99 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+Unit <irq_mngr> synthesized.
+
+Synthesizing Unit <filter>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/hsv_hdl/filter.vhd".
+WARNING:Xst:647 - Input <m_ack> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit register for signal <dout>.
+    Found 16-bit register for signal <R>.
+    Found 16-bit register for signal <G>.
+    Found 16-bit register for signal <B>.
+    Found 16-bit 4-to-1 multiplexer for signal <GND_27_o_GND_27_o_mux_5_OUT> created at line 39.
+WARNING:Xst:737 - Found 1-bit latch for signal <ready>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred  64 D-type flip-flop(s).
+	inferred   1 Latch(s).
+	inferred   1 Multiplexer(s).
+Unit <filter> synthesized.
+
+Synthesizing Unit <hsvfilter>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/hsvfilter.vhd".
+        HL = 4
+        HH = 18
+        SL = 50
+        VL = 75
+        SH = 138
+        VH = 177
+    Found 1-bit register for signal <tick>.
+    Found 9-bit subtractor for signal <R[8]_G[8]_sub_16_OUT<8:0>> created at line 38.
+    Found 9-bit subtractor for signal <B[8]_R[8]_sub_17_OUT<8:0>> created at line 38.
+    Found 9-bit subtractor for signal <G[8]_B[8]_sub_19_OUT<8:0>> created at line 38.
+    Found 9-bit subtractor for signal <S> created at line 29.
+    Found 18-bit subtractor for signal <PH> created at line 28.
+    Found 9-bit subtractor for signal <sub1> created at line 29.
+    Found 9-bit subtractor for signal <sub2> created at line 29.
+    Found 9-bit comparator greater for signal <R[8]_G[8]_LessThan_4_o> created at line 36
+    Found 9-bit comparator greater for signal <R[8]_B[8]_LessThan_5_o> created at line 36
+    Found 9-bit comparator greater for signal <G[8]_B[8]_LessThan_6_o> created at line 36
+    Found 9-bit comparator greater for signal <G[8]_R[8]_LessThan_9_o> created at line 37
+    Found 9-bit comparator greater for signal <B[8]_R[8]_LessThan_10_o> created at line 37
+    Found 9-bit comparator greater for signal <B[8]_G[8]_LessThan_11_o> created at line 37
+    Found 9-bit comparator equal for signal <V[8]_R[8]_equal_14_o> created at line 38
+    Found 9-bit comparator equal for signal <V[8]_G[8]_equal_15_o> created at line 38
+    Found 9-bit comparator equal for signal <V[8]_B[8]_equal_23_o> created at line 40
+    Found 18-bit comparator lessequal for signal <n0039> created at line 82
+    Found 18-bit comparator lessequal for signal <n0041> created at line 82
+    Found 9-bit comparator lessequal for signal <n0043> created at line 83
+    Found 9-bit comparator lessequal for signal <n0045> created at line 83
+    Found 9-bit comparator lessequal for signal <n0047> created at line 84
+    Found 9-bit comparator lessequal for signal <n0049> created at line 84
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred   1 D-type flip-flop(s).
+	inferred  15 Comparator(s).
+	inferred   9 Multiplexer(s).
+Unit <hsvfilter> synthesized.
+
+Synthesizing Unit <mult9x9>.
+    Related source file is "/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/mult9x9.vhd".
+    Found 9-bit register for signal <a_reg>.
+    Found 4-bit register for signal <n_reg>.
+    Found 19-bit register for signal <p_reg>.
+    Found 1-bit register for signal <state_reg>.
+    Found 10-bit adder for signal <pu_reg[9]_GND_30_o_add_14_OUT> created at line 78.
+    Found 4-bit subtractor for signal <GND_30_o_GND_30_o_sub_14_OUT<3:0>> created at line 1308.
+    Found 9-bit subtractor for signal <a_in[8]_unary_minus_1_OUT<8:0>> created at line 0.
+    Found 9-bit subtractor for signal <b_in[8]_unary_minus_3_OUT<8:0>> created at line 0.
+    Found 18-bit subtractor for signal <p_reg[17]_unary_minus_24_OUT<17:0>> created at line 0.
+WARNING:Xst:737 - Found 1-bit latch for signal <pu_next<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pu_next<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pu_next<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pu_next<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pu_next<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pu_next<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pu_next<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pu_next<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pu_next<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pu_next<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+	inferred  10 Latch(s).
+	inferred  19 Multiplexer(s).
+Unit <mult9x9> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 16
+ 10-bit adder                                          : 2
+ 18-bit subtractor                                     : 3
+ 21-bit subtractor                                     : 1
+ 4-bit subtractor                                      : 2
+ 9-bit subtractor                                      : 8
+# Registers                                            : 28
+ 1-bit register                                        : 8
+ 16-bit register                                       : 12
+ 19-bit register                                       : 2
+ 21-bit register                                       : 1
+ 3-bit register                                        : 1
+ 4-bit register                                        : 2
+ 9-bit register                                        : 2
+# Latches                                              : 21
+ 1-bit latch                                           : 21
+# Comparators                                          : 15
+ 18-bit comparator lessequal                           : 2
+ 9-bit comparator equal                                : 3
+ 9-bit comparator greater                              : 6
+ 9-bit comparator lessequal                            : 4
+# Multiplexers                                         : 64
+ 1-bit 2-to-1 multiplexer                              : 25
+ 10-bit 2-to-1 multiplexer                             : 2
+ 16-bit 2-to-1 multiplexer                             : 6
+ 16-bit 4-to-1 multiplexer                             : 2
+ 18-bit 2-to-1 multiplexer                             : 2
+ 19-bit 2-to-1 multiplexer                             : 4
+ 21-bit 2-to-1 multiplexer                             : 4
+ 21-bit 4-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 4
+ 9-bit 2-to-1 multiplexer                              : 13
+# Tristates                                            : 16
+ 1-bit tristate buffer                                 : 16
+# FSMs                                                 : 1
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <irq_r_15> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_14> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_13> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_12> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_11> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_10> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_9> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_8> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_7> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_6> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_5> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_4> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_3> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_r_2> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_15> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_14> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_13> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_12> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_11> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_10> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_9> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_8> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_7> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_6> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_5> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_4> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_3> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_2> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <address_0> of sequential type is unconnected in block <imx51_wb_16>.
+WARNING:Xst:2677 - Node <B_8> of sequential type is unconnected in block <rw_cnt_ent>.
+WARNING:Xst:2677 - Node <B_9> of sequential type is unconnected in block <rw_cnt_ent>.
+WARNING:Xst:2677 - Node <B_10> of sequential type is unconnected in block <rw_cnt_ent>.
+WARNING:Xst:2677 - Node <B_11> of sequential type is unconnected in block <rw_cnt_ent>.
+WARNING:Xst:2677 - Node <B_12> of sequential type is unconnected in block <rw_cnt_ent>.
+WARNING:Xst:2677 - Node <B_13> of sequential type is unconnected in block <rw_cnt_ent>.
+WARNING:Xst:2677 - Node <B_14> of sequential type is unconnected in block <rw_cnt_ent>.
+WARNING:Xst:2677 - Node <B_15> of sequential type is unconnected in block <rw_cnt_ent>.
+WARNING:Xst:1710 - FF/Latch <irq_pend_2> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_3> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_4> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_5> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_6> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_7> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_8> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_9> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_10> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_11> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_12> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_13> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_14> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_15> (without init value) has a constant value of 0 in block <irq_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_2> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_3> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_4> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_5> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_6> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_7> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_8> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_9> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_10> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_11> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_12> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_13> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_14> is unconnected in block <irq_manager>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_15> is unconnected in block <irq_manager>.
+WARNING:Xst:2404 -  FFs/Latches <slave_sel<2:2>> (without init value) have a constant value of 0 in block <interface_mngr>.
+
+Synthesizing (advanced) Unit <mult9x9>.
+The following registers are absorbed into counter <n_reg>: 1 register on signal <n_reg>.
+Unit <mult9x9> synthesized (advanced).
+WARNING:Xst:2677 - Node <B_8> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <B_9> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <B_10> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <B_11> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <B_12> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <B_13> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <B_14> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <B_15> of sequential type is unconnected in block <filter>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 16
+ 10-bit adder                                          : 2
+ 18-bit subtractor                                     : 3
+ 21-bit subtractor                                     : 1
+ 4-bit subtractor                                      : 2
+ 9-bit subtractor                                      : 8
+# Counters                                             : 2
+ 4-bit down counter                                    : 2
+# Registers                                            : 271
+ Flip-Flops                                            : 271
+# Comparators                                          : 15
+ 18-bit comparator lessequal                           : 2
+ 9-bit comparator equal                                : 3
+ 9-bit comparator greater                              : 6
+ 9-bit comparator lessequal                            : 4
+# Multiplexers                                         : 63
+ 1-bit 2-to-1 multiplexer                              : 25
+ 10-bit 2-to-1 multiplexer                             : 2
+ 16-bit 2-to-1 multiplexer                             : 6
+ 16-bit 4-to-1 multiplexer                             : 2
+ 18-bit 2-to-1 multiplexer                             : 2
+ 19-bit 2-to-1 multiplexer                             : 4
+ 21-bit 2-to-1 multiplexer                             : 4
+ 21-bit 4-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 4
+ 9-bit 2-to-1 multiplexer                              : 13
+# FSMs                                                 : 1
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <irq_r_2> in Unit <irq_mngr> is equivalent to the following 13 FFs/Latches, which will be removed : <irq_r_3> <irq_r_4> <irq_r_5> <irq_r_6> <irq_r_7> <irq_r_8> <irq_r_9> <irq_r_10> <irq_r_11> <irq_r_12> <irq_r_13> <irq_r_14> <irq_r_15> 
+WARNING:Xst:1710 - FF/Latch <irq_r_2> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_2> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_3> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_4> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_5> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_6> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_7> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_8> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_9> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_10> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_11> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_12> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_13> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_14> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_old_15> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <irq_pend_2> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_3> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_4> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_5> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_6> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_7> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_8> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_9> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_10> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_11> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_12> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_13> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_14> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <irq_pend_15> (without init value) has a constant value of 0 in block <irq_mngr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_2> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_3> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_4> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_5> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_6> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_7> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_8> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_9> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_10> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_11> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_12> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_13> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_14> is unconnected in block <irq_mngr>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <irq_ack_15> is unconnected in block <irq_mngr>.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <debounce_unit/FSM_0> on signal <state_reg[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ zero  | 00
+ wait1 | 01
+ wait0 | 10
+ one   | 11
+-------------------
+WARNING:Xst:1710 - FF/Latch <mult2/a_reg_0> (without init value) has a constant value of 0 in block <hsvfilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mult1/a_reg_0> (without init value) has a constant value of 0 in block <hsvfilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mult1/a_reg_1> (without init value) has a constant value of 0 in block <hsvfilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <mult2/a_reg_8> (without init value) has a constant value of 0 in block <hsvfilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mult1/a_reg_8> (without init value) has a constant value of 0 in block <hsvfilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2170 - Unit hsvfilter : the following signal(s) form a combinatorial loop: state_tick_OR_91_o.
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    ready in unit <filter>
+
+
+Optimizing unit <top_level> ...
+
+Optimizing unit <debounce> ...
+
+Optimizing unit <interface_mngr> ...
+
+Optimizing unit <irq_mngr> ...
+
+Optimizing unit <filter> ...
+
+Optimizing unit <hsvfilter> ...
+INFO:Xst:2261 - The FF/Latch <mult2/a_reg_2> in Unit <hsvfilter> is equivalent to the following FF/Latch, which will be removed : <mult2/a_reg_6> 
+INFO:Xst:2261 - The FF/Latch <mult1/a_reg_3> in Unit <hsvfilter> is equivalent to the following FF/Latch, which will be removed : <mult1/a_reg_7> 
+INFO:Xst:2261 - The FF/Latch <mult1/a_reg_5> in Unit <hsvfilter> is equivalent to the following FF/Latch, which will be removed : <mult1/a_reg_6> 
+INFO:Xst:2261 - The FF/Latch <mult2/a_reg_3> in Unit <hsvfilter> is equivalent to the following FF/Latch, which will be removed : <mult2/a_reg_7> 
+WARNING:Xst:1710 - FF/Latch <mult2/p_reg_18> (without init value) has a constant value of 0 in block <hsvfilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mult1/p_reg_18> (without init value) has a constant value of 0 in block <hsvfilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <mult2/p_reg_18> (without init value) has a constant value of 0 in block <hsvfilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mult1/p_reg_18> (without init value) has a constant value of 0 in block <hsvfilter>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <mult2/a_reg_2> in Unit <hsvfilter> is equivalent to the following FF/Latch, which will be removed : <mult2/a_reg_6> 
+INFO:Xst:2261 - The FF/Latch <mult1/a_reg_3> in Unit <hsvfilter> is equivalent to the following FF/Latch, which will be removed : <mult1/a_reg_7> 
+INFO:Xst:2261 - The FF/Latch <mult1/a_reg_5> in Unit <hsvfilter> is equivalent to the following FF/Latch, which will be removed : <mult1/a_reg_6> 
+INFO:Xst:2261 - The FF/Latch <mult2/a_reg_3> in Unit <hsvfilter> is equivalent to the following FF/Latch, which will be removed : <mult2/a_reg_7> 
+WARNING:Xst:2677 - Node <imx51_wb_16/address_0> of sequential type is unconnected in block <top_level>.
+INFO:Xst:2261 - The FF/Latch <rw_cnt_ent/filter_unit/mult1/state_reg> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <rw_cnt_ent/filter_unit/mult2/state_reg> 
+INFO:Xst:2261 - The FF/Latch <rw_cnt_ent/filter_unit/mult1/n_reg_0> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <rw_cnt_ent/filter_unit/mult2/n_reg_0> 
+INFO:Xst:2261 - The FF/Latch <rw_cnt_ent/filter_unit/mult1/n_reg_1> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <rw_cnt_ent/filter_unit/mult2/n_reg_1> 
+INFO:Xst:2261 - The FF/Latch <rw_cnt_ent/filter_unit/mult1/n_reg_2> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <rw_cnt_ent/filter_unit/mult2/n_reg_2> 
+INFO:Xst:2261 - The FF/Latch <rw_cnt_ent/filter_unit/mult1/n_reg_3> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <rw_cnt_ent/filter_unit/mult2/n_reg_3> 
+INFO:Xst:2261 - The FF/Latch <rw_cnt_ent/filter_unit/mult1/a_reg_2> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <rw_cnt_ent/filter_unit/mult2/a_reg_1> 
+INFO:Xst:2261 - The FF/Latch <rw_cnt_ent/filter_unit/mult1/a_reg_3> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <rw_cnt_ent/filter_unit/mult2/a_reg_3> 
+INFO:Xst:2261 - The FF/Latch <rw_cnt_ent/filter_unit/mult1/a_reg_4> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <rw_cnt_ent/filter_unit/mult2/a_reg_5> 
+INFO:Xst:2261 - The FF/Latch <rw_cnt_ent/filter_unit/mult1/a_reg_5> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <rw_cnt_ent/filter_unit/mult2/a_reg_2> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 10.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 204
+ Flip-Flops                                            : 204
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top_level.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 692
+#      GND                         : 1
+#      INV                         : 63
+#      LUT1                        : 6
+#      LUT2                        : 35
+#      LUT3                        : 43
+#      LUT4                        : 96
+#      LUT5                        : 134
+#      LUT6                        : 87
+#      MUXCY                       : 117
+#      MUXF7                       : 2
+#      VCC                         : 1
+#      XORCY                       : 107
+# FlipFlops/Latches                : 225
+#      FD                          : 2
+#      FDC                         : 76
+#      FDCE                        : 109
+#      FDPE                        : 16
+#      FDRE                        : 1
+#      LD                          : 21
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 21
+#      IBUF                        : 4
+#      IOBUF                       : 16
+#      OBUF                        : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9csg225-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             225  out of  11440     1%  
+ Number of Slice LUTs:                  464  out of   5720     8%  
+    Number used as Logic:               464  out of   5720     8%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    522
+   Number with an unused Flip Flop:     297  out of    522    56%  
+   Number with an unused LUT:            58  out of    522    11%  
+   Number of fully used LUT-FF pairs:   167  out of    522    31%  
+   Number of unique control sets:        15
+
+IO Utilization: 
+ Number of IOs:                          22
+ Number of bonded IOBs:                  22  out of    160    13%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------------------------------------------------------------------------+------------------------------------------------+-------+
+Clock Signal                                                                                               | Clock buffer(FF name)                          | Load  |
+-----------------------------------------------------------------------------------------------------------+------------------------------------------------+-------+
+ext_clk                                                                                                    | BUFGP                                          | 204   |
+rw_cnt_ent/filter_unit/mult1/GND_30_o_start_OR_81_o(rw_cnt_ent/filter_unit/mult1/GND_30_o_start_OR_81_o1:O)| BUFG(*)(rw_cnt_ent/filter_unit/mult1/pu_next_9)| 20    |
+rw_cnt_ent/ready_G(rw_cnt_ent/ready_G:O)                                                                   | NONE(*)(rw_cnt_ent/ready)                      | 1     |
+-----------------------------------------------------------------------------------------------------------+------------------------------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 12.418ns (Maximum Frequency: 80.528MHz)
+   Minimum input arrival time before clock: 5.207ns
+   Maximum output required time after clock: 7.252ns
+   Maximum combinational path delay: 8.820ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ext_clk'
+  Clock period: 12.418ns (frequency: 80.528MHz)
+  Total number of paths / destination ports: 13608770 / 467
+-------------------------------------------------------------------------
+Delay:               12.418ns (Levels of Logic = 25)
+  Source:            rw_cnt_ent/B_0 (FF)
+  Destination:       rw_cnt_ent/dout_7 (FF)
+  Source Clock:      ext_clk rising
+  Destination Clock: ext_clk rising
+
+  Data Path: rw_cnt_ent/B_0 to rw_cnt_ent/dout_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            10   0.525   1.463  rw_cnt_ent/B_0 (rw_cnt_ent/B_0)
+     LUT6:I0->O            1   0.254   0.681  rw_cnt_ent/filter_unit/R[8]_B[8]_LessThan_5_o2 (rw_cnt_ent/filter_unit/R[8]_B[8]_LessThan_5_o1)
+     MUXF7:S->O            1   0.185   0.790  rw_cnt_ent/filter_unit/R[8]_B[8]_LessThan_5_o1 (rw_cnt_ent/filter_unit/R[8]_B[8]_LessThan_5_o2)
+     LUT6:I4->O           14   0.250   1.127  rw_cnt_ent/filter_unit/R[8]_R[8]_AND_53_o (rw_cnt_ent/filter_unit/R[8]_R[8]_AND_53_o)
+     LUT6:I5->O           14   0.254   1.235  rw_cnt_ent/filter_unit/V[8]_R[8]_equal_14_o83 (rw_cnt_ent/filter_unit/V[8]_R[8]_equal_14_o)
+     LUT5:I3->O            1   0.250   0.000  rw_cnt_ent/filter_unit/Mmux_sub_rs_lut<0> (rw_cnt_ent/filter_unit/Mmux_sub_rs_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<0> (rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<1> (rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<2> (rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<3> (rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<4> (rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<5> (rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<6> (rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<6>)
+     MUXCY:CI->O           0   0.023   0.000  rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<7> (rw_cnt_ent/filter_unit/Mmux_sub_rs_cy<7>)
+     XORCY:CI->O           4   0.206   0.804  rw_cnt_ent/filter_unit/Mmux_sub_rs_xor<8> (rw_cnt_ent/filter_unit/sub<8>)
+     LUT2:I1->O            1   0.254   0.000  rw_cnt_ent/filter_unit/Msub_PH_lut<10> (rw_cnt_ent/filter_unit/Msub_PH_lut<10>)
+     MUXCY:S->O            1   0.215   0.000  rw_cnt_ent/filter_unit/Msub_PH_cy<10> (rw_cnt_ent/filter_unit/Msub_PH_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  rw_cnt_ent/filter_unit/Msub_PH_cy<11> (rw_cnt_ent/filter_unit/Msub_PH_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  rw_cnt_ent/filter_unit/Msub_PH_cy<12> (rw_cnt_ent/filter_unit/Msub_PH_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  rw_cnt_ent/filter_unit/Msub_PH_cy<13> (rw_cnt_ent/filter_unit/Msub_PH_cy<13>)
+     MUXCY:CI->O           0   0.023   0.000  rw_cnt_ent/filter_unit/Msub_PH_cy<14> (rw_cnt_ent/filter_unit/Msub_PH_cy<14>)
+     XORCY:CI->O           6   0.206   1.306  rw_cnt_ent/filter_unit/Msub_PH_xor<15> (rw_cnt_ent/filter_unit/PH<15>)
+     LUT5:I0->O            0   0.254   0.000  rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_lutdi6 (rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_lutdi6)
+     MUXCY:DI->O           1   0.181   0.000  rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_cy<6> (rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_cy<6>)
+     MUXCY:CI->O           8   0.235   0.944  rw_cnt_ent/filter_unit/Mcompar_PH_th_h[17]_PH[17]_LessThan_32_o_cy<7> (rw_cnt_ent/filter_unit/PH_th_h[17]_PH[17]_LessThan_32_o)
+     LUT6:I5->O            1   0.254   0.000  rw_cnt_ent/Mmux_GND_27_o_GND_27_o_mux_5_OUT91 (rw_cnt_ent/GND_27_o_GND_27_o_mux_5_OUT<2>)
+     FDCE:D                    0.074          rw_cnt_ent/dout_2
+    ----------------------------------------
+    Total                     12.418ns (4.068ns logic, 8.350ns route)
+                                       (32.8% logic, 67.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ext_clk'
+  Total number of paths / destination ports: 388 / 237
+-------------------------------------------------------------------------
+Offset:              5.207ns (Levels of Logic = 4)
+  Source:            button (PAD)
+  Destination:       debounce_unit/state_reg_FSM_FFd1 (FF)
+  Destination Clock: ext_clk rising
+
+  Data Path: button to debounce_unit/state_reg_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            25   1.328   1.403  button_IBUF (button_IBUF)
+     LUT6:I5->O            1   0.254   0.958  debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>1 (debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>)
+     LUT4:I0->O            1   0.254   0.682  debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>6 (debounce_unit/q_next[20]_GND_5_o_equal_6_o<20>5)
+     LUT5:I4->O            1   0.254   0.000  debounce_unit/state_reg_FSM_FFd1-In1 (debounce_unit/state_reg_FSM_FFd1-In)
+     FDC:D                     0.074          debounce_unit/state_reg_FSM_FFd1
+    ----------------------------------------
+    Total                      5.207ns (2.164ns logic, 3.043ns route)
+                                       (41.6% logic, 58.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ext_clk'
+  Total number of paths / destination ports: 115 / 17
+-------------------------------------------------------------------------
+Offset:              7.252ns (Levels of Logic = 3)
+  Source:            interface/slave_sel_0 (FF)
+  Destination:       imx_da<15> (PAD)
+  Source Clock:      ext_clk rising
+
+  Data Path: interface/slave_sel_0 to imx_da<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              7   0.525   1.018  interface/slave_sel_0 (interface/slave_sel_0)
+     LUT4:I2->O           16   0.250   1.612  irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_46_o11 (irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_46_o)
+     LUT6:I1->O            1   0.254   0.681  Mmux_wbm_readdata161 (wbm_readdata<9>)
+     IOBUF:I->IO               2.912          imx_da_9_IOBUF (imx_da<9>)
+    ----------------------------------------
+    Total                      7.252ns (3.941ns logic, 3.311ns route)
+                                       (54.3% logic, 45.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 80 / 16
+-------------------------------------------------------------------------
+Delay:               8.820ns (Levels of Logic = 4)
+  Source:            imx_cs_n (PAD)
+  Destination:       imx_da<15> (PAD)
+
+  Data Path: imx_cs_n to imx_da<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            31   1.328   1.779  imx_cs_n_IBUF (imx_cs_n_IBUF)
+     LUT4:I0->O           16   0.254   1.612  irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_46_o11 (irq_manager/wbs_s1_strobe_wbs_s1_cycle_AND_46_o)
+     LUT6:I1->O            1   0.254   0.681  Mmux_wbm_readdata161 (wbm_readdata<9>)
+     IOBUF:I->IO               2.912          imx_da_9_IOBUF (imx_da<9>)
+    ----------------------------------------
+    Total                      8.820ns (4.748ns logic, 4.072ns route)
+                                       (53.8% logic, 46.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock ext_clk
+---------------------------------------------------+---------+---------+---------+---------+
+                                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------------------------+---------+---------+---------+---------+
+ext_clk                                            |   12.418|         |         |         |
+rw_cnt_ent/filter_unit/mult1/GND_30_o_start_OR_81_o|         |    2.021|         |         |
+rw_cnt_ent/ready_G                                 |         |    1.336|         |         |
+---------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock rw_cnt_ent/filter_unit/mult1/GND_30_o_start_OR_81_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ext_clk        |         |         |    3.361|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock rw_cnt_ent/ready_G
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ext_clk        |         |         |    2.752|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 14.97 secs
+ 
+--> 
+
+
+Total memory usage is 124428 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  150 (   0 filtered)
+Number of infos    :   22 (   0 filtered)
+

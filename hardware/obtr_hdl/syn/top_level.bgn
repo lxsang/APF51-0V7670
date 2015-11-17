@@ -5,14 +5,10 @@ Loading device for application Rf_Device from file '6slx9.nph' in environment
    "top_level" is an NCD, version 3.2, device xc6slx9, package csg225, speed -2
 Opened constraints file top_level.pcf.
 
-Fri Oct 16 21:43:16 2015
+Tue Nov 17 10:51:35 2015
 
 /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/unwrapped/bitgen -w -g Binary:Yes -intstyle ise top_level.ncd 
 
-INFO:Bitgen:341 - This design is using one or more 9K Block RAMs (RAMB8BWER). 
-   9K Block RAM initialization data, both user defined and default, requires a
-   special bit stream format.  For more information, please reference Xilinx
-   Answer Record 39999.
 Summary of Bitgen Options:
 +----------------------+----------------------+
 | Option Name          | Current Setting      |
@@ -132,12 +128,7 @@ There were 0 CONFIG constraint(s) processed from top_level.pcf.
 
 
 Running DRC.
-WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
-   (RAMB8BWER).  9K Block RAM initialization data, both user defined and
-   default, may be incorrect and should not be used.  For more information,
-   please reference Xilinx Answer Record 39999.
-DRC detected 0 errors and 1 warnings.  Please see the previously displayed
-individual error or warning messages for more details.
+DRC detected 0 errors and 0 warnings.
 Creating bit map...
 Saving bit stream in "top_level.bit".
 Saving bit stream in "top_level.bin".

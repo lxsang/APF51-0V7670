@@ -1,0 +1,124 @@
+$date
+  Sat Nov 14 22:37:04 2015
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$var reg 1 ! clka $end
+$var reg 1 " clkb $end
+$var reg 1 # reset $end
+$var reg 1 $ flaga $end
+$var reg 1 % flagb $end
+$scope module uut $end
+$var reg 1 & clka $end
+$var reg 1 ' clkb $end
+$var reg 1 ( reset $end
+$var reg 1 ) flaga $end
+$var reg 1 * flagb $end
+$var reg 1 + flaga_toggle $end
+$var reg 3 , flagb_sync[2:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+0"
+1#
+0$
+0%
+0&
+0'
+1(
+0)
+0*
+0+
+b000 ,
+#10000000
+1"
+1'
+#20000000
+0"
+0#
+0'
+0(
+#30000000
+1"
+1'
+#40000000
+1!
+0"
+1$
+1&
+0'
+1)
+1+
+#50000000
+1"
+1'
+b001 ,
+#60000000
+0"
+0'
+#70000000
+1"
+1%
+1'
+1*
+b011 ,
+#80000000
+0!
+0"
+0&
+0'
+#90000000
+1"
+0%
+1'
+0*
+b111 ,
+#100000000
+0"
+0'
+#110000000
+1"
+1'
+#120000000
+1!
+0"
+0$
+1&
+0'
+0)
+#130000000
+1"
+1'
+#140000000
+0"
+0'
+#150000000
+1"
+1'
+#160000000
+0!
+0"
+0&
+0'
+#170000000
+1"
+1'
+#180000000
+0"
+0'
+#190000000
+1"
+1'
+#200000000
+1!
+0"
+1&
+0'
+#210000000
+1"
+1'

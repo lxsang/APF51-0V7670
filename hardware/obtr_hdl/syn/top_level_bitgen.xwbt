@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/syn/top_level.ncd
-OUTFILE=/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/syn/top_level.bit
-FAMILY=Spartan6
-PART=xc6slx9-2csg225
-WORKINGDIR=/home/mrsang/ushare/fpgaws/apf51_ws/apf51-ov7670/APF51-0V7670/hardware/obtr_hdl/syn
-LICENSE=WebPack
-USER_INFO=210888618_0_0_325

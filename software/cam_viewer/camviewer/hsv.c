@@ -131,18 +131,11 @@ void execute(int client,const char* method,dictionary rq)
 		for (int i = 0; i < nword ; i++) {
                         unsigned short tmp = buff_out[i];
                         for (int j=0; j<16; j++) {
-                                if(tmp & (1<<j))
-                                { 
-					img_data[i*16+j] = 255;
-					/*npx++;
-					sum = i*16+j;
-					x+= sum/w;
-					y+= sum%w;*/
-				}
-                                else
-                                        img_data[i*16+j] = 0;
+				uchar v = (tmp&(1<<j))?166:0;
+				img_data[i*16+j] = v;
+				//img_data[i*16+j*3+1] = v;
+				//img_data[i*16+j*3+2] = v;
                         }
-
                 }
 		IplImage* gray_image  = cvCreateImage(cvSize(w,h),IPL_DEPTH_8U,1);
 		//cvSetData(gray_image,img_data,gray_image->widthStep);
@@ -158,7 +151,7 @@ void execute(int client,const char* method,dictionary rq)
 			
                         printf("[x,y] = [%d,%d]\n", x,y);
 			// draw the circle
-			cvCircle(gray_image, cvPoint(y,x), 10, cvScalar(255,0,0,0), 1, 8, 0);
+			cvCircle(gray_image, cvPoint(y,x), 10, cvScalar(255,255,255,0), -1, 8, 0);
                 }
 		int params[3] = {0};
 		params[0] = CV_IMWRITE_JPEG_QUALITY;

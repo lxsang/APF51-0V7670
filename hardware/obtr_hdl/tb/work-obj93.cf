@@ -1,61 +1,79 @@
 v 3
-file . "../hsvfilter.vhd" "20151106144036.000" "20151106154044.645":
-  entity hsvfilter at 1( 0) + 0 on 923;
-  architecture arch of hsvfilter at 25( 502) + 0 on 924;
-file . "mult_test.vhd" "20151105163926.000" "20151105174110.789":
-  entity mult_test at 2( 1) + 0 on 873;
-  architecture behavior of mult_test at 9( 107) + 0 on 874;
-file . "test_clk_gen.vhd" "20151023112825.000" "20151023140201.973":
-  entity clk_gen_tb at 2( 1) + 0 on 805;
-  architecture behavior of clk_gen_tb at 8( 83) + 0 on 806;
-file . "../../wb_irq/rstgen_syscon.vhd" "20151014164402.000" "20151023132832.449":
-  entity rstgen_syscon at 12( 309) + 0 on 765;
-  architecture rstgen_syscon_1 of rstgen_syscon at 34( 852) + 0 on 766;
-file . "../dual_port_dual_clock.vhd" "20151015193028.000" "20151023132832.422":
-  entity dual_port_dual_clock at 1( 0) + 0 on 761;
-  architecture arch of dual_port_dual_clock at 19( 439) + 0 on 762;
-file . "../../wb_irq/irq_mngr.vhd" "20151014164402.000" "20151023132832.389":
-  entity irq_mngr at 19( 649) + 0 on 757;
-  architecture rtl of irq_mngr at 55( 2100) + 4 on 758;
-file . "../../wb_irq/imx51_wb16_wrapper.vhd" "20151014164402.000" "20151023132832.344":
-  entity imx51_wb16_wrapper at 17( 550) + 0 on 751;
-  architecture rtl of imx51_wb16_wrapper at 48( 1729) + 0 on 752;
-file . "../button.vhd" "20151013095645.000" "20151013174319.115":
-  entity button at 1( 0) + 0 on 363;
-  architecture arch of button at 21( 460) + 0 on 364;
-file . "test.vhdl" "20151016192712.000" "20151023132832.481":
-  entity wb_test at 2( 1) + 0 on 769;
-  architecture behavior of wb_test at 8( 77) + 0 on 770;
-file . "../interface_mngr.vhd" "20151016160556.000" "20151023132832.354":
-  entity interface_mngr at 1( 0) + 0 on 753;
-  architecture arch of interface_mngr at 24( 616) + 0 on 754;
-file . "../led.vhd" "20151013084042.000" "20151013174319.130":
-  entity led at 1( 0) + 0 on 365;
-  architecture arch of led at 22( 513) + 0 on 366;
-file . "../default.vhd" "20151007205159.000" "20151007225202.207":
-  entity default at 1( 0) + 0 on 209;
-  architecture arch of default at 20( 462) + 0 on 210;
-file . "../top_level.vhd" "20151018115533.000" "20151023132832.469":
-  entity top_level at 1( 0) + 0 on 767;
-  architecture rtl of top_level at 22( 396) + 0 on 768;
-file . "../../wb_irq/debounce.vhd" "20151014164402.000" "20151023132832.406":
-  entity debounce at 3( 21) + 0 on 759;
-  architecture arch of debounce at 15( 275) + 0 on 760;
-file . "../buffer_ctrl.vhd" "20151016155149.000" "20151023132832.436":
-  entity buffer_ctrl at 2( 40) + 0 on 763;
-  architecture arch of buffer_ctrl at 23( 531) + 0 on 764;
-file . "../rw_counter.vhd" "20151016162221.000" "20151023132832.375":
-  entity rw_counter at 1( 0) + 0 on 755;
-  architecture arch of rw_counter at 19( 436) + 0 on 756;
-file . "../clock_gen.vhd" "20151023120156.000" "20151023140201.957":
-  entity clock_gen at 1( 0) + 0 on 803;
-  architecture arch of clock_gen at 13( 205) + 0 on 804;
+file . "../flag_sync.vhd" "20151114213504.000" "20151114223704.035":
+  entity flag_sync at 1( 0) + 0 on 1079;
+  architecture arch of flag_sync at 13( 212) + 0 on 1080;
+file . "../center_of_mass.vhd" "20151117094554.000" "20151117104652.499":
+  entity center_of_mass at 1( 0) + 0 on 1145;
+  architecture arch of center_of_mass at 19( 485) + 0 on 1146;
+file . "fifo_test.vhd" "20151111153451.000" "20151111164116.671":
+  entity fifo_test at 2( 1) + 0 on 1023;
+  architecture behavior of fifo_test at 9( 107) + 0 on 1024;
+file . "../../ov7670_interface/dual_port_dual_clock.vhd" "20151026152221.000" "20151111164116.623":
+  entity dual_port_dual_clock at 22( 1147) + 0 on 1019;
+  architecture arch of dual_port_dual_clock at 40( 1586) + 0 on 1020;
+file . "../mult9x9.vhd" "20151111144441.000" "20151111174933.439":
+  entity mult9x9 at 1( 0) + 0 on 1025;
+  architecture arch of mult9x9 at 15( 336) + 0 on 1026;
+file . "hsvfilter_test.vhd" "20151111144823.000" "20151111174933.459":
+  entity hsvfilter_test at 2( 1) + 0 on 1029;
+  architecture behavior of hsvfilter_test at 9( 117) + 0 on 1030;
 file . "../mult8x8.vhd" "20151105154458.000" "20151105172904.977":
   entity mult8x8 at 1( 0) + 0 on 853;
   architecture arch of mult8x8 at 15( 336) + 0 on 854;
-file . "hsvfilter_test.vhd" "20151106142452.000" "20151106154044.658":
-  entity hsvfilter_test at 2( 1) + 0 on 925;
-  architecture behavior of hsvfilter_test at 9( 117) + 0 on 926;
-file . "../mult9x9.vhd" "20151106142027.000" "20151106154044.636":
-  entity mult9x9 at 1( 0) + 0 on 921;
-  architecture arch of mult9x9 at 15( 336) + 0 on 922;
+file . "../clock_gen.vhd" "20151023120156.000" "20151023140201.957":
+  entity clock_gen at 1( 0) + 0 on 803;
+  architecture arch of clock_gen at 13( 205) + 0 on 804;
+file . "../rw_counter.vhd" "20151016162221.000" "20151023132832.375":
+  entity rw_counter at 1( 0) + 0 on 755;
+  architecture arch of rw_counter at 19( 436) + 0 on 756;
+file . "../buffer_ctrl.vhd" "20151016155149.000" "20151023132832.436":
+  entity buffer_ctrl at 2( 40) + 0 on 763;
+  architecture arch of buffer_ctrl at 23( 531) + 0 on 764;
+file . "../../wb_irq/debounce.vhd" "20151014164402.000" "20151023132832.406":
+  entity debounce at 3( 21) + 0 on 759;
+  architecture arch of debounce at 15( 275) + 0 on 760;
+file . "../top_level.vhd" "20151018115533.000" "20151023132832.469":
+  entity top_level at 1( 0) + 0 on 767;
+  architecture rtl of top_level at 22( 396) + 0 on 768;
+file . "../default.vhd" "20151007205159.000" "20151007225202.207":
+  entity default at 1( 0) + 0 on 209;
+  architecture arch of default at 20( 462) + 0 on 210;
+file . "../led.vhd" "20151013084042.000" "20151013174319.130":
+  entity led at 1( 0) + 0 on 365;
+  architecture arch of led at 22( 513) + 0 on 366;
+file . "../interface_mngr.vhd" "20151016160556.000" "20151023132832.354":
+  entity interface_mngr at 1( 0) + 0 on 753;
+  architecture arch of interface_mngr at 24( 616) + 0 on 754;
+file . "test.vhdl" "20151016192712.000" "20151023132832.481":
+  entity wb_test at 2( 1) + 0 on 769;
+  architecture behavior of wb_test at 8( 77) + 0 on 770;
+file . "../button.vhd" "20151013095645.000" "20151013174319.115":
+  entity button at 1( 0) + 0 on 363;
+  architecture arch of button at 21( 460) + 0 on 364;
+file . "../../wb_irq/imx51_wb16_wrapper.vhd" "20151014164402.000" "20151023132832.344":
+  entity imx51_wb16_wrapper at 17( 550) + 0 on 751;
+  architecture rtl of imx51_wb16_wrapper at 48( 1729) + 0 on 752;
+file . "../../wb_irq/irq_mngr.vhd" "20151014164402.000" "20151023132832.389":
+  entity irq_mngr at 19( 649) + 0 on 757;
+  architecture rtl of irq_mngr at 55( 2100) + 4 on 758;
+file . "../../wb_irq/rstgen_syscon.vhd" "20151014164402.000" "20151023132832.449":
+  entity rstgen_syscon at 12( 309) + 0 on 765;
+  architecture rstgen_syscon_1 of rstgen_syscon at 34( 852) + 0 on 766;
+file . "test_clk_gen.vhd" "20151023112825.000" "20151023140201.973":
+  entity clk_gen_tb at 2( 1) + 0 on 805;
+  architecture behavior of clk_gen_tb at 8( 83) + 0 on 806;
+file . "mult_test.vhd" "20151105163926.000" "20151111154516.769":
+  entity mult_test at 2( 1) + 0 on 929;
+  architecture behavior of mult_test at 9( 107) + 0 on 930;
+file . "../hsvfilter.vhd" "20151111144659.000" "20151111174933.450":
+  entity hsvfilter at 1( 0) + 0 on 1027;
+  architecture arch of hsvfilter at 27( 525) + 0 on 1028;
+file . "../FIFO_dual_clock.vhd" "20151111154111.000" "20151111164116.640":
+  entity fifo_dual_clock at 2( 24) + 0 on 1021;
+  architecture arch of fifo_dual_clock at 20( 467) + 0 on 1022;
+file . "center_of_mass_test.vhd" "20151117094644.000" "20151117104652.513":
+  entity center_of_mass_test at 2( 1) + 0 on 1147;
+  architecture behavior of center_of_mass_test at 9( 127) + 0 on 1148;
+file . "flag_sync_test.vhd" "20151114213659.000" "20151114223704.058":
+  entity flag_sync_test at 2( 1) + 0 on 1081;
+  architecture behavior of flag_sync_test at 9( 117) + 0 on 1082;

@@ -23,7 +23,7 @@ architecture arch of mult9x9 is
   signal n_reg, n_next : unsigned(C_W-1 downto 0);
   signal p_reg, p_next : unsigned(2*W downto 0);
 
-  signal pu_next : unsigned(W downto 0);-- is p_next(2*W downto W);
+  signal pu,pu_next : unsigned(W downto 0);-- is p_next(2*W downto W);
   signal pu_reg  : unsigned(W downto 0);-- is p_reg(2*W downto W);
   signal pl_reg  : unsigned(W-1 downto 0);-- is p_reg(W-1 downto 0);
   signal ua_in,ub_in: unsigned(W-1 downto 0);
@@ -43,11 +43,13 @@ begin
       a_reg <= (others=>'0');
       n_reg <= (others=>'0');
       p_reg <= (others=>'0');
+	  pu <= (others=>'0');
     elsif rising_edge(clk) then
       state_reg <= state_next;
       a_reg <= a_next;
       n_reg <= n_next;
       p_reg <= p_next;
+	  pu <= pu_next;
     end if;
   end process;
 
@@ -58,6 +60,7 @@ begin
     a_next <= a_reg;
     n_next <= n_reg;
     p_next <= p_reg;
+	pu_next <= pu;
     ready <= '0';
 
     case state_reg is

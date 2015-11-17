@@ -60,21 +60,31 @@ architecture RTL of top_level is
 	signal wbm_address, wbm_readdata, wbm_writedata : std_logic_vector(15 downto 0) ;
 	signal wbm_strobe, wbm_write, wbm_ack, wbm_cycle: std_logic;
 	signal strobe,cycle, wr: std_logic;
-    signal gls_reset, gls_clk: std_logic;
-    signal irq_dout, buffer_dout, cnt_dout : std_logic_vector(15 downto 0);
-    signal irq_ack, bt_irq, cnt_ack : std_logic;
+    signal sreset,hreset,gls_reset, gls_clk: std_logic;
+    signal irq_dout, buffer_dout, pos_dout : std_logic_vector(15 downto 0);
+    signal irq_ack, bt_irq : std_logic;
     signal irq_port: std_logic_vector(15 downto 0);
-    signal buffer_ack: std_logic;
+    signal buffer_ack, pos_ack: std_logic;
     signal ack_tick : std_logic;
-	signal resend, frame_irq: std_logic;
+	signal istart, resend, frame_irq: std_logic;
+	signal sum_x_out, sum_y_out, n_out: std_logic_vector(31 downto 0) ;
 begin
   irq_port <= "000000000000000" & frame_irq;
     reset_gen: entity work.rstgen_syscon
       port map (
         ext_clk => ext_clk,
         gls_clk=> gls_clk,
-        gls_reset=> gls_reset
+        gls_reset=> sreset
         );
+	    debounce_unit: entity work.debounce
+	      port map(
+	        clk => gls_reset,
+	        reset => sreset,
+	        sw => button,
+	        db_level => open,
+	        db_tick => hreset
+	        );
+			gls_reset <= sreset or hreset;
 	imx51_wb_16: entity work.imx51_wb16_wrapper
 	port map (
 	    -- i.MX Signals
@@ -125,9 +135,9 @@ begin
         irq_cs          => c_sel(0),
         irqport         => irq_port,
         gls_irq         => gls_irq,
-		start 			=> resend
+		start 			=> istart
         );
-
+		resend <= istart or hreset;
   --gls_irq <= bt_irq;
     
     
@@ -145,8 +155,9 @@ begin
 		c_sel	=> c_sel(1), 
 		ack		=> buffer_ack,
     	ack_tick=> ack_tick,
+		wr 		=> wr,
 		dout	=> buffer_dout,
-		filter 	=> '1',
+		--filter 	=> '1',
       	cfinish => led,
   		resend 	=>  resend,
 		frame_irq=>frame_irq,
@@ -159,29 +170,32 @@ begin
   		OV7670_SIOD  	=> OV7670_SIOD,
   		OV7670_RESET 	=> OV7670_RESET,
   		OV7670_PWDN  	=> OV7670_PWDN,
-  		OV7670_XCLK  	=> OV7670_XCLK
+  		OV7670_XCLK  	=> OV7670_XCLK,
+		sum_x_out => sum_x_out,
+		sum_y_out => sum_y_out,
+		n_out => n_out
 		);
 
-
-    rw_cnt_ent: entity work.rw_counter
-      port map(
-          clk       => gls_clk,
-          reset     => gls_reset,
-          addr      => wbm_address(2 downto 1),
-          strobe    => strobe,
-          cycle	    => cycle,
-          c_sel     => c_sel(2),
-          m_ack     => ack_tick,
-          ack	    => cnt_ack,
-          wr	    => wr,
-          dout      => cnt_dout
-          );
-
-
+		obj_pos_ent: entity work.object_position_unit
+		  port map(
+			clk => gls_clk,
+			reset => gls_reset,
+			strobe => strobe,
+			cycle => cycle,
+			addr => wbm_address(3 downto 1),
+			sum_x_in=> sum_x_out,
+			sum_y_in=> sum_y_out,
+			n_in => n_out,
+			frame_ok => frame_irq,
+			c_sel => c_sel(2),
+			ack => pos_ack,
+			wr=> wr,
+			dout => pos_dout
+		  ) ;
 	wbm_readdata <= buffer_dout when buffer_ack='1' else
                     irq_dout when irq_ack = '1' else
-                    cnt_dout when cnt_ack = '1' else
+                    pos_dout when pos_ack = '1' else
                     (others=>'0');
-	wbm_ack <= buffer_ack or irq_ack or cnt_ack;
+	wbm_ack <= buffer_ack or irq_ack or pos_ack;
 
 end architecture RTL;

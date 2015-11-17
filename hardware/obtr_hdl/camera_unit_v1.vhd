@@ -52,7 +52,11 @@ entity camera_unit is
 	OV7670_SIOD  	: inout STD_LOGIC;
 	OV7670_RESET 	: out   STD_LOGIC;
 	OV7670_PWDN  	: out   STD_LOGIC;
-	OV7670_XCLK  	: out   STD_LOGIC
+	OV7670_XCLK  	: out   STD_LOGIC;
+	-- object position goes here
+	sum_x_out: out std_logic_vector(31 downto 0) ;
+	sum_y_out: out std_logic_vector(31 downto 0) ;
+	n_out: out std_logic_vector(31 downto 0) 
 );
 
 end entity;
@@ -60,9 +64,9 @@ end entity;
 architecture arch of camera_unit is
   	-- signals declaration here
   	constant ID: natural := 1;
-	constant VGA_ADDR: std_logic_vector(18 downto 0 ) 	:= "1001010111111111111";
-	constant QVGA_ADDR: std_logic_vector(18 downto 0) 	:= "0010010101111111111";
-	constant QQVGA_ADDR : std_logic_vector(18 downto 0)	:= "0000100101011111111";
+	-- constant VGA_ADDR: std_logic_vector(14 downto 0 ) 	:= "100101011111111";
+-- 	constant QVGA_ADDR: std_logic_vector(14 downto 0) 	:= "001001010111111";
+-- 	constant QQVGA_ADDR : std_logic_vector(14 downto 0)	:= "000010010101111";
   	constant OFFSET: unsigned(15 downto 0) := X"0008";
 	
   	signal mem_addr : std_logic_vector(15 downto 0);
@@ -73,14 +77,14 @@ architecture arch of camera_unit is
 	
 	signal clk_45: std_logic;
 	signal fr_addr: std_logic_vector(18 downto 0) ;
-	signal fr_addr_map, fr_addr_map_next: std_logic_vector(18 downto 0) ;
+	signal fr_addr_map: std_logic_vector(14 downto 0) ;
 	-- select the filter or not
-	signal R8,R8_next,G8, G8_next,B8,B8_next : std_logic_vector(7 downto 0);
-	signal pixon: std_logic;
-	signal d1, d2: std_logic_vector(7 downto 0) ;
+	signal pixons: std_logic_vector(3 downto 0);
 	signal filter_ready: std_logic;
 	signal rez_160x120,rez_320x240: std_logic;
 	signal rez_in: std_logic_vector(1 downto 0) ;
+	signal frame_end, frame_end_sync: std_logic;
+	signal px_cnt:std_logic_vector(1 downto 0);
 begin
   ack <=  strobe and cycle and c_sel;
   state <= (ack_db or state) and (strobe and cycle and c_sel);
@@ -116,18 +120,12 @@ end process ;
       ack_db <= '0';
       --fr_din <= (others=>'0');
 	  filter_out <= (others=>'0');
-	  R8 <= (others=>'0');
-	  G8 <= (others=>'0');
-	  B8 <= (others=>'0');
-	 fr_addr_map <= (others=>'0');
+	 --fr_addr_map <= (others=>'0');
     elsif rising_edge(clk) then
       --fr_din <= fr_din_next;
 	  filter_out<= filter_out_next;
       ack_db <= strobe and cycle and c_sel and (not ack_db) and (not state);
-	  R8 <= R8_next;
-	  G8 <= G8_next;
-	  B8 <= B8_next;
-	 fr_addr_map <= fr_addr_map_next;
+	 --fr_addr_map <= fr_addr_map_next;
     end if;
   end process;
   
@@ -164,50 +162,75 @@ capture_unit: entity work.ov7670_capture
 	   	dout  => cam_dout, 		-- to buffer out
 	   	we    => px_wr
 	);
-	frame_irq <= '1' when ((rez_320x240 = '1' and fr_addr_map = QVGA_ADDR)
-	 						OR (rez_160x120 = '1' and fr_addr_map = QQVGA_ADDR)
-							OR (rez_160x120 = '0' and rez_320x240 = '0' and fr_addr_map = VGA_ADDR)) 
-						else '0';
--- add the filter
-R8_next <= cam_dout(15 downto 11) & "000" when px_wr='1' else R8;
-G8_next <= cam_dout(10 downto 5) & "00" when px_wr='1' else G8;
-B8_next <= cam_dout(4 downto 0) & "000" when px_wr='1' else B8;
-
-filter_unit: entity work.hsvfilter
-	port map(
-  		clk => clk,
-		reset => reset,
-		R_in => R8_next,
-		G_in => G8_next,
-		B_in => B8_next,
-		start => px_wr,
-		pixon => pixon,
-		available => filter_ready
-	);
-	wr_op <= '1' when fr_addr_map(3 downto 0)  = "1111" and filter_ready = '1'  else '0';-- when filter = '1' else px_wr;
-	filter_out_next <= pixon&filter_out(15 downto 1) when filter_ready = '1' else filter_out;
-	--buffer_in <= cam_dout when filter = '0' else filter_out_next;
---fr_din_next <= cam_dout&fr_din(7 downto 0)  when wr_op = '1' else
---                 fr_din(15 downto 8)&cam_dout when
---                (px_wr = '1') else fr_din;
-	fr_addr_map_next <=fr_addr when px_wr='1' else fr_addr_map;--when filter = '1' else fr_addr;
+	
+image_processing:entity work.processing_unit
+  port map(
+	clk=>clk,
+	reset=>reset,
+	px_wr=>px_wr,
+	trigger=> frame_end_sync,
+	addr=> fr_addr(1 downto 0),
+	data_in => cam_dout,
+	data_out => pixons,
+	data_ok => filter_ready
+  ) ;
+  center_of_mass_ent: entity work.center_of_mass
+  port map (
+	clk=> clk,
+	reset=> reset,
+	rez_320x240 => rez_320x240,
+	rez_160x120 => rez_160x120,
+	addr_in => fr_addr_map,
+	refresh => frame_end,
+	din_ok => wr_op,
+	pixon => filter_out_next,
+	sum_x_out=> sum_x_out,
+	sum_y_out => sum_y_out,
+	n_out=> n_out
+  ) ;
+  px_cnt_proc : process( clk,reset )
+  begin
+  	if reset = '1' then
+  		px_cnt <= (others=>'0');
+  	elsif rising_edge(clk) then
+  		if(filter_ready = '1') then
+			px_cnt <= std_logic_vector(unsigned(px_cnt)+1);
+		end if;
+  	end if;
+  end process ; -- px_cnt
+  
+  irq_sync: entity work.flag_sync
+    port map(
+  	clkA => OV7670_PCLK, 
+	clkB => clk,
+	reset=> reset,
+  	flagA=>OV7670_VSYNC,
+  	flagB => frame_end_sync
+    ) ;
+frame_irq <= frame_end_sync;
+-- frame_end <= '1' when ((rez_320x240 = '1' and fr_addr_map = QVGA_ADDR)
+--  						OR (rez_160x120 = '1' and fr_addr_map = QQVGA_ADDR)
+-- 						OR (rez_160x120 = '0' and rez_320x240 = '0' and fr_addr_map = VGA_ADDR))
+-- 					else '0';
+frame_end <= '1' when fr_addr_map = "000000000000000" and wr_op = '1' else '0';
+wr_op <= '1' when px_cnt  = "00" and filter_ready = '1'  else '0';-- when filter = '1' else px_wr;
+filter_out_next <= pixons&filter_out(15 downto 4) when filter_ready = '1' else filter_out;	
+fr_addr_map <= std_logic_vector(unsigned(fr_addr(18 downto 4)) - 1);
  -- end process;
-  frame_ent: entity work.dual_port_dual_clock
+ frame_ent: entity work.dual_port_dual_clock
     generic map(
       ADDR_WIDTH => BUF_AW,
       DATA_WIDTH => BUF_DW
       )
     port map(
-    clka    => clk,-- a bit dagerous OV7670_PCLK,
+    clka    => clk,
 	clkb 	=> clk,
     we      => wr_op, 		
-    addr_a  => fr_addr_map(18 downto 4),--fr_addr_map, 
+    addr_a  => fr_addr_map,--fr_addr_map, 
     addr_b  => mem_addr(BUF_AW downto 1), 	-- requested by host
     din_a   => filter_out_next,--buffer_in,--fr_din_next, 		-- stacked data from camera
     dout_a  => open,
     dout_b  => buffer_out -- to host
     );
-	--d1 <= (others=>'1') when buffer_out(0) = '1' else (others=>'0');
-	--d2 <= (others=>'1') when buffer_out(1) = '1' else (others=>'0');
 	dout <= buffer_out;
 end architecture;

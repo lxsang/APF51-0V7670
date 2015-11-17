@@ -48,7 +48,7 @@ architecture arch of interface_mngr is
 begin 
 	adv <= addr_in(0);
 	c_sel <= slave_sel;
-	slave_active <= slave_sel(0) or slave_sel(1) or slave_sel(2) ;
+	slave_active <= slave_sel(0) or slave_sel(1) or slave_sel(2);
    	--- addressing decode and sync sgnal ---
 	addressing_proc : process(reset,clk, addr_in) 
 	begin 
@@ -59,11 +59,10 @@ begin
           
           if addr_in(15 downto 3) = "0000000000000" and strobe_in='1' then
             slave_sel(0) <= '1';
-          elsif addr_in(15 downto 3) = "1111111111111" and strobe_in = '1' then
-            slave_sel(2) <= '1';
-         elsif strobe_in='1' then 
-           slave_sel(1) <= '1';
-           
+         elsif addr_in(15 downto 4) = "111111111111" and strobe_in='1' then 
+           slave_sel(2) <= '1';
+	   	elsif strobe_in = '1' then
+			slave_sel(1) <= '1';
          end if; 
 		end if;
 	end process ; -- addressing_proc
